@@ -1,0 +1,72 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              String            @id @default(cuid())
+  email           String            @unique
+  name            String?
+  password        String?
+  role            String            @default("user")
+  subscription    Subscription?
+  savedArticles   SavedArticle[]
+  readingProgress ReadingProgress[]
+  createdAt       DateTime          @default(now())
+}
+
+model Subscription {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  plan      String
+  status    String
+  expiresAt DateTime
+  stripeId  String?
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model Category {
+  id       String    @id @default(cuid())
+  name     String
+  slug     String    @unique
+  articles Article[]
+}
+
+model Article {
+  id         String   @id @default(cuid())
+  title      String
+  slug       String   @unique
+  content    String   @db.Text
+  coverUrl   String?
+  audioUrl   String?
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id])
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model SavedArticle {
+  id        String @id @default(cuid())
+  userId    String
+  articleId String
+}
+
+model ReadingProgress {
+  id        String   @id @default(cuid())
+  userId    String
+  articleId String
+  progress  Int
+  updatedAt DateTime @updatedAt
+}
+
+model Issue {
+  id        String  @id @default(cuid())
+  month     Int
+  year      Int
+  pdfUrl    String
+  createdAt DateTime @default(now())
+}
