@@ -25,11 +25,11 @@ export function Navbar() {
     <header className="sticky top-0 z-50 header-premium px-3 md:px-6">
       <div className="container">
         <div className="flex flex-col gap-2">
-          <div className="header-shell flex items-center justify-between gap-3">
+          <div className="header-shell flex w-full items-center justify-between gap-2 overflow-hidden">
             <Link href="/" className="inline-flex items-center gap-3 shrink-0" aria-label="Rehnüma ana sayfa">
               <span className="sr-only">Rehnüma</span>
               <span className="logo-shine">
-                <Image src={logo} alt="Rehnüma" className="logo-glow h-12 w-auto md:h-12" priority />
+                <Image src={logo} alt="Rehnüma" className="logo-glow h-11 w-auto md:h-12" priority />
               </span>
             </Link>
             <nav className="hidden lg:flex items-center gap-1 text-sm">
@@ -39,10 +39,10 @@ export function Navbar() {
                 </Link>
               ))}
             </nav>
-            <div className="flex items-center gap-2 text-sm whitespace-nowrap">
+            <div className="flex items-center gap-1.5 text-sm whitespace-nowrap">
               <button
                 type="button"
-                className="inline-flex items-center gap-2 rounded-full border border-black/5 bg-white/90 px-3 py-2 text-sm font-semibold text-neutral-800 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:shadow lg:hidden"
+                className="inline-flex items-center gap-1.5 rounded-full border border-black/5 bg-white/90 px-2.5 py-2 text-sm font-semibold text-neutral-800 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:shadow lg:hidden"
                 aria-expanded={isMobileOpen}
                 aria-controls="mobile-categories"
                 onClick={toggleMobile}
@@ -73,12 +73,14 @@ export function Navbar() {
                   />
                 </svg>
               </button>
-              <Link href="/admin" className="nav-link nav-link-muted hidden sm:inline-flex">
-                Admin
-              </Link>
-              <Link href="/abonelik" className="nav-cta hidden sm:inline-flex">
-                Abonelik
-              </Link>
+              <div className="hidden items-center gap-2 lg:flex">
+                <Link href="/admin" className="nav-link nav-link-muted">
+                  Admin
+                </Link>
+                <Link href="/abonelik" className="nav-cta">
+                  Abonelik
+                </Link>
+              </div>
             </div>
           </div>
           {isMobileOpen ? (
