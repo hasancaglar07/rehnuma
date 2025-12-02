@@ -38,6 +38,30 @@ a {
   z-index: 0;
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: oklch(var(--primary) / 0.85) rgba(0, 0, 0, 0.06);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(var(--primary) / 0.85);
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(var(--primary) / 1);
+}
+
 @layer base {
 h1,
 h2,
