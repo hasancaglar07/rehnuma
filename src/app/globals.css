@@ -76,11 +76,32 @@ h4 {
 }
 
 .header-premium {
-  background: #fff;
-  border-bottom: 1px solid oklch(var(--border) / 0.6);
-  box-shadow: 0 10px 28px -24px oklch(var(--foreground) / 0.35);
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  background: transparent;
+  border-bottom: none;
+  box-shadow: none;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.header-shell {
+  border-radius: 999px;
+  border: 1px solid oklch(var(--border) / 0.65);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.45rem 0.75rem;
+  box-shadow: 0 16px 34px -26px oklch(var(--foreground) / 0.6);
+  backdrop-filter: blur(12px);
+}
+
+@media (min-width: 768px) {
+  .header-shell {
+    padding: 0.55rem 1.05rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header-shell {
+    padding: 0.65rem 1.25rem;
+  }
 }
 
 .nav-link {

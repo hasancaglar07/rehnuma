@@ -1,9 +1,8 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
 
+// Construct OG image for social previews.
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const title = searchParams.get("title") || "Rehnüma Kadın Dergisi";
@@ -27,6 +26,6 @@ export async function GET(request: Request) {
         <div style={{ maxWidth: "900px", lineHeight: 1.1 }}>{title}</div>
       </div>
     ),
-    { ...size }
+    { width: 1200, height: 630 }
   );
 }

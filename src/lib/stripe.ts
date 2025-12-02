@@ -1,7 +1,10 @@
 import Stripe from "stripe";
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
-  apiVersion: "2024-06-20"
+// Use a placeholder test key if env var is missing to avoid init errors during build.
+const stripeSecret = process.env.STRIPE_SECRET_KEY || "sk_test_placeholder";
+
+export const stripe = new Stripe(stripeSecret, {
+  apiVersion: "2025-11-17.clover"
 });
 
 export function getPriceId(plan: string) {

@@ -4,6 +4,9 @@ import { Navbar } from "@/components/shared/navbar";
 import { Footer } from "@/components/shared/footer";
 import Link from "next/link";
 
+type ProgressItem = { id: string; articleId: string; progress: number };
+type ProgressArticle = { id: string; title: string; slug: string };
+
 export default async function ReadingHistoryPage() {
   const session = await getSession();
   if (!session.user) {
@@ -18,13 +21,15 @@ export default async function ReadingHistoryPage() {
     );
   }
 
-  const progress = await prisma.readingProgress.findMany({
+  const progress: ProgressItem[] = await prisma.readingProgress.findMany({
+    select: { id: true, articleId: true, progress: true },
     where: { userId: session.user.id },
     orderBy: { updatedAt: "desc" }
   });
 
-  const articles = await prisma.article.findMany({
-    where: { id: { in: progress.map((p) => p.articleId) } }
+  const articles: ProgressArticle[] = await prisma.article.findMany({
+    select: { id: true, title: true, slug: true },
+    where: { id: { in: progress.map((p: ProgressItem) => p.articleId) } }
   });
 
   return (
@@ -34,8 +39,8 @@ export default async function ReadingHistoryPage() {
         <h1 className="text-3xl font-serif">Okuma Geçmişi</h1>
         <div className="space-y-3">
           {progress.length === 0 && <p className="text-muted-foreground">Geçmiş bulunamadı.</p>}
-          {progress.map((p) => {
-            const article = articles.find((a) => a.id === p.articleId);
+          {progress.map((p: ProgressItem) => {
+            const article = articles.find((a: ProgressArticle) => a.id === p.articleId);
             if (!article) return null;
             return (
               <div key={p.id} className="border border-border rounded-xl p-4 flex items-center justify-between">

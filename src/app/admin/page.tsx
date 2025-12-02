@@ -3,12 +3,17 @@ import { Navbar } from "@/components/shared/navbar";
 import { Footer } from "@/components/shared/footer";
 import { prisma } from "@/db/prisma";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminDashboard() {
-  const [articles, users, subscriptions] = await Promise.all([
-    prisma.article.count(),
-    prisma.user.count(),
-    prisma.subscription.count({ where: { status: "active" } })
-  ]);
+  const hasDatabase = Boolean(process.env.DATABASE_URL);
+  const [articles, users, subscriptions] = hasDatabase
+    ? await Promise.all([
+        prisma.article.count(),
+        prisma.user.count(),
+        prisma.subscription.count({ where: { status: "active" } })
+      ])
+    : [0, 0, 0];
 
   const cards = [
     { title: "Yazılar", value: articles },

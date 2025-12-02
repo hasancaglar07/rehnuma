@@ -3,9 +3,18 @@ import { Navbar } from "@/components/shared/navbar";
 import { Footer } from "@/components/shared/footer";
 import Link from "next/link";
 import { prisma } from "@/db/prisma";
+type ArticleListItem = { id: string; title: string; slug: string };
+
+export const dynamic = "force-dynamic";
 
 export default async function AdminArticlesPage() {
-  const articles = await prisma.article.findMany({ orderBy: { createdAt: "desc" } });
+  const hasDatabase = Boolean(process.env.DATABASE_URL);
+  const articles: ArticleListItem[] = hasDatabase
+    ? await prisma.article.findMany({
+        select: { id: true, title: true, slug: true },
+        orderBy: { createdAt: "desc" }
+      })
+    : [];
 
   return (
     <div className="min-h-screen">
@@ -17,7 +26,7 @@ export default async function AdminArticlesPage() {
           </Link>
         </div>
         <div className="grid gap-2">
-          {articles.map((article) => (
+          {articles.map((article: ArticleListItem) => (
             <div key={article.id} className="border border-border rounded-xl p-4 flex items-center justify-between">
               <div>
                 <p className="font-semibold">{article.title}</p>

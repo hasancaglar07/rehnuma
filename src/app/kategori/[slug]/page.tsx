@@ -7,6 +7,13 @@ import type { Metadata } from "next";
 export const revalidate = 120;
 
 type Props = { params: { slug: string } };
+type ArticleListItem = { id: string; title: string; slug: string; content: string };
+type CategoryWithArticles =
+  | {
+      name: string;
+      articles: ArticleListItem[];
+    }
+  | null;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
@@ -16,9 +23,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function CategoryPage({ params }: Props) {
-  const category = await prisma.category.findUnique({
+  const category: CategoryWithArticles = await prisma.category.findUnique({
     where: { slug: params.slug },
-    include: { articles: true }
+    select: {
+      name: true,
+      articles: { select: { id: true, title: true, slug: true, content: true } }
+    }
   });
 
   return (
@@ -27,7 +37,7 @@ export default async function CategoryPage({ params }: Props) {
       <main className="container py-12 space-y-6">
         <h1 className="text-3xl font-serif">{category?.name ?? "Kategori"}</h1>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {category?.articles.map((article) => (
+          {category?.articles.map((article: ArticleListItem) => (
             <ArticleCard key={article.id} title={article.title} slug={article.slug} excerpt={article.content.slice(0, 120)} />
           )) ?? <p className="text-muted-foreground">Bu kategoride içerik yok.</p>}
         </div>
