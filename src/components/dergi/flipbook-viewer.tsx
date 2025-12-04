@@ -273,6 +273,11 @@ export function FlipbookViewer({ pdfUrl }: Props) {
     };
     const node = wrapperRef.current;
     if (!node) return;
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+    if (isMobile) {
+      setControlsVisible(true);
+      return;
+    }
     node.addEventListener("pointermove", show);
     node.addEventListener("pointerdown", show);
     show();
@@ -313,11 +318,11 @@ export function FlipbookViewer({ pdfUrl }: Props) {
   return (
     <div className="space-y-3" ref={wrapperRef}>
       <div
-        className={`flex flex-wrap items-center gap-2 rounded-2xl border border-border bg-background/80 p-3 shadow-sm transition-opacity duration-200 ${
+        className={`flex flex-col gap-2 md:flex-row md:flex-wrap md:items-center rounded-2xl border border-border bg-background/80 p-3 shadow-sm transition-opacity duration-200 ${
           controlsVisible ? "opacity-100" : "opacity-0"
         }`}
       >
-        <div className="flex items-center gap-1 text-xs text-muted-foreground">
+        <div className="flex flex-wrap items-center gap-1 text-xs text-muted-foreground">
           <button onClick={prevPage} disabled={pageNum <= 1} className="rounded-full border px-3 py-1 disabled:opacity-50">
             ←
           </button>
@@ -328,7 +333,7 @@ export function FlipbookViewer({ pdfUrl }: Props) {
             →
           </button>
         </div>
-        <div className="flex items-center gap-1 text-xs text-muted-foreground">
+        <div className="flex flex-wrap items-center gap-1 text-xs text-muted-foreground">
           <button onClick={zoomOut} className="rounded-full border px-3 py-1">
             -
           </button>
@@ -341,8 +346,6 @@ export function FlipbookViewer({ pdfUrl }: Props) {
           <button onClick={zoomIn} className="rounded-full border px-3 py-1">
             +
           </button>
-        </div>
-        <div className="flex items-center gap-2 text-xs text-muted-foreground">
           <button
             onClick={() => setViewMode((v) => (v === "spread" ? "single" : "spread"))}
             className="rounded-full border px-3 py-1"
@@ -350,7 +353,7 @@ export function FlipbookViewer({ pdfUrl }: Props) {
             {viewMode === "spread" ? "Tek sayfa" : "Çift sayfa"}
           </button>
         </div>
-        <div className="flex items-center gap-2 ml-auto text-xs text-muted-foreground">
+        <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground md:ml-auto">
           {themes.map((t) => (
             <button
               key={t.id}
@@ -360,7 +363,7 @@ export function FlipbookViewer({ pdfUrl }: Props) {
             />
           ))}
         </div>
-        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+        <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
           <button
             onClick={() => setShowThumbs((v) => !v)}
             className="rounded-full border px-3 py-1"
@@ -388,7 +391,7 @@ export function FlipbookViewer({ pdfUrl }: Props) {
       <div
         ref={containerRef}
         className={`rounded-3xl border overflow-hidden shadow-lg ${theme.bg} ${theme.text} ${theme.border}`}
-        style={{ minHeight: 420 }}
+        style={{ minHeight: 360 }}
         onPointerDown={handlePointerDown}
         onPointerUp={handlePointerUp}
       >

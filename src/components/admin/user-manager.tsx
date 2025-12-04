@@ -107,16 +107,16 @@ export function UserManager() {
         </select>
       </div>
       {filteredUsers.map((user) => (
-        <div key={user.id} className="border border-border rounded-xl p-4 bg-background/80 flex flex-col gap-2">
-          <div className="flex items-center justify-between gap-2">
-            <div>
+        <div key={user.id} className="border border-border rounded-xl p-4 bg-background/80 flex flex-col gap-3">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <div className="space-y-1">
               <p className="font-semibold">{user.email}</p>
               <p className="text-sm text-muted-foreground">
                 Rol: {user.role} · Abonelik: {user.subscription?.status ?? "yok"} {user.subscription?.plan ? `(${user.subscription.plan})` : ""}
               </p>
               {user.isBanned && <p className="text-sm text-rose-600">Banlı</p>}
             </div>
-            <div className="flex flex-wrap gap-2 text-sm">
+            <div className="flex flex-wrap gap-2 text-sm justify-start sm:justify-end">
               {user.isBanned ? (
                 <button
                   type="button"

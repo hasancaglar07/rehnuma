@@ -144,13 +144,13 @@ export function CategoryList() {
       <div className="grid gap-3">
         {sorted.map((cat, idx) => (
           <div key={cat.id} className="border border-border rounded-xl p-4 flex flex-col gap-3 bg-background/80">
-            <div className="flex items-center justify-between gap-2">
-              <div>
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <div className="space-y-1">
                 <p className="font-semibold">{cat.name}</p>
                 <p className="text-sm text-muted-foreground">{cat.slug}</p>
                 <p className="text-xs text-muted-foreground">Sıra: {idx + 1}</p>
               </div>
-              <div className="flex items-center gap-2 text-sm">
+              <div className="flex flex-wrap items-center gap-2 text-sm">
                 <button
                   type="button"
                   className="px-3 py-1 rounded-full border border-border hover:-translate-y-0.5 transition"

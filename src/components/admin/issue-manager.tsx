@@ -213,7 +213,7 @@ export function IssueManager() {
     <div className="space-y-6">
       {status && <div className="rounded-lg border border-border bg-background/80 px-3 py-2 text-sm">{status}</div>}
       {editingIssue && (
-        <div className="rounded-lg border border-border bg-background/70 px-3 py-2 text-sm flex items-center justify-between gap-3">
+        <div className="rounded-lg border border-border bg-background/70 px-3 py-2 text-sm flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <span>
             {editingIssue.month}/{editingIssue.year} sayısını düzenliyorsunuz.
           </span>
@@ -231,7 +231,7 @@ export function IssueManager() {
       )}
       {loading && <div className="text-sm text-muted-foreground">Dergi verileri yükleniyor…</div>}
       <form className="grid gap-3" onSubmit={handleSubmit}>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <input
             name="month"
             type="number"
@@ -302,7 +302,7 @@ export function IssueManager() {
         </div>
 
         <div className="rounded-xl border border-border bg-background/70 p-3 space-y-3">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm font-medium">Bu sayıya eklenecek yazılar</p>
             <button type="button" onClick={addLinkedArticle} className="text-sm text-primary">
               Yazı ekle
@@ -362,7 +362,7 @@ export function IssueManager() {
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           <button
             type="submit"
             className="px-4 py-2 rounded-full bg-primary text-primary-foreground w-fit disabled:opacity-60 disabled:cursor-not-allowed"
@@ -390,12 +390,12 @@ export function IssueManager() {
             key={`${issue.year}-${issue.month}-${issue.id}`}
             className="border border-border rounded-xl p-4 flex flex-col gap-3 bg-background/80"
           >
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex items-center gap-3 w-full sm:w-auto">
                 <div className="w-14 h-20 border border-border rounded-lg overflow-hidden bg-secondary/40 text-xs text-muted-foreground flex items-center justify-center">
                   {issue.coverUrl ? <img src={issue.coverUrl} alt="Kapak" className="w-full h-full object-cover" /> : "Kapak"}
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="font-semibold">
                     {issue.month}/{issue.year}
                   </p>
@@ -415,7 +415,7 @@ export function IssueManager() {
                   </div>
                 </div>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 sm:self-start">
                 {editingIssueId === issue.id && <span className="text-xs text-emerald-700">Düzenleniyor</span>}
                 <button type="button" className="text-sm text-primary underline" onClick={() => startEdit(issue)}>
                   Düzenle
@@ -430,9 +430,9 @@ export function IssueManager() {
                     .slice()
                     .sort((a, b) => a.order - b.order)
                     .map((item) => (
-                      <li key={item.id} className="flex items-center justify-between gap-2">
-                        <span>{item.article.title}</span>
-                        <div className="flex items-center gap-2">
+                      <li key={item.id} className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                        <span className="break-words">{item.article.title}</span>
+                        <div className="flex flex-wrap items-center gap-2">
                           {item.role && <span className="text-xs text-muted-foreground">{item.role}</span>}
                           {item.reviewer?.email && <span className="text-xs text-emerald-700">Hakem: {item.reviewer.email}</span>}
                         </div>

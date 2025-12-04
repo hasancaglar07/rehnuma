@@ -98,8 +98,11 @@ export default async function AdminArticlesPage({ searchParams }: Props) {
         </div>
         <div className="grid gap-2">
           {articles.map((article: ArticleListItem) => (
-            <div key={article.id} className="border border-border rounded-xl p-4 flex items-center justify-between">
-              <div>
+            <div
+              key={article.id}
+              className="border border-border rounded-xl p-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between"
+            >
+              <div className="space-y-1">
                 <div className="flex items-center gap-2">
                   <p className="font-semibold">{article.title}</p>
                   <StatusBadge status={article.status} />
@@ -117,8 +120,8 @@ export default async function AdminArticlesPage({ searchParams }: Props) {
                   )}
                 </p>
               </div>
-              <div className="text-sm flex flex-col gap-2 items-end">
-                <div className="flex gap-3">
+              <div className="text-sm flex flex-col gap-2 items-start md:items-end w-full md:w-auto">
+                <div className="flex gap-3 flex-wrap">
                   <Link href={`/yazi/${article.slug}`} className="text-primary">
                     Görüntüle
                   </Link>

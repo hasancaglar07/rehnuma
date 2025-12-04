@@ -65,7 +65,10 @@ export default async function AdminDashboard() {
             <div className="mt-3 space-y-2">
               {recentEvents.length === 0 && <p className="text-sm text-muted-foreground">Henüz kayıt yok.</p>}
               {recentEvents.map((event) => (
-                <div key={event.id} className="flex items-center justify-between gap-3 rounded-lg border border-border/60 bg-secondary/30 px-3 py-2">
+                <div
+                  key={event.id}
+                  className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between rounded-lg border border-border/60 bg-secondary/30 px-3 py-2"
+                >
                   <div className="flex flex-col">
                     <span className="text-sm font-medium capitalize">{event.action}</span>
                     <span className="text-xs text-muted-foreground">
