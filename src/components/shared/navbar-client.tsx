@@ -20,7 +20,7 @@ export function NavbarClient() {
   const isAdmin = useMemo(() => {
     const metaRole = user?.publicMetadata?.role as string | undefined;
     return (metaRole || serverRole) === "admin";
-  }, [serverRole, user]);
+  }, [serverRole, user?.publicMetadata?.role]);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   useEffect(() => {
