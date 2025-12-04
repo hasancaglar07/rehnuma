@@ -1,15 +1,26 @@
 "use client";
-import { useEffect, useMemo, useState, type CSSProperties } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { ArticleAudio } from "./audio-player";
 import { ArticleContent } from "./article-content";
 import { getCsrfToken } from "@/utils/client-cookies";
 import { cn } from "@/lib/cn";
 
 type Props = {
-  article: { slug: string; title: string; content: string; audioUrl?: string | null };
+  article: {
+    slug: string;
+    title: string;
+    content: string;
+    audioUrl?: string | null;
+    shareUrl?: string;
+    readingMinutes?: number;
+    wordCount?: number;
+  };
   isSubscriber: boolean;
+  isSignedIn?: boolean;
   initialSaved?: boolean;
   initialProgress?: number;
+  loginUrl?: string;
+  subscribeUrl?: string;
 };
 
 type ReadingTheme = {
@@ -84,14 +95,30 @@ const themes: ReadingTheme[] = [
   }
 ];
 
-export function ArticleReader({ article, isSubscriber, initialSaved = false, initialProgress = 0 }: Props) {
+export function ArticleReader({
+  article,
+  isSubscriber,
+  isSignedIn = false,
+  initialSaved = false,
+  initialProgress = 0,
+  loginUrl: loginUrlProp,
+  subscribeUrl: subscribeUrlProp
+}: Props) {
   const [fontScale, setFontScale] = useState(100);
   const [saved, setSaved] = useState(initialSaved);
   const [progress, setProgress] = useState(initialProgress);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [themeId, setThemeId] = useState<ReadingTheme["id"]>("clean");
+  const [shareCopied, setShareCopied] = useState(false);
+  const progressRef = useRef(initialProgress);
 
   const theme = useMemo(() => themes.find((t) => t.id === themeId) || themes[0], [themeId]);
+  const shareUrl = useMemo(() => article.shareUrl || (typeof window !== "undefined" ? window.location.href : ""), [article.shareUrl]);
+  const loginUrl = useMemo(
+    () => loginUrlProp || `/giris?returnTo=${encodeURIComponent(`/yazi/${article.slug}`)}`,
+    [article.slug, loginUrlProp]
+  );
+  const subscribeUrl = useMemo(() => subscribeUrlProp || "/abonelik", [subscribeUrlProp]);
 
   const clampFont = (next: number) => Math.min(120, Math.max(90, next));
 
@@ -111,16 +138,29 @@ export function ArticleReader({ article, isSubscriber, initialSaved = false, ini
   }, [initialProgress]);
 
   useEffect(() => {
+    let ticking = false;
+    let lastTs = 0;
     const handleScroll = () => {
-      const doc = document.documentElement;
-      const scrollable = doc.scrollHeight - doc.clientHeight;
-      const current = scrollable > 0 ? Math.min(100, Math.round((doc.scrollTop / scrollable) * 100)) : 0;
-      setProgress(current);
+      const now = performance.now();
+      if (now - lastTs < 80) return;
+      lastTs = now;
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        ticking = false;
+        const doc = document.documentElement;
+        const scrollable = doc.scrollHeight - doc.clientHeight;
+        const current = scrollable > 0 ? Math.min(100, Math.round((doc.scrollTop / scrollable) * 100)) : 0;
+        const prev = progressRef.current;
+        if (Math.abs(current - prev) >= 1) {
+          progressRef.current = current;
+          setProgress(current);
+        }
+      });
     };
     handleScroll();
-    const onScroll = () => window.requestAnimationFrame(handleScroll);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -172,6 +212,67 @@ export function ArticleReader({ article, isSubscriber, initialSaved = false, ini
   const progressTrack = theme.isDark ? "bg-white/20" : "bg-secondary/60";
   const progressText = theme.isDark ? "text-slate-200" : "text-muted-foreground";
   const saveIdleClass = theme.isDark ? "border border-white/40 bg-white/5 text-white" : "border border-border bg-background text-foreground";
+
+  const articleBody = useMemo(
+    () => (
+      <ArticleContent
+        content={article.content}
+        isSubscriber={isSubscriber}
+        fontScale={fontScale}
+        className={theme.proseClass}
+        paywallMeta={{
+          returnTo: loginUrl,
+          isSignedIn,
+          hasAudio: Boolean(article.audioUrl),
+          wordCount: article.wordCount,
+          readingMinutes: article.readingMinutes
+        }}
+      />
+    ),
+    [
+      article.audioUrl,
+      article.content,
+      article.readingMinutes,
+      article.wordCount,
+      fontScale,
+      isSignedIn,
+      isSubscriber,
+      loginUrl,
+      theme.proseClass
+    ]
+  );
+
+  const copyShare = async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setShareCopied(true);
+      setTimeout(() => setShareCopied(false), 1600);
+    } catch {
+      setShareCopied(false);
+    }
+  };
+
+  const nativeShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: article.title, url: shareUrl });
+        return;
+      } catch {
+        // ignore
+      }
+    }
+    await copyShare();
+  };
+
+  const shareLinks = useMemo(() => {
+    const encodedUrl = encodeURIComponent(shareUrl);
+    const encodedTitle = encodeURIComponent(article.title);
+    return {
+      whatsapp: `https://wa.me/?text=${encodedTitle}%20${encodedUrl}`,
+      x: `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`,
+      linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}`
+    };
+  }, [article.title, shareUrl]);
 
   return (
     <div
@@ -246,12 +347,47 @@ export function ArticleReader({ article, isSubscriber, initialSaved = false, ini
         )}
       </div>
       <ArticleAudio src={article.audioUrl || undefined} />
-      <ArticleContent
-        content={article.content}
-        isSubscriber={isSubscriber}
-        fontScale={fontScale}
-        className={theme.proseClass}
-      />
+      <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+        <button
+          type="button"
+          onClick={nativeShare}
+          className="rounded-full border border-border bg-background px-3 py-1.5 transition hover:-translate-y-0.5"
+        >
+          Paylaş
+        </button>
+        <a
+          href={shareLinks.whatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-full border border-border bg-background px-3 py-1.5 transition hover:-translate-y-0.5"
+        >
+          Whatsapp
+        </a>
+        <a
+          href={shareLinks.x}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-full border border-border bg-background px-3 py-1.5 transition hover:-translate-y-0.5"
+        >
+          X
+        </a>
+        <a
+          href={shareLinks.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-full border border-border bg-background px-3 py-1.5 transition hover:-translate-y-0.5"
+        >
+          LinkedIn
+        </a>
+        <button
+          type="button"
+          onClick={copyShare}
+          className="rounded-full border border-border bg-background px-3 py-1.5 transition hover:-translate-y-0.5"
+        >
+          {shareCopied ? "Kopyalandı" : "Linki kopyala"}
+        </button>
+      </div>
+      {articleBody}
     </div>
   );
 }

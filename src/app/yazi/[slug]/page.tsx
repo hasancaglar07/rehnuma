@@ -1,6 +1,7 @@
 import { prisma } from "@/db/prisma";
 import { getSession } from "@/lib/auth";
 import { ArticleReader } from "@/components/articles/article-reader";
+import { ArticleCard } from "@/components/articles/article-card";
 import { toExcerpt } from "@/utils/excerpt";
 import type { Metadata } from "next";
 import { getBaseUrl } from "@/lib/url";
@@ -10,12 +11,39 @@ type Props = { params: Promise<{ slug: string }> };
 async function fetchArticle(slug: string) {
   try {
     return await prisma.article.findUnique({
-      where: { slug },
+      where: { slug, status: "published" },
       include: { category: { select: { name: true, slug: true } } }
     });
   } catch (error) {
     console.error("[article] article fetch failed", error);
     return null;
+  }
+}
+
+async function fetchRelated(articleId: string, categorySlug?: string | null) {
+  try {
+    const related = await prisma.article.findMany({
+      where: {
+        id: { not: articleId },
+        status: "published",
+        ...(categorySlug ? { category: { slug: categorySlug } } : {})
+      },
+      select: { id: true, title: true, slug: true, content: true, category: { select: { name: true } } },
+      orderBy: { createdAt: "desc" },
+      take: 4
+    });
+    if (related.length === 0 && categorySlug) {
+      return prisma.article.findMany({
+        where: { id: { not: articleId }, status: "published" },
+        select: { id: true, title: true, slug: true, content: true, category: { select: { name: true } } },
+        orderBy: { createdAt: "desc" },
+        take: 4
+      });
+    }
+    return related;
+  } catch (error) {
+    console.error("[article] related fetch failed", error);
+    return [];
   }
 }
 
@@ -51,7 +79,9 @@ export default async function ArticlePage({ params }: Props) {
   const { slug } = await params;
   const article = await fetchArticle(slug);
   const session = await getSession();
-  const isSubscriber = session.user?.subscriptionStatus === "active";
+  const isSignedIn = Boolean(session.user);
+  const isAdmin = session.user?.role === "admin";
+  const isSubscriber = isAdmin || session.user?.subscriptionStatus === "active";
 
   if (!article) {
     return (
@@ -66,6 +96,10 @@ export default async function ArticlePage({ params }: Props) {
   const wordCount = article.content.split(/\s+/).filter(Boolean).length;
   const readingMinutes = Math.max(1, Math.round(wordCount / 190));
   const publishedDate = new Intl.DateTimeFormat("tr-TR", { dateStyle: "long" }).format(article.createdAt);
+  const baseUrl = getBaseUrl();
+  const shareUrl = `${baseUrl}/yazi/${slug}`;
+  const loginUrl = `/giris?returnTo=${encodeURIComponent(`/yazi/${slug}`)}`;
+  const related = await fetchRelated(article.id, article.category?.slug);
 
   let saved: Awaited<ReturnType<typeof prisma.savedArticle.findUnique>> | null = null;
   let readingProgress: Awaited<ReturnType<typeof prisma.readingProgress.findUnique>> | null = null;
@@ -129,11 +163,38 @@ export default async function ArticlePage({ params }: Props) {
             </div>
           )}
           <ArticleReader
-            article={{ slug: article.slug, title: article.title, content: article.content, audioUrl: article.audioUrl }}
+            article={{
+              slug: article.slug,
+              title: article.title,
+              content: article.content,
+              audioUrl: article.audioUrl,
+              shareUrl,
+              readingMinutes,
+              wordCount
+            }}
             isSubscriber={!!isSubscriber}
+            isSignedIn={isSignedIn}
             initialSaved={!!saved}
             initialProgress={readingProgress?.progress ?? 0}
+            loginUrl={loginUrl}
+            subscribeUrl="/abonelik"
           />
+          {related.length > 0 && (
+            <section className="space-y-3 pt-6">
+              <h2 className="text-2xl font-serif">İlgili Yazılar</h2>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {related.map((item) => (
+                  <ArticleCard
+                    key={item.id}
+                    title={item.title}
+                    slug={item.slug}
+                    excerpt={toExcerpt(item.content, 120)}
+                    category={item.category?.name ?? undefined}
+                  />
+                ))}
+              </div>
+            </section>
+          )}
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         </div>
       </main>

@@ -10,6 +10,13 @@ type Props = {
   isSubscriber: boolean;
   fontScale?: number;
   className?: string;
+  paywallMeta?: {
+    returnTo: string;
+    isSignedIn?: boolean;
+    hasAudio?: boolean;
+    wordCount?: number;
+    readingMinutes?: number;
+  };
 };
 
 const proseClass =
@@ -37,7 +44,7 @@ function MarkdownBody({ text, fontScale, className }: { text: string; fontScale:
   );
 }
 
-export function ArticleContent({ content, isSubscriber, fontScale = 100, className }: Props) {
+export function ArticleContent({ content, isSubscriber, fontScale = 100, className, paywallMeta }: Props) {
   const normalizedContent = normalizeEmphasisSpacing(content);
   if (isSubscriber) {
     return <MarkdownBody text={normalizedContent} fontScale={fontScale} className={className} />;
@@ -48,7 +55,13 @@ export function ArticleContent({ content, isSubscriber, fontScale = 100, classNa
     <div className="space-y-6" data-nosnippet>
       <MarkdownBody text={partial} fontScale={fontScale} className={className} />
       <div className="mx-auto max-w-3xl pt-2">
-        <PaywallOverlay />
+        <PaywallOverlay
+          returnTo={paywallMeta?.returnTo ?? "/giris"}
+          isSignedIn={paywallMeta?.isSignedIn}
+          hasAudio={paywallMeta?.hasAudio}
+          wordCount={paywallMeta?.wordCount}
+          readingMinutes={paywallMeta?.readingMinutes}
+        />
       </div>
     </div>
   );
