@@ -18,8 +18,7 @@ export function NavbarClient() {
   const { isSignedIn, user } = useUser();
   const [serverRole, setServerRole] = useState<string | null>(null);
   const isAdmin = useMemo(() => {
-    const metaRole =
-      (user?.publicMetadata?.role as string | undefined) || (user?.privateMetadata?.role as string | undefined);
+    const metaRole = user?.publicMetadata?.role as string | undefined;
     return (metaRole || serverRole) === "admin";
   }, [serverRole, user]);
   const [isMobileOpen, setIsMobileOpen] = useState(false);

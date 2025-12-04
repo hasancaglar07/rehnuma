@@ -15,7 +15,7 @@ export default clerkMiddleware(async (auth, req) => {
     return NextResponse.redirect(loginUrl);
   }
 
-  return redirectToSignIn({ returnBackUrl: req.url, signInUrl: "/giris" });
+  return redirectToSignIn({ returnBackUrl: req.url });
 });
 
 export const config = {
