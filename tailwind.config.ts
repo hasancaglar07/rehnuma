@@ -46,7 +46,7 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)"
       },
       fontFamily: {
-        serif: ["var(--font-serif)", "'Playfair Display'", "serif"],
+        serif: ["var(--font-serif)", "'Literata'", "serif"],
         sans: ["var(--font-sans)", "'Source Serif 4'", "serif"],
         accent: ["var(--font-accent)", "'Parisienne'", "cursive"]
       }

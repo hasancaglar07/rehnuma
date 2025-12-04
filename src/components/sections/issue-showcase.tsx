@@ -4,7 +4,9 @@ export function IssueShowcase({ coverUrl }: { coverUrl?: string }) {
   return (
     <section className="container py-12">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-2xl font-serif">Bu Ayın Sayısı</h2>
+        <h2 className="text-[1.65rem] md:text-[1.85rem] font-serif font-semibold tracking-[-0.01em] text-foreground">
+          Bu Ayın Sayısı
+        </h2>
         <Link href="/dergi" className="text-sm text-primary">
           Arşive git
         </Link>
@@ -19,7 +21,9 @@ export function IssueShowcase({ coverUrl }: { coverUrl?: string }) {
         </div>
         <div className="space-y-2">
           <p className="text-sm text-muted-foreground">Yalnızca abonelere özel</p>
-          <h3 className="text-xl font-semibold">Dijital Dergi</h3>
+          <h3 className="font-sans text-[1.18rem] leading-[1.4] font-semibold tracking-[-0.01em] text-foreground">
+            Dijital Dergi
+          </h3>
           <p className="text-sm text-muted-foreground">
             Flipbook deneyimi, içindekiler ve yazarlar listesi ile aylık sayılar.
           </p>

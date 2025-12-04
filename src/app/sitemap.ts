@@ -15,7 +15,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const now = new Date();
 
-  const staticRoutes: MetadataRoute.Sitemap = ["/", "/abonelik", "/dergi"].map((path) => ({
+  const staticRoutes: MetadataRoute.Sitemap = [
+    "/",
+    "/abonelik",
+    "/dergi",
+    "/iletisim",
+    "/gizlilik-politikasi",
+    "/cerez-politikasi",
+    "/kullanim-sartlari"
+  ].map((path) => ({
     url: `${baseUrl}${path}`,
     lastModified: now,
     changeFrequency: "weekly" as const,

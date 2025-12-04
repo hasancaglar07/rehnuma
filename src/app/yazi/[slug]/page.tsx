@@ -149,7 +149,9 @@ export default async function ArticlePage({ params }: Props) {
               </span>
               <span className="text-muted-foreground/80">{wordCount} kelime</span>
             </div>
-            <h1 className="text-4xl font-serif leading-tight tracking-tight md:text-5xl">{article.title}</h1>
+            <h1 className="text-4xl md:text-5xl font-serif font-semibold leading-[1.1] tracking-[-0.02em] text-foreground">
+              {article.title}
+            </h1>
             <p className="max-w-3xl text-lg leading-relaxed text-muted-foreground">{toExcerpt(article.content, 180)}</p>
           </div>
           {article.coverUrl && (

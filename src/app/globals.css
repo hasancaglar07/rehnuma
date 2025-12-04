@@ -23,7 +23,8 @@ body {
     radial-gradient(90% 80% at 82% 0%, oklch(var(--accent) / 0.05), transparent 50%);
   background-attachment: fixed;
   color: oklch(var(--foreground) / 1);
-  font-family: "Georgia", "Times New Roman", serif;
+  font-family: var(--font-sans), "Source Serif 4", serif;
+  line-height: 1.65;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -78,7 +79,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-serif), "Playfair Display", serif;
+  font-family: var(--font-serif), "Literata", serif;
   letter-spacing: -0.01em;
 }
 

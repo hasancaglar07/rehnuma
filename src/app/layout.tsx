@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { sourceSerif, playfair, parisienne } from "@/styles/fonts";
+import { sourceSerif, literata, parisienne } from "@/styles/fonts";
 import { SakuraMount } from "@/components/shared/sakura-mount";
 import { BackgroundGlow } from "@/components/shared/background-glow";
 import { PageTransition } from "@/components/shared/page-transition";
@@ -17,7 +17,7 @@ const clerkAppearance = {
     colorText: "oklch(var(--foreground) / 1)",
     colorBackground: "oklch(var(--background) / 1)",
     borderRadius: "12px",
-    fontFamily: "'Georgia', 'Times New Roman', serif"
+    fontFamily: "'Source Serif 4', 'Literata', serif"
   },
   elements: {
     formFieldInput: "border border-border rounded-xl bg-white/90 text-sm px-3 py-2.5",
@@ -55,10 +55,47 @@ const clerkLocalization = {
 export const metadata: Metadata = {
   title: "Rehnüma Kadın Dergisi",
   description: "Bilgeliğin ve zarafetin izinde dijital dergi deneyimi.",
-  metadataBase: new URL(getBaseUrl())
+  metadataBase: new URL(getBaseUrl()),
+  applicationName: "Rehnüma Kadın Dergisi",
+  referrer: "origin-when-cross-origin",
+  themeColor: "#ffffff",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Rehnüma Kadın Dergisi",
+    description: "Bilgeliğin ve zarafetin izinde dijital dergi deneyimi.",
+    url: getBaseUrl(),
+    siteName: "Rehnüma Kadın Dergisi",
+    type: "website",
+    locale: "tr_TR",
+    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "Rehnüma Kadın Dergisi" }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rehnüma Kadın Dergisi",
+    description: "Bilgeliğin ve zarafetin izinde dijital dergi deneyimi.",
+    images: ["/og-default.png"]
+  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const baseUrl = getBaseUrl();
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Rehnüma Kadın Dergisi",
+      url: baseUrl,
+      logo: `${baseUrl}/og-default.png`,
+      sameAs: []
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Rehnüma Kadın Dergisi",
+      url: baseUrl
+    }
+  ];
+
   return (
     <ClerkProvider
       appearance={clerkAppearance}
@@ -72,8 +109,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <link rel="preload" as="image" href={HeroImage.src} />
           <link rel="preconnect" href="https://clerk.services" />
           <link rel="dns-prefetch" href="https://clerk.services" />
+          <script
+            type="application/ld+json"
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
         </head>
-        <body className={`${sourceSerif.variable} ${playfair.variable} ${parisienne.variable} font-sans antialiased`}>
+        <body className={`${sourceSerif.variable} ${literata.variable} ${parisienne.variable} font-sans antialiased`}>
           <div className="relative min-h-screen w-full bg-white overflow-hidden">
             <BackgroundGlow />
             <SakuraMount />
@@ -83,8 +125,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </header>
               <PageTransition>
                 <main>{children}</main>
-                <Footer />
               </PageTransition>
+              <Footer />
             </div>
           </div>
         </body>

@@ -9,7 +9,7 @@ export function HeroSection() {
         <div className="grid items-center gap-10 md:grid-cols-2">
           <div className="max-w-3xl space-y-6">
             <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Dijital Dergi</p>
-            <h1 className="text-4xl md:text-5xl font-serif leading-tight">
+            <h1 className="text-4xl md:text-5xl font-serif font-semibold leading-[1.1] tracking-[-0.02em] text-foreground">
               Bilgeliğin ve Zarafetin İzinde <span className="font-accent text-rose-700">Kadınlara Rehber.</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl">

@@ -1,9 +1,8 @@
-import { Playfair_Display, Parisienne, Source_Serif_4 } from "next/font/google";
+import { Literata, Parisienne, Source_Serif_4 } from "next/font/google";
 
-// Display + accent font stack
-export const playfair = Playfair_Display({
+export const literata = Literata({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
   variable: "--font-serif"
 });

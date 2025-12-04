@@ -6,6 +6,10 @@ export async function GET() {
   const body = `User-agent: *
 Allow: /
 Disallow: /admin
+Disallow: /profil
+Disallow: /giris
+Disallow: /kayit
+Disallow: /sso-callback
 Sitemap: ${baseUrl}/sitemap.xml`;
   return new NextResponse(body, { status: 200, headers: { "Content-Type": "text/plain" } });
 }

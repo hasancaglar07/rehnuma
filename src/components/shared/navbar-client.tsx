@@ -9,9 +9,10 @@ import logo from "@/assets/logo-rehnuma.svg";
 
 const mainLinks = [
   { href: "/kategori/annelik-cocuk", label: "Annelik" },
-  { href: "/kategori/maneviyat-islami-ilimler", label: "Maneviyat" },
   { href: "/kategori/aile-evlilik", label: "Aile" },
-  { href: "/dergi", label: "Dergi" }
+  { href: "/kategori/siir-edebiyat", label: "Edebiyat" },
+  { href: "/kategori/ev-ve-hayat", label: "Ev & Hayat" },
+  { href: "/kategori/maneviyat-islami-ilimler", label: "Maneviyat" }
 ];
 
 export function NavbarClient() {
