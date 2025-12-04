@@ -3,36 +3,53 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "prisma generate && next build",
+    "dev": "node scripts/next-dev.js",
+    "build": "prisma generate && node scripts/next-build.js",
     "start": "next start",
     "lint": "next lint",
+    "test": "vitest",
+    "e2e": "playwright test",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:deploy": "prisma migrate deploy",
     "prisma:seed": "ts-node prisma/seed.ts"
   },
   "dependencies": {
+    "@clerk/localizations": "^3.29.0",
+    "@clerk/nextjs": "^6.35.6",
     "@prisma/client": "^5.16.2",
+    "@upstash/ratelimit": "^2.0.7",
+    "@upstash/redis": "^1.35.7",
+    "@vercel/blob": "^0.27.0",
     "autoprefixer": "^10.4.19",
-    "next": "14.2.3",
+    "bcryptjs": "^3.0.3",
+    "next": "16.0.7",
+    "pdfjs-dist": "^5.4.449",
     "postcss": "^8.4.38",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-h5-audio-player": "^3.9.1",
     "react-hook-form": "^7.52.1",
+    "react-markdown": "^10.1.0",
+    "react-pageflip": "^2.0.3",
+    "remark-gfm": "^4.0.1",
     "sakura-js": "^1.0.4",
     "stripe": "^20.0.0",
     "tailwindcss": "^3.4.3",
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@tailwindcss/typography": "^0.5.15",
     "@types/node": "^20.12.8",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
-    "@tailwindcss/typography": "^0.5.15",
     "prisma": "^5.16.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "vitest": "^4.0.15"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   }
 }

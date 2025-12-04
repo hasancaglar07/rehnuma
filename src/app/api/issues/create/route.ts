@@ -1,17 +1,65 @@
-import { NextResponse } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
+import { revalidatePath } from "next/cache";
+import { z } from "zod";
 import { prisma } from "@/db/prisma";
+import { requireAdminGuard, requireCsrfGuard, requestIp } from "@/lib/api-guards";
+import { rateLimit } from "@/lib/rate-limit";
+import { logAudit } from "@/lib/audit";
 
-export async function POST(req: Request) {
-  const cookies = req.headers.get("cookie") || "";
-  const role = cookies.match(/role=([^;]+)/)?.[1] || "user";
-  if (role !== "admin") return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+const schema = z.object({
+  month: z.number().int().min(1).max(12),
+  year: z.number().int().min(2020),
+  pdfUrl: z.string().url("Geçersiz PDF URL"),
+  coverUrl: z.string().url().optional().or(z.literal("")),
+  articles: z
+    .array(
+      z.object({
+        articleId: z.string(),
+        reviewerId: z.string().optional(),
+        role: z.string().optional(),
+        order: z.number().optional()
+      })
+    )
+    .optional()
+});
 
-  const { month, year, pdfUrl } = await req.json();
-  if (!month || !year || !pdfUrl) return NextResponse.json({ error: "Missing fields" }, { status: 400 });
+export async function POST(req: NextRequest) {
+  const limiter = await rateLimit("issues-create", requestIp(req));
+  if (!limiter.success) return NextResponse.json({ error: "Çok fazla istek" }, { status: 429 });
 
-  const issue = await prisma.issue.create({
-    data: { month, year, pdfUrl }
-  });
+  const csrf = requireCsrfGuard(req);
+  if (csrf) return csrf;
 
-  return NextResponse.json({ issue }, { status: 201 });
+  const auth = await requireAdminGuard(req);
+  if (auth instanceof NextResponse) return auth;
+
+  const body = await req.json();
+  const parsed = schema.safeParse(body);
+  if (!parsed.success) return NextResponse.json({ error: parsed.error.issues[0].message }, { status: 400 });
+
+  try {
+    const issue = await prisma.issue.create({
+      data: { month: parsed.data.month, year: parsed.data.year, pdfUrl: parsed.data.pdfUrl, coverUrl: parsed.data.coverUrl || undefined }
+    });
+
+    if (parsed.data.articles?.length) {
+      const items = parsed.data.articles.map((item, idx) => ({
+        issueId: issue.id,
+        articleId: item.articleId,
+        reviewerId: item.reviewerId,
+        role: item.role || "author",
+        order: item.order ?? idx
+      }));
+      await prisma.issueArticle.createMany({ data: items, skipDuplicates: true });
+    }
+
+    revalidatePath("/dergi");
+    revalidatePath(`/dergi/${issue.year}-${String(issue.month).padStart(2, "0")}`);
+
+    await logAudit(auth.user, "create", "issue", issue.id, { month: issue.month, year: issue.year });
+
+    return NextResponse.json({ issue }, { status: 201 });
+  } catch (err) {
+    return NextResponse.json({ error: "Dergi oluşturulamadı" }, { status: 400 });
+  }
 }

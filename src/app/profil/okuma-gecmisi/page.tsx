@@ -1,4 +1,4 @@
-import { getSession } from "@/lib/auth";
+import { requireUser } from "@/lib/auth";
 import { prisma } from "@/db/prisma";
 import { Navbar } from "@/components/shared/navbar";
 import { Footer } from "@/components/shared/footer";
@@ -8,22 +8,11 @@ type ProgressItem = { id: string; articleId: string; progress: number };
 type ProgressArticle = { id: string; title: string; slug: string };
 
 export default async function ReadingHistoryPage() {
-  const session = await getSession();
-  if (!session.user) {
-    return (
-      <div className="min-h-screen">
-        <Navbar />
-        <main className="container py-12">
-          <p className="text-muted-foreground">Giriş yapın.</p>
-        </main>
-        <Footer />
-      </div>
-    );
-  }
+  const user = await requireUser("/profil/okuma-gecmisi");
 
   const progress: ProgressItem[] = await prisma.readingProgress.findMany({
     select: { id: true, articleId: true, progress: true },
-    where: { userId: session.user.id },
+    where: { userId: user.id },
     orderBy: { updatedAt: "desc" }
   });
 

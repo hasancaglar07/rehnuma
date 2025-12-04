@@ -1,5 +1,5 @@
 # Rehnüma Kadın Dergisi — Teknik & İçerik Odaklı Tam Proje Dokümanı  
-**Teknolojiler: Next.js 15, App Router, shadcn/ui, Tailwind CSS, Prisma, PostgreSQL, Stripe, Vercel Blob, Sakura.js**  
+**Teknolojiler: Next.js 16, App Router, shadcn/ui, Tailwind CSS, Prisma, PostgreSQL, Stripe, Vercel Blob, Sakura.js**  
 **Platform: Online İslami kadın dergisi + dijital abonelik sistemi**
 
 ---
@@ -49,13 +49,13 @@ Kullanıcı davranışı:
 
 # 4. TEKNOLOJİ YIĞINI (STACK)
 ## 4.1 Frontend
-- **Next.js 15 (App Router)**  
+- **Next.js 16 (App Router)**  
 - Typescript  
 - shadcn/ui bileşenleri  
 - Tailwind CSS  
 - Sakura.js (background animasyonu)  
 - react-hook-form + zod  
-- react-flipbook (PDF flipbook görüntüleme)  
+- react-pageflip (PDF flipbook görüntüleme)  
 - Radix UI Primitives (shadcn içinde)  
 
 ## 4.2 Backend
@@ -432,4 +432,3 @@ src/
 
 Bu doküman, Rehnüma için tam kapsamlı ve geliştirilebilir bir Next.js tabanlı dijital dergi sistemini tanımlar.  
 Tasarım, içerik, abonelik, admin paneli, DB modeli ve API tamamen hazırdır.
-

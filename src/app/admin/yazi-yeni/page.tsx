@@ -2,8 +2,10 @@ import { AdminShell } from "@/components/admin/admin-shell";
 import { Navbar } from "@/components/shared/navbar";
 import { Footer } from "@/components/shared/footer";
 import { NewArticleForm } from "@/components/admin/new-article-form";
+import { requireAdmin } from "@/lib/auth";
 
-export default function AdminNewArticlePage() {
+export default async function AdminNewArticlePage() {
+  await requireAdmin("/admin/yazi-yeni");
   return (
     <div className="min-h-screen">
       <Navbar />

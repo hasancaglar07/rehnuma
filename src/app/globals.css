@@ -25,8 +25,13 @@
 body {
   background: oklch(var(--background) / 1);
   color: oklch(var(--foreground) / 1);
-  font-family: var(--font-sans), "Source Serif 4", serif;
+  font-family: "Georgia", "Times New Roman", serif;
   min-height: 100vh;
+}
+
+html,
+body {
+  overflow-x: hidden;
 }
 
 a {
@@ -99,6 +104,11 @@ h4 {
   filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.25));
 }
 
+.no-sakura #sakura-layer,
+.no-sakura .sakura {
+  display: none !important;
+}
+
 .header-premium {
   background: transparent;
   border-bottom: none;
@@ -167,6 +177,12 @@ h4 {
 .nav-cta:hover {
   transform: translateY(-1px);
   box-shadow: 0 16px 30px -18px oklch(var(--primary) / 0.9);
+}
+
+/* Clerk dev etiketi/ingilizce uyarıları gizle */
+.cl-root [data-localization-key="developmentMode.title"],
+.cl-root [data-localization-key="developmentMode.subtitle"] {
+  display: none !important;
 }
 
 

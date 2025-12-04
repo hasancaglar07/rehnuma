@@ -1,7 +1,7 @@
 # Deployment ve Environment Yönetimi
 
 ## Hedef Platform
-- **Vercel**: Next.js 15, ISR/Edge cache desteği; Blob entegrasyonu.
+- **Vercel**: Next.js 16, ISR/Edge cache desteği; Blob entegrasyonu.
 
 ## Environment Değişkenleri
 - `DATABASE_URL` (PostgreSQL/Supabase/Neon)
@@ -14,6 +14,8 @@
 - `next build` → Vercel otomatik.
 - Route handlers için edge veya node runtime seçimi; webhook için Node önerilir.
 - ISR revalidation Vercel tarafından yönetilir.
+- Preview/Production environment ayrımı: `DATABASE_URL`, `STRIPE_*`, `BLOB_READ_WRITE_TOKEN`, `UPSTASH_*` değişkenleri hem preview hem prod ortamlarında ayrı tutulur.
+- Proje ayarlarında default runtime Node, `/api/subscription/webhook` Node, `/og` Edge olarak bırakılmalı.
 
 ## Webhook Kurulumu
 - Stripe dashboard’dan endpoint: `/api/subscription/webhook`.
@@ -30,6 +32,7 @@
 ## İzleme ve Loglar
 - Vercel logs (build/runtime), Stripe event logs.
 - (Opsiyonel) Uptime ve error alert’leri.
+- Stripe webhook hataları ve rate-limit olayları Vercel loglarına düşer; gerektiğinde Slack/Webhook alert eklenebilir.
 
 ## Sürümleme ve Rollback
 - Git push → Preview → Production promote.

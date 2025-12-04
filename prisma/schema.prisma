@@ -14,9 +14,13 @@ model User {
   name            String?
   password        String?
   role            String            @default("user")
+  isBanned        Boolean           @default(false)
   subscription    Subscription?
   savedArticles   SavedArticle[]
   readingProgress ReadingProgress[]
+  sessions        Session[]
+  auditLogs       AuditLog[]
+  issueReviews    IssueArticle[]    @relation("IssueArticleReviewer")
   createdAt       DateTime          @default(now())
 }
 
@@ -34,6 +38,7 @@ model Category {
   id       String    @id @default(cuid())
   name     String
   slug     String    @unique
+  order    Int       @default(0)
   articles Article[]
 }
 
@@ -44,12 +49,14 @@ model Article {
   content    String   @db.Text
   coverUrl   String?
   audioUrl   String?
+  status     String   @default("draft")
   categoryId String
   category   Category @relation(fields: [categoryId], references: [id])
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
   saved      SavedArticle[]
   progress   ReadingProgress[]
+  issueLinks IssueArticle[]
 }
 
 model SavedArticle {
@@ -58,6 +65,8 @@ model SavedArticle {
   articleId String
   user      User    @relation(fields: [userId], references: [id])
   article   Article @relation(fields: [articleId], references: [id])
+
+  @@unique([userId, articleId])
 }
 
 model ReadingProgress {
@@ -68,6 +77,8 @@ model ReadingProgress {
   updatedAt DateTime @updatedAt
   user      User     @relation(fields: [userId], references: [id])
   article   Article  @relation(fields: [articleId], references: [id])
+
+  @@unique([userId, articleId])
 }
 
 model Issue {
@@ -75,5 +86,43 @@ model Issue {
   month     Int
   year      Int
   pdfUrl    String
+  coverUrl  String?
   createdAt DateTime @default(now())
+  articles  IssueArticle[]
+
+  @@unique([year, month])
+}
+
+model IssueArticle {
+  id         String   @id @default(cuid())
+  issueId    String
+  articleId  String
+  reviewerId String?
+  role       String   @default("author")
+  order      Int      @default(0)
+  issue      Issue    @relation(fields: [issueId], references: [id])
+  article    Article  @relation(fields: [articleId], references: [id])
+  reviewer   User?    @relation("IssueArticleReviewer", fields: [reviewerId], references: [id])
+
+  @@unique([issueId, articleId])
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  userId    String
+  tokenHash String   @unique
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+  expiresAt DateTime
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  userId     String?
+  action     String
+  targetType String
+  targetId   String?
+  metadata   Json?
+  createdAt  DateTime @default(now())
+  user       User?    @relation(fields: [userId], references: [id])
 }

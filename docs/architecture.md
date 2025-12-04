@@ -1,7 +1,7 @@
 # Rehnüma Platform Mimarisi
 
 ## Genel Yaklaşım
-Rehnüma, Next.js 15 App Router üzerinde kurulu, hem SSR/ISR hem de Edge dostu bir dijital dergi platformudur. Sunum katmanı (UI) shadcn/ui + Tailwind ile tasarlanır, veri katmanı Prisma + PostgreSQL ile yönetilir ve ödeme/abonelik Stripe üzerinden yürütülür. Medya (PDF, görsel, ses) Vercel Blob’da tutulur; flipbook ve audio player bileşenleri lazy-load edilir. Kullanıcı yetkilendirmesi ve abonelik kontrolü middleware seviyesinde yapılır.
+Rehnüma, Next.js 16 App Router üzerinde kurulu, hem SSR/ISR hem de Edge dostu bir dijital dergi platformudur. Sunum katmanı (UI) shadcn/ui + Tailwind ile tasarlanır, veri katmanı Prisma + PostgreSQL ile yönetilir ve ödeme/abonelik Stripe üzerinden yürütülür. Medya (PDF, görsel, ses) Vercel Blob’da tutulur; flipbook ve audio player bileşenleri lazy-load edilir. Kullanıcı yetkilendirmesi ve abonelik kontrolü middleware seviyesinde yapılır.
 
 ## Katmanlar
 - **Sunum**: Next.js App Router sayfaları, client/server bileşen karışımı, global tema ve Sakura.js arka plan efekti.

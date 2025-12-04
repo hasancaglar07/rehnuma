@@ -1,21 +1,23 @@
-import { Playfair_Display, Source_Serif_4, Parisienne } from "next/font/google";
+import { Playfair_Display, Parisienne, Source_Serif_4 } from "next/font/google";
+
+// Display + accent font stack
+export const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-serif"
+});
 
 export const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap"
-});
-
-export const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-serif",
+  weight: ["400", "500", "600", "700"],
   display: "swap",
-  weight: ["400", "500", "600", "700"]
+  variable: "--font-sans"
 });
 
 export const parisienne = Parisienne({
   subsets: ["latin"],
-  variable: "--font-accent",
-  weight: "400",
-  display: "swap"
+  weight: ["400"],
+  display: "swap",
+  variable: "--font-accent"
 });

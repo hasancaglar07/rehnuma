@@ -3,24 +3,79 @@ import { Navbar } from "@/components/shared/navbar";
 import { Footer } from "@/components/shared/footer";
 import Link from "next/link";
 import { prisma } from "@/db/prisma";
-type ArticleListItem = { id: string; title: string; slug: string };
+import { StatusBadge } from "@/components/admin/status-badge";
+import { ArticleRowActions } from "@/components/admin/article-row-actions";
+import { requireAdmin } from "@/lib/auth";
+type ArticleListItem = { id: string; title: string; slug: string; status: string; category?: { name: string; slug: string } };
+type Props = { searchParams: Promise<{ status?: string; q?: string; category?: string }> };
 
 export const dynamic = "force-dynamic";
 
-export default async function AdminArticlesPage() {
+export default async function AdminArticlesPage({ searchParams }: Props) {
+  const resolvedSearch = await searchParams;
+  await requireAdmin("/admin/yazilar");
   const hasDatabase = Boolean(process.env.DATABASE_URL);
+  const statusFilter =
+    resolvedSearch.status === "draft" || resolvedSearch.status === "published" ? resolvedSearch.status : undefined;
+  const query = resolvedSearch.q?.trim();
+  const categoryFilter = resolvedSearch.category?.trim();
   const articles: ArticleListItem[] = hasDatabase
     ? await prisma.article.findMany({
-        select: { id: true, title: true, slug: true },
-        orderBy: { createdAt: "desc" }
+        select: { id: true, title: true, slug: true, status: true, category: { select: { name: true, slug: true } } },
+        where: {
+          ...(statusFilter ? { status: statusFilter } : {}),
+          ...(categoryFilter ? { category: { slug: categoryFilter } } : {}),
+          ...(query
+            ? {
+                OR: [
+                  { title: { contains: query, mode: "insensitive" } },
+                  { slug: { contains: query, mode: "insensitive" } }
+                ]
+              }
+            : {})
+        },
+        orderBy: { updatedAt: "desc" }
       })
     : [];
+  const categories = hasDatabase ? await prisma.category.findMany({ orderBy: { order: "asc" } }) : [];
 
   return (
     <div className="min-h-screen">
       <Navbar />
       <AdminShell title="Yazı Yönetimi" description="Yazıları düzenle veya yeni oluştur">
-        <div className="flex justify-end">
+        <div className="flex items-center justify-between gap-3 flex-wrap">
+          <form className="flex flex-wrap items-center gap-2" method="get">
+            <input
+              name="q"
+              defaultValue={query}
+              placeholder="Başlık veya slug ara"
+              className="px-3 py-2 rounded-lg border border-border bg-background text-sm"
+            />
+            <select
+              name="status"
+              defaultValue={statusFilter || ""}
+              className="px-3 py-2 rounded-lg border border-border bg-background text-sm"
+            >
+              <option value="">Tümü</option>
+              <option value="published">Yayınlanan</option>
+              <option value="draft">Taslak</option>
+            </select>
+            <select
+              name="category"
+              defaultValue={categoryFilter || ""}
+              className="px-3 py-2 rounded-lg border border-border bg-background text-sm"
+            >
+              <option value="">Kategori</option>
+              {categories.map((cat) => (
+                <option key={cat.slug} value={cat.slug}>
+                  {cat.name}
+                </option>
+              ))}
+            </select>
+            <button type="submit" className="px-3 py-2 rounded-full bg-primary text-primary-foreground text-sm">
+              Filtrele
+            </button>
+          </form>
           <Link href="/admin/yazi-yeni" className="px-4 py-2 rounded-full bg-primary text-primary-foreground">
             Yeni Yazı
           </Link>
@@ -29,13 +84,25 @@ export default async function AdminArticlesPage() {
           {articles.map((article: ArticleListItem) => (
             <div key={article.id} className="border border-border rounded-xl p-4 flex items-center justify-between">
               <div>
-                <p className="font-semibold">{article.title}</p>
+                <div className="flex items-center gap-2">
+                  <p className="font-semibold">{article.title}</p>
+                  <StatusBadge status={article.status} />
+                </div>
                 <p className="text-sm text-muted-foreground">{article.slug}</p>
+                <p className="text-xs text-muted-foreground">
+                  {article.category?.name ? `Kategori: ${article.category.name}` : "Kategori yok"}
+                </p>
               </div>
-              <div className="text-sm flex gap-3">
-                <Link href={`/yazi/${article.slug}`} className="text-primary">
-                  Görüntüle
-                </Link>
+              <div className="text-sm flex flex-col gap-2 items-end">
+                <div className="flex gap-3">
+                  <Link href={`/yazi/${article.slug}`} className="text-primary">
+                    Görüntüle
+                  </Link>
+                  <Link href={`/admin/yazilar/${article.slug}`} className="text-primary">
+                    Düzenle
+                  </Link>
+                </div>
+                <ArticleRowActions slug={article.slug} status={article.status} />
               </div>
             </div>
           ))}

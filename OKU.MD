@@ -1,8 +1,32 @@
-&nbsp; 1. npm install çalıştırın; .env değerlerini doldurun (DB, Stripe key/price IDs, BLOB token, NEXT\_PUBLIC\_URL).
+  1. Yazı düzenleme akışı (liste → düzenle → revalidate, paywall önizleme).
 
-&nbsp; 2. npx prisma generate \&\& npx prisma migrate dev \&\& npx prisma db seed ile şemayı uygulayın.
+  2. Kategori CRUD + sıralama.
 
-&nbsp; 3. Stripe webhook’u /api/subscription/webhook endpoint’ine yönlendirip STRIPE\_WEBHOOK\_SECRET ekleyin.
+  3. Dergi yönetimi (kapak + PDF upload, flipbook entegrasyonu).
 
-&nbsp; 4. npm run dev ile yerelde test edin; abonelik akışı ve middleware yönlendirmelerini doğrulayın.
+  4. Kullanıcı/abonelik yönetimi.
+
+
+
+  1. /giris ve /kayit (tek sayfada tab’li veya ayrı rotalar) oluştur, zod ile validasyon + /api/auth/login ve /api/auth/
+
+&nbsp;    register POST entegrasyonu, CSRF header’ı getCsrfToken ile gönder, başarıda /profil veya returnTo parametresine
+
+&nbsp;    yönlendir. Başarılı giriş sonrası kısa toast/hata mesajları ekle.
+
+&nbsp; 2. Navbar’ı cookie ipuçlarını (role, subscriptionStatus) okuyacak hale getir; misafire “Giriş / Üye Ol” CTA’sı, oturum
+
+&nbsp;    açmışa “Profil” ve “Çıkış”, sadece role=admin olana “Admin” linkleri göster. Küçük bir avatar/isim etiketini ekle.
+
+&nbsp; 3. Profil sayfasını doldur: ad/e-posta, abonelik kartı (plan, status, varsa expiresAt), “Aboneliği Yönet” (/abonelik)
+
+&nbsp;    ve “Çıkış” butonları; kaydedilen/okuma geçmişi sayfalarına giden kısa özet kutuları ekle.
+
+&nbsp; 4. Abonelik kartlarını oturum kontrolüyle bağla: SubscriptionPlans 401 dönerse otomatik /giris?returnTo=/abonelik’e
+
+&nbsp;    yönlendir; oturum varken normal checkout akışını koru.
+
+&nbsp; 5. Middleware yönlendirmelerini yeni login sayfasına uyumlu hale getir (auth gereken rota → /giris?returnTo=..., admin
+
+&nbsp;    rolü yoksa /).
 

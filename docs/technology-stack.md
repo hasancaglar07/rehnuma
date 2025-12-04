@@ -1,13 +1,13 @@
 # Teknoloji Yığını
 
 ## Frontend
-- **Next.js 15 (App Router)**: SSR/ISR, route handlers, server actions, metadata API.
+- **Next.js 16 (App Router)**: SSR/ISR, route handlers, server actions, metadata API.
 - **Typescript**: Tür güvenliği.
 - **shadcn/ui + Radix Primitives**: Erişilebilir, tema dostu bileşen seti.
 - **Tailwind CSS**: Yardımcı sınıf tabanlı stil; proje özel oklch teması override.
 - **Sakura.js**: Hafif arka plan animasyonu; throttled kullanım.
 - **react-hook-form + zod**: Form yönetimi + şema doğrulama.
-- **react-flipbook**: PDF flipbook deneyimi (dergi).
+- **react-pageflip**: PDF flipbook deneyimi (dergi).
 
 ## Backend
 - **Next.js Route Handlers**: `/api/*` uçları için; edge/Node çalışma zamanı seçilebilir.

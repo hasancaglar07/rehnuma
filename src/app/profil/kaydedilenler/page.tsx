@@ -1,4 +1,4 @@
-import { getSession } from "@/lib/auth";
+import { requireUser } from "@/lib/auth";
 import { prisma } from "@/db/prisma";
 import { Navbar } from "@/components/shared/navbar";
 import { Footer } from "@/components/shared/footer";
@@ -8,22 +8,11 @@ type SavedItem = { articleId: string };
 type SavedArticleCard = { id: string; title: string; slug: string; content: string };
 
 export default async function SavedPage() {
-  const session = await getSession();
-  if (!session.user) {
-    return (
-      <div className="min-h-screen">
-        <Navbar />
-        <main className="container py-12">
-          <p className="text-muted-foreground">Giriş yapın.</p>
-        </main>
-        <Footer />
-      </div>
-    );
-  }
+  const user = await requireUser("/profil/kaydedilenler");
 
   const saved: SavedItem[] = await prisma.savedArticle.findMany({
     select: { articleId: true },
-    where: { userId: session.user.id }
+    where: { userId: user.id }
   });
 
   const articles: SavedArticleCard[] = await prisma.article.findMany({
