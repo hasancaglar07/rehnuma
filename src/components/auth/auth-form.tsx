@@ -14,7 +14,7 @@ const authAppearance = {
   },
   elements: {
     rootBox: "w-full",
-    card: "shadow-xl border border-border/70 bg-white/90 backdrop-blur-sm rounded-2xl",
+    card: "shadow-xl border border-border/70 bg-white/90 backdrop-blur-sm rounded-2xl w-full max-w-full",
     formFieldInput: "border border-border rounded-xl bg-white/95 text-sm px-3 py-2.5",
     formButtonPrimary:
       "rounded-full bg-[oklch(var(--primary)/1)] text-white font-semibold py-2.5 hover:brightness-110 transition shadow",
@@ -42,13 +42,13 @@ export function AuthForm({ returnTo = "/profil", initialTab = "login" }: Props) 
     mode === "login" ? "E-postan ve şifrenle devam et." : "Yeni hesap oluştur, aboneliğe geç.";
 
   return (
-    <div className="mx-auto w-full max-w-2xl rounded-2xl border border-border bg-background/80 p-6 shadow-lg">
-      <div className="mb-4 flex items-center justify-between">
-        <div>
+    <div className="mx-auto w-full max-w-2xl rounded-2xl border border-border bg-background/80 p-4 shadow-lg sm:p-6">
+      <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <div className="space-y-1">
           <h1 className="text-2xl font-serif">{modeTitle}</h1>
           <p className="text-sm text-muted-foreground">{modeSubtitle}</p>
         </div>
-        <Button variant="link" onClick={toggleMode}>
+        <Button variant="link" onClick={toggleMode} className="self-start sm:self-auto px-0">
           {mode === "login" ? "Üye Ol" : "Giriş Yap"}
         </Button>
       </div>
