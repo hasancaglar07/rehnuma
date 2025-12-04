@@ -79,49 +79,79 @@ export default async function IssuePage({ params }: Props) {
 
   return (
     <div className="min-h-screen">
-      <main className="container py-12 space-y-4">
-        <h1 className="text-3xl font-serif">
-          {month}/{year} Sayısı
-        </h1>
+      <main className="container space-y-6 py-10 lg:py-12">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-xs uppercase tracking-wide text-muted-foreground">Dijital sayı</p>
+            <h1 className="text-3xl font-serif">
+              {month}/{year} Sayısı
+            </h1>
+            <p className="text-sm text-muted-foreground">Kapak, flipbook ve PDF erişimi tek ekranda.</p>
+          </div>
+          <p className="text-xs text-muted-foreground">Mobilde tek sayfa moduna geçer, çift dokun zoom yapar.</p>
+        </div>
+
         {!issue && <p className="text-muted-foreground">Dergi bulunamadı.</p>}
+
         {issue && (
-          <div className="grid gap-8 lg:grid-cols-[360px,1fr]">
-            <div className="w-full max-w-sm space-y-3">
-              <div className="aspect-[3/4] w-full border border-border rounded-xl overflow-hidden bg-secondary/30">
-                {issue.coverUrl ? (
-                  <img src={issue.coverUrl} alt="Kapak" className="w-full h-full object-cover" />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center text-sm text-muted-foreground">Kapak</div>
-                )}
-              </div>
-              <div className="flex gap-2">
-                <Link
-                  href={isVip ? issue.pdfUrl : "/abonelik"}
-                  className={`px-4 py-2 rounded-full text-sm ${
-                    isVip
-                      ? "bg-primary text-primary-foreground"
-                      : "border border-border text-muted-foreground cursor-not-allowed"
-                  }`}
-                  target={isVip ? "_blank" : undefined}
-                >
-                  {isVip ? "PDF indir" : "VIP ile indirilebilir"}
-                </Link>
-              </div>
-              <div className="rounded-xl border border-border bg-background/70 p-3 space-y-2">
-                <p className="text-sm font-semibold">İçindekiler</p>
-                {issue.articles.length === 0 && <p className="text-xs text-muted-foreground">Yazı eklenmedi.</p>}
-                {issue.articles.map((item) => (
-                  <div key={item.id} className="flex items-center justify-between text-sm">
-                    <Link href={`/yazi/${item.article.slug}`} className="text-primary hover:underline">
-                      {item.article.title}
-                    </Link>
-                    {item.reviewer?.email && <span className="text-xs text-muted-foreground">Hakem: {item.reviewer.email}</span>}
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="aspect-[3/4] w-full">
+          <div className="space-y-6">
+            <div id="okuma" className="rounded-3xl border border-border bg-background/90 p-3 shadow-sm">
               <FlipbookViewer pdfUrl={issue.pdfUrl} />
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              <Link
+                href={isVip ? issue.pdfUrl : "/abonelik"}
+                className={`inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold ${
+                  isVip ? "border border-border text-foreground hover:-translate-y-0.5" : "border border-border text-muted-foreground"
+                }`}
+                target={isVip ? "_blank" : undefined}
+              >
+                {isVip ? "PDF indir" : "VIP ile indirilebilir"}
+              </Link>
+              <Link
+                href="#kapak"
+                className="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition hover:-translate-y-0.5"
+              >
+                Kapak & İçindekiler
+              </Link>
+            </div>
+
+            <div id="kapak" className="space-y-3 rounded-3xl border border-border bg-background/80 p-4 shadow-sm">
+              <div className="grid gap-4 lg:grid-cols-[minmax(260px,320px),1fr]">
+                <div className="overflow-hidden rounded-3xl border border-border bg-secondary/30 shadow-sm" style={{ aspectRatio: "3 / 4" }}>
+                  {issue.coverUrl ? (
+                    <img src={issue.coverUrl} alt="Kapak" className="h-full w-full object-cover" />
+                  ) : (
+                    <div className="flex h-full items-center justify-center text-sm text-muted-foreground">Kapak</div>
+                  )}
+                </div>
+                <div className="space-y-3">
+                  <div className="rounded-2xl border border-border bg-background/70 p-3 text-sm text-muted-foreground shadow-sm">
+                    <p className="font-semibold text-foreground">Okuma ipuçları</p>
+                    <ul className="mt-2 list-disc space-y-1 pl-4">
+                      <li>Sayfa/tema/zoom tercihleriniz hatırlanır; tekrar girişte kaldığınız yerden devam eder.</li>
+                      <li>Mobilde tek sayfa + altta kontrol barı; çift dokun zoom, sağ/sol kaydır sayfa değiştir, “Sade mod” ile tam ekran okuyun.</li>
+                      <li>Klavye: ← → sayfa, + / - zoom, F tam ekran, O outline, T önizleme.</li>
+                    </ul>
+                  </div>
+                  <div className="space-y-2 rounded-2xl border border-border bg-background/70 p-3">
+                    <div className="flex items-center justify-between">
+                      <p className="text-sm font-semibold">İçindekiler</p>
+                      <span className="text-[11px] text-muted-foreground">Sıralı</span>
+                    </div>
+                    {issue.articles.length === 0 && <p className="text-xs text-muted-foreground">Yazı eklenmedi.</p>}
+                    {issue.articles.map((item) => (
+                      <div key={item.id} className="flex items-center justify-between rounded-xl border border-border/60 px-3 py-2 text-sm">
+                        <Link href={`/yazi/${item.article.slug}`} className="text-primary hover:underline">
+                          {item.article.title}
+                        </Link>
+                        {item.reviewer?.email && <span className="text-xs text-muted-foreground">Hakem: {item.reviewer.email}</span>}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         )}

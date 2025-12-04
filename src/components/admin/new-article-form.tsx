@@ -17,7 +17,10 @@ type UploadTarget = "coverUrl" | "audioUrl";
 
 const schema = z.object({
   title: z.string().min(3, "Başlık en az 3 karakter olmalı"),
-  slug: z.string().min(3, "Slug en az 3 karakter olmalı"),
+  slug: z
+    .string()
+    .min(3, "Slug en az 3 karakter olmalı")
+    .regex(/^[a-z0-9-]+$/, "Slug sadece ingilizce harf, rakam ve tire içerebilir"),
   content: z.string().min(20, "İçerik en az 20 karakter olmalı"),
   categorySlug: z.string().min(1, "Kategori seçin"),
   coverUrl: z.string().url("Geçersiz URL").optional().or(z.literal("")),
@@ -104,6 +107,11 @@ export function NewArticleForm({ mode = "create", initialData }: Props) {
   useEffect(() => {
     if (!slugValue) {
       setSlugStatus("idle");
+      return;
+    }
+    const normalized = slugify(slugValue);
+    if (normalized !== slugValue) {
+      setValue("slug", normalized, { shouldDirty: true, shouldValidate: true });
       return;
     }
     if (mode === "edit" && slugValue === initialData?.slug) {
@@ -202,9 +210,16 @@ export function NewArticleForm({ mode = "create", initialData }: Props) {
     setStatusTone(null);
     const parsed = schema.safeParse(values);
     if (!parsed.success) {
+      const fields = Array.from(new Set(parsed.error.issues.map((issue) => issue.path[0] as string)));
       parsed.error.issues.forEach((issue) => {
         const key = issue.path[0] as keyof FormValues;
         setError(key, { type: "manual", message: issue.message });
+      });
+      setStatusTone("error");
+      setStatusMessage(`Eksik ya da hatalı alanları düzeltin: ${fields.join(", ")}`);
+      requestAnimationFrame(() => {
+        const firstError = document.querySelector("[data-field-error='true']");
+        if (firstError instanceof HTMLElement) firstError.scrollIntoView({ behavior: "smooth", block: "center" });
       });
       return;
     }
@@ -231,29 +246,29 @@ export function NewArticleForm({ mode = "create", initialData }: Props) {
       headers: { "Content-Type": "application/json", "x-csrf-token": getCsrfToken() },
       body: JSON.stringify(payload)
     });
-    if (res.ok) {
-      setStatusTone("success");
-      setStatusMessage(mode === "edit" ? "Güncellendi" : "Kaydedildi");
-      if (mode === "create") {
-        reset({
-          status: "draft",
-          title: "",
-          slug: "",
-          content: "",
-          categorySlug: selectedCategory,
-          coverUrl: "",
-          audioUrl: "",
-          publishAt: "",
-          isPaywalled: false,
-          excerpt: "",
-          metaTitle: "",
-          metaDescription: ""
-        });
-      }
-    } else {
+    if (!res.ok) {
       const err = await res.json().catch(() => ({}));
       setStatusTone("error");
-      setStatusMessage(err.error || "Hata oluştu");
+      setStatusMessage(err.error || "Kaydedilemedi, alanları kontrol edin.");
+      return;
+    }
+    setStatusTone("success");
+    setStatusMessage(mode === "edit" ? "Güncellendi" : "Kaydedildi");
+    if (mode === "create") {
+      reset({
+        status: "draft",
+        title: "",
+        slug: "",
+        content: "",
+        categorySlug: selectedCategory,
+        coverUrl: "",
+        audioUrl: "",
+        publishAt: "",
+        isPaywalled: false,
+        excerpt: "",
+        metaTitle: "",
+        metaDescription: ""
+      });
     }
   });
 
@@ -272,7 +287,7 @@ export function NewArticleForm({ mode = "create", initialData }: Props) {
             }
           }}
         />
-        {errors.title && <p className="text-sm text-rose-600">{errors.title.message}</p>}
+        {errors.title && <p className="text-sm text-rose-600" data-field-error="true">{errors.title.message}</p>}
       </div>
 
       <div className="grid gap-2">
@@ -289,7 +304,7 @@ export function NewArticleForm({ mode = "create", initialData }: Props) {
           className="border rounded-lg p-3 bg-background"
           readOnly={mode === "edit"}
         />
-        {errors.slug && <p className="text-sm text-rose-600">{errors.slug.message}</p>}
+        {errors.slug && <p className="text-sm text-rose-600" data-field-error="true">{errors.slug.message}</p>}
         {mode === "create" && slugValue && (
           <p className="text-xs text-muted-foreground">
             Slug durumu:{" "}
@@ -437,7 +452,7 @@ export function NewArticleForm({ mode = "create", initialData }: Props) {
             </option>
           ))}
         </select>
-        {errors.categorySlug && <p className="text-sm text-rose-600">{errors.categorySlug.message}</p>}
+        {errors.categorySlug && <p className="text-sm text-rose-600" data-field-error="true">{errors.categorySlug.message}</p>}
       </div>
 
       <div className="grid gap-2">
