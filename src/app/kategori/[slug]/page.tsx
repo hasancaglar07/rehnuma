@@ -4,6 +4,7 @@ import { Navbar } from "@/components/shared/navbar";
 import { Footer } from "@/components/shared/footer";
 import { toExcerpt } from "@/utils/excerpt";
 import type { Metadata } from "next";
+import { getBaseUrl } from "@/lib/url";
 
 export const revalidate = 120;
 
@@ -18,7 +19,7 @@ type CategoryWithArticles =
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const baseUrl = process.env.NEXT_PUBLIC_URL || "https://rehnuma.example.com";
+  const baseUrl = getBaseUrl();
   const canonical = `${baseUrl}/kategori/${slug}`;
   return {
     title: `Kategori: ${slug} | Rehnüma`,

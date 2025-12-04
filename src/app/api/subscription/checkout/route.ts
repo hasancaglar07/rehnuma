@@ -3,6 +3,7 @@ import { z } from "zod";
 import { stripe, getPriceId } from "@/lib/stripe";
 import { rateLimit } from "@/lib/rate-limit";
 import { requireAuthGuard, requireCsrfGuard, requestIp } from "@/lib/api-guards";
+import { getBaseUrl } from "@/lib/url";
 
 const schema = z.object({
   plan: z.enum(["monthly", "yearly", "vip"]).default("monthly")
@@ -21,6 +22,7 @@ export async function POST(req: NextRequest) {
   if (!process.env.NEXT_PUBLIC_URL) {
     return NextResponse.json({ error: "NEXT_PUBLIC_URL eksik" }, { status: 500 });
   }
+  const baseUrl = getBaseUrl();
 
   const body = await req.json();
   const parsed = schema.safeParse(body);
@@ -33,8 +35,8 @@ export async function POST(req: NextRequest) {
     client_reference_id: auth.user.id,
     metadata: { plan: parsed.data.plan, userId: auth.user.id },
     subscription_data: { metadata: { userId: auth.user.id, plan: parsed.data.plan } },
-    success_url: `${process.env.NEXT_PUBLIC_URL}/profil`,
-    cancel_url: `${process.env.NEXT_PUBLIC_URL}/abonelik`
+    success_url: `${baseUrl}/profil`,
+    cancel_url: `${baseUrl}/abonelik`
   });
 
   return NextResponse.json({ url: session.url });

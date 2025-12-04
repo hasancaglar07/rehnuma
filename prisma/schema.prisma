@@ -50,6 +50,11 @@ model Article {
   coverUrl   String?
   audioUrl   String?
   status     String   @default("draft")
+  publishedAt DateTime?
+  isPaywalled Boolean @default(false)
+  excerpt    String?
+  metaTitle  String?
+  metaDescription String?
   categoryId String
   category   Category @relation(fields: [categoryId], references: [id])
   createdAt  DateTime @default(now())

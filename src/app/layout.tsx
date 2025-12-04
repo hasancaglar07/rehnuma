@@ -6,6 +6,7 @@ import { SakuraMount } from "@/components/shared/sakura-mount";
 import { BackgroundGlow } from "@/components/shared/background-glow";
 import { ClerkProvider } from "@clerk/nextjs";
 import { trTR } from "@clerk/localizations";
+import { getBaseUrl } from "@/lib/url";
 
 const clerkAppearance = {
   variables: {
@@ -51,7 +52,7 @@ const clerkLocalization = {
 export const metadata: Metadata = {
   title: "Rehnüma Kadın Dergisi",
   description: "Bilgeliğin ve zarafetin izinde dijital dergi deneyimi.",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_URL || "https://example.com")
+  metadataBase: new URL(getBaseUrl())
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

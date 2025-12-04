@@ -13,7 +13,12 @@ const schema = z.object({
   categorySlug: z.string().optional(),
   coverUrl: z.string().url().optional().or(z.literal("")),
   audioUrl: z.string().url().optional().or(z.literal("")),
-  status: z.enum(["draft", "published"]).optional()
+  status: z.enum(["draft", "published"]).optional(),
+  isPaywalled: z.boolean().optional(),
+  publishAt: z.string().datetime().optional(),
+  excerpt: z.string().max(320).optional(),
+  metaTitle: z.string().max(120).optional(),
+  metaDescription: z.string().max(220).optional()
 });
 
 export async function PUT(req: NextRequest) {
@@ -45,6 +50,11 @@ export async function PUT(req: NextRequest) {
       coverUrl: parsed.data.coverUrl || undefined,
       audioUrl: parsed.data.audioUrl || undefined,
       status: parsed.data.status,
+      publishedAt: parsed.data.publishAt ? new Date(parsed.data.publishAt) : undefined,
+      isPaywalled: parsed.data.isPaywalled,
+      excerpt: parsed.data.excerpt,
+      metaTitle: parsed.data.metaTitle,
+      metaDescription: parsed.data.metaDescription,
       category: parsed.data.categorySlug ? { connect: { slug: parsed.data.categorySlug } } : undefined
     }
   });

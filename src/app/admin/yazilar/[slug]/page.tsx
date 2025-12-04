@@ -21,7 +21,12 @@ export default async function AdminEditArticlePage({ params }: Props) {
       category: { select: { slug: true } },
       coverUrl: true,
       audioUrl: true,
-      status: true
+      status: true,
+      publishedAt: true,
+      isPaywalled: true,
+      excerpt: true,
+      metaTitle: true,
+      metaDescription: true
     }
   });
 
@@ -42,7 +47,12 @@ export default async function AdminEditArticlePage({ params }: Props) {
             categorySlug: article.category.slug,
             coverUrl: article.coverUrl || "",
             audioUrl: article.audioUrl || "",
-            status: (article.status as "draft" | "published") ?? "draft"
+            status: (article.status as "draft" | "published") ?? "draft",
+            publishAt: article.publishedAt?.toISOString().slice(0, 16) ?? "",
+            isPaywalled: article.isPaywalled ?? false,
+            excerpt: article.excerpt || "",
+            metaTitle: article.metaTitle || "",
+            metaDescription: article.metaDescription || ""
           }}
         />
       </AdminShell>

@@ -1,9 +1,11 @@
 import { NextResponse } from "next/server";
+import { getBaseUrl } from "@/lib/url";
 
 export async function GET() {
+  const baseUrl = getBaseUrl();
   const body = `User-agent: *
 Allow: /
 Disallow: /admin
-Sitemap: ${process.env.NEXT_PUBLIC_URL || "https://example.com"}/sitemap.xml`;
+Sitemap: ${baseUrl}/sitemap.xml`;
   return new NextResponse(body, { status: 200, headers: { "Content-Type": "text/plain" } });
 }

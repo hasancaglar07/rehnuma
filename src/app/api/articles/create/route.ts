@@ -13,7 +13,12 @@ const schema = z.object({
   categorySlug: z.string().min(1, "Kategori gerekli"),
   coverUrl: z.string().url().optional().or(z.literal("")),
   audioUrl: z.string().url().optional().or(z.literal("")),
-  status: z.enum(["draft", "published"]).default("draft")
+  status: z.enum(["draft", "published"]).default("draft"),
+  isPaywalled: z.boolean().optional(),
+  publishAt: z.string().datetime().optional(),
+  excerpt: z.string().max(320).optional(),
+  metaTitle: z.string().max(120).optional(),
+  metaDescription: z.string().max(220).optional()
 });
 
 export async function POST(req: NextRequest) {
@@ -38,6 +43,11 @@ export async function POST(req: NextRequest) {
       slug: parsed.data.slug,
       content: parsed.data.content,
       status: parsed.data.status,
+      publishedAt: parsed.data.publishAt ? new Date(parsed.data.publishAt) : parsed.data.status === "published" ? new Date() : null,
+      isPaywalled: parsed.data.isPaywalled ?? false,
+      excerpt: parsed.data.excerpt,
+      metaTitle: parsed.data.metaTitle,
+      metaDescription: parsed.data.metaDescription,
       coverUrl: parsed.data.coverUrl || undefined,
       audioUrl: parsed.data.audioUrl || undefined,
       category: { connect: { slug: parsed.data.categorySlug } }

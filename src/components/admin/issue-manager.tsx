@@ -400,6 +400,19 @@ export function IssueManager() {
                     {issue.month}/{issue.year}
                   </p>
                   <p className="text-sm text-muted-foreground line-clamp-1">{issue.pdfUrl}</p>
+                  <div className="flex flex-wrap gap-2 text-xs mt-1">
+                    {issue.pdfUrl && (
+                      <a className="text-primary underline" href={issue.pdfUrl} target="_blank" rel="noreferrer">
+                        PDF'yi aç
+                      </a>
+                    )}
+                    {issue.coverUrl && (
+                      <a className="text-primary underline" href={issue.coverUrl} target="_blank" rel="noreferrer">
+                        Kapak önizleme
+                      </a>
+                    )}
+                    <span className="text-muted-foreground">Yazı: {issue.articles?.length ?? 0} adet</span>
+                  </div>
                 </div>
               </div>
               <div className="flex items-center gap-2">

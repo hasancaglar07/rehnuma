@@ -22,7 +22,12 @@ const schema = z.object({
   categorySlug: z.string().min(1, "Kategori seçin"),
   coverUrl: z.string().url("Geçersiz URL").optional().or(z.literal("")),
   audioUrl: z.string().url("Geçersiz URL").optional().or(z.literal("")),
-  status: z.enum(["draft", "published"])
+  status: z.enum(["draft", "published"]),
+  publishAt: z.string().datetime().optional().or(z.literal("")),
+  isPaywalled: z.boolean().optional(),
+  excerpt: z.string().max(320, "Özet en fazla 320 karakter").optional().or(z.literal("")),
+  metaTitle: z.string().max(120, "Meta başlık en fazla 120 karakter").optional().or(z.literal("")),
+  metaDescription: z.string().max(220, "Meta açıklama en fazla 220 karakter").optional().or(z.literal(""))
 });
 type FormValues = z.infer<typeof schema>;
 
@@ -55,7 +60,12 @@ export function NewArticleForm({ mode = "create", initialData }: Props) {
       categorySlug: initialData?.categorySlug ?? "",
       coverUrl: initialData?.coverUrl ?? "",
       audioUrl: initialData?.audioUrl ?? "",
-      status: initialData?.status ?? "draft"
+      status: initialData?.status ?? "draft",
+      publishAt: initialData?.publishAt ?? "",
+      isPaywalled: initialData?.isPaywalled ?? false,
+      excerpt: initialData?.excerpt ?? "",
+      metaTitle: initialData?.metaTitle ?? "",
+      metaDescription: initialData?.metaDescription ?? ""
     }
   });
   const contentRegister = register("content");
@@ -88,7 +98,7 @@ export function NewArticleForm({ mode = "create", initialData }: Props) {
   useEffect(() => {
     if (mode === "edit" || slugEdited) return;
     const nextSlug = slugify(titleValue || "");
-    setValue("slug", nextSlug, { shouldDirty: true, shouldValidate: false });
+    setValue("slug", nextSlug, { shouldDirty: Boolean(titleValue), shouldValidate: false });
   }, [titleValue, slugEdited, mode, setValue]);
 
   useEffect(() => {
@@ -206,7 +216,12 @@ export function NewArticleForm({ mode = "create", initialData }: Props) {
     const payload = {
       ...parsed.data,
       coverUrl: parsed.data.coverUrl || undefined,
-      audioUrl: parsed.data.audioUrl || undefined
+      audioUrl: parsed.data.audioUrl || undefined,
+      publishAt: parsed.data.publishAt || undefined,
+      excerpt: parsed.data.excerpt || undefined,
+      metaTitle: parsed.data.metaTitle || undefined,
+      metaDescription: parsed.data.metaDescription || undefined,
+      isPaywalled: parsed.data.isPaywalled ?? false
     };
     const endpoint = mode === "edit" ? "/api/articles/update" : "/api/articles/create";
     const method = mode === "edit" ? "PUT" : "POST";
@@ -227,7 +242,12 @@ export function NewArticleForm({ mode = "create", initialData }: Props) {
           content: "",
           categorySlug: selectedCategory,
           coverUrl: "",
-          audioUrl: ""
+          audioUrl: "",
+          publishAt: "",
+          isPaywalled: false,
+          excerpt: "",
+          metaTitle: "",
+          metaDescription: ""
         });
       }
     } else {
@@ -426,6 +446,52 @@ export function NewArticleForm({ mode = "create", initialData }: Props) {
           <option value="draft">Taslak</option>
           <option value="published">Yayınla</option>
         </select>
+      </div>
+
+      <div className="grid gap-2">
+        <label className="text-sm font-medium">Yayın Zamanı</label>
+        <input
+          type="datetime-local"
+          {...register("publishAt")}
+          className="border rounded-lg p-3 bg-background"
+        />
+        <p className="text-xs text-muted-foreground">Boş bırakılırsa hemen yayınlanır. Gelecek tarih planlama için.</p>
+      </div>
+
+      <div className="grid gap-2">
+        <label className="inline-flex items-center gap-2 text-sm font-medium">
+          <input type="checkbox" {...register("isPaywalled")} className="h-4 w-4" />
+          Paywall (abonelik gereksin)
+        </label>
+        <p className="text-xs text-muted-foreground">İşaretlenirse ödeme duvarı arkasına alınır.</p>
+      </div>
+
+      <div className="grid gap-2">
+        <label className="text-sm font-medium">Özet</label>
+        <textarea
+          {...register("excerpt")}
+          placeholder="En fazla 320 karakter"
+          className="border rounded-lg p-3 bg-background"
+          rows={3}
+        />
+        {errors.excerpt && <p className="text-sm text-rose-600">{errors.excerpt.message}</p>}
+      </div>
+
+      <div className="grid gap-2">
+        <label className="text-sm font-medium">Meta Başlık</label>
+        <input {...register("metaTitle")} placeholder="SEO başlık (opsiyonel)" className="border rounded-lg p-3 bg-background" />
+        {errors.metaTitle && <p className="text-sm text-rose-600">{errors.metaTitle.message}</p>}
+      </div>
+
+      <div className="grid gap-2">
+        <label className="text-sm font-medium">Meta Açıklama</label>
+        <textarea
+          {...register("metaDescription")}
+          placeholder="SEO açıklaması (opsiyonel)"
+          className="border rounded-lg p-3 bg-background"
+          rows={3}
+        />
+        {errors.metaDescription && <p className="text-sm text-rose-600">{errors.metaDescription.message}</p>}
       </div>
 
       <div className="grid gap-2">

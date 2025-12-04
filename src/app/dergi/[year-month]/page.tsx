@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 import { requireUser } from "@/lib/auth";
 import dynamic from "next/dynamic";
 import type { Metadata } from "next";
+import { getBaseUrl } from "@/lib/url";
 
 const FlipbookViewer = dynamic(() => import("@/components/dergi/flipbook-viewer").then((m) => m.FlipbookViewer), {
   loading: () => <div className="aspect-[3/4] w-full border border-border rounded-xl overflow-hidden animate-pulse bg-secondary/30" />
@@ -20,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const year = Number(yearStr);
   const month = Number(monthStr);
   const issue = await prisma.issue.findFirst({ where: { year, month } });
-  const baseUrl = process.env.NEXT_PUBLIC_URL || "https://rehnuma.example.com";
+  const baseUrl = getBaseUrl();
   const canonical = `${baseUrl}/dergi/${slug}`;
   const title = issue ? `${issue.month}/${issue.year} Dergi | Rehnüma` : "Dergi | Rehnüma";
   const description = issue ? "Rehnüma dijital dergi sayısı" : "Dijital dergi arşivi";
@@ -67,7 +68,7 @@ export default async function IssuePage({ params }: Props) {
   }
 
   const isVip = isAdmin || user.subscriptionPlan === "vip";
-  const baseUrl = process.env.NEXT_PUBLIC_URL || "https://rehnuma.example.com";
+  const baseUrl = getBaseUrl();
   const issueLd = issue
     ? {
         "@context": "https://schema.org",

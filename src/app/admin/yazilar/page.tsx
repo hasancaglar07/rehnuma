@@ -6,7 +6,15 @@ import { prisma } from "@/db/prisma";
 import { StatusBadge } from "@/components/admin/status-badge";
 import { ArticleRowActions } from "@/components/admin/article-row-actions";
 import { requireAdmin } from "@/lib/auth";
-type ArticleListItem = { id: string; title: string; slug: string; status: string; category?: { name: string; slug: string } };
+type ArticleListItem = {
+  id: string;
+  title: string;
+  slug: string;
+  status: string;
+  category?: { name: string; slug: string };
+  isPaywalled?: boolean;
+  publishedAt?: Date | null;
+};
 type Props = { searchParams: Promise<{ status?: string; q?: string; category?: string }> };
 
 export const dynamic = "force-dynamic";
@@ -21,7 +29,15 @@ export default async function AdminArticlesPage({ searchParams }: Props) {
   const categoryFilter = resolvedSearch.category?.trim();
   const articles: ArticleListItem[] = hasDatabase
     ? await prisma.article.findMany({
-        select: { id: true, title: true, slug: true, status: true, category: { select: { name: true, slug: true } } },
+        select: {
+          id: true,
+          title: true,
+          slug: true,
+          status: true,
+          isPaywalled: true,
+          publishedAt: true,
+          category: { select: { name: true, slug: true } }
+        },
         where: {
           ...(statusFilter ? { status: statusFilter } : {}),
           ...(categoryFilter ? { category: { slug: categoryFilter } } : {}),
@@ -91,6 +107,14 @@ export default async function AdminArticlesPage({ searchParams }: Props) {
                 <p className="text-sm text-muted-foreground">{article.slug}</p>
                 <p className="text-xs text-muted-foreground">
                   {article.category?.name ? `Kategori: ${article.category.name}` : "Kategori yok"}
+                  {" · "}
+                  {article.isPaywalled ? "Paywall" : "Açık"}
+                  {article.publishedAt && (
+                    <>
+                      {" · "}
+                      {new Date(article.publishedAt).toLocaleString("tr-TR")}
+                    </>
+                  )}
                 </p>
               </div>
               <div className="text-sm flex flex-col gap-2 items-end">

@@ -1,8 +1,9 @@
 import { MetadataRoute } from "next";
 import { prisma } from "@/db/prisma";
+import { getBaseUrl } from "@/lib/url";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_URL || "https://example.com";
+  const baseUrl = getBaseUrl();
   const hasDatabase = Boolean(process.env.DATABASE_URL);
   const [articles, categories, issues] = hasDatabase
     ? await Promise.all([

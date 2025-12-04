@@ -5,6 +5,7 @@ import { Footer } from "@/components/shared/footer";
 import { ArticleReader } from "@/components/articles/article-reader";
 import { toExcerpt } from "@/utils/excerpt";
 import type { Metadata } from "next";
+import { getBaseUrl } from "@/lib/url";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -23,7 +24,7 @@ async function fetchArticle(slug: string) {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const article = await fetchArticle(slug);
-  const baseUrl = process.env.NEXT_PUBLIC_URL || "https://rehnuma.example.com";
+  const baseUrl = getBaseUrl();
   const description = article?.content ? toExcerpt(article.content, 160) : "Rehnüma yazısı";
   const canonical = `${baseUrl}/yazi/${slug}`;
   const ogImage = article?.coverUrl || `${baseUrl}/og?title=${encodeURIComponent(article?.title ?? "Rehnüma")}&type=article`;

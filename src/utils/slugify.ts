@@ -1,6 +1,6 @@
 export function slugify(input: string) {
   return input
-    .toLowerCase()
+    .toLocaleLowerCase("tr-TR")
     .trim()
     .replace(/[^a-z0-9ğüşöçıİıçşöğ\s-]/g, "")
     .replace(/\s+/g, "-")
