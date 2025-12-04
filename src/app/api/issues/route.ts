@@ -6,9 +6,18 @@ import { requireAdminGuard, requireCsrfGuard, requestIp } from "@/lib/api-guards
 import { rateLimit } from "@/lib/rate-limit";
 import { logAudit } from "@/lib/audit";
 
-export async function GET() {
+export async function GET(req: NextRequest) {
   if (!process.env.DATABASE_URL) {
     return NextResponse.json({ issues: [] }, { headers: { "Cache-Control": "public, s-maxage=300, stale-while-revalidate=300" } });
+  }
+
+  const isLite = req.nextUrl.searchParams.get("lite") === "1";
+  if (isLite) {
+    const issues = await prisma.issue.findMany({
+      select: { id: true, year: true, month: true, coverUrl: true },
+      orderBy: [{ year: "desc" }, { month: "desc" }]
+    });
+    return NextResponse.json({ issues }, { headers: { "Cache-Control": "public, s-maxage=120, stale-while-revalidate=300" } });
   }
 
   const issues = await prisma.issue.findMany({

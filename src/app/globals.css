@@ -12,21 +12,21 @@
   --border: 0.92 0.004 286.32;
 }
 
-.dark {
-  --background: 0.141 0.005 285.823;
-  --foreground: 0.985 0 0;
-  --primary: 0.55 0.14 354.25;
-}
-
 * {
   border-color: oklch(var(--border) / 1);
 }
 
 body {
   background: oklch(var(--background) / 1);
+  background-image:
+    radial-gradient(120% 120% at 12% 8%, oklch(var(--primary) / 0.06), transparent 45%),
+    radial-gradient(90% 80% at 82% 0%, oklch(var(--accent) / 0.05), transparent 50%);
+  background-attachment: fixed;
   color: oklch(var(--foreground) / 1);
   font-family: "Georgia", "Times New Roman", serif;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 html,
@@ -36,6 +36,12 @@ body {
 
 a {
   color: oklch(var(--primary) / 1);
+}
+
+:focus-visible {
+  outline: 2px solid oklch(var(--primary) / 0.8);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px oklch(var(--primary) / 0.18);
 }
 
 .sakura {
@@ -122,6 +128,7 @@ h4 {
   border: 1px solid oklch(var(--border) / 0.65);
   background: rgba(255, 255, 255, 0.9);
   padding: 0.45rem 0.75rem;
+  min-height: 68px;
   box-shadow: 0 16px 34px -26px oklch(var(--foreground) / 0.6);
   backdrop-filter: blur(12px);
 }
@@ -129,12 +136,14 @@ h4 {
 @media (min-width: 768px) {
   .header-shell {
     padding: 0.55rem 1.05rem;
+    min-height: 72px;
   }
 }
 
 @media (min-width: 1024px) {
   .header-shell {
     padding: 0.65rem 1.25rem;
+    min-height: 76px;
   }
 }
 
@@ -179,6 +188,11 @@ h4 {
   box-shadow: 0 16px 30px -18px oklch(var(--primary) / 0.9);
 }
 
+.page-transition {
+  animation: pageFade 160ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, transform;
+}
+
 /* Clerk dev etiketi/ingilizce uyarıları gizle */
 .cl-root [data-localization-key="developmentMode.title"],
 .cl-root [data-localization-key="developmentMode.subtitle"] {
@@ -202,5 +216,28 @@ h4 {
   }
   50% {
     filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.55));
+  }
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .page-transition {
+    animation: none !important;
   }
 }

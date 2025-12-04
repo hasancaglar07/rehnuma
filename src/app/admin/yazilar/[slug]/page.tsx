@@ -1,7 +1,5 @@
 import { AdminShell } from "@/components/admin/admin-shell";
 import { NewArticleForm } from "@/components/admin/new-article-form";
-import { Navbar } from "@/components/shared/navbar";
-import { Footer } from "@/components/shared/footer";
 import { prisma } from "@/db/prisma";
 import { notFound } from "next/navigation";
 import { requireAdmin } from "@/lib/auth";
@@ -36,7 +34,6 @@ export default async function AdminEditArticlePage({ params }: Props) {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
       <AdminShell title="Yazıyı Düzenle" description="Başlık, içerik, medya ve durum güncelle">
         <NewArticleForm
           mode="edit"
@@ -56,7 +53,6 @@ export default async function AdminEditArticlePage({ params }: Props) {
           }}
         />
       </AdminShell>
-      <Footer />
     </div>
   );
 }

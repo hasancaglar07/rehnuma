@@ -1,7 +1,5 @@
 import { requireUser } from "@/lib/auth";
 import { prisma } from "@/db/prisma";
-import { Navbar } from "@/components/shared/navbar";
-import { Footer } from "@/components/shared/footer";
 import { ArticleCard } from "@/components/articles/article-card";
 
 type SavedItem = { articleId: string };
@@ -22,7 +20,6 @@ export default async function SavedPage() {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
       <main className="container py-12 space-y-4">
         <h1 className="text-3xl font-serif">Kaydedilenler</h1>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -32,7 +29,6 @@ export default async function SavedPage() {
           {articles.length === 0 && <p className="text-muted-foreground">Henüz kaydedilen yok.</p>}
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

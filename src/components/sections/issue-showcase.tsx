@@ -11,7 +11,11 @@ export function IssueShowcase({ coverUrl }: { coverUrl?: string }) {
       </div>
       <div className="border border-border rounded-xl p-6 flex flex-col md:flex-row items-center gap-6 bg-background/70">
         <div className="w-40 h-56 bg-secondary/40 rounded-lg border border-border flex items-center justify-center text-sm">
-          {coverUrl ? <img src={coverUrl} alt="Dergi Kapağı" className="w-full h-full object-cover rounded-lg" /> : "Kapak"}
+          {coverUrl ? (
+            <img src={coverUrl} alt="Dergi Kapağı" className="w-full h-full object-cover rounded-lg" loading="lazy" />
+          ) : (
+            "Kapak"
+          )}
         </div>
         <div className="space-y-2">
           <p className="text-sm text-muted-foreground">Yalnızca abonelere özel</p>

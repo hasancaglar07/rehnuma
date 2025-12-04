@@ -1,5 +1,3 @@
-import { Navbar } from "@/components/shared/navbar";
-import { Footer } from "@/components/shared/footer";
 import { AuthForm } from "@/components/auth/auth-form";
 
 type Props = { searchParams: Promise<{ returnTo?: string; tab?: string }> };
@@ -17,7 +15,6 @@ export default async function LoginPage({ searchParams }: Props) {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
       <main className="container px-4 py-10 space-y-8">
         <div className="space-y-2 text-center">
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Üyelik</p>
@@ -28,7 +25,6 @@ export default async function LoginPage({ searchParams }: Props) {
         </div>
         <AuthForm returnTo={returnTo} initialTab={initialTab} />
       </main>
-      <Footer />
     </div>
   );
 }

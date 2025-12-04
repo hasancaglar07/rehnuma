@@ -1,6 +1,4 @@
 import { AdminShell } from "@/components/admin/admin-shell";
-import { Navbar } from "@/components/shared/navbar";
-import { Footer } from "@/components/shared/footer";
 import { prisma } from "@/db/prisma";
 import Link from "next/link";
 import { requireAdmin } from "@/lib/auth";
@@ -45,7 +43,6 @@ export default async function AdminDashboard() {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
       <AdminShell title="Admin Dashboard" description="Özet metrikler ve son olaylar">
         <div className="grid gap-3 sm:grid-cols-3">
           {cards.map((card) => (
@@ -123,7 +120,6 @@ export default async function AdminDashboard() {
           ))}
         </div>
       </AdminShell>
-      <Footer />
     </div>
   );
 }

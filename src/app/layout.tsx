@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { sourceSerif, playfair, parisienne } from "@/styles/fonts";
-import { ThemeProvider } from "@/components/shared/theme-provider";
 import { SakuraMount } from "@/components/shared/sakura-mount";
 import { BackgroundGlow } from "@/components/shared/background-glow";
+import { PageTransition } from "@/components/shared/page-transition";
+import { Navbar } from "@/components/shared/navbar";
+import { Footer } from "@/components/shared/footer";
+import HeroImage from "@/assets/hero.png";
 import { ClerkProvider } from "@clerk/nextjs";
 import { trTR } from "@clerk/localizations";
 import { getBaseUrl } from "@/lib/url";
@@ -66,15 +69,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <html lang="tr" suppressHydrationWarning>
         <head>
           <link rel="stylesheet" href="/sakura/sakura.min.css" />
+          <link rel="preload" as="image" href={HeroImage.src} />
+          <link rel="preconnect" href="https://clerk.services" />
+          <link rel="dns-prefetch" href="https://clerk.services" />
         </head>
         <body className={`${sourceSerif.variable} ${playfair.variable} ${parisienne.variable} font-sans antialiased`}>
-          <ThemeProvider>
-            <div className="relative min-h-screen w-full bg-white overflow-hidden">
-              <BackgroundGlow />
-              <SakuraMount />
-              <div className="relative z-10">{children}</div>
+          <div className="relative min-h-screen w-full bg-white overflow-hidden">
+            <BackgroundGlow />
+            <SakuraMount />
+            <div className="relative z-10">
+              <header>
+                <Navbar />
+              </header>
+              <PageTransition>
+                <main>{children}</main>
+                <Footer />
+              </PageTransition>
             </div>
-          </ThemeProvider>
+          </div>
         </body>
       </html>
     </ClerkProvider>

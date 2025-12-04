@@ -1,6 +1,4 @@
 import { prisma } from "@/db/prisma";
-import { Navbar } from "@/components/shared/navbar";
-import { Footer } from "@/components/shared/footer";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { requireUser } from "@/lib/auth";
@@ -81,7 +79,6 @@ export default async function IssuePage({ params }: Props) {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
       <main className="container py-12 space-y-4">
         <h1 className="text-3xl font-serif">
           {month}/{year} Sayısı
@@ -130,7 +127,6 @@ export default async function IssuePage({ params }: Props) {
         )}
         {issueLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(issueLd) }} />}
       </main>
-      <Footer />
     </div>
   );
 }

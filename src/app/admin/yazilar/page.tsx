@@ -1,6 +1,4 @@
 import { AdminShell } from "@/components/admin/admin-shell";
-import { Navbar } from "@/components/shared/navbar";
-import { Footer } from "@/components/shared/footer";
 import Link from "next/link";
 import { prisma } from "@/db/prisma";
 import { StatusBadge } from "@/components/admin/status-badge";
@@ -57,7 +55,6 @@ export default async function AdminArticlesPage({ searchParams }: Props) {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
       <AdminShell title="Yazı Yönetimi" description="Yazıları düzenle veya yeni oluştur">
         <div className="flex items-center justify-between gap-3 flex-wrap">
           <form className="flex flex-wrap items-center gap-2" method="get">
@@ -136,7 +133,6 @@ export default async function AdminArticlesPage({ searchParams }: Props) {
           {articles.length === 0 && <p className="text-muted-foreground">Henüz yazı yok.</p>}
         </div>
       </AdminShell>
-      <Footer />
     </div>
   );
 }

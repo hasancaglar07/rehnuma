@@ -1,7 +1,5 @@
 import { requireUser } from "@/lib/auth";
 import { prisma } from "@/db/prisma";
-import { Navbar } from "@/components/shared/navbar";
-import { Footer } from "@/components/shared/footer";
 import { LogoutButton } from "@/components/shared/logout-button";
 import Link from "next/link";
 
@@ -19,7 +17,6 @@ export default async function ProfilePage() {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
       <main className="container py-12 space-y-6">
         <div className="grid gap-4 md:grid-cols-2">
           <div className="border border-border rounded-xl p-4 bg-background/80">
@@ -58,7 +55,6 @@ export default async function ProfilePage() {
           </Link>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

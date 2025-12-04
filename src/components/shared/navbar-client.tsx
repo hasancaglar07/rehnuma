@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton, useUser } from "@clerk/nextjs";
 
 import logo from "@/assets/logo-rehnuma.svg";
 
@@ -14,19 +14,40 @@ const mainLinks = [
   { href: "/dergi", label: "Dergi" }
 ];
 
-type Props = {
-  hasAuth: boolean;
-  isAdmin: boolean;
-  subscriptionStatus?: string;
-};
-
-export function NavbarClient({ hasAuth, isAdmin, subscriptionStatus }: Props) {
+export function NavbarClient() {
+  const { isSignedIn, user } = useUser();
+  const [serverRole, setServerRole] = useState<string | null>(null);
+  const isAdmin = useMemo(() => {
+    const metaRole =
+      (user?.publicMetadata?.role as string | undefined) || (user?.privateMetadata?.role as string | undefined);
+    return (metaRole || serverRole) === "admin";
+  }, [serverRole, user]);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isSignedIn) {
+      setServerRole(null);
+      return;
+    }
+    let cancelled = false;
+    fetch("/api/me", { cache: "no-store" })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (cancelled || !data) return;
+        setServerRole(data.role ?? null);
+      })
+      .catch(() => {
+        if (!cancelled) setServerRole(null);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [isSignedIn]);
 
   const toggleMobile = () => setIsMobileOpen((prev) => !prev);
   const closeMobile = () => setIsMobileOpen(false);
 
-  const profileLink = hasAuth ? { href: "/profil", label: "Profil" } : null;
+  const profileLink = isSignedIn ? { href: "/profil", label: "Profil" } : null;
 
   return (
     <header className="sticky top-0 z-50 header-premium px-3 md:px-6">
@@ -88,10 +109,10 @@ export function NavbarClient({ hasAuth, isAdmin, subscriptionStatus }: Props) {
               <div className="hidden items-center gap-2 lg:flex">
                 {isAdmin && (
                   <>
-                    <Link href="/admin" className="nav-link nav-link-muted">
+                    <Link href="/admin" prefetch={false} className="nav-link nav-link-muted">
                       Admin
                     </Link>
-                    <Link href="/admin/kullanicilar" className="nav-link nav-link-muted">
+                    <Link href="/admin/kullanicilar" prefetch={false} className="nav-link nav-link-muted">
                       Kullanıcılar
                     </Link>
                   </>

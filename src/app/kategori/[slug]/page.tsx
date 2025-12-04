@@ -1,7 +1,5 @@
 import { prisma } from "@/db/prisma";
 import { ArticleCard } from "@/components/articles/article-card";
-import { Navbar } from "@/components/shared/navbar";
-import { Footer } from "@/components/shared/footer";
 import { toExcerpt } from "@/utils/excerpt";
 import type { Metadata } from "next";
 import { getBaseUrl } from "@/lib/url";
@@ -38,11 +36,9 @@ export default async function CategoryPage({ params }: Props) {
   if (!slug) {
     return (
       <div className="min-h-screen">
-        <Navbar />
         <main className="container py-12">
           <p className="text-muted-foreground">Kategori bulunamadı.</p>
         </main>
-        <Footer />
       </div>
     );
   }
@@ -57,7 +53,6 @@ export default async function CategoryPage({ params }: Props) {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
       <main className="container py-12 space-y-6">
         <h1 className="text-3xl font-serif">{category?.name ?? "Kategori"}</h1>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -66,7 +61,6 @@ export default async function CategoryPage({ params }: Props) {
           )) ?? <p className="text-muted-foreground">Bu kategoride içerik yok.</p>}
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

@@ -15,8 +15,7 @@ type Theme = {
 const themes: Theme[] = [
   { id: "light", label: "Beyaz", bg: "bg-white", text: "text-slate-900", border: "border-slate-200" },
   { id: "cream", label: "Krem", bg: "bg-[#fdf8ef]", text: "text-[#2c1b10]", border: "border-[#e6d7bd]" },
-  { id: "sepia", label: "Sepya", bg: "bg-[#f3e7d3]", text: "text-[#24170c]", border: "border-[#ddc9a8]" },
-  { id: "dark", label: "Gece", bg: "bg-[#0b0f1a]", text: "text-slate-100", border: "border-white/15" }
+  { id: "sepia", label: "Sepya", bg: "bg-[#f3e7d3]", text: "text-[#24170c]", border: "border-[#ddc9a8]" }
 ];
 
 type PageCache = Map<string, HTMLCanvasElement>;

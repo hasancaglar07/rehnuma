@@ -1,7 +1,5 @@
 import { prisma } from "@/db/prisma";
 import { getSession } from "@/lib/auth";
-import { Navbar } from "@/components/shared/navbar";
-import { Footer } from "@/components/shared/footer";
 import { ArticleReader } from "@/components/articles/article-reader";
 import { toExcerpt } from "@/utils/excerpt";
 import type { Metadata } from "next";
@@ -58,11 +56,9 @@ export default async function ArticlePage({ params }: Props) {
   if (!article) {
     return (
       <div className="min-h-screen">
-        <Navbar />
         <main className="container py-12">
           <p className="text-muted-foreground">Yazı bulunamadı.</p>
         </main>
-        <Footer />
       </div>
     );
   }
@@ -100,7 +96,6 @@ export default async function ArticlePage({ params }: Props) {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
       <main className="container py-12">
         <div className="mx-auto max-w-4xl space-y-8">
           <div className="space-y-4">
@@ -142,7 +137,6 @@ export default async function ArticlePage({ params }: Props) {
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

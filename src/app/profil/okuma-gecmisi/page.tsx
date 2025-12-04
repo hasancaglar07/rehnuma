@@ -1,7 +1,5 @@
 import { requireUser } from "@/lib/auth";
 import { prisma } from "@/db/prisma";
-import { Navbar } from "@/components/shared/navbar";
-import { Footer } from "@/components/shared/footer";
 import Link from "next/link";
 
 type ProgressItem = { id: string; articleId: string; progress: number };
@@ -23,7 +21,6 @@ export default async function ReadingHistoryPage() {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
       <main className="container py-12 space-y-4">
         <h1 className="text-3xl font-serif">Okuma Geçmişi</h1>
         <div className="space-y-3">
@@ -45,7 +42,6 @@ export default async function ReadingHistoryPage() {
           })}
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

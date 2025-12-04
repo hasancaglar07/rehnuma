@@ -2,8 +2,6 @@ import { HeroSection } from "@/components/sections/hero-section";
 import { FeaturedGrid } from "@/components/sections/featured-grid";
 import { CategoryGrid } from "@/components/sections/category-grid";
 import { IssueShowcase } from "@/components/sections/issue-showcase";
-import { Navbar } from "@/components/shared/navbar";
-import { Footer } from "@/components/shared/footer";
 import { prisma } from "@/db/prisma";
 import { toExcerpt } from "@/utils/excerpt";
 
@@ -59,14 +57,12 @@ export default async function HomePage() {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
       <main>
         <HeroSection />
         <FeaturedGrid items={featured} />
         <CategoryGrid categories={categoryList} />
         <IssueShowcase coverUrl={latestIssue?.coverUrl ?? undefined} />
       </main>
-      <Footer />
     </div>
   );
 }
