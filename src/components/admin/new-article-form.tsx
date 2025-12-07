@@ -40,6 +40,7 @@ const schema = z.object({
   status: z.enum(["draft", "published"]),
   publishAt: publishAtField,
   isPaywalled: z.boolean().optional(),
+  isFeatured: z.boolean().optional(),
   excerpt: z.string().max(320, "Özet en fazla 320 karakter").optional().or(z.literal("")),
   metaTitle: z.string().max(120, "Meta başlık en fazla 120 karakter").optional().or(z.literal("")),
   metaDescription: z.string().max(220, "Meta açıklama en fazla 220 karakter").optional().or(z.literal("")),
@@ -81,6 +82,7 @@ export function NewArticleForm({ mode = "create", initialData, allowPublish = tr
       status: initialData?.status ?? "draft",
       publishAt: initialData?.publishAt ?? "",
       isPaywalled: initialData?.isPaywalled ?? false,
+      isFeatured: initialData?.isFeatured ?? false,
       excerpt: initialData?.excerpt ?? "",
       metaTitle: initialData?.metaTitle ?? "",
       metaDescription: initialData?.metaDescription ?? "",
@@ -124,6 +126,7 @@ export function NewArticleForm({ mode = "create", initialData, allowPublish = tr
   const titleValue = watch("title");
   const slugValue = watch("slug");
   const authorValue = watch("authorId");
+  const coverUrlValue = watch("coverUrl");
 
   const categoryOptions = useMemo(() => (categories.length ? categories : FALLBACK_CATEGORIES), [categories]);
   const authorOptions = useMemo(() => authors, [authors]);
@@ -269,7 +272,8 @@ export function NewArticleForm({ mode = "create", initialData, allowPublish = tr
       excerpt: parsed.data.excerpt || undefined,
       metaTitle: parsed.data.metaTitle || undefined,
       metaDescription: parsed.data.metaDescription || undefined,
-      isPaywalled: parsed.data.isPaywalled ?? false
+      isPaywalled: parsed.data.isPaywalled ?? false,
+      isFeatured: parsed.data.isFeatured ?? false
     };
     if (!allowPublish) {
       payload.status = "draft";
@@ -304,6 +308,7 @@ export function NewArticleForm({ mode = "create", initialData, allowPublish = tr
         audioUrl: "",
         publishAt: "",
         isPaywalled: false,
+        isFeatured: false,
         excerpt: "",
         metaTitle: "",
         metaDescription: ""
@@ -539,6 +544,14 @@ export function NewArticleForm({ mode = "create", initialData, allowPublish = tr
       </div>
 
       <div className="grid gap-2">
+        <label className="inline-flex items-center gap-2 text-sm font-medium">
+          <input type="checkbox" {...register("isFeatured")} className="h-4 w-4" />
+          Öne çıkan
+        </label>
+        <p className="text-xs text-muted-foreground">Kategori sekmesinde ve öne çıkan listelerinde vurgulansın.</p>
+      </div>
+
+      <div className="grid gap-2">
         <label className="text-sm font-medium">Özet</label>
         <textarea
           {...register("excerpt")}
@@ -584,6 +597,19 @@ export function NewArticleForm({ mode = "create", initialData, allowPublish = tr
           </label>
         </div>
         <p className="text-xs text-muted-foreground">Görseli yüklerseniz URL otomatik doldurulur (public Blob).</p>
+        {coverUrlValue?.trim() ? (
+          <div className="mt-2 rounded-xl border border-border bg-secondary/30 p-2">
+            <p className="text-xs text-muted-foreground mb-2">Önizleme</p>
+            <div className="overflow-hidden rounded-lg border border-border/70 bg-background">
+              <img
+                src={coverUrlValue}
+                alt="Kapak önizleme"
+                className="w-full max-h-64 object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        ) : null}
         {errors.coverUrl && <p className="text-sm text-rose-600">{errors.coverUrl.message}</p>}
       </div>
 

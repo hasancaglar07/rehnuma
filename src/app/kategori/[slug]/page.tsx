@@ -1,7 +1,7 @@
 import { prisma } from "@/db/prisma";
-import { ArticleFeed } from "@/components/articles/article-feed";
 import type { Metadata } from "next";
 import { getBaseUrl } from "@/lib/url";
+import { CategoryFeedShell } from "@/components/articles/category-feed-shell";
 
 export const revalidate = 120;
 
@@ -54,9 +54,19 @@ export default async function CategoryPage({ params }: Props) {
       status: "published",
       OR: [{ category: { slug } }, { category: { parent: { slug } } }]
     },
-    orderBy: { createdAt: "desc" },
+    orderBy: [{ publishedAt: "desc" }, { createdAt: "desc" }],
     take: pageSize + 1,
-    select: { id: true, title: true, slug: true, content: true, coverUrl: true, publishedAt: true, createdAt: true }
+    select: {
+      id: true,
+      title: true,
+      slug: true,
+      content: true,
+      coverUrl: true,
+      publishedAt: true,
+      createdAt: true,
+      isFeatured: true,
+      category: { select: { name: true } }
+    }
   });
 
   const hasMore = articles.length > pageSize;
@@ -70,7 +80,6 @@ export default async function CategoryPage({ params }: Props) {
     maneviyat: "Kalbi dinginleştiren manevi okumalara seçilmiş yazılar.",
     "aile-ve-cocuk": "Evlilik, ebeveynlik ve aile içi ahenk için rehber içerikler."
   };
-  const filters = ["En yeni", "Öne çıkan", "Kısa okuma"];
   const tagline = taglineMap[slug] ?? "Özenle seçilmiş yazılarla premium bir okuma deneyimi.";
 
   return (
@@ -81,35 +90,15 @@ export default async function CategoryPage({ params }: Props) {
             {category?.name ?? "Kategori"}
           </h1>
           <p className="max-w-3xl text-muted-foreground text-base md:text-lg">{tagline}</p>
-          <div className="flex flex-wrap gap-2 pt-1">
-            {filters.map((label, idx) => (
-              <span
-                key={label}
-                className={`rounded-full border px-3 py-1 text-sm ${
-                  idx === 0
-                    ? "border-primary/30 bg-primary/10 text-primary"
-                    : "border-border/60 bg-white/60 text-muted-foreground"
-                }`}
-              >
-                {label}
-              </span>
-            ))}
-          </div>
         </div>
 
-        <div className="rounded-3xl border border-border/70 bg-gradient-to-b from-white via-white to-primary/5 p-4 sm:p-6 lg:p-8">
-          {initialArticles.length ? (
-            <ArticleFeed
-              initialArticles={initialArticles}
-              categorySlug={slug}
-              pageSize={pageSize}
-              initialPage={1}
-              hasMore={hasMore}
-            />
-          ) : (
-            <p className="text-muted-foreground sm:col-span-2 lg:col-span-3">Bu kategoride içerik yok.</p>
-          )}
-        </div>
+        <CategoryFeedShell
+          initialArticles={initialArticles}
+          categorySlug={slug}
+          pageSize={pageSize}
+          hasMore={hasMore}
+          initialPage={1}
+        />
       </main>
     </div>
   );

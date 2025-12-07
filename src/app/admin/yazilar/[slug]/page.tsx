@@ -23,6 +23,7 @@ export default async function AdminEditArticlePage({ params }: Props) {
       status: true,
       publishedAt: true,
       isPaywalled: true,
+      isFeatured: true,
       excerpt: true,
       metaTitle: true,
       metaDescription: true
@@ -65,6 +66,7 @@ export default async function AdminEditArticlePage({ params }: Props) {
             status: (article.status as "draft" | "published") ?? "draft",
             publishAt: article.publishedAt?.toISOString().slice(0, 16) ?? "",
             isPaywalled: article.isPaywalled ?? false,
+            isFeatured: article.isFeatured ?? false,
             excerpt: article.excerpt || "",
             metaTitle: article.metaTitle || "",
             metaDescription: article.metaDescription || "",

@@ -121,6 +121,7 @@ async function main() {
       categorySlug: "ruh-ve-mana",
       coverUrl: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80",
       audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+      isFeatured: true,
       authorSlug: "seda-aksoy"
     },
     {
@@ -131,6 +132,7 @@ async function main() {
       categorySlug: "tohum",
       coverUrl: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80",
       audioUrl: "",
+      isFeatured: false,
       authorSlug: "rehnuma-editor"
     },
     {
@@ -141,6 +143,7 @@ async function main() {
       categorySlug: "pur-ihtimam",
       coverUrl: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=900&q=80",
       audioUrl: "",
+      isFeatured: true,
       authorSlug: "rehnuma-editor"
     },
     {
@@ -151,6 +154,7 @@ async function main() {
       categorySlug: "edebi-alem",
       coverUrl: "https://images.unsplash.com/photo-1495433324511-bf8e92934d90?auto=format&fit=crop&w=900&q=80",
       audioUrl: "",
+      isFeatured: false,
       authorSlug: "seda-aksoy"
     },
     {
@@ -161,6 +165,7 @@ async function main() {
       categorySlug: "evlilige-dair",
       coverUrl: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
       audioUrl: "",
+      isFeatured: false,
       authorSlug: "rehnuma-editor"
     }
   ];
@@ -175,6 +180,7 @@ async function main() {
         coverUrl: data.coverUrl,
         audioUrl: data.audioUrl,
         status: "published",
+        isFeatured: data.isFeatured ?? false,
         author: data.authorSlug
           ? { connect: { id: authorMap[data.authorSlug]?.id ?? "" } }
           : { disconnect: true },
@@ -187,6 +193,7 @@ async function main() {
         coverUrl: data.coverUrl,
         audioUrl: data.audioUrl,
         status: "published",
+        isFeatured: data.isFeatured ?? false,
         author: data.authorSlug && authorMap[data.authorSlug]?.id ? { connect: { id: authorMap[data.authorSlug]!.id } } : undefined,
         category: { connect: { id: categoryMap[data.categorySlug] } }
       }

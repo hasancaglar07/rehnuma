@@ -10,9 +10,10 @@ type Props = {
     readingMinutes?: number;
     date?: string;
   };
+  isFeatured?: boolean;
 };
 
-export function ArticleCard({ title, slug, excerpt, category, coverUrl, meta }: Props) {
+export function ArticleCard({ title, slug, excerpt, category, coverUrl, meta, isFeatured }: Props) {
   const hasMeta = Boolean(meta?.readingMinutes || meta?.date);
   return (
     <Link
@@ -20,6 +21,11 @@ export function ArticleCard({ title, slug, excerpt, category, coverUrl, meta }: 
       className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white/90 p-3 sm:p-4 shadow-sm transition hover:-translate-y-[3px] hover:shadow-md"
     >
       <div className="relative overflow-hidden rounded-[14px] bg-secondary/30 border border-border/70">
+        {isFeatured && (
+          <span className="absolute left-2 top-2 z-10 rounded-full bg-primary text-primary-foreground px-2 py-1 text-[11px] font-semibold shadow-sm">
+            Öne çıkan
+          </span>
+        )}
         {coverUrl ? (
           <>
             <img

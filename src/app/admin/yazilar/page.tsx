@@ -12,6 +12,7 @@ type ArticleListItem = {
   author?: { name: string | null; slug: string | null } | null;
   category?: { name: string; slug: string };
   isPaywalled?: boolean;
+  isFeatured?: boolean;
   publishedAt?: Date | null;
 };
 type Props = { searchParams: Promise<{ status?: string; q?: string; category?: string }> };
@@ -35,6 +36,7 @@ export default async function AdminArticlesPage({ searchParams }: Props) {
           slug: true,
           status: true,
           isPaywalled: true,
+          isFeatured: true,
           publishedAt: true,
           category: { select: { name: true, slug: true } },
           author: { select: { name: true, slug: true } }
@@ -113,6 +115,7 @@ export default async function AdminArticlesPage({ searchParams }: Props) {
                   {article.category?.name ? `Kategori: ${article.category.name}` : "Kategori yok"}
                   {" · "}
                   {article.isPaywalled ? "Paywall" : "Açık"}
+                  {article.isFeatured ? " · Öne çıkan" : ""}
                   {article.author?.name ? ` · ${article.author.name}` : ""}
                   {article.publishedAt && (
                     <>

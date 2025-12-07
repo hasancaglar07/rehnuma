@@ -1,8 +1,9 @@
- "use client";
+"use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ArticleCard } from "@/components/articles/article-card";
 import { toExcerpt } from "@/utils/excerpt";
+import { estimateReadingMinutes } from "@/utils/reading-time";
 
 type ArticleItem = {
   id: string;
@@ -13,6 +14,7 @@ type ArticleItem = {
   publishedAt?: string | Date | null;
   createdAt: string | Date;
   category?: { name?: string | null } | null;
+  isFeatured?: boolean | null;
 };
 
 type Props = {
@@ -21,6 +23,7 @@ type Props = {
   pageSize?: number;
   initialPage?: number;
   hasMore: boolean;
+  activeFilter?: "latest" | "featured" | "short";
 };
 
 type ArticleResponse = {
@@ -28,14 +31,15 @@ type ArticleResponse = {
   nextPage: number | null;
 };
 
+export type ArticleFeedItem = ArticleItem;
+
 function normalizeDate(value?: string | Date | null) {
   if (!value) return undefined;
   return value instanceof Date ? value : new Date(value);
 }
 
 function computeMeta(article: ArticleItem) {
-  const wordCount = article.content ? article.content.trim().split(/\s+/).length : 0;
-  const readingMinutes = Math.max(1, Math.round(wordCount / 200));
+  const readingMinutes = estimateReadingMinutes(article.content);
   const dateValue = normalizeDate(article.publishedAt) ?? normalizeDate(article.createdAt);
   const dateLabel = dateValue
     ? new Intl.DateTimeFormat("tr-TR", { month: "short", day: "numeric" }).format(dateValue)
@@ -44,7 +48,15 @@ function computeMeta(article: ArticleItem) {
   return { readingMinutes, dateLabel };
 }
 
-export function ArticleFeed({ initialArticles, categorySlug, pageSize = 9, initialPage = 1, hasMore }: Props) {
+export function ArticleFeed({
+  initialArticles,
+  categorySlug,
+  pageSize = 9,
+  initialPage = 1,
+  hasMore,
+  activeFilter
+}: Props) {
+  const filter = activeFilter ?? "latest";
   const [articles, setArticles] = useState<ArticleItem[]>(initialArticles);
   const [nextPage, setNextPage] = useState<number | null>(hasMore ? initialPage + 1 : null);
   const [loading, setLoading] = useState(false);
@@ -61,7 +73,8 @@ export function ArticleFeed({ initialArticles, categorySlug, pageSize = 9, initi
           coverUrl: a.coverUrl ?? undefined,
           readingMinutes,
           dateLabel,
-          categoryName: a.category?.name ?? undefined
+          categoryName: a.category?.name ?? undefined,
+          isFeatured: Boolean(a.isFeatured)
         };
       }),
     [articles]
@@ -70,7 +83,8 @@ export function ArticleFeed({ initialArticles, categorySlug, pageSize = 9, initi
   useEffect(() => {
     setArticles(initialArticles);
     setNextPage(hasMore ? initialPage + 1 : null);
-  }, [initialArticles, hasMore, initialPage]);
+    setError(null);
+  }, [initialArticles, hasMore, initialPage, filter]);
 
   const loadMore = useCallback(async () => {
     if (loading || !nextPage) return;
@@ -81,6 +95,7 @@ export function ArticleFeed({ initialArticles, categorySlug, pageSize = 9, initi
       if (categorySlug) query.set("category", categorySlug);
       query.set("limit", String(pageSize));
       query.set("page", String(nextPage));
+      if (filter && filter !== "latest") query.set("filter", filter);
       const res = await fetch(`/api/articles?${query.toString()}`, { cache: "no-store" });
       if (!res.ok) throw new Error("İçerikler yüklenemedi");
       const data: ArticleResponse = await res.json();
@@ -92,7 +107,7 @@ export function ArticleFeed({ initialArticles, categorySlug, pageSize = 9, initi
     } finally {
       setLoading(false);
     }
-  }, [categorySlug, loading, nextPage, pageSize]);
+  }, [categorySlug, loading, nextPage, pageSize, filter]);
 
   // Intersection observer for infinite scroll
   useEffect(() => {
@@ -122,13 +137,14 @@ export function ArticleFeed({ initialArticles, categorySlug, pageSize = 9, initi
           <ArticleCard
             key={article.id}
             title={article.title}
-            slug={article.slug}
-            excerpt={article.excerpt}
-            coverUrl={article.coverUrl}
-            category={article.categoryName}
-            meta={{ readingMinutes: article.readingMinutes, date: article.dateLabel }}
-          />
-        ))}
+          slug={article.slug}
+          excerpt={article.excerpt}
+          coverUrl={article.coverUrl}
+          category={article.categoryName}
+          isFeatured={article.isFeatured}
+          meta={{ readingMinutes: article.readingMinutes, date: article.dateLabel }}
+        />
+      ))}
       </div>
 
       {error && (

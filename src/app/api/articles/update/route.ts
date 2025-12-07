@@ -24,6 +24,7 @@ const schema = z.object({
   audioUrl: z.string().url().optional().or(z.literal("")),
   status: z.enum(["draft", "published"]).optional(),
   isPaywalled: z.boolean().optional(),
+  isFeatured: z.boolean().optional(),
   publishAt: publishAtSchema,
   excerpt: z.string().max(320).optional(),
   metaTitle: z.string().max(120).optional(),
@@ -92,6 +93,7 @@ export async function PUT(req: NextRequest) {
             ? new Date()
             : undefined,
       isPaywalled: parsed.data.isPaywalled,
+      isFeatured: parsed.data.isFeatured,
       excerpt: parsed.data.excerpt,
       metaTitle: parsed.data.metaTitle,
       metaDescription: parsed.data.metaDescription,
