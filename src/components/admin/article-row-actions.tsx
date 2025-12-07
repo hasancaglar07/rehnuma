@@ -6,9 +6,11 @@ import { getCsrfToken } from "@/utils/client-cookies";
 type Props = {
   slug: string;
   status: string;
+  canPublish?: boolean;
+  canDelete?: boolean;
 };
 
-export function ArticleRowActions({ slug, status }: Props) {
+export function ArticleRowActions({ slug, status, canPublish = true, canDelete = true }: Props) {
   const router = useRouter();
   const [loading, setLoading] = useState<"publish" | "draft" | "delete" | null>(null);
   const [message, setMessage] = useState<string | null>(null);
@@ -70,26 +72,30 @@ export function ArticleRowActions({ slug, status }: Props) {
   return (
     <div className="flex flex-col gap-1 text-sm items-end">
       <div className="flex flex-wrap gap-2">
-        <button
-          type="button"
-          onClick={() => updateStatus(isPublished ? "draft" : "published")}
-          disabled={loading !== null}
-          className="px-3 py-1 rounded-full border border-border hover:-translate-y-0.5 transition"
-        >
-          {loading === "publish" || loading === "draft"
-            ? "Kaydediliyor..."
-            : isPublished
-              ? "Taslağa Al"
-              : "Yayınla"}
-        </button>
-        <button
-          type="button"
-          onClick={handleDelete}
-          disabled={loading !== null}
-          className="px-3 py-1 rounded-full border border-border hover:-translate-y-0.5 transition text-rose-600"
-        >
-          {loading === "delete" ? "Siliniyor..." : "Sil"}
-        </button>
+        {canPublish && (
+          <button
+            type="button"
+            onClick={() => updateStatus(isPublished ? "draft" : "published")}
+            disabled={loading !== null}
+            className="px-3 py-1 rounded-full border border-border hover:-translate-y-0.5 transition"
+          >
+            {loading === "publish" || loading === "draft"
+              ? "Kaydediliyor..."
+              : isPublished
+                ? "Taslağa Al"
+                : "Yayınla"}
+          </button>
+        )}
+        {canDelete && (
+          <button
+            type="button"
+            onClick={handleDelete}
+            disabled={loading !== null}
+            className="px-3 py-1 rounded-full border border-border hover:-translate-y-0.5 transition text-rose-600"
+          >
+            {loading === "delete" ? "Siliniyor..." : "Sil"}
+          </button>
+        )}
       </div>
       {message && <span className="text-xs text-muted-foreground">{message}</span>}
     </div>

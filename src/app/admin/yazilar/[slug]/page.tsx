@@ -1,21 +1,22 @@
 import { AdminShell } from "@/components/admin/admin-shell";
 import { NewArticleForm } from "@/components/admin/new-article-form";
 import { prisma } from "@/db/prisma";
-import { notFound } from "next/navigation";
-import { requireAdmin } from "@/lib/auth";
+import { notFound, redirect } from "next/navigation";
+import { requireRole } from "@/lib/auth";
 
 type Props = { params: Promise<{ slug: string }> };
 export const dynamic = "force-dynamic";
 
 export default async function AdminEditArticlePage({ params }: Props) {
   const { slug } = await params;
-  await requireAdmin(`/admin/yazilar/${slug}`);
+  const user = await requireRole(["admin", "editor", "author"], `/admin/yazilar/${slug}`);
   const article = await prisma.article.findUnique({
     where: { slug },
     select: {
       title: true,
       slug: true,
       content: true,
+      authorId: true,
       category: { select: { slug: true } },
       coverUrl: true,
       audioUrl: true,
@@ -31,6 +32,23 @@ export default async function AdminEditArticlePage({ params }: Props) {
   if (!article) {
     notFound();
   }
+  if (user.role === "author") {
+    if (article.authorId && article.authorId !== user.id) {
+      redirect("/admin/yazilar");
+    }
+    if (article.status === "published") {
+      redirect("/admin/yazilar");
+    }
+  }
+  const allowPublish = user.role !== "author";
+  const initialAuthorProfile =
+    article.authorId ??
+    (
+      await prisma.authorProfile.findFirst({
+        where: { userId: user.id },
+        select: { id: true }
+      })
+    )?.id;
 
   return (
     <div className="min-h-screen">
@@ -49,8 +67,11 @@ export default async function AdminEditArticlePage({ params }: Props) {
             isPaywalled: article.isPaywalled ?? false,
             excerpt: article.excerpt || "",
             metaTitle: article.metaTitle || "",
-            metaDescription: article.metaDescription || ""
+            metaDescription: article.metaDescription || "",
+            authorId: initialAuthorProfile
           }}
+          allowPublish={allowPublish}
+          allowAuthorSelect={user.role !== "author"}
         />
       </AdminShell>
     </div>

@@ -23,6 +23,15 @@ export async function requireAdminGuard(_req: Request): Promise<GuardResult> {
   return auth;
 }
 
+export async function requireRoleGuard(_req: Request, roles: string[]): Promise<GuardResult> {
+  const auth = await requireAuthGuard(_req);
+  if (auth instanceof NextResponse) return auth;
+  if (!roles.includes(auth.user.role)) {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
+  return auth;
+}
+
 export function requireCsrfGuard(_req: Request): NextResponse | null {
   return null;
 }

@@ -12,17 +12,22 @@ const FlipbookViewer = dynamic(() => import("@/components/dergi/flipbook-viewer"
 
 type Props = { params: Promise<{ "year-month": string }> };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+async function resolveIssueParams(params: Props["params"]) {
   const resolved = await params;
   const slug = resolved["year-month"];
   const [yearStr, monthStr] = typeof slug === "string" && slug.includes("-") ? slug.split("-") : ["", ""];
   const year = Number(yearStr);
   const month = Number(monthStr);
+  return { slug, year, month };
+}
+
+async function issueMetadata(params: Props["params"], basePath: string): Promise<Metadata> {
+  const { slug, year, month } = await resolveIssueParams(params);
   const issue = await prisma.issue.findFirst({ where: { year, month } });
   const baseUrl = getBaseUrl();
-  const canonical = `${baseUrl}/dergi/${slug}`;
-  const title = issue ? `${issue.month}/${issue.year} Dergi | Rehnüma` : "Dergi | Rehnüma";
-  const description = issue ? "Rehnüma dijital dergi sayısı" : "Dijital dergi arşivi";
+  const canonical = `${baseUrl}${basePath}/${slug}`;
+  const title = issue ? `${issue.month}/${issue.year} Sayı | Rehnüma` : "Sayı | Rehnüma";
+  const description = issue ? "Rehnüma dijital sayı" : "Dijital sayı arşivi";
   const ogImage = issue?.coverUrl || `${baseUrl}/og?title=${encodeURIComponent(title)}&type=issue`;
 
   return {
@@ -38,12 +43,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function IssuePage({ params }: Props) {
-  const resolved = await params;
-  const slug = resolved["year-month"];
-  const [yearStr, monthStr] = typeof slug === "string" && slug.includes("-") ? slug.split("-") : ["", ""];
-  const year = Number(yearStr);
-  const month = Number(monthStr);
+async function IssueDetail({ params, basePath }: { params: Props["params"]; basePath: string }) {
+  const { slug, year, month } = await resolveIssueParams(params);
 
   const issue = await prisma.issue.findFirst({
     where: { year, month },
@@ -58,7 +59,7 @@ export default async function IssuePage({ params }: Props) {
     }
   });
 
-  const user = await requireUser(`/dergi/${slug}`);
+  const user = await requireUser(`${basePath}/${slug}`);
   const isAdmin = user.role === "admin";
   const isSubscriber = isAdmin || user.subscriptionStatus === "active";
   if (!isSubscriber) {
@@ -71,9 +72,9 @@ export default async function IssuePage({ params }: Props) {
     ? {
         "@context": "https://schema.org",
         "@type": "CreativeWork",
-        name: `${issue.month}/${issue.year} Rehnüma Dergi`,
+        name: `${issue.month}/${issue.year} Rehnüma Sayı`,
         isAccessibleForFree: false,
-        url: `${baseUrl}/dergi/${slug}`
+        url: `${baseUrl}${basePath}/${slug}`
       }
     : null;
 
@@ -91,7 +92,7 @@ export default async function IssuePage({ params }: Props) {
           <p className="text-xs text-muted-foreground">Mobilde tek sayfa moduna geçer, çift dokun zoom yapar.</p>
         </div>
 
-        {!issue && <p className="text-muted-foreground">Dergi bulunamadı.</p>}
+        {!issue && <p className="text-muted-foreground">Sayı bulunamadı.</p>}
 
         {issue && (
           <div className="space-y-6">
@@ -159,4 +160,20 @@ export default async function IssuePage({ params }: Props) {
       </main>
     </div>
   );
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  return issueMetadata(params, "/dergi");
+}
+
+export default async function IssuePage(props: Props) {
+  return <IssueDetail {...props} basePath="/dergi" />;
+}
+
+export async function generateSayilarMetadata({ params }: Props): Promise<Metadata> {
+  return issueMetadata(params, "/sayilar");
+}
+
+export async function SayilarIssuePage(props: Props) {
+  return <IssueDetail {...props} basePath="/sayilar" />;
 }

@@ -4,11 +4,13 @@ import { prisma } from "@/db/prisma";
 import { rateLimit } from "@/lib/rate-limit";
 import { logAudit } from "@/lib/audit";
 import { requireAdminGuard, requireCsrfGuard, requestIp } from "@/lib/api-guards";
+import { ensureAuthorProfileForUser } from "@/lib/auth";
 
 const actionSchema = z.discriminatedUnion("action", [
   z.object({
-    action: z.enum(["ban", "unban", "promote", "demote"]),
+    action: z.enum(["ban", "unban", "promote", "demote", "setRole"]),
     id: z.string().min(1),
+    role: z.enum(["admin", "editor", "author", "user"]).optional(),
     reason: z.string().max(200).optional()
   }),
   z.object({
@@ -65,6 +67,14 @@ export async function PUT(req: NextRequest) {
     user = await prisma.user.update({ where: { id: parsed.data.id }, data: { role: "admin" } });
   } else if (parsed.data.action === "demote") {
     user = await prisma.user.update({ where: { id: parsed.data.id }, data: { role: "user" } });
+  } else if (parsed.data.action === "setRole") {
+    if (!parsed.data.role) {
+      return NextResponse.json({ error: "Rol gerekli" }, { status: 400 });
+    }
+    user = await prisma.user.update({ where: { id: parsed.data.id }, data: { role: parsed.data.role } });
+    if (parsed.data.role === "author" || parsed.data.role === "editor") {
+      await ensureAuthorProfileForUser(user.id, user.name || user.email, user.email);
+    }
   } else if (parsed.data.action === "subscription") {
     const exists = await prisma.subscription.findUnique({ where: { userId: parsed.data.id } });
     const expiresAt = parsed.data.expiresAt ? new Date(parsed.data.expiresAt) : exists?.expiresAt;

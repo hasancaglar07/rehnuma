@@ -10,7 +10,8 @@ const schema = z.object({
   items: z.array(
     z.object({
       id: z.string().min(1),
-      order: z.number()
+      order: z.number(),
+      parentId: z.string().nullable().optional()
     })
   )
 });
@@ -32,7 +33,7 @@ export async function POST(req: NextRequest) {
   const updates = parsed.data.items.map((item) =>
     prisma.category.update({
       where: { id: item.id },
-      data: { order: item.order }
+      data: { order: item.order, parentId: item.parentId ?? null }
     })
   );
 

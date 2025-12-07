@@ -9,7 +9,8 @@ import { logAudit } from "@/lib/audit";
 const categorySchema = z.object({
   id: z.string().optional(),
   name: z.string().min(2, "Ad gerekli"),
-  slug: z.string().min(2, "Slug gerekli")
+  slug: z.string().min(2, "Slug gerekli"),
+  parentId: z.string().nullable().optional()
 });
 
 export async function GET() {
@@ -17,7 +18,10 @@ export async function GET() {
     return NextResponse.json({ categories: [] }, { status: 200, headers: { "Cache-Control": "public, s-maxage=300, stale-while-revalidate=300" } });
   }
 
-  const categories = await prisma.category.findMany({ orderBy: { order: "asc" } });
+  const categories = await prisma.category.findMany({
+    orderBy: { order: "asc" },
+    include: { parent: { select: { id: true, name: true } } }
+  });
   return NextResponse.json({ categories }, { status: 200, headers: { "Cache-Control": "public, s-maxage=300, stale-while-revalidate=300" } });
 }
 
@@ -35,9 +39,14 @@ export async function POST(req: NextRequest) {
   const parsed = categorySchema.safeParse(body);
   if (!parsed.success) return NextResponse.json({ error: parsed.error.issues[0].message }, { status: 400 });
 
-  const maxOrder = await prisma.category.aggregate({ _max: { order: true } });
+  const maxOrder = await prisma.category.aggregate({ where: { parentId: parsed.data.parentId ?? null }, _max: { order: true } });
   const category = await prisma.category.create({
-    data: { name: parsed.data.name, slug: parsed.data.slug, order: (maxOrder._max.order ?? 0) + 1 }
+    data: {
+      name: parsed.data.name,
+      slug: parsed.data.slug,
+      parentId: parsed.data.parentId ?? null,
+      order: (maxOrder._max.order ?? 0) + 1
+    }
   });
 
   revalidatePath("/");
@@ -63,7 +72,7 @@ export async function PUT(req: NextRequest) {
 
   const category = await prisma.category.update({
     where: { id: parsed.data.id },
-    data: { name: parsed.data.name, slug: parsed.data.slug }
+    data: { name: parsed.data.name, slug: parsed.data.slug, parentId: parsed.data.parentId ?? null }
   });
 
   revalidatePath("/");

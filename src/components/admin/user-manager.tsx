@@ -15,10 +15,12 @@ export function UserManager() {
   const [users, setUsers] = useState<User[]>([]);
   const [status, setStatus] = useState<string | null>(null);
   const [search, setSearch] = useState("");
-  const [roleFilter, setRoleFilter] = useState<"all" | "admin" | "user">("all");
+  const [roleFilter, setRoleFilter] = useState<"all" | "admin" | "editor" | "author" | "user">("all");
   const [banFilter, setBanFilter] = useState<"all" | "banned" | "active">("all");
   const [editingSubId, setEditingSubId] = useState<string | null>(null);
   const [subForm, setSubForm] = useState({ plan: "", status: "", expiresAt: "" });
+  const [roleEditId, setRoleEditId] = useState<string | null>(null);
+  const [roleValue, setRoleValue] = useState("");
 
   useEffect(() => {
     fetch("/api/users")
@@ -89,11 +91,13 @@ export function UserManager() {
         />
         <select
           value={roleFilter}
-          onChange={(e) => setRoleFilter(e.target.value as "all" | "admin" | "user")}
+          onChange={(e) => setRoleFilter(e.target.value as typeof roleFilter)}
           className="px-3 py-2 rounded-lg border border-border bg-background text-sm"
         >
           <option value="all">Rol: Tümü</option>
           <option value="admin">Admin</option>
+          <option value="editor">Editör</option>
+          <option value="author">Yazar</option>
           <option value="user">Kullanıcı</option>
         </select>
         <select
@@ -117,49 +121,71 @@ export function UserManager() {
               {user.isBanned && <p className="text-sm text-rose-600">Banlı</p>}
             </div>
             <div className="flex flex-wrap gap-2 text-sm justify-start sm:justify-end">
-              {user.isBanned ? (
-                <button
-                  type="button"
-                  onClick={() => mutate(user.id, "unban")}
-                  className="px-3 py-1 rounded-full border border-border hover:-translate-y-0.5 transition"
-                >
-                  Banı Kaldır
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={() => {
-                    const reason = window.prompt("Ban gerekçesi (opsiyonel)");
-                    mutate(user.id, "ban", reason || undefined);
-                  }}
-                  className="px-3 py-1 rounded-full border border-border hover:-translate-y-0.5 transition text-rose-600"
-                >
-                  Banla
-                </button>
-              )}
-              {user.role === "admin" ? (
-                <button
-                  type="button"
-                  onClick={() => mutate(user.id, "demote")}
-                  className="px-3 py-1 rounded-full border border-border hover:-translate-y-0.5 transition"
-                >
-                  Admin Kaldır
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={() => mutate(user.id, "promote")}
-                  className="px-3 py-1 rounded-full border border-border hover:-translate-y-0.5 transition"
-                >
-                  Admin Yap
-                </button>
-              )}
+            {user.isBanned ? (
+              <button
+                type="button"
+                onClick={() => mutate(user.id, "unban")}
+                className="px-3 py-1 rounded-full border border-border hover:-translate-y-0.5 transition"
+              >
+                Banı Kaldır
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={() => {
+                  const reason = window.prompt("Ban gerekçesi (opsiyonel)");
+                  mutate(user.id, "ban", reason || undefined);
+                }}
+                className="px-3 py-1 rounded-full border border-border hover:-translate-y-0.5 transition text-rose-600"
+              >
+                Banla
+              </button>
+            )}
             </div>
           </div>
           {user.subscription?.expiresAt && (
             <p className="text-xs text-muted-foreground">Son geçerlilik: {new Date(user.subscription.expiresAt).toLocaleDateString("tr-TR")}</p>
           )}
           <div className="flex flex-wrap items-center gap-2 text-sm">
+            <div className="flex items-center gap-2">
+              <select
+                value={roleEditId === user.id ? roleValue : user.role}
+                onChange={(e) => {
+                  setRoleEditId(user.id);
+                  setRoleValue(e.target.value);
+                }}
+                className="px-2 py-1 rounded border border-border bg-background text-sm"
+              >
+                <option value="admin">Admin</option>
+                <option value="editor">Editör</option>
+                <option value="author">Yazar</option>
+                <option value="user">Kullanıcı</option>
+              </select>
+              <button
+                type="button"
+                className="px-3 py-1 rounded-full border border-border hover:-translate-y-0.5 transition"
+                onClick={() => {
+                  const roleToSet = roleEditId === user.id ? roleValue : user.role;
+                  fetch("/api/users", {
+                    method: "PUT",
+                    headers: { "Content-Type": "application/json", "x-csrf-token": getCsrfToken() },
+                    body: JSON.stringify({ id: user.id, action: "setRole", role: roleToSet })
+                  })
+                    .then(async (res) => {
+                      if (!res.ok) {
+                        const err = await res.json().catch(() => ({}));
+                        throw new Error(err.error || "Rol güncellenemedi");
+                      }
+                      const data = await res.json();
+                      setUsers((prev) => prev.map((u) => (u.id === user.id ? { ...u, ...data.user } : u)));
+                      setStatus("Rol güncellendi");
+                    })
+                    .catch((err) => setStatus(err.message || "Rol güncellenemedi"));
+                }}
+              >
+                Kaydet
+              </button>
+            </div>
             <button
               type="button"
               className="px-3 py-1 rounded-full border border-border hover:-translate-y-0.5 transition"

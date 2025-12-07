@@ -6,33 +6,21 @@ import { getBaseUrl } from "@/lib/url";
 export const revalidate = 120;
 
 type Props = { params: Promise<{ slug: string }> };
-type ArticleListItem = {
-  id: string;
-  title: string;
-  slug: string;
-  content: string;
-  coverUrl: string | null;
-  publishedAt: Date | null;
-  createdAt: Date;
-};
-type CategoryWithArticles =
-  | {
-      name: string;
-      articles: ArticleListItem[];
-    }
-  | null;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const baseUrl = getBaseUrl();
   const canonical = `${baseUrl}/kategori/${slug}`;
+  const category = await prisma.category.findUnique({ where: { slug }, select: { name: true } });
+  const title = category?.name ? `Kategori: ${category.name} | Rehnüma` : `Kategori: ${slug} | Rehnüma`;
+  const description = category?.name ? `${category.name} kategorisindeki yazılar` : `Rehnüma kategorisi: ${slug}`;
   return {
-    title: `Kategori: ${slug} | Rehnüma`,
-    description: `Rehnüma kategorisi: ${slug}`,
+    title,
+    description,
     alternates: { canonical },
     openGraph: {
-      title: `Kategori: ${slug} | Rehnüma`,
-      description: `Rehnüma kategorisi: ${slug}`,
+      title,
+      description,
       url: canonical
     }
   };
@@ -51,27 +39,36 @@ export default async function CategoryPage({ params }: Props) {
   }
 
   const pageSize = 9;
-  const category: CategoryWithArticles = await prisma.category.findUnique({
+  const category = await prisma.category.findUnique({
     where: { slug },
     select: {
       name: true,
-      articles: {
-        orderBy: { createdAt: "desc" },
-        take: pageSize + 1,
-        select: { id: true, title: true, slug: true, content: true, coverUrl: true, publishedAt: true, createdAt: true }
-      }
+      slug: true,
+      parent: { select: { name: true, slug: true } },
+      children: { select: { name: true, slug: true } }
     }
   });
-  const hasMore = (category?.articles?.length ?? 0) > pageSize;
-  const initialArticles = category?.articles?.slice(0, pageSize) ?? [];
+
+  const articles = await prisma.article.findMany({
+    where: {
+      status: "published",
+      OR: [{ category: { slug } }, { category: { parent: { slug } } }]
+    },
+    orderBy: { createdAt: "desc" },
+    take: pageSize + 1,
+    select: { id: true, title: true, slug: true, content: true, coverUrl: true, publishedAt: true, createdAt: true }
+  });
+
+  const hasMore = articles.length > pageSize;
+  const initialArticles = articles.slice(0, pageSize);
 
   const taglineMap: Record<string, string> = {
-    "annelik-cocuk": "Şefkat, bağ kurma ve annelik yolculuğunda zarif rehberlik.",
-    "aile-evlilik": "Aile içi ahenk ve sevgi dolu bir ev ortamı için ilham.",
-    "siir-edebiyat": "Dizeler ve hikayelerle ruhu besleyen seçkiler.",
-    "ev-ve-hayat": "Gündelik hayata estetik ve huzur katan öneriler.",
-    "dijital-dergi": "Dijital sayılara dair özetler ve dergi ruhu.",
-    "maneviyat-islami-ilimler": "Kalbi dinginleştiren manevi okumalara seçilmiş yazılar."
+    "rehnuma-dusunce": "Fikir, eleştiri ve çağın ruhuna dair derinlikli okumalar.",
+    "kultur-edebiyat": "Dizeler, hikayeler ve kültürel mirasla ruhu besleyen seçkiler.",
+    "kadin-ve-saglik": "Sağlık, beslenme ve şefkatli bakım için zarif öneriler.",
+    "ev-ve-yasam": "Gündelik hayata estetik ve huzur katan yaşam pratikleri.",
+    maneviyat: "Kalbi dinginleştiren manevi okumalara seçilmiş yazılar.",
+    "aile-ve-cocuk": "Evlilik, ebeveynlik ve aile içi ahenk için rehber içerikler."
   };
   const filters = ["En yeni", "Öne çıkan", "Kısa okuma"];
   const tagline = taglineMap[slug] ?? "Özenle seçilmiş yazılarla premium bir okuma deneyimi.";

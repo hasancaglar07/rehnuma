@@ -15,13 +15,19 @@ export async function GET(req: NextRequest) {
   let statusFilter: string | undefined = "published";
   if (includeAll) {
     const session = await getSession();
-    if (session.user?.role === "admin") {
+    if (session.user?.role === "admin" || session.user?.role === "editor") {
       statusFilter = undefined;
     }
   }
 
+  const categoryWhere = category
+    ? {
+        OR: [{ category: { slug: category } }, { category: { parent: { slug: category } } }]
+      }
+    : {};
+
   const baseWhere = {
-    ...(category ? { category: { slug: category } } : {}),
+    ...categoryWhere,
     ...(statusFilter ? { status: statusFilter } : {})
   };
 

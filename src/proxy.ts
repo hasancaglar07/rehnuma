@@ -1,7 +1,7 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
-const isProtectedRoute = createRouteMatcher(["/profil(.*)", "/admin(.*)", "/dergi(.*)"]);
+const isProtectedRoute = createRouteMatcher(["/profil(.*)", "/admin(.*)", "/dergi(.*)", "/sayilar(.*)"]);
 
 export default clerkMiddleware(async (auth, req) => {
   if (!isProtectedRoute(req)) return;
@@ -9,7 +9,7 @@ export default clerkMiddleware(async (auth, req) => {
   const { userId, redirectToSignIn } = await auth();
   if (userId) return;
 
-  if (req.nextUrl.pathname.startsWith("/dergi")) {
+  if (req.nextUrl.pathname.startsWith("/dergi") || req.nextUrl.pathname.startsWith("/sayilar")) {
     const loginUrl = new URL("/giris", req.url);
     loginUrl.searchParams.set("returnTo", req.nextUrl.pathname + req.nextUrl.search);
     return NextResponse.redirect(loginUrl);

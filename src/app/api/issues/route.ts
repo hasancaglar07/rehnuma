@@ -2,7 +2,7 @@ import { revalidatePath } from "next/cache";
 import { NextResponse, type NextRequest } from "next/server";
 import { z } from "zod";
 import { prisma } from "@/db/prisma";
-import { requireAdminGuard, requireCsrfGuard, requestIp } from "@/lib/api-guards";
+import { requireRoleGuard, requireCsrfGuard, requestIp } from "@/lib/api-guards";
 import { rateLimit } from "@/lib/rate-limit";
 import { logAudit } from "@/lib/audit";
 
@@ -60,7 +60,7 @@ export async function PUT(req: NextRequest) {
   const csrf = requireCsrfGuard(req);
   if (csrf) return csrf;
 
-  const auth = await requireAdminGuard(req);
+  const auth = await requireRoleGuard(req, ["admin", "editor"]);
   if (auth instanceof NextResponse) return auth;
 
   const body = await req.json();

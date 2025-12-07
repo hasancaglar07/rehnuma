@@ -17,7 +17,7 @@ export default async function HomePage() {
           take: 6,
           include: { category: true }
         }),
-        prisma.category.findMany({ orderBy: { order: "asc" } }),
+        prisma.category.findMany({ where: { parentId: null }, orderBy: { order: "asc" } }),
         prisma.issue.findFirst({ orderBy: [{ year: "desc" }, { month: "desc" }] })
       ])
     : [[], [], null];

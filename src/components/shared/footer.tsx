@@ -1,10 +1,11 @@
 import Link from "next/link";
 
 const navigation = [
-  { href: "/dergi", label: "Dergi" },
-  { href: "/abonelik", label: "Abonelik" },
-  { href: "/kategori/maneviyat-islami-ilimler", label: "Maneviyat" },
-  { href: "/kategori/annelik-cocuk", label: "Annelik" }
+  { href: "/sayilar", label: "Sayılar" },
+  { href: "/kategoriler", label: "Kategoriler" },
+  { href: "/yazarlar", label: "Yazarlar" },
+  { href: "/blog", label: "Blog" },
+  { href: "/kurumsal", label: "Kurumsal" }
 ];
 
 const legalLinks = [
@@ -43,11 +44,8 @@ export function Footer() {
               bir okuma atmosferi sunar.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link
-                href="/dergi"
-                className="px-5 py-3 rounded-full bg-primary text-primary-foreground shadow-lg hover:-translate-y-0.5 transition"
-              >
-                Dergiye Git
+              <Link href="/sayilar" className="px-5 py-3 rounded-full bg-primary text-primary-foreground shadow-lg hover:-translate-y-0.5 transition">
+                Sayılara Git
               </Link>
               <Link
                 href="/iletisim"

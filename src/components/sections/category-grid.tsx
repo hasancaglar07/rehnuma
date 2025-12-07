@@ -1,12 +1,12 @@
 import Link from "next/link";
 
 const defaultCategories = [
-  { slug: "annelik-cocuk", name: "Annelik" },
-  { slug: "aile-evlilik", name: "Aile" },
-  { slug: "siir-edebiyat", name: "Edebiyat" },
-  { slug: "ev-ve-hayat", name: "Ev & Hayat" },
-  { slug: "dijital-dergi", name: "Dergi" },
-  { slug: "maneviyat-islami-ilimler", name: "Maneviyat" }
+  { slug: "rehnuma-dusunce", name: "Rehnüma Düşünce" },
+  { slug: "kultur-edebiyat", name: "Kültür Edebiyat" },
+  { slug: "kadin-ve-saglik", name: "Kadın ve Sağlık" },
+  { slug: "ev-ve-yasam", name: "Ev ve Yaşam" },
+  { slug: "maneviyat", name: "Maneviyat" },
+  { slug: "aile-ve-cocuk", name: "Aile ve Çocuk" }
 ];
 
 export function CategoryGrid({ categories = defaultCategories }: { categories?: { slug: string; name: string }[] }) {

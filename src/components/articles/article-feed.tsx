@@ -17,7 +17,7 @@ type ArticleItem = {
 
 type Props = {
   initialArticles: ArticleItem[];
-  categorySlug: string;
+  categorySlug?: string;
   pageSize?: number;
   initialPage?: number;
   hasMore: boolean;
@@ -77,10 +77,11 @@ export function ArticleFeed({ initialArticles, categorySlug, pageSize = 9, initi
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch(
-        `/api/articles?category=${encodeURIComponent(categorySlug)}&limit=${pageSize}&page=${nextPage}`,
-        { cache: "no-store" }
-      );
+      const query = new URLSearchParams();
+      if (categorySlug) query.set("category", categorySlug);
+      query.set("limit", String(pageSize));
+      query.set("page", String(nextPage));
+      const res = await fetch(`/api/articles?${query.toString()}`, { cache: "no-store" });
       if (!res.ok) throw new Error("İçerikler yüklenemedi");
       const data: ArticleResponse = await res.json();
       const incoming = data.articles || [];

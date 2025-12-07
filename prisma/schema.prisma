@@ -21,6 +21,7 @@ model User {
   sessions        Session[]
   auditLogs       AuditLog[]
   issueReviews    IssueArticle[]    @relation("IssueArticleReviewer")
+  authorProfile   AuthorProfile?    @relation("UserAuthorProfile")
   createdAt       DateTime          @default(now())
 }
 
@@ -39,6 +40,9 @@ model Category {
   name     String
   slug     String    @unique
   order    Int       @default(0)
+  parentId String?
+  parent   Category? @relation("CategoryHierarchy", fields: [parentId], references: [id])
+  children Category[] @relation("CategoryHierarchy")
   articles Article[]
 }
 
@@ -55,8 +59,10 @@ model Article {
   excerpt    String?
   metaTitle  String?
   metaDescription String?
+  authorId   String?
   categoryId String
   category   Category @relation(fields: [categoryId], references: [id])
+  author     AuthorProfile? @relation(fields: [authorId], references: [id])
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
   saved      SavedArticle[]
@@ -110,6 +116,21 @@ model IssueArticle {
   reviewer   User?    @relation("IssueArticleReviewer", fields: [reviewerId], references: [id])
 
   @@unique([issueId, articleId])
+}
+
+model AuthorProfile {
+  id         String    @id @default(cuid())
+  name       String
+  slug       String    @unique
+  bio        String?
+  avatarUrl  String?
+  website    String?
+  instagram  String?
+  twitter    String?
+  articles   Article[]
+  createdAt  DateTime  @default(now())
+  userId     String?   @unique
+  user       User?     @relation("UserAuthorProfile", fields: [userId], references: [id])
 }
 
 model Session {

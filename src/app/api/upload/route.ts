@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { randomHex } from "@/utils/crypto";
 import { put } from "@vercel/blob";
-import { requireAdminGuard, requireCsrfGuard, requestIp } from "@/lib/api-guards";
+import { requireRoleGuard, requireCsrfGuard, requestIp } from "@/lib/api-guards";
 import { rateLimit } from "@/lib/rate-limit";
 import { logAudit } from "@/lib/audit";
 
@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
   const csrf = requireCsrfGuard(req);
   if (csrf) return csrf;
 
-  const auth = await requireAdminGuard(req);
+  const auth = await requireRoleGuard(req, ["admin", "editor", "author"]);
   if (auth instanceof NextResponse) return auth;
 
   const token = process.env.BLOB_READ_WRITE_TOKEN;

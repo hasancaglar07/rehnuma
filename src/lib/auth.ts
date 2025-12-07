@@ -1,6 +1,7 @@
 import { auth, clerkClient } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { prisma } from "@/db/prisma";
+import { slugify } from "@/utils/slugify";
 export type SessionUser = {
   id: string;
   email: string;
@@ -9,6 +10,11 @@ export type SessionUser = {
   subscriptionPlan?: string;
   isBanned?: boolean;
 };
+
+export function hasRole(user: SessionUser | null, roles: string[]) {
+  if (!user) return false;
+  return roles.includes(user.role);
+}
 
 const hasDatabase = Boolean(process.env.DATABASE_URL);
 
@@ -113,4 +119,43 @@ export async function requireAdmin(returnTo = "/admin") {
     redirect("/");
   }
   return user;
+}
+
+export async function requireRole(roles: string[], returnTo = "/admin") {
+  const user = await requireUser(returnTo);
+  if (!roles.includes(user.role)) {
+    redirect("/");
+  }
+  return user;
+}
+
+export async function ensureAuthorProfileForUser(userId: string, name?: string | null, email?: string | null) {
+  if (!process.env.DATABASE_URL) return null;
+  try {
+    const existing = await prisma.authorProfile.findUnique({ where: { userId } });
+    if (existing) return existing.id;
+    const emailLocal = email?.split("@")[0];
+    const fallbackName = name || emailLocal || "Rehnüma Yazarı";
+    const baseSlug = slugify(fallbackName || "yazar");
+    let slug = baseSlug || `yazar-${userId.slice(0, 6)}`;
+    let counter = 1;
+    // ensure slug unique
+    // eslint-disable-next-line no-constant-condition
+    while (true) {
+      const found = await prisma.authorProfile.findUnique({ where: { slug } });
+      if (!found) break;
+      slug = `${baseSlug}-${counter++}`;
+    }
+    const profile = await prisma.authorProfile.create({
+      data: {
+        name: fallbackName,
+        slug,
+        user: { connect: { id: userId } }
+      }
+    });
+    return profile.id;
+  } catch (err) {
+    console.error("[ensureAuthorProfileForUser] failed", err);
+    return null;
+  }
 }

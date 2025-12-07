@@ -3,12 +3,13 @@ import Link from "next/link";
 import { prisma } from "@/db/prisma";
 import { StatusBadge } from "@/components/admin/status-badge";
 import { ArticleRowActions } from "@/components/admin/article-row-actions";
-import { requireAdmin } from "@/lib/auth";
+import { requireRole } from "@/lib/auth";
 type ArticleListItem = {
   id: string;
   title: string;
   slug: string;
   status: string;
+  author?: { name: string | null; slug: string | null } | null;
   category?: { name: string; slug: string };
   isPaywalled?: boolean;
   publishedAt?: Date | null;
@@ -19,7 +20,8 @@ export const dynamic = "force-dynamic";
 
 export default async function AdminArticlesPage({ searchParams }: Props) {
   const resolvedSearch = await searchParams;
-  await requireAdmin("/admin/yazilar");
+  const user = await requireRole(["admin", "editor", "author"], "/admin/yazilar");
+  const isAuthor = user.role === "author";
   const hasDatabase = Boolean(process.env.DATABASE_URL);
   const statusFilter =
     resolvedSearch.status === "draft" || resolvedSearch.status === "published" ? resolvedSearch.status : undefined;
@@ -34,9 +36,11 @@ export default async function AdminArticlesPage({ searchParams }: Props) {
           status: true,
           isPaywalled: true,
           publishedAt: true,
-          category: { select: { name: true, slug: true } }
+          category: { select: { name: true, slug: true } },
+          author: { select: { name: true, slug: true } }
         },
         where: {
+          ...(isAuthor ? { authorId: user.id } : {}),
           ...(statusFilter ? { status: statusFilter } : {}),
           ...(categoryFilter ? { category: { slug: categoryFilter } } : {}),
           ...(query
@@ -109,6 +113,7 @@ export default async function AdminArticlesPage({ searchParams }: Props) {
                   {article.category?.name ? `Kategori: ${article.category.name}` : "Kategori yok"}
                   {" · "}
                   {article.isPaywalled ? "Paywall" : "Açık"}
+                  {article.author?.name ? ` · ${article.author.name}` : ""}
                   {article.publishedAt && (
                     <>
                       {" · "}
@@ -126,7 +131,12 @@ export default async function AdminArticlesPage({ searchParams }: Props) {
                     Düzenle
                   </Link>
                 </div>
-                <ArticleRowActions slug={article.slug} status={article.status} />
+                <ArticleRowActions
+                  slug={article.slug}
+                  status={article.status}
+                  canPublish={user.role !== "author"}
+                  canDelete={user.role !== "author"}
+                />
               </div>
             </div>
           ))}

@@ -12,7 +12,10 @@
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:deploy": "prisma migrate deploy",
-    "prisma:seed": "ts-node prisma/seed.ts"
+    "prisma:seed": "ts-node prisma/seed.ts",
+    "migrate:categories": "ts-node --compiler-options \"{\\\"module\\\":\\\"CommonJS\\\"}\" scripts/migrate-categories.ts",
+    "rebalance:categories": "ts-node --compiler-options \"{\\\"module\\\":\\\"CommonJS\\\"}\" scripts/rebalance-categories-and-authors.ts",
+    "link:authors": "ts-node --compiler-options \"{\\\"module\\\":\\\"CommonJS\\\"}\" scripts/link-authors.ts"
   },
   "dependencies": {
     "@clerk/localizations": "^3.29.0",

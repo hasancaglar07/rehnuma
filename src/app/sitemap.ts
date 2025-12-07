@@ -18,7 +18,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
     "/",
     "/abonelik",
-    "/dergi",
+    "/sayilar",
+    "/kategoriler",
+    "/kurumsal",
+    "/kurumsal/hakkimizda",
+    "/kurumsal/misyon",
+    "/kurumsal/vizyon",
+    "/kurumsal/kunye",
+    "/blog",
+    "/yazarlar",
+    "/dergi", // legacy
     "/iletisim",
     "/gizlilik-politikasi",
     "/cerez-politikasi",
@@ -43,7 +52,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6
   }));
   const issueRoutes = issues.map((i) => ({
-    url: `${baseUrl}/dergi/${i.year}-${String(i.month).padStart(2, "0")}`,
+    url: `${baseUrl}/sayilar/${i.year}-${String(i.month).padStart(2, "0")}`,
     lastModified: i.createdAt,
     changeFrequency: "weekly" as const,
     priority: 0.7

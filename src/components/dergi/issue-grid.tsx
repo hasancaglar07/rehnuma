@@ -7,6 +7,8 @@ import { Skeleton } from "@/components/ui/skeleton";
 type IssueListItem = { id: string; year: number; month: number; coverUrl?: string | null };
 type IssueGridProps = { isSubscriber?: boolean };
 
+const issueBasePath = "/sayilar";
+
 function IssueCardSkeleton() {
   return (
     <div className="rounded-2xl border border-border bg-background/80 p-4 shadow-[0_12px_30px_-24px_rgba(0,0,0,0.3)]">
@@ -20,12 +22,12 @@ function IssueCardSkeleton() {
 function IssueCard({ issue, isSubscriber }: { issue: IssueListItem; isSubscriber: boolean }) {
   const monthLabel = String(issue.month).padStart(2, "0");
   const slug = `${issue.year}-${monthLabel}`;
-  const ctaHref = isSubscriber ? `/dergi/${slug}` : "/abonelik";
+  const ctaHref = isSubscriber ? `${issueBasePath}/${slug}` : "/abonelik";
   const ctaLabel = isSubscriber ? "Okumaya başla" : "Abone olarak oku";
 
   return (
     <div className="flex h-full flex-col rounded-2xl border border-border bg-background/80 p-4 shadow-[0_12px_30px_-24px_rgba(0,0,0,0.25)] transition hover:-translate-y-1">
-      <Link href={`/dergi/${slug}`} className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60">
+      <Link href={`${issueBasePath}/${slug}`} className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60">
         <div className="mb-3 w-full overflow-hidden rounded-xl border border-border bg-secondary/30" style={{ aspectRatio: "3 / 4" }}>
           {issue.coverUrl ? (
             <img src={issue.coverUrl} alt={`${monthLabel}/${issue.year} kapak`} className="h-full w-full object-cover" loading="lazy" />
@@ -49,7 +51,7 @@ function IssueCard({ issue, isSubscriber }: { issue: IssueListItem; isSubscriber
           </Link>
           {isSubscriber && (
             <Link
-              href={`/dergi/${slug}`}
+              href={`${issueBasePath}/${slug}`}
               className="inline-flex items-center justify-center rounded-full border border-border px-3 py-2 text-sm font-medium text-foreground transition hover:-translate-y-0.5"
             >
               Detay
@@ -158,13 +160,13 @@ export function IssueGrid({ isSubscriber = false }: IssueGridProps) {
               </p>
               <div className="flex flex-wrap gap-2 pt-1">
                 <Link
-                  href={isSubscriber ? `/dergi/${featuredSlug}` : "/abonelik"}
+                  href={isSubscriber ? `${issueBasePath}/${featuredSlug}` : "/abonelik"}
                   className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:opacity-90"
                 >
                   {isSubscriber ? "Okumaya başla" : "Abone olup oku"}
                 </Link>
                 <Link
-                  href={`/dergi/${featuredSlug}`}
+                  href={`${issueBasePath}/${featuredSlug}`}
                   className="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition hover:-translate-y-0.5"
                 >
                   Sayfayı aç

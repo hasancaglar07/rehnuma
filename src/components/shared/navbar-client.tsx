@@ -1,28 +1,33 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton, useUser } from "@clerk/nextjs";
 
 import logo from "@/assets/logo-rehnuma.svg";
 
-const mainLinks = [
-  { href: "/kategori/annelik-cocuk", label: "Annelik" },
-  { href: "/kategori/aile-evlilik", label: "Aile" },
-  { href: "/kategori/siir-edebiyat", label: "Edebiyat" },
-  { href: "/kategori/ev-ve-hayat", label: "Ev & Hayat" },
-  { href: "/kategori/maneviyat-islami-ilimler", label: "Maneviyat" }
+const navLinks = [
+  { href: "/kurumsal", label: "Kurumsal" },
+  { href: "/sayilar", label: "Sayılar" },
+  { href: "/kategoriler", label: "Kategoriler" },
+  { href: "/yazarlar", label: "Yazarlar" },
+  { href: "/blog", label: "Blog" },
+  { href: "/iletisim", label: "İletişim" }
 ];
 
 export function NavbarClient() {
   const { isSignedIn, user } = useUser();
   const [serverRole, setServerRole] = useState<string | null>(null);
-  const isAdmin = useMemo(() => {
+  const role = useMemo(() => {
     const metaRole = user?.publicMetadata?.role as string | undefined;
-    return (metaRole || serverRole) === "admin";
+    return metaRole || serverRole || null;
   }, [serverRole, user?.publicMetadata?.role]);
+  const isAdmin = role === "admin";
+  const isContentManager = role === "admin" || role === "editor" || role === "author";
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isAdminMenuOpen, setIsAdminMenuOpen] = useState(false);
+  const closeAdminMenuTimeout = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (!isSignedIn) {
@@ -46,14 +51,48 @@ export function NavbarClient() {
 
   const toggleMobile = () => setIsMobileOpen((prev) => !prev);
   const closeMobile = () => setIsMobileOpen(false);
+  const openAdminMenu = () => {
+    if (closeAdminMenuTimeout.current) {
+      clearTimeout(closeAdminMenuTimeout.current);
+    }
+    setIsAdminMenuOpen(true);
+  };
+  const scheduleCloseAdminMenu = () => {
+    if (closeAdminMenuTimeout.current) {
+      clearTimeout(closeAdminMenuTimeout.current);
+    }
+    closeAdminMenuTimeout.current = setTimeout(() => setIsAdminMenuOpen(false), 200);
+  };
 
   const profileLink = isSignedIn ? { href: "/profil", label: "Profil" } : null;
+  const adminMenuLinks = isAdmin
+    ? [
+        { href: "/admin", label: "Admin" },
+        { href: "/admin/kullanicilar", label: "Kullanıcılar" },
+        { href: "/admin/yazilar", label: "Yönetim" }
+      ]
+    : [];
+  const contentManagerLink = !isAdmin && isContentManager ? { href: "/admin/yazilar", label: "Yönetim" } : null;
+  const mobileNavItems = [
+    ...navLinks,
+    ...(profileLink ? [profileLink] : []),
+    ...adminMenuLinks,
+    ...(!isAdmin && isContentManager ? [{ href: "/admin/yazilar", label: "Yönetim" }] : [])
+  ];
+
+  useEffect(() => {
+    return () => {
+      if (closeAdminMenuTimeout.current) {
+        clearTimeout(closeAdminMenuTimeout.current);
+      }
+    };
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 header-premium px-3 md:px-6">
       <div className="container">
         <div className="flex flex-col gap-2">
-          <div className="header-shell flex w-full items-center justify-between gap-2 overflow-hidden">
+          <div className="header-shell flex w-full items-center justify-between gap-2 overflow-visible">
             <Link href="/" className="inline-flex items-center gap-3 shrink-0" aria-label="Rehnüma ana sayfa">
               <span className="sr-only">Rehnüma</span>
               <span className="logo-shine">
@@ -61,11 +100,16 @@ export function NavbarClient() {
               </span>
             </Link>
             <nav className="hidden lg:flex items-center gap-1 text-sm">
-              {mainLinks.map((item) => (
+              {navLinks.map((item) => (
                 <Link key={item.href} href={item.href} className="nav-link">
                   {item.label}
                 </Link>
               ))}
+              {contentManagerLink ? (
+                <Link href={contentManagerLink.href} prefetch={false} className="nav-link nav-link-muted">
+                  {contentManagerLink.label}
+                </Link>
+              ) : null}
               {profileLink ? (
                 <Link href={profileLink.href} className="nav-link">
                   {profileLink.label}
@@ -80,7 +124,7 @@ export function NavbarClient() {
                 aria-controls="mobile-categories"
                 onClick={toggleMobile}
               >
-                <span className="sr-only">Kategoriler</span>
+                <span className="sr-only">Menü</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
@@ -107,15 +151,60 @@ export function NavbarClient() {
                 </svg>
               </button>
               <div className="hidden items-center gap-2 lg:flex">
-                {isAdmin && (
-                  <>
-                    <Link href="/admin" prefetch={false} className="nav-link nav-link-muted">
+                {isAdmin && adminMenuLinks.length > 0 && (
+                  <div
+                    className="relative"
+                    onMouseEnter={openAdminMenu}
+                    onMouseLeave={scheduleCloseAdminMenu}
+                    onFocus={openAdminMenu}
+                    onBlur={(e) => {
+                      if (!e.currentTarget.contains(e.relatedTarget)) {
+                        scheduleCloseAdminMenu();
+                      }
+                    }}
+                  >
+                    <button
+                      type="button"
+                      className="nav-link nav-link-muted inline-flex items-center gap-1"
+                      aria-haspopup="true"
+                      aria-expanded={isAdminMenuOpen}
+                      onClick={() => setIsAdminMenuOpen((prev) => !prev)}
+                    >
                       Admin
-                    </Link>
-                    <Link href="/admin/kullanicilar" prefetch={false} className="nav-link nav-link-muted">
-                      Kullanıcılar
-                    </Link>
-                  </>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className={`h-4 w-4 transition-transform ${isAdminMenuOpen ? "rotate-180" : ""}`}
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08Z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </button>
+                    <div
+                      className={`absolute right-0 z-40 mt-2 w-52 flex-col gap-1 rounded-2xl border border-black/5 bg-white/95 p-2 shadow-xl backdrop-blur ${
+                        isAdminMenuOpen ? "flex" : "hidden"
+                      }`}
+                      onMouseEnter={openAdminMenu}
+                      onMouseLeave={scheduleCloseAdminMenu}
+                    >
+                      {adminMenuLinks.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          prefetch={false}
+                          className="nav-link flex w-full justify-start rounded-xl px-3 py-2 text-left"
+                          onClick={() => setIsAdminMenuOpen(false)}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 )}
                 <Link href="/abonelik" className="nav-cta">
                   Abone Ol
@@ -140,20 +229,16 @@ export function NavbarClient() {
               className="lg:hidden rounded-3xl border border-black/5 bg-white/95 px-2 py-2 shadow-lg backdrop-blur-md"
             >
               <nav className="flex flex-col gap-1 text-sm">
-                {[...mainLinks]
-                  .concat(profileLink ? [profileLink] : [])
-                  .concat(isAdmin ? [{ href: "/admin", label: "Admin" }] : [])
-                  .concat(isAdmin ? [{ href: "/admin/kullanicilar", label: "Kullanıcılar" }] : [])
-                  .map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className={`w-full justify-center text-base ${item.href === "/abonelik" ? "nav-cta" : "nav-link"}`}
-                      onClick={closeMobile}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
+                {mobileNavItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`w-full justify-center text-base ${item.href === "/abonelik" ? "nav-cta" : "nav-link"}`}
+                    onClick={closeMobile}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
                 <div className="px-2 py-1">
                   <SignedIn>
                     <div className="flex items-center gap-2">

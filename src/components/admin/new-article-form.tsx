@@ -13,7 +13,19 @@ const MarkdownPreview = (props: ComponentProps<typeof ReactMarkdown>) => {
 };
 
 type Category = { id: string; name: string; slug: string };
+type AuthorOption = { id: string; name: string; slug: string };
 type UploadTarget = "coverUrl" | "audioUrl";
+
+const publishAtField = z
+  .union([
+    z.literal(""),
+    z
+      .string()
+      .regex(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/, "Yayın zamanı 2024-12-31T14:30 formatında olmalı"),
+    z.string().datetime({ message: "Yayın zamanı geçerli bir tarih olmalı" })
+  ])
+  .optional()
+  .transform((val) => (val === "" ? undefined : val));
 
 const schema = z.object({
   title: z.string().min(3, "Başlık en az 3 karakter olmalı"),
@@ -26,11 +38,12 @@ const schema = z.object({
   coverUrl: z.string().url("Geçersiz URL").optional().or(z.literal("")),
   audioUrl: z.string().url("Geçersiz URL").optional().or(z.literal("")),
   status: z.enum(["draft", "published"]),
-  publishAt: z.string().datetime().optional().or(z.literal("")),
+  publishAt: publishAtField,
   isPaywalled: z.boolean().optional(),
   excerpt: z.string().max(320, "Özet en fazla 320 karakter").optional().or(z.literal("")),
   metaTitle: z.string().max(120, "Meta başlık en fazla 120 karakter").optional().or(z.literal("")),
-  metaDescription: z.string().max(220, "Meta açıklama en fazla 220 karakter").optional().or(z.literal(""))
+  metaDescription: z.string().max(220, "Meta açıklama en fazla 220 karakter").optional().or(z.literal("")),
+  authorId: z.string().optional()
 });
 type FormValues = z.infer<typeof schema>;
 
@@ -38,6 +51,8 @@ type Mode = "create" | "edit";
 type Props = {
   mode?: Mode;
   initialData?: Partial<FormValues> & { slug?: string };
+  allowPublish?: boolean;
+  allowAuthorSelect?: boolean;
 };
 
 const FALLBACK_CATEGORIES: Category[] = [
@@ -46,7 +61,7 @@ const FALLBACK_CATEGORIES: Category[] = [
   { name: "Aile & Evlilik", slug: "aile-evlilik", id: "fallback-3" }
 ];
 
-export function NewArticleForm({ mode = "create", initialData }: Props) {
+export function NewArticleForm({ mode = "create", initialData, allowPublish = true, allowAuthorSelect = false }: Props) {
   const {
     register,
     handleSubmit,
@@ -68,7 +83,8 @@ export function NewArticleForm({ mode = "create", initialData }: Props) {
       isPaywalled: initialData?.isPaywalled ?? false,
       excerpt: initialData?.excerpt ?? "",
       metaTitle: initialData?.metaTitle ?? "",
-      metaDescription: initialData?.metaDescription ?? ""
+      metaDescription: initialData?.metaDescription ?? "",
+      authorId: initialData?.authorId ?? ""
     }
   });
   const contentRegister = register("content");
@@ -76,6 +92,7 @@ export function NewArticleForm({ mode = "create", initialData }: Props) {
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [statusTone, setStatusTone] = useState<"success" | "error" | null>(null);
   const [categories, setCategories] = useState<Category[]>([]);
+  const [authors, setAuthors] = useState<AuthorOption[]>([]);
   const [uploading, setUploading] = useState<UploadTarget | null>(null);
   const contentRef = useRef<HTMLTextAreaElement | null>(null);
   const [slugEdited, setSlugEdited] = useState(mode === "edit");
@@ -89,14 +106,27 @@ export function NewArticleForm({ mode = "create", initialData }: Props) {
         setCategories(incoming.length ? incoming : FALLBACK_CATEGORIES);
       })
       .catch(() => setCategories(FALLBACK_CATEGORIES));
-  }, []);
+  }, [allowAuthorSelect]);
+
+  useEffect(() => {
+    if (!allowAuthorSelect) return;
+    fetch("/api/authors")
+      .then((res) => res.json())
+      .then((data) => {
+        const incoming = Array.isArray(data.authors) ? data.authors : [];
+        setAuthors(incoming);
+      })
+      .catch(() => setAuthors([]));
+  }, [allowAuthorSelect]);
 
   const contentValue = watch("content");
   const selectedCategory = watch("categorySlug");
   const titleValue = watch("title");
   const slugValue = watch("slug");
+  const authorValue = watch("authorId");
 
   const categoryOptions = useMemo(() => (categories.length ? categories : FALLBACK_CATEGORIES), [categories]);
+  const authorOptions = useMemo(() => authors, [authors]);
 
   useEffect(() => {
     if (mode === "edit" || slugEdited) return;
@@ -210,13 +240,16 @@ export function NewArticleForm({ mode = "create", initialData }: Props) {
     setStatusTone(null);
     const parsed = schema.safeParse(values);
     if (!parsed.success) {
-      const fields = Array.from(new Set(parsed.error.issues.map((issue) => issue.path[0] as string)));
       parsed.error.issues.forEach((issue) => {
         const key = issue.path[0] as keyof FormValues;
         setError(key, { type: "manual", message: issue.message });
       });
       setStatusTone("error");
-      setStatusMessage(`Eksik ya da hatalı alanları düzeltin: ${fields.join(", ")}`);
+      const detailedMessages = parsed.error.issues.map((issue) => {
+        const field = issue.path[0] || "alan";
+        return `${field}: ${issue.message}`;
+      });
+      setStatusMessage(`Eksik ya da hatalı alanları düzeltin: ${detailedMessages.join(" • ")}`);
       requestAnimationFrame(() => {
         const firstError = document.querySelector("[data-field-error='true']");
         if (firstError instanceof HTMLElement) firstError.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -232,12 +265,18 @@ export function NewArticleForm({ mode = "create", initialData }: Props) {
       ...parsed.data,
       coverUrl: parsed.data.coverUrl || undefined,
       audioUrl: parsed.data.audioUrl || undefined,
-      publishAt: parsed.data.publishAt || undefined,
+      publishAt: allowPublish ? parsed.data.publishAt || undefined : undefined,
       excerpt: parsed.data.excerpt || undefined,
       metaTitle: parsed.data.metaTitle || undefined,
       metaDescription: parsed.data.metaDescription || undefined,
       isPaywalled: parsed.data.isPaywalled ?? false
     };
+    if (!allowPublish) {
+      payload.status = "draft";
+    }
+    if (!allowAuthorSelect) {
+      payload.authorId = undefined;
+    }
     const endpoint = mode === "edit" ? "/api/articles/update" : "/api/articles/create";
     const method = mode === "edit" ? "PUT" : "POST";
 
@@ -455,23 +494,41 @@ export function NewArticleForm({ mode = "create", initialData }: Props) {
         {errors.categorySlug && <p className="text-sm text-rose-600" data-field-error="true">{errors.categorySlug.message}</p>}
       </div>
 
-      <div className="grid gap-2">
-        <label className="text-sm font-medium">Durum</label>
-        <select {...register("status")} className="border rounded-lg p-3 bg-background">
-          <option value="draft">Taslak</option>
-          <option value="published">Yayınla</option>
-        </select>
-      </div>
+      {allowAuthorSelect && (
+        <div className="grid gap-2">
+          <label className="text-sm font-medium">Yazar</label>
+          <select {...register("authorId")} className="border rounded-lg p-3 bg-background">
+            <option value="">Yazar seçin</option>
+            {authorOptions.map((author) => (
+              <option key={author.id} value={author.id}>
+                {author.name}
+              </option>
+            ))}
+          </select>
+          <p className="text-xs text-muted-foreground">Varsayılan olarak kendi profilin seçilir; dilersen başka yazara atayabilirsin.</p>
+        </div>
+      )}
 
       <div className="grid gap-2">
-        <label className="text-sm font-medium">Yayın Zamanı</label>
-        <input
-          type="datetime-local"
-          {...register("publishAt")}
-          className="border rounded-lg p-3 bg-background"
-        />
-        <p className="text-xs text-muted-foreground">Boş bırakılırsa hemen yayınlanır. Gelecek tarih planlama için.</p>
+        <label className="text-sm font-medium">Durum</label>
+        <select {...register("status")} className="border rounded-lg p-3 bg-background" disabled={!allowPublish}>
+          <option value="draft">Taslak</option>
+          {allowPublish && <option value="published">Yayınla</option>}
+        </select>
+        {!allowPublish && <p className="text-xs text-muted-foreground">Yazar rolü yalnızca taslak kaydedebilir.</p>}
       </div>
+
+      {allowPublish && (
+        <div className="grid gap-2">
+          <label className="text-sm font-medium">Yayın Zamanı</label>
+          <input
+            type="datetime-local"
+            {...register("publishAt")}
+            className="border rounded-lg p-3 bg-background"
+          />
+          <p className="text-xs text-muted-foreground">Boş bırakılırsa hemen yayınlanır. Gelecek tarih planlama için.</p>
+        </div>
+      )}
 
       <div className="grid gap-2">
         <label className="inline-flex items-center gap-2 text-sm font-medium">

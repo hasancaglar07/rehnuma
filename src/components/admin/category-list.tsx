@@ -2,15 +2,22 @@
 import { useEffect, useMemo, useState } from "react";
 import { getCsrfToken } from "@/utils/client-cookies";
 
-type Category = { id: string; name: string; slug: string; order?: number };
+type Category = {
+  id: string;
+  name: string;
+  slug: string;
+  order?: number;
+  parentId?: string | null;
+  parent?: { id: string; name: string } | null;
+};
 
 export function CategoryList() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<string | null>(null);
   const [editingId, setEditingId] = useState<string | null>(null);
-  const [createForm, setCreateForm] = useState({ name: "", slug: "" });
-  const [editForm, setEditForm] = useState({ name: "", slug: "" });
+  const [createForm, setCreateForm] = useState({ name: "", slug: "", parentId: "" });
+  const [editForm, setEditForm] = useState({ name: "", slug: "", parentId: "" });
 
   useEffect(() => {
     fetch("/api/categories")
@@ -18,8 +25,10 @@ export function CategoryList() {
       .then((data) => setCategories(data.categories ?? []));
   }, []);
 
-  const sorted = useMemo(
-    () => [...categories].sort((a, b) => (a.order ?? 0) - (b.order ?? 0)),
+  const sorted = useMemo(() => [...categories].sort((a, b) => (a.order ?? 0) - (b.order ?? 0)), [categories]);
+
+  const parentOptions = useMemo(
+    () => categories.filter((c) => !c.parentId).sort((a, b) => (a.order ?? 0) - (b.order ?? 0)),
     [categories]
   );
 
@@ -33,7 +42,7 @@ export function CategoryList() {
     const res = await fetch("/api/categories", {
       method: "POST",
       headers: { "Content-Type": "application/json", "x-csrf-token": getCsrfToken() },
-      body: JSON.stringify(createForm)
+      body: JSON.stringify({ ...createForm, parentId: createForm.parentId || null })
     });
     setLoading(false);
     if (!res.ok) {
@@ -43,7 +52,7 @@ export function CategoryList() {
     }
     const data = await res.json();
     setCategories((prev) => [...prev, data.category]);
-    setCreateForm({ name: "", slug: "" });
+    setCreateForm({ name: "", slug: "", parentId: "" });
     setStatus("Kategori eklendi");
   };
 
@@ -67,7 +76,7 @@ export function CategoryList() {
 
   const handleEditStart = (cat: Category) => {
     setEditingId(cat.id);
-    setEditForm({ name: cat.name, slug: cat.slug });
+    setEditForm({ name: cat.name, slug: cat.slug, parentId: cat.parentId ?? "" });
   };
 
   const handleUpdate = async (id: string) => {
@@ -76,7 +85,7 @@ export function CategoryList() {
     const res = await fetch("/api/categories", {
       method: "PUT",
       headers: { "Content-Type": "application/json", "x-csrf-token": getCsrfToken() },
-      body: JSON.stringify({ id, ...editForm })
+      body: JSON.stringify({ id, ...editForm, parentId: editForm.parentId || null })
     });
     setLoading(false);
     if (!res.ok) {
@@ -85,7 +94,7 @@ export function CategoryList() {
       return;
     }
     setCategories((prev) =>
-      prev.map((c) => (c.id === id ? { ...c, name: editForm.name, slug: editForm.slug } : c))
+      prev.map((c) => (c.id === id ? { ...c, name: editForm.name, slug: editForm.slug, parentId: editForm.parentId || null } : c))
     );
     setEditingId(null);
     setStatus("Güncellendi");
@@ -98,7 +107,7 @@ export function CategoryList() {
     const reordered = [...sorted];
     const [moved] = reordered.splice(index, 1);
     reordered.splice(targetIndex, 0, moved);
-    const payload = reordered.map((cat, idx) => ({ id: cat.id, order: idx }));
+    const payload = reordered.map((cat, idx) => ({ id: cat.id, order: idx, parentId: cat.parentId ?? null }));
 
     setCategories((prev) => {
       const map = Object.fromEntries(payload.map((p) => [p.id, p.order]));
@@ -129,6 +138,18 @@ export function CategoryList() {
             placeholder="slug"
             className="border rounded-lg p-3 bg-background"
           />
+          <select
+            value={createForm.parentId}
+            onChange={(e) => setCreateForm((f) => ({ ...f, parentId: e.target.value }))}
+            className="border rounded-lg p-3 bg-background sm:col-span-2"
+          >
+            <option value="">Ana kategori</option>
+            {parentOptions.map((parent) => (
+              <option key={parent.id} value={parent.id}>
+                {parent.name}
+              </option>
+            ))}
+          </select>
         </div>
         <button
           type="button"
@@ -148,6 +169,11 @@ export function CategoryList() {
               <div className="space-y-1">
                 <p className="font-semibold">{cat.name}</p>
                 <p className="text-sm text-muted-foreground">{cat.slug}</p>
+                {cat.parentId && (
+                  <p className="text-sm text-muted-foreground">
+                    Üst kategori: {categories.find((c) => c.id === cat.parentId)?.name ?? cat.parent?.name ?? "—"}
+                  </p>
+                )}
                 <p className="text-xs text-muted-foreground">Sıra: {idx + 1}</p>
               </div>
               <div className="flex flex-wrap items-center gap-2 text-sm">
@@ -197,6 +223,20 @@ export function CategoryList() {
                   placeholder="slug"
                   className="border rounded-lg p-3 bg-background"
                 />
+                <select
+                  value={editForm.parentId}
+                  onChange={(e) => setEditForm((f) => ({ ...f, parentId: e.target.value }))}
+                  className="border rounded-lg p-3 bg-background sm:col-span-2"
+                >
+                  <option value="">Ana kategori</option>
+                  {parentOptions
+                    .filter((parent) => parent.id !== cat.id)
+                    .map((parent) => (
+                      <option key={parent.id} value={parent.id}>
+                        {parent.name}
+                      </option>
+                    ))}
+                </select>
                 <div className="flex items-center gap-3 sm:col-span-2">
                   <button
                     type="button"

@@ -5,6 +5,7 @@ import { ArticleCard } from "@/components/articles/article-card";
 import { toExcerpt } from "@/utils/excerpt";
 import type { Metadata } from "next";
 import { getBaseUrl } from "@/lib/url";
+import Link from "next/link";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -12,7 +13,7 @@ async function fetchArticle(slug: string) {
   try {
     return await prisma.article.findUnique({
       where: { slug, status: "published" },
-      include: { category: { select: { name: true, slug: true } } }
+      include: { category: { select: { name: true, slug: true } }, author: { select: { name: true, slug: true } } }
     });
   } catch (error) {
     console.error("[article] article fetch failed", error);
@@ -115,12 +116,16 @@ export default async function ArticlePage({ params }: Props) {
     }
   }
 
+  const authorLd = article.author?.name
+    ? { "@type": "Person", name: article.author.name, url: `${baseUrl}/yazarlar/${article.author.slug}` }
+    : { "@type": "Organization", name: "Rehnüma" };
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: article.title,
     datePublished: article.createdAt,
-    author: { "@type": "Organization", name: "Rehnüma" },
+    author: authorLd,
     isAccessibleForFree: false,
     hasPart: { "@type": "WebPageElement", isAccessibleForFree: false, cssSelector: "[data-nosnippet]" },
     articleSection: article.category?.name,
@@ -148,6 +153,16 @@ export default async function ArticlePage({ params }: Props) {
                 •
               </span>
               <span className="text-muted-foreground/80">{wordCount} kelime</span>
+              {article.author?.name && (
+                <>
+                  <span className="text-muted-foreground/50" aria-hidden>
+                    •
+                  </span>
+                  <Link href={`/yazarlar/${article.author.slug}`} className="text-muted-foreground/80 hover:text-primary">
+                    {article.author.name}
+                  </Link>
+                </>
+              )}
             </div>
             <h1 className="text-4xl md:text-5xl font-serif font-semibold leading-[1.1] tracking-[-0.02em] text-foreground">
               {article.title}
