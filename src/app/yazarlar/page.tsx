@@ -13,31 +13,37 @@ export default async function YazarlarPage() {
   const hasDatabase = Boolean(process.env.DATABASE_URL);
   const authors = hasDatabase
     ? await prisma.authorProfile.findMany({
-        where: {
-          OR: [
-            { articles: { some: { status: "published" } } },
-            {
-              isListed: true,
-              OR: [
-                { userId: null },
-                { user: { is: { role: { in: ["author", "editor"] } } } }
-              ]
-            }
-          ]
-        },
-        orderBy: { name: "asc" },
-        include: { _count: { select: { articles: { where: { status: "published" } } } } }
-      })
+      where: {
+        OR: [
+          { articles: { some: { status: "published" } } },
+          {
+            isListed: true,
+            OR: [
+              { userId: null },
+              { user: { is: { role: { in: ["author", "editor"] } } } }
+            ]
+          }
+        ]
+      },
+      orderBy: { name: "asc" },
+      include: { _count: { select: { articles: { where: { status: "published" } } } } }
+    })
     : [
-        {
-          id: "fallback-author",
-          name: "Rehnüma Editör Ekibi",
-          slug: "rehnuma-editor",
-          bio: "Rehnüma kadın dergisi editörleri; zarafet, maneviyat ve kültür odaklı yazılar hazırlar.",
-          avatarUrl: null,
-          _count: { articles: 3 }
-        }
-      ];
+      {
+        id: "fallback-author",
+        name: "Rehnüma Editör Ekibi",
+        slug: "rehnuma-editor",
+        bio: "Rehnüma kadın dergisi editörleri; zarafet, maneviyat ve kültür odaklı yazılar hazırlar.",
+        avatarUrl: null,
+        website: null,
+        instagram: null,
+        twitter: null,
+        isListed: true,
+        userId: null,
+        createdAt: new Date(),
+        _count: { articles: 3 }
+      }
+    ];
 
   return (
     <div className="min-h-screen">
