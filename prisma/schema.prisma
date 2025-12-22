@@ -57,6 +57,7 @@ model Article {
   publishedAt DateTime?
   isPaywalled Boolean @default(false)
   isFeatured  Boolean @default(false)
+  isRecommended Boolean @default(false)
   excerpt    String?
   metaTitle  String?
   metaDescription String?
@@ -128,10 +129,28 @@ model AuthorProfile {
   website    String?
   instagram  String?
   twitter    String?
+  isListed   Boolean   @default(true)
   articles   Article[]
   createdAt  DateTime  @default(now())
   userId     String?   @unique
   user       User?     @relation("UserAuthorProfile", fields: [userId], references: [id])
+}
+
+model HomepageContent {
+  id                         String   @id @default(cuid())
+  heroBadge                  String?
+  heroTitle                  String
+  heroAccent                 String?
+  heroDescription            String
+  heroPrimaryCtaLabel         String
+  heroPrimaryCtaHref          String
+  heroSecondaryCtaLabel       String?
+  heroSecondaryCtaHref        String?
+  heroImageUrl               String?
+  heroImageAlt               String?
+  recommendationsTitle       String
+  recommendationsDescription String?
+  updatedAt                  DateTime @updatedAt
 }
 
 model Session {

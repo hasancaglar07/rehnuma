@@ -14,6 +14,11 @@ export default async function ProfilePage() {
   const isExpired = subscription?.expiresAt && subscription.expiresAt < new Date();
   const subscriptionStatus = isExpired ? "expired" : subscription?.status ?? "inactive";
   const subscriptionPlan = isExpired ? "" : subscription?.plan ?? "";
+  const planLabelMap: Record<string, string> = {
+    monthly: "Tek Sayı",
+    yearly: "Abonelik",
+    vip: "VIP (iptal)"
+  };
 
   return (
     <div className="min-h-screen">
@@ -33,7 +38,7 @@ export default async function ProfilePage() {
           <div className="border border-border rounded-xl p-4 bg-background/80 space-y-2">
             <p className="text-sm text-muted-foreground">Abonelik</p>
             <p className="text-lg font-semibold">
-              {subscriptionPlan ? subscriptionPlan.toUpperCase() : "Plan yok"} · {subscriptionStatus}
+              {subscriptionPlan ? planLabelMap[subscriptionPlan] ?? subscriptionPlan : "Plan yok"} · {subscriptionStatus}
             </p>
             {subscription?.expiresAt && (
               <p className="text-sm text-muted-foreground">

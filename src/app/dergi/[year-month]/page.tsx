@@ -66,7 +66,7 @@ async function IssueDetail({ params, basePath }: { params: Props["params"]; base
     redirect("/abonelik");
   }
 
-  const isVip = isAdmin || user.subscriptionPlan === "vip";
+  const isPremium = isAdmin || user.subscriptionPlan === "yearly";
   const baseUrl = getBaseUrl();
   const issueLd = issue
     ? {
@@ -102,13 +102,13 @@ async function IssueDetail({ params, basePath }: { params: Props["params"]; base
 
             <div className="flex flex-wrap gap-2">
               <Link
-                href={isVip ? issue.pdfUrl : "/abonelik"}
+                href={isPremium ? issue.pdfUrl : "/abonelik"}
                 className={`inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold ${
-                  isVip ? "border border-border text-foreground hover:-translate-y-0.5" : "border border-border text-muted-foreground"
+                  isPremium ? "border border-border text-foreground hover:-translate-y-0.5" : "border border-border text-muted-foreground"
                 }`}
-                target={isVip ? "_blank" : undefined}
+                target={isPremium ? "_blank" : undefined}
               >
-                {isVip ? "PDF indir" : "VIP ile indirilebilir"}
+                {isPremium ? "PDF indir" : "Abonelik ile indirilebilir"}
               </Link>
               <Link
                 href="#kapak"

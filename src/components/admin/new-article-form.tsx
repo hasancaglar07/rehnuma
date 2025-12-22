@@ -41,6 +41,7 @@ const schema = z.object({
   publishAt: publishAtField,
   isPaywalled: z.boolean().optional(),
   isFeatured: z.boolean().optional(),
+  isRecommended: z.boolean().optional(),
   excerpt: z.string().max(320, "Özet en fazla 320 karakter").optional().or(z.literal("")),
   metaTitle: z.string().max(120, "Meta başlık en fazla 120 karakter").optional().or(z.literal("")),
   metaDescription: z.string().max(220, "Meta açıklama en fazla 220 karakter").optional().or(z.literal("")),
@@ -83,6 +84,7 @@ export function NewArticleForm({ mode = "create", initialData, allowPublish = tr
       publishAt: initialData?.publishAt ?? "",
       isPaywalled: initialData?.isPaywalled ?? false,
       isFeatured: initialData?.isFeatured ?? false,
+      isRecommended: initialData?.isRecommended ?? false,
       excerpt: initialData?.excerpt ?? "",
       metaTitle: initialData?.metaTitle ?? "",
       metaDescription: initialData?.metaDescription ?? "",
@@ -273,7 +275,8 @@ export function NewArticleForm({ mode = "create", initialData, allowPublish = tr
       metaTitle: parsed.data.metaTitle || undefined,
       metaDescription: parsed.data.metaDescription || undefined,
       isPaywalled: parsed.data.isPaywalled ?? false,
-      isFeatured: parsed.data.isFeatured ?? false
+      isFeatured: parsed.data.isFeatured ?? false,
+      isRecommended: parsed.data.isRecommended ?? false
     };
     if (!allowPublish) {
       payload.status = "draft";
@@ -309,6 +312,7 @@ export function NewArticleForm({ mode = "create", initialData, allowPublish = tr
         publishAt: "",
         isPaywalled: false,
         isFeatured: false,
+        isRecommended: false,
         excerpt: "",
         metaTitle: "",
         metaDescription: ""
@@ -549,6 +553,14 @@ export function NewArticleForm({ mode = "create", initialData, allowPublish = tr
           Öne çıkan
         </label>
         <p className="text-xs text-muted-foreground">Kategori sekmesinde ve öne çıkan listelerinde vurgulansın.</p>
+      </div>
+
+      <div className="grid gap-2">
+        <label className="inline-flex items-center gap-2 text-sm font-medium">
+          <input type="checkbox" {...register("isRecommended")} className="h-4 w-4" />
+          Tavsiye
+        </label>
+        <p className="text-xs text-muted-foreground">Anasayfa tavsiyeler bölümünde gösterilsin.</p>
       </div>
 
       <div className="grid gap-2">

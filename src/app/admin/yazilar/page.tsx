@@ -13,6 +13,7 @@ type ArticleListItem = {
   category?: { name: string; slug: string };
   isPaywalled?: boolean;
   isFeatured?: boolean;
+  isRecommended?: boolean;
   publishedAt?: Date | null;
 };
 type Props = { searchParams: Promise<{ status?: string; q?: string; category?: string }> };
@@ -37,6 +38,7 @@ export default async function AdminArticlesPage({ searchParams }: Props) {
           status: true,
           isPaywalled: true,
           isFeatured: true,
+          isRecommended: true,
           publishedAt: true,
           category: { select: { name: true, slug: true } },
           author: { select: { name: true, slug: true } }
@@ -58,11 +60,31 @@ export default async function AdminArticlesPage({ searchParams }: Props) {
       })
     : [];
   const categories = hasDatabase ? await prisma.category.findMany({ orderBy: { order: "asc" } }) : [];
+  const categoryLabel = categoryFilter ? categories.find((cat) => cat.slug === categoryFilter)?.name : undefined;
+  const activeFilters = [
+    statusFilter ? `Durum: ${statusFilter === "published" ? "Yayinda" : "Taslak"}` : null,
+    categoryFilter ? `Kategori: ${categoryLabel || categoryFilter}` : null,
+    query ? `Arama: ${query}` : null
+  ].filter(Boolean);
+  const hasActiveFilters = activeFilters.length > 0;
 
   return (
     <div className="min-h-screen">
-      <AdminShell title="Yazı Yönetimi" description="Yazıları düzenle veya yeni oluştur">
-        <div className="flex items-center justify-between gap-3 flex-wrap">
+      <AdminShell
+        title="Yazı Yönetimi"
+        description="Yazıları düzenle veya yeni oluştur"
+        actions={
+          <>
+            <Link href="/blog" className="px-3 py-2 rounded-full border border-border text-sm">
+              Blogu gör
+            </Link>
+            <Link href="/admin/yazi-yeni" className="px-3 py-2 rounded-full bg-primary text-primary-foreground text-sm">
+              Yeni yazı
+            </Link>
+          </>
+        }
+      >
+        <div className="flex flex-col gap-2">
           <form className="flex flex-wrap items-center gap-2" method="get">
             <input
               name="q"
@@ -95,9 +117,16 @@ export default async function AdminArticlesPage({ searchParams }: Props) {
               Filtrele
             </button>
           </form>
-          <Link href="/admin/yazi-yeni" className="px-4 py-2 rounded-full bg-primary text-primary-foreground">
-            Yeni Yazı
-          </Link>
+          <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+            <span>{articles.length} yazı</span>
+            {hasActiveFilters && <span>·</span>}
+            {hasActiveFilters && <span>Aktif filtreler: {activeFilters.join(" · ")}</span>}
+            {hasActiveFilters && (
+              <Link href="/admin/yazilar" className="underline">
+                Filtreleri temizle
+              </Link>
+            )}
+          </div>
         </div>
         <div className="grid gap-2">
           {articles.map((article: ArticleListItem) => (
@@ -116,6 +145,7 @@ export default async function AdminArticlesPage({ searchParams }: Props) {
                   {" · "}
                   {article.isPaywalled ? "Paywall" : "Açık"}
                   {article.isFeatured ? " · Öne çıkan" : ""}
+                  {article.isRecommended ? " · Tavsiye" : ""}
                   {article.author?.name ? ` · ${article.author.name}` : ""}
                   {article.publishedAt && (
                     <>

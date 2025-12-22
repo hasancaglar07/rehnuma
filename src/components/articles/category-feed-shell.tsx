@@ -57,7 +57,7 @@ export function CategoryFeedShell({ initialArticles, categorySlug, pageSize, has
       query.set("limit", String(pageSize));
       query.set("page", "1");
       if (key !== "latest") query.set("filter", key);
-      const res = await fetch(`/api/articles?${query.toString()}`, { cache: "no-store" });
+      const res = await fetch(`/api/articles?${query.toString()}`);
       if (!res.ok) throw new Error("İçerikler alınamadı");
       const data = await res.json();
       const articles = Array.isArray(data.articles) ? data.articles : [];

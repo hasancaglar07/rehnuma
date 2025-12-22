@@ -3,16 +3,38 @@ import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
-type Plan = { id: "monthly" | "yearly" | "vip"; title: string; desc: string; price: string; perks: string[]; badge?: string };
+type Plan = {
+  id: "monthly" | "yearly";
+  title: string;
+  desc: string;
+  price: string;
+  perks: string[];
+  quantityLabel: string;
+  badge?: string;
+};
 
 export function SubscriptionPlans() {
   const plans: Plan[] = [
-    { id: "monthly", title: "Aylık", desc: "Tüm yazılar, sesli içerikler", price: "₺79/ay", perks: ["Tüm yazılara erişim", "Sesli içerikler", "Okuma ilerlemesi"] },
-    { id: "yearly", title: "Yıllık", desc: "Arşiv ve tüm yazılar", price: "₺790/yıl", perks: ["Tüm yazılar", "Eski sayılar", "Kaydetme ve ilerleme"], badge: "Tasarruf" },
-    { id: "vip", title: "VIP", desc: "PDF indirilebilir, özel içerik", price: "₺129/ay", perks: ["Flipbook + PDF indirme", "VIP sesli içerik", "Öncelikli destek"], badge: "VIP" }
+    {
+      id: "monthly",
+      title: "Tek Sayı",
+      desc: "Bu ayın sayısına tek seferlik erişim",
+      price: "225 TRY",
+      perks: ["Seçili sayı erişimi", "Dijital okuma", "Güncel sayı"],
+      quantityLabel: "Dergi adedi"
+    },
+    {
+      id: "yearly",
+      title: "Abonelik",
+      desc: "Yıllık erişim ve arşiv",
+      price: "900 TRY",
+      perks: ["Tüm yazılar", "Arşiv sayılar", "Kaydetme ve ilerleme"],
+      quantityLabel: "Abonelik adedi",
+      badge: "Önerilen"
+    }
   ];
   return (
-    <div className="grid gap-4 md:grid-cols-3">
+    <div className="grid gap-4 md:grid-cols-2">
       {plans.map((plan) => (
         <PlanCard key={plan.id} {...plan} />
       ))}
@@ -20,17 +42,18 @@ export function SubscriptionPlans() {
   );
 }
 
-function PlanCard({ id, title, desc, price, perks, badge }: Plan) {
+function PlanCard({ id, title, desc, price, perks, badge, quantityLabel }: Plan) {
   const router = useRouter();
   const [pending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
+  const [quantity, setQuantity] = useState(1);
   const checkout = () =>
     startTransition(async () => {
       setError(null);
       const res = await fetch("/api/subscription/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ plan: id })
+        body: JSON.stringify({ plan: id, quantity })
       });
       const data = await res.json();
       if (res.status === 401) {
@@ -59,6 +82,17 @@ function PlanCard({ id, title, desc, price, perks, badge }: Plan) {
           <li key={perk}>• {perk}</li>
         ))}
       </ul>
+      <div className="flex items-center justify-between gap-3 text-sm">
+        <label className="text-muted-foreground">{quantityLabel}</label>
+        <input
+          type="number"
+          min={1}
+          max={12}
+          value={quantity}
+          onChange={(e) => setQuantity(Math.max(1, Math.min(12, Number(e.target.value) || 1)))}
+          className="w-20 rounded-lg border border-border bg-background px-2 py-1 text-right text-sm"
+        />
+      </div>
       <Button onClick={checkout} disabled={pending} className="mt-2 w-full">
         {pending ? "Yönlendiriliyor..." : "Abone Ol"}
       </Button>

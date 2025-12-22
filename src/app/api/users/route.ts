@@ -65,8 +65,10 @@ export async function PUT(req: NextRequest) {
     auditMeta = parsed.data.reason ? { reason: parsed.data.reason } : undefined;
   } else if (parsed.data.action === "promote") {
     user = await prisma.user.update({ where: { id: parsed.data.id }, data: { role: "admin" } });
+    await prisma.authorProfile.updateMany({ where: { userId: parsed.data.id }, data: { isListed: false } });
   } else if (parsed.data.action === "demote") {
     user = await prisma.user.update({ where: { id: parsed.data.id }, data: { role: "user" } });
+    await prisma.authorProfile.updateMany({ where: { userId: parsed.data.id }, data: { isListed: false } });
   } else if (parsed.data.action === "setRole") {
     if (!parsed.data.role) {
       return NextResponse.json({ error: "Rol gerekli" }, { status: 400 });
@@ -74,6 +76,9 @@ export async function PUT(req: NextRequest) {
     user = await prisma.user.update({ where: { id: parsed.data.id }, data: { role: parsed.data.role } });
     if (parsed.data.role === "author" || parsed.data.role === "editor") {
       await ensureAuthorProfileForUser(user.id, user.name || user.email, user.email);
+      await prisma.authorProfile.updateMany({ where: { userId: user.id }, data: { isListed: true } });
+    } else {
+      await prisma.authorProfile.updateMany({ where: { userId: user.id }, data: { isListed: false } });
     }
   } else if (parsed.data.action === "subscription") {
     const exists = await prisma.subscription.findUnique({ where: { userId: parsed.data.id } });

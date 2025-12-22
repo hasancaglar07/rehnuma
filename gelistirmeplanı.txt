@@ -1,0 +1,29 @@
+REHNÜMA DERGI GELISTIRME PLANI (REVIZE)
+
+1) Anasayfa - Hero ve Tavsiyeler
+   - Hero manset, aciklama ve gorsel admin tarafindan duzenlenebilir olacak.
+   - "Bu Ayin Sayisi" bolumu kaldirilip "Tavsiyeler" bolumune cevrilecek.
+   - Tavsiyeler, adminin "onerilen" isaretledigi yazilardan dinamik cekilecek.
+   - Kartlarda gorsel, kategori ve kisa ozet gosterilecek.
+
+2) One Cikan ve liste akis duzeltmeleri
+   - Anasayfa "One Cikan Yazilar" kartlari gorselli olacak.
+   - "Tumunu gor" baglantisi yeni /one-cikan sayfasina yonlenecek.
+
+3) Abonelik planlari ve adet bilgisi
+   - Tek Sayi: 225 TRY, Abonelik: 900 TRY, VIP kaldirilacak.
+   - Abonelik veya dergi adedi secimi checkout istegine quantity olarak eklenecek.
+   - Admin abonelik guncelleme secenekleri yeni planlara uyumlu hale getirilecek.
+
+4) Yazar yonetimi ve gorunurluk
+   - Admin paneline yazar ekleme/duzenleme (bio, sosyal, avatar) modulu eklenecek.
+   - Yazar listesinde yalnizca "isListed" veya yayinli yazisi olan profiller gorunecek.
+   - Rol degisince admin kullanicilarin yazar gorunurlugu guncellenecek.
+
+5) Footer ve iletisim guncellemesi
+   - Footer tek renk zemin + Rehnüma logosu olacak.
+   - Tum mail adresleri rehnumadergi@gmail.com olacak ve tek yerden yonetilecek.
+
+6) Teknik adimlar
+   - Prisma: Article.isRecommended, AuthorProfile.isListed ve HomepageContent eklenir.
+   - API ve UI guncellemeleri tamamlanir, anasayfa revalidate edilir.

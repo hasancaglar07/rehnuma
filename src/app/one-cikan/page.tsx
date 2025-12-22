@@ -7,18 +7,18 @@ import { estimateReadingMinutes } from "@/utils/reading-time";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Blog | Rehnüma Kadın Dergisi",
-  description: "Rehnüma blog akışı: güncel yazılar, rehberler ve ilham verici içerikler."
+  title: "One Cikan Yazilar | Rehnuma Kadin Dergisi",
+  description: "Rehnuma editor secimleri: one cikan yazilarin tam listesi."
 };
 
-export default async function BlogPage() {
+export default async function OneCikanPage() {
   const hasDatabase = Boolean(process.env.DATABASE_URL);
   const pageSize = 9;
 
   const articles = hasDatabase
     ? await prisma.article.findMany({
-        where: { status: "published" },
-        orderBy: { createdAt: "desc" },
+        where: { status: "published", isFeatured: true },
+        orderBy: [{ publishedAt: "desc" }, { createdAt: "desc" }],
         take: pageSize + 1,
         select: {
           id: true,
@@ -36,9 +36,9 @@ export default async function BlogPage() {
     : [
         {
           id: "fallback-1",
-          title: "Zarafetle Yaşamak",
+          title: "Zarafetle Yasamak",
           slug: "zarafetle-yasamak",
-          content: "Maneviyat ve günlük hayat arasında zarif bir köprü kurmak için pratik ipuçları.",
+          content: "Maneviyat ve gunluk hayat arasinda zarif bir kopru kurmak icin pratik ipuclari.",
           coverUrl: null,
           createdAt: new Date(),
           category: { name: "Maneviyat" }
@@ -66,15 +66,21 @@ export default async function BlogPage() {
     <div className="min-h-screen">
       <main className="container space-y-6 py-12 lg:py-16">
         <div className="space-y-3 max-w-3xl">
-          <p className="text-xs uppercase tracking-[0.18em] text-primary/80">Blog</p>
-          <h1 className="text-3xl md:text-4xl font-serif leading-tight">Güncel yazılar ve ilham veren içerikler</h1>
+          <p className="text-xs uppercase tracking-[0.18em] text-primary/80">One Cikan</p>
+          <h1 className="text-3xl md:text-4xl font-serif leading-tight">Editorun one cikardigi yazilar</h1>
           <p className="text-lg text-muted-foreground">
-            Rehnüma Düşünce’den Ev ve Yaşam’a uzanan taze yazılar, rehberler ve röportajlar burada.
+            Derginin editoryal secimleriyle ozenle derlenen yazilarin tam listesini kesfedin.
           </p>
         </div>
 
         <div className="rounded-3xl border border-border/70 bg-gradient-to-b from-white via-white to-primary/5 p-4 sm:p-6 lg:p-8">
-          <ArticleFeed initialArticles={initialArticles} pageSize={pageSize} initialPage={1} hasMore={hasMore} />
+          <ArticleFeed
+            initialArticles={initialArticles}
+            pageSize={pageSize}
+            initialPage={1}
+            hasMore={hasMore}
+            activeFilter="featured"
+          />
         </div>
       </main>
     </div>

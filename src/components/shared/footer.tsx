@@ -15,22 +15,11 @@ const legalLinks = [
   { href: "/iletisim", label: "İletişim" }
 ];
 
-const roseVideoSrc = "/rose-video.mp4";
-
 export function Footer() {
   return (
     <footer className="relative mt-20 overflow-hidden">
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <video
-          className="absolute inset-0 h-full w-full object-cover pointer-events-none"
-          src={roseVideoSrc}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          aria-hidden="true"
-        />
+        <div className="absolute inset-0 bg-[#f4efe8]" />
         <div className="absolute inset-0 bg-gradient-to-t from-white via-white/90 to-white/55" />
       </div>
 

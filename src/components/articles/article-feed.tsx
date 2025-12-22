@@ -9,12 +9,14 @@ type ArticleItem = {
   id: string;
   title: string;
   slug: string;
-  content: string;
+  content?: string | null;
+  excerpt?: string | null;
   coverUrl?: string | null;
   publishedAt?: string | Date | null;
   createdAt: string | Date;
   category?: { name?: string | null } | null;
   isFeatured?: boolean | null;
+  readingMinutes?: number | null;
 };
 
 type Props = {
@@ -39,7 +41,8 @@ function normalizeDate(value?: string | Date | null) {
 }
 
 function computeMeta(article: ArticleItem) {
-  const readingMinutes = estimateReadingMinutes(article.content);
+  const readingMinutes =
+    article.readingMinutes ?? (article.content ? estimateReadingMinutes(article.content) : undefined);
   const dateValue = normalizeDate(article.publishedAt) ?? normalizeDate(article.createdAt);
   const dateLabel = dateValue
     ? new Intl.DateTimeFormat("tr-TR", { month: "short", day: "numeric" }).format(dateValue)
@@ -69,7 +72,7 @@ export function ArticleFeed({
         const { readingMinutes, dateLabel } = computeMeta(a);
         return {
           ...a,
-          excerpt: toExcerpt(a.content, 140),
+          excerpt: toExcerpt(a.excerpt ?? a.content ?? "", 140),
           coverUrl: a.coverUrl ?? undefined,
           readingMinutes,
           dateLabel,
@@ -96,7 +99,7 @@ export function ArticleFeed({
       query.set("limit", String(pageSize));
       query.set("page", String(nextPage));
       if (filter && filter !== "latest") query.set("filter", filter);
-      const res = await fetch(`/api/articles?${query.toString()}`, { cache: "no-store" });
+      const res = await fetch(`/api/articles?${query.toString()}`);
       if (!res.ok) throw new Error("İçerikler yüklenemedi");
       const data: ArticleResponse = await res.json();
       const incoming = data.articles || [];
@@ -137,14 +140,14 @@ export function ArticleFeed({
           <ArticleCard
             key={article.id}
             title={article.title}
-          slug={article.slug}
-          excerpt={article.excerpt}
-          coverUrl={article.coverUrl}
-          category={article.categoryName}
-          isFeatured={article.isFeatured}
-          meta={{ readingMinutes: article.readingMinutes, date: article.dateLabel }}
-        />
-      ))}
+            slug={article.slug}
+            excerpt={article.excerpt}
+            coverUrl={article.coverUrl}
+            category={article.categoryName}
+            isFeatured={article.isFeatured}
+            meta={{ readingMinutes: article.readingMinutes, date: article.dateLabel }}
+          />
+        ))}
       </div>
 
       {error && (

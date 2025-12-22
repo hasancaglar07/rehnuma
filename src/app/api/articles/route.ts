@@ -2,7 +2,40 @@ import { NextResponse, type NextRequest } from "next/server";
 import type { Prisma } from "@prisma/client";
 import { prisma } from "@/db/prisma";
 import { getSession } from "@/lib/auth";
-import { isShortRead } from "@/utils/reading-time";
+import { toExcerpt } from "@/utils/excerpt";
+import { estimateReadingMinutes, isShortRead } from "@/utils/reading-time";
+
+const articleSelect = {
+  id: true,
+  title: true,
+  slug: true,
+  content: true,
+  excerpt: true,
+  coverUrl: true,
+  createdAt: true,
+  publishedAt: true,
+  isFeatured: true,
+  category: { select: { name: true } }
+} satisfies Prisma.ArticleSelect;
+
+type ArticleRow = Prisma.ArticleGetPayload<{ select: typeof articleSelect }>;
+
+function formatArticle(article: ArticleRow) {
+  const excerptSource = article.excerpt || article.content;
+  const excerpt = toExcerpt(excerptSource, 140);
+  return {
+    id: article.id,
+    title: article.title,
+    slug: article.slug,
+    excerpt,
+    coverUrl: article.coverUrl,
+    createdAt: article.createdAt,
+    publishedAt: article.publishedAt,
+    isFeatured: article.isFeatured,
+    category: article.category,
+    readingMinutes: estimateReadingMinutes(article.content)
+  };
+}
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
@@ -40,35 +73,35 @@ export async function GET(req: NextRequest) {
     ...(filter === "featured" ? { isFeatured: true } : {})
   };
   const orderBy: Prisma.ArticleOrderByWithRelationInput[] = [{ publishedAt: "desc" }, { createdAt: "desc" }];
-  const include: Prisma.ArticleInclude = { category: true };
-
   // Pagination
   if (limit) {
     const take = limit + 1; // fetch one extra to check hasMore
     const skip = (page - 1) * limit;
 
     if (filter === "short") {
-      const { articles, nextPage } = await paginateShort(where, orderBy, include, { limit, page });
+      const { articles, nextPage } = await paginateShort(where, orderBy, articleSelect, { limit, page });
       return NextResponse.json(
         { articles, nextPage },
         { headers: { "Cache-Control": "public, s-maxage=60, stale-while-revalidate=120" } }
       );
     }
 
-    const articles = await prisma.article.findMany({ where, orderBy, include, skip, take });
+    const articles = await prisma.article.findMany({ where, orderBy, select: articleSelect, skip, take });
 
     const hasMore = articles.length > limit;
     const data = hasMore ? articles.slice(0, limit) : articles;
+    const items = data.map(formatArticle);
     const nextPage = hasMore ? page + 1 : null;
 
     return NextResponse.json(
-      { articles: data, nextPage },
+      { articles: items, nextPage },
       { headers: { "Cache-Control": "public, s-maxage=60, stale-while-revalidate=120" } }
     );
   }
 
-  const articles = await prisma.article.findMany({ where, orderBy, include });
-  const data = filter === "short" ? articles.filter((article) => isShortRead(article.content)) : articles;
+  const articles = await prisma.article.findMany({ where, orderBy, select: articleSelect });
+  const filtered = filter === "short" ? articles.filter((article) => isShortRead(article.content)) : articles;
+  const data = filtered.map(formatArticle);
 
   return NextResponse.json(
     { articles: data },
@@ -79,7 +112,7 @@ export async function GET(req: NextRequest) {
 async function paginateShort(
   where: Prisma.ArticleWhereInput,
   orderBy: Prisma.ArticleOrderByWithRelationInput[],
-  include: Prisma.ArticleInclude,
+  select: Prisma.ArticleSelect,
   opts: { limit: number; page: number }
 ) {
   const { limit, page } = opts;
@@ -92,7 +125,7 @@ async function paginateShort(
   let exhausted = false;
 
   while (collected.length < limit + 1 && !exhausted) {
-    const batch = await prisma.article.findMany({ where, orderBy, include, skip: cursor, take: batchSize });
+    const batch = await prisma.article.findMany({ where, orderBy, select, skip: cursor, take: batchSize });
     if (batch.length < batchSize) exhausted = true;
     cursor += batch.length;
     let filtered = batch.filter((article) => isShortRead(article.content));
@@ -113,7 +146,8 @@ async function paginateShort(
 
   const hasMore = collected.length > limit;
   const articles = hasMore ? collected.slice(0, limit) : collected;
+  const items = articles.map(formatArticle);
   const nextPage = hasMore ? page + 1 : null;
 
-  return { articles, nextPage };
+  return { articles: items, nextPage };
 }

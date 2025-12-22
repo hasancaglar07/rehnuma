@@ -68,7 +68,9 @@ export function NavbarClient() {
   const adminMenuLinks = isAdmin
     ? [
         { href: "/admin", label: "Admin" },
+        { href: "/admin/anasayfa", label: "Anasayfa" },
         { href: "/admin/kullanicilar", label: "Kullanıcılar" },
+        { href: "/admin/yazarlar", label: "Yazarlar" },
         { href: "/admin/yazilar", label: "Yönetim" }
       ]
     : [];

@@ -1,6 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { getCsrfToken } from "@/utils/client-cookies";
+import { CopyButton } from "@/components/admin/copy-button";
 
 type User = {
   id: string;
@@ -14,6 +15,7 @@ type User = {
 export function UserManager() {
   const [users, setUsers] = useState<User[]>([]);
   const [status, setStatus] = useState<string | null>(null);
+  const [listLoading, setListLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [roleFilter, setRoleFilter] = useState<"all" | "admin" | "editor" | "author" | "user">("all");
   const [banFilter, setBanFilter] = useState<"all" | "banned" | "active">("all");
@@ -21,11 +23,18 @@ export function UserManager() {
   const [subForm, setSubForm] = useState({ plan: "", status: "", expiresAt: "" });
   const [roleEditId, setRoleEditId] = useState<string | null>(null);
   const [roleValue, setRoleValue] = useState("");
+  const planLabels: Record<string, string> = {
+    monthly: "Tek Sayı",
+    yearly: "Abonelik",
+    vip: "VIP (iptal)"
+  };
 
   useEffect(() => {
+    setListLoading(true);
     fetch("/api/users")
       .then((res) => res.json())
-      .then((data) => setUsers(data.users ?? []));
+      .then((data) => setUsers(data.users ?? []))
+      .finally(() => setListLoading(false));
   }, []);
 
   const mutate = async (id: string, action: "ban" | "unban" | "promote" | "demote", reason?: string) => {
@@ -71,14 +80,16 @@ export function UserManager() {
     setStatus("Abonelik güncellendi");
   };
 
-  const filteredUsers = users.filter((user) => {
-    const matchesSearch = search
-      ? user.email.toLowerCase().includes(search.toLowerCase()) || user.role.toLowerCase().includes(search.toLowerCase())
-      : true;
-    const matchesRole = roleFilter === "all" ? true : user.role === roleFilter;
-    const matchesBan = banFilter === "all" ? true : banFilter === "banned" ? user.isBanned : !user.isBanned;
-    return matchesSearch && matchesRole && matchesBan;
-  });
+  const filteredUsers = useMemo(() => {
+    return users.filter((user) => {
+      const matchesSearch = search
+        ? user.email.toLowerCase().includes(search.toLowerCase()) || user.role.toLowerCase().includes(search.toLowerCase())
+        : true;
+      const matchesRole = roleFilter === "all" ? true : user.role === roleFilter;
+      const matchesBan = banFilter === "all" ? true : banFilter === "banned" ? user.isBanned : !user.isBanned;
+      return matchesSearch && matchesRole && matchesBan;
+    });
+  }, [users, search, roleFilter, banFilter]);
 
   return (
     <div className="grid gap-3">
@@ -109,16 +120,42 @@ export function UserManager() {
           <option value="active">Aktif</option>
           <option value="banned">Banlı</option>
         </select>
+        <span className="text-xs text-muted-foreground">
+          {filteredUsers.length}/{users.length} kullanıcı
+        </span>
+        {(search || roleFilter !== "all" || banFilter !== "all") && (
+          <button
+            type="button"
+            onClick={() => {
+              setSearch("");
+              setRoleFilter("all");
+              setBanFilter("all");
+            }}
+            className="text-xs text-muted-foreground underline"
+          >
+            Temizle
+          </button>
+        )}
       </div>
-      {filteredUsers.map((user) => (
+      {listLoading && <p className="text-sm text-muted-foreground">Kullanicilar yukleniyor...</p>}
+      {!listLoading && filteredUsers.map((user) => (
         <div key={user.id} className="border border-border rounded-xl p-4 bg-background/80 flex flex-col gap-3">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <div className="space-y-1">
               <p className="font-semibold">{user.email}</p>
               <p className="text-sm text-muted-foreground">
-                Rol: {user.role} · Abonelik: {user.subscription?.status ?? "yok"} {user.subscription?.plan ? `(${user.subscription.plan})` : ""}
+                Rol: {user.role} · Abonelik: {user.subscription?.status ?? "yok"}{" "}
+                {user.subscription?.plan ? `(${planLabels[user.subscription.plan] ?? user.subscription.plan})` : ""}
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Kayit: {new Date(user.createdAt).toLocaleDateString("tr-TR")}
               </p>
               {user.isBanned && <p className="text-sm text-rose-600">Banlı</p>}
+              <CopyButton
+                text={user.email}
+                label="E-posta kopyala"
+                className="text-xs text-muted-foreground underline"
+              />
             </div>
             <div className="flex flex-wrap gap-2 text-sm justify-start sm:justify-end">
             {user.isBanned ? (
@@ -212,9 +249,11 @@ export function UserManager() {
                   className="border rounded-lg p-2 bg-background"
                 >
                   <option value="">Plan</option>
-                  <option value="monthly">Aylık</option>
-                  <option value="yearly">Yıllık</option>
-                  <option value="vip">VIP</option>
+                  <option value="monthly">Tek Sayı</option>
+                  <option value="yearly">Abonelik</option>
+                  <option value="vip" disabled>
+                    VIP (iptal)
+                  </option>
                 </select>
                 <select
                   value={subForm.status}
@@ -255,7 +294,7 @@ export function UserManager() {
           )}
         </div>
       ))}
-      {filteredUsers.length === 0 && <p className="text-muted-foreground">Kullanıcı yok.</p>}
+      {!listLoading && filteredUsers.length === 0 && <p className="text-muted-foreground">Kullanıcı yok.</p>}
       {status && <p className="text-sm text-muted-foreground">{status}</p>}
     </div>
   );

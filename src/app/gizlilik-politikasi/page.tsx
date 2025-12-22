@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CONTACT_EMAIL } from "@/lib/contact";
 
 const sections = [
   {
@@ -90,8 +91,8 @@ export default function GizlilikPolitikasiPage() {
               <p className="text-sm uppercase tracking-[0.18em] text-primary/80">Haklarınız</p>
               <h3 className="text-2xl font-serif">KVKK kapsamındaki talepler</h3>
             </div>
-            <Link href="mailto:destek@rehnuma.com" className="text-primary hover:underline">
-              destek@rehnuma.com
+            <Link href={`mailto:${CONTACT_EMAIL}`} className="text-primary hover:underline">
+              {CONTACT_EMAIL}
             </Link>
           </div>
           <div className="grid gap-4 md:grid-cols-2 text-muted-foreground">

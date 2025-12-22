@@ -27,6 +27,10 @@ async function fetchClerkUser(userId: string, sessionClaims: SessionClaims) {
   const nameFromClaims =
     (sessionClaims?.full_name as string | undefined) || (sessionClaims?.first_name as string | undefined);
 
+  if (emailFromClaims) {
+    return { email: emailFromClaims, name: nameFromClaims };
+  }
+
   try {
     const client = await clerkClient();
     const user = await client.users.getUser(userId);
@@ -68,16 +72,26 @@ async function getDbUser(userId: string, sessionClaims: SessionClaims) {
       include: { subscription: true }
     }));
 
-  const user = existingByEmail
-    ? await prisma.user.update({
-        where: { id: existingByEmail.id },
-        data: { email, name }
-      })
-    : await prisma.user.create({
-        data: { id: userId, email, name, role: "user" }
+  let user = existingByEmail;
+  if (user) {
+    const data: { email?: string; name?: string | null } = {};
+    if (user.email !== email) data.email = email;
+    if (name !== undefined && name !== user.name) data.name = name;
+    if (Object.keys(data).length > 0) {
+      user = await prisma.user.update({
+        where: { id: user.id },
+        data,
+        include: { subscription: true }
       });
+    }
+  } else {
+    user = await prisma.user.create({
+      data: { id: userId, email, name, role: "user" },
+      include: { subscription: true }
+    });
+  }
 
-  const subscription = await prisma.subscription.findUnique({ where: { userId: user.id } });
+  const subscription = user.subscription;
 
   const isExpired = subscription?.expiresAt && subscription.expiresAt < new Date();
   return {
@@ -133,7 +147,12 @@ export async function ensureAuthorProfileForUser(userId: string, name?: string |
   if (!process.env.DATABASE_URL) return null;
   try {
     const existing = await prisma.authorProfile.findUnique({ where: { userId } });
-    if (existing) return existing.id;
+    if (existing) {
+      if (!existing.isListed) {
+        await prisma.authorProfile.update({ where: { id: existing.id }, data: { isListed: true } });
+      }
+      return existing.id;
+    }
     const emailLocal = email?.split("@")[0];
     const fallbackName = name || emailLocal || "Rehnüma Yazarı";
     const baseSlug = slugify(fallbackName || "yazar");
@@ -150,7 +169,8 @@ export async function ensureAuthorProfileForUser(userId: string, name?: string |
       data: {
         name: fallbackName,
         slug,
-        user: { connect: { id: userId } }
+        user: { connect: { id: userId } },
+        isListed: true
       }
     });
     return profile.id;

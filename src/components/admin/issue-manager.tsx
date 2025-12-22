@@ -1,6 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { getCsrfToken } from "@/utils/client-cookies";
+import { CopyButton } from "@/components/admin/copy-button";
 
 type IssueArticleLink = {
   id: string;
@@ -21,6 +22,7 @@ export function IssueManager() {
   const [uploading, setUploading] = useState<"cover" | "pdf" | null>(null);
   const [loading, setLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [search, setSearch] = useState("");
   const [form, setForm] = useState({ month: "", year: "", pdfUrl: "", coverUrl: "" });
   const [articleOptions, setArticleOptions] = useState<ArticleOption[]>([]);
   const [reviewers, setReviewers] = useState<ReviewerOption[]>([]);
@@ -208,6 +210,20 @@ export function IssueManager() {
   };
 
   const editingIssue = editingIssueId ? issues.find((i) => i.id === editingIssueId) : null;
+  const filteredIssues = useMemo(() => {
+    const term = search.trim().toLowerCase();
+    if (!term) return issues;
+    return issues.filter((issue) => {
+      const label = `${issue.month}/${issue.year}`.toLowerCase();
+      const slug = `${issue.year}-${String(issue.month).padStart(2, "0")}`;
+      return (
+        label.includes(term) ||
+        slug.includes(term) ||
+        issue.pdfUrl.toLowerCase().includes(term) ||
+        (issue.coverUrl || "").toLowerCase().includes(term)
+      );
+    });
+  }, [issues, search]);
 
   return (
     <div className="space-y-6">
@@ -384,8 +400,31 @@ export function IssueManager() {
           )}
         </div>
       </form>
+      <div className="flex flex-wrap items-center gap-2">
+        <input
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="Sayi ara (ay/yil veya slug)"
+          className="px-3 py-2 rounded-lg border border-border bg-background text-sm"
+        />
+        <span className="text-xs text-muted-foreground">
+          {filteredIssues.length}/{issues.length} sayi
+        </span>
+        {search && (
+          <button
+            type="button"
+            onClick={() => setSearch("")}
+            className="text-xs text-muted-foreground underline"
+          >
+            Temizle
+          </button>
+        )}
+      </div>
+
       <div className="grid gap-3">
-        {issues.map((issue) => (
+        {filteredIssues.map((issue) => {
+          const issueSlug = `${issue.year}-${String(issue.month).padStart(2, "0")}`;
+          return (
           <div
             key={`${issue.year}-${issue.month}-${issue.id}`}
             className="border border-border rounded-xl p-4 flex flex-col gap-3 bg-background/80"
@@ -400,6 +439,7 @@ export function IssueManager() {
                     {issue.month}/{issue.year}
                   </p>
                   <p className="text-sm text-muted-foreground line-clamp-1">{issue.pdfUrl}</p>
+                  <p className="text-xs text-muted-foreground">Slug: {issueSlug}</p>
                   <div className="flex flex-wrap gap-2 text-xs mt-1">
                     {issue.pdfUrl && (
                       <a className="text-primary underline" href={issue.pdfUrl} target="_blank" rel="noreferrer">
@@ -411,7 +451,22 @@ export function IssueManager() {
                         Kapak önizleme
                       </a>
                     )}
+                    <a className="text-primary underline" href={`/dergi/${issueSlug}`} target="_blank" rel="noreferrer">
+                      Sayiyi ac
+                    </a>
                     <span className="text-muted-foreground">Yazı: {issue.articles?.length ?? 0} adet</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2 text-xs">
+                    <CopyButton
+                      text={`/dergi/${issueSlug}`}
+                      label="Sayi linki kopyala"
+                      className="text-xs text-muted-foreground underline"
+                    />
+                    <CopyButton
+                      text={issue.pdfUrl}
+                      label="PDF linki kopyala"
+                      className="text-xs text-muted-foreground underline"
+                    />
                   </div>
                 </div>
               </div>
@@ -444,8 +499,12 @@ export function IssueManager() {
               )}
             </div>
           </div>
-        ))}
-        {issues.length === 0 && <p className="text-muted-foreground">Dergi yok.</p>}
+        );
+        })}
+        {!loading && issues.length === 0 && <p className="text-muted-foreground">Dergi yok.</p>}
+        {!loading && issues.length > 0 && filteredIssues.length === 0 && (
+          <p className="text-muted-foreground">Arama kriterine uygun sayı bulunamadı.</p>
+        )}
       </div>
     </div>
   );

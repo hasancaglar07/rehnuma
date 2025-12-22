@@ -6,7 +6,8 @@ import { requireAuthGuard, requireCsrfGuard, requestIp } from "@/lib/api-guards"
 import { getBaseUrl } from "@/lib/url";
 
 const schema = z.object({
-  plan: z.enum(["monthly", "yearly", "vip"]).default("monthly")
+  plan: z.enum(["monthly", "yearly"]).default("monthly"),
+  quantity: z.coerce.number().int().min(1).max(12).optional().default(1)
 });
 
 export async function POST(req: NextRequest) {
@@ -29,12 +30,13 @@ export async function POST(req: NextRequest) {
   if (!parsed.success) return NextResponse.json({ error: parsed.error.issues[0].message }, { status: 400 });
 
   const priceId = getPriceId(parsed.data.plan);
+  const quantity = parsed.data.quantity ?? 1;
   const session = await stripe.checkout.sessions.create({
     mode: "subscription",
-    line_items: [{ price: priceId, quantity: 1 }],
+    line_items: [{ price: priceId, quantity }],
     client_reference_id: auth.user.id,
-    metadata: { plan: parsed.data.plan, userId: auth.user.id },
-    subscription_data: { metadata: { userId: auth.user.id, plan: parsed.data.plan } },
+    metadata: { plan: parsed.data.plan, userId: auth.user.id, quantity: String(quantity) },
+    subscription_data: { metadata: { userId: auth.user.id, plan: parsed.data.plan, quantity: String(quantity) } },
     success_url: `${baseUrl}/profil`,
     cancel_url: `${baseUrl}/abonelik`
   });

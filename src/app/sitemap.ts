@@ -26,6 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/kurumsal/vizyon",
     "/kurumsal/kunye",
     "/blog",
+    "/one-cikan",
     "/yazarlar",
     "/dergi", // legacy
     "/iletisim",

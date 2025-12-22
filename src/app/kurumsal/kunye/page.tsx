@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CONTACT_EMAIL, COLLAB_EMAIL } from "@/lib/contact";
 
 const sections = [
   {
@@ -12,8 +13,8 @@ const sections = [
   {
     title: "İletişim",
     items: [
-      { label: "E-posta", value: "destek@rehnuma.com" },
-      { label: "İşbirliği", value: "isbirligi@rehnuma.com" }
+      { label: "E-posta", value: CONTACT_EMAIL },
+      { label: "İşbirliği", value: COLLAB_EMAIL }
     ]
   },
   {

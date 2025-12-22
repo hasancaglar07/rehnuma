@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CONTACT_EMAIL } from "@/lib/contact";
 
 const contactChannels = [
   {
@@ -37,7 +38,7 @@ export default function IletisimPage() {
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
-              href="mailto:destek@rehnuma.com"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="px-5 py-3 rounded-full bg-primary text-primary-foreground shadow-lg hover:-translate-y-0.5 transition"
             >
               E-posta Gönder
@@ -88,8 +89,8 @@ export default function IletisimPage() {
             <div className="space-y-3 text-muted-foreground">
               <div>
                 <p className="text-sm font-semibold text-foreground">E-posta</p>
-                <Link href="mailto:destek@rehnuma.com" className="text-primary hover:underline">
-                  destek@rehnuma.com
+                <Link href={`mailto:${CONTACT_EMAIL}`} className="text-primary hover:underline">
+                  {CONTACT_EMAIL}
                 </Link>
               </div>
               <div>

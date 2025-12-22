@@ -34,16 +34,31 @@ export default async function AdminDashboard() {
   ];
 
   const modules = [
+    { href: "/admin/anasayfa", title: "Anasayfa", desc: "Hero ve tavsiyeler metinleri", cta: "Düzenle" },
     { href: "/admin/yazilar", title: "Yazılar", desc: "Listele, filtrele, düzenle", cta: "Yönet" },
     { href: "/admin/yazi-yeni", title: "Yeni Yazı", desc: "Başlık, içerik, medya ekle", cta: "Oluştur" },
     { href: "/admin/dergi", title: "Dergi", desc: "PDF & kapak yükle, arşivi yönet", cta: "Yönet" },
     { href: "/admin/kategoriler", title: "Kategoriler", desc: "CRUD ve sıralama", cta: "Düzenle" },
+    { href: "/admin/yazarlar", title: "Yazarlar", desc: "Profil ve görünürlük yönetimi", cta: "Yönet" },
     { href: "/admin/kullanicilar", title: "Kullanıcılar", desc: "Ban/rol ve abonelik bilgisi", cta: "Yönet" }
   ];
 
   return (
     <div className="min-h-screen">
-      <AdminShell title="Admin Dashboard" description="Özet metrikler ve son olaylar">
+      <AdminShell
+        title="Admin Dashboard"
+        description="Özet metrikler ve son olaylar"
+        actions={
+          <>
+            <Link href="/" className="px-3 py-2 rounded-full border border-border text-sm">
+              Siteyi gör
+            </Link>
+            <Link href="/admin/yazi-yeni" className="px-3 py-2 rounded-full bg-primary text-primary-foreground text-sm">
+              Yeni yazı
+            </Link>
+          </>
+        }
+      >
         <div className="grid gap-3 sm:grid-cols-3">
           {cards.map((card) => (
             <div key={card.title} className="border border-border rounded-xl p-4 bg-background/80">

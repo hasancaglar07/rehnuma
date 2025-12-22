@@ -2,6 +2,8 @@ import { prisma } from "@/db/prisma";
 import type { Metadata } from "next";
 import { getBaseUrl } from "@/lib/url";
 import { CategoryFeedShell } from "@/components/articles/category-feed-shell";
+import { toExcerpt } from "@/utils/excerpt";
+import { estimateReadingMinutes } from "@/utils/reading-time";
 
 export const revalidate = 120;
 
@@ -61,6 +63,7 @@ export default async function CategoryPage({ params }: Props) {
       title: true,
       slug: true,
       content: true,
+      excerpt: true,
       coverUrl: true,
       publishedAt: true,
       createdAt: true,
@@ -70,7 +73,18 @@ export default async function CategoryPage({ params }: Props) {
   });
 
   const hasMore = articles.length > pageSize;
-  const initialArticles = articles.slice(0, pageSize);
+  const initialArticles = articles.slice(0, pageSize).map((article) => ({
+    id: article.id,
+    title: article.title,
+    slug: article.slug,
+    excerpt: toExcerpt(article.excerpt || article.content, 140),
+    coverUrl: article.coverUrl,
+    publishedAt: article.publishedAt,
+    createdAt: article.createdAt,
+    isFeatured: article.isFeatured,
+    category: article.category,
+    readingMinutes: estimateReadingMinutes(article.content)
+  }));
 
   const taglineMap: Record<string, string> = {
     "rehnuma-dusunce": "Fikir, eleştiri ve çağın ruhuna dair derinlikli okumalar.",

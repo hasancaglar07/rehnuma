@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import { getCsrfToken } from "@/utils/client-cookies";
+import { CopyButton } from "@/components/admin/copy-button";
 
 type Category = {
   id: string;
@@ -14,15 +15,19 @@ type Category = {
 export function CategoryList() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(false);
+  const [listLoading, setListLoading] = useState(true);
   const [status, setStatus] = useState<string | null>(null);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [createForm, setCreateForm] = useState({ name: "", slug: "", parentId: "" });
   const [editForm, setEditForm] = useState({ name: "", slug: "", parentId: "" });
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
+    setListLoading(true);
     fetch("/api/categories")
       .then((res) => res.json())
-      .then((data) => setCategories(data.categories ?? []));
+      .then((data) => setCategories(data.categories ?? []))
+      .finally(() => setListLoading(false));
   }, []);
 
   const sorted = useMemo(() => [...categories].sort((a, b) => (a.order ?? 0) - (b.order ?? 0)), [categories]);
@@ -31,6 +36,13 @@ export function CategoryList() {
     () => categories.filter((c) => !c.parentId).sort((a, b) => (a.order ?? 0) - (b.order ?? 0)),
     [categories]
   );
+
+  const filtered = useMemo(() => {
+    const term = search.trim().toLowerCase();
+    if (!term) return sorted;
+    return sorted.filter((cat) => cat.name.toLowerCase().includes(term) || cat.slug.toLowerCase().includes(term));
+  }, [search, sorted]);
+  const isFiltering = Boolean(search.trim());
 
   const handleCreate = async () => {
     if (!createForm.name || !createForm.slug) {
@@ -162,8 +174,30 @@ export function CategoryList() {
         {status && <p className="text-sm text-muted-foreground">{status}</p>}
       </div>
 
+      <div className="flex flex-wrap items-center gap-2">
+        <input
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="Kategori ara (ad veya slug)"
+          className="px-3 py-2 rounded-lg border border-border bg-background text-sm"
+        />
+        <span className="text-xs text-muted-foreground">
+          {filtered.length}/{sorted.length} kategori
+        </span>
+        {isFiltering && (
+          <button
+            type="button"
+            onClick={() => setSearch("")}
+            className="text-xs text-muted-foreground underline"
+          >
+            Temizle
+          </button>
+        )}
+      </div>
+
       <div className="grid gap-3">
-        {sorted.map((cat, idx) => (
+        {listLoading && <p className="text-sm text-muted-foreground">Kategoriler yukleniyor...</p>}
+        {!listLoading && filtered.map((cat, idx) => (
           <div key={cat.id} className="border border-border rounded-xl p-4 flex flex-col gap-3 bg-background/80">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <div className="space-y-1">
@@ -174,14 +208,31 @@ export function CategoryList() {
                     Üst kategori: {categories.find((c) => c.id === cat.parentId)?.name ?? cat.parent?.name ?? "—"}
                   </p>
                 )}
-                <p className="text-xs text-muted-foreground">Sıra: {idx + 1}</p>
+                <p className="text-xs text-muted-foreground">
+                  Sıra: {sorted.findIndex((item) => item.id === cat.id) + 1}
+                </p>
+                <div className="flex flex-wrap items-center gap-2 text-xs">
+                  <a href={`/kategori/${cat.slug}`} className="text-primary underline" target="_blank" rel="noreferrer">
+                    Kategoriyi ac
+                  </a>
+                  <CopyButton
+                    text={`/kategori/${cat.slug}`}
+                    label="Link kopyala"
+                    className="text-xs text-muted-foreground underline"
+                  />
+                  <CopyButton
+                    text={cat.slug}
+                    label="Slug kopyala"
+                    className="text-xs text-muted-foreground underline"
+                  />
+                </div>
               </div>
               <div className="flex flex-wrap items-center gap-2 text-sm">
                 <button
                   type="button"
                   className="px-3 py-1 rounded-full border border-border hover:-translate-y-0.5 transition"
                   onClick={() => handleMove(cat.id, "up")}
-                  disabled={idx === 0}
+                  disabled={idx === 0 || isFiltering}
                 >
                   ↑
                 </button>
@@ -189,7 +240,7 @@ export function CategoryList() {
                   type="button"
                   className="px-3 py-1 rounded-full border border-border hover:-translate-y-0.5 transition"
                   onClick={() => handleMove(cat.id, "down")}
-                  disabled={idx === sorted.length - 1}
+                  disabled={idx === filtered.length - 1 || isFiltering}
                 >
                   ↓
                 </button>
@@ -257,7 +308,7 @@ export function CategoryList() {
             )}
           </div>
         ))}
-        {sorted.length === 0 && <p className="text-muted-foreground">Kategori bulunamadı.</p>}
+        {!listLoading && filtered.length === 0 && <p className="text-muted-foreground">Kategori bulunamadı.</p>}
       </div>
     </div>
   );
