@@ -60,8 +60,8 @@ export async function GET(req: NextRequest) {
 
   const categoryWhere = category
     ? {
-        OR: [{ category: { slug: category } }, { category: { parent: { slug: category } } }]
-      }
+      OR: [{ category: { slug: category } }, { category: { parent: { slug: category } } }]
+    }
     : {};
 
   const baseWhere = {
@@ -79,7 +79,7 @@ export async function GET(req: NextRequest) {
     const skip = (page - 1) * limit;
 
     if (filter === "short") {
-      const { articles, nextPage } = await paginateShort(where, orderBy, articleSelect, { limit, page });
+      const { articles, nextPage } = await paginateShort(where, orderBy, { limit, page });
       return NextResponse.json(
         { articles, nextPage },
         { headers: { "Cache-Control": "public, s-maxage=60, stale-while-revalidate=120" } }
@@ -112,7 +112,6 @@ export async function GET(req: NextRequest) {
 async function paginateShort(
   where: Prisma.ArticleWhereInput,
   orderBy: Prisma.ArticleOrderByWithRelationInput[],
-  select: Prisma.ArticleSelect,
   opts: { limit: number; page: number }
 ) {
   const { limit, page } = opts;
@@ -121,11 +120,11 @@ async function paginateShort(
 
   let cursor = 0;
   let remainingSkip = shortToSkip;
-  let collected: Awaited<ReturnType<typeof prisma.article.findMany>> = [];
+  let collected: ArticleRow[] = [];
   let exhausted = false;
 
   while (collected.length < limit + 1 && !exhausted) {
-    const batch = await prisma.article.findMany({ where, orderBy, select, skip: cursor, take: batchSize });
+    const batch = await prisma.article.findMany({ where, orderBy, select: articleSelect, skip: cursor, take: batchSize });
     if (batch.length < batchSize) exhausted = true;
     cursor += batch.length;
     let filtered = batch.filter((article) => isShortRead(article.content));
