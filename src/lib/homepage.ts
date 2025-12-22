@@ -16,7 +16,7 @@ export const DEFAULT_HOMEPAGE_CONTENT = {
 
 export type HomepageContent = typeof DEFAULT_HOMEPAGE_CONTENT;
 
-export function normalizeHomepageContent(content?: Partial<HomepageContent> | null): HomepageContent {
+export function normalizeHomepageContent(content?: Partial<Record<keyof HomepageContent, string | null>> | null): HomepageContent {
   if (!content) return DEFAULT_HOMEPAGE_CONTENT;
   return {
     heroBadge: content.heroBadge ?? "",
