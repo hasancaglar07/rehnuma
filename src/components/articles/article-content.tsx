@@ -10,6 +10,7 @@ type Props = {
   isSubscriber: boolean;
   fontScale?: number;
   className?: string;
+  contentIsPreview?: boolean;
   paywallMeta?: {
     returnTo: string;
     isSignedIn?: boolean;
@@ -44,13 +45,13 @@ function MarkdownBody({ text, fontScale, className }: { text: string; fontScale:
   );
 }
 
-export function ArticleContent({ content, isSubscriber, fontScale = 100, className, paywallMeta }: Props) {
+export function ArticleContent({ content, isSubscriber, fontScale = 100, className, contentIsPreview, paywallMeta }: Props) {
   const normalizedContent = normalizeEmphasisSpacing(content);
   if (isSubscriber) {
     return <MarkdownBody text={normalizedContent} fontScale={fontScale} className={className} />;
   }
 
-  const partial = buildPreview(normalizedContent);
+  const partial = contentIsPreview ? normalizedContent : buildPreview(normalizedContent);
   return (
     <div className="space-y-6" data-nosnippet>
       <MarkdownBody text={partial} fontScale={fontScale} className={className} />

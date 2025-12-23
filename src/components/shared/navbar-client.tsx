@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton, useUser } from "@clerk/nextjs";
 
@@ -35,7 +34,7 @@ export function NavbarClient() {
       return;
     }
     let cancelled = false;
-    fetch("/api/me", { cache: "no-store" })
+    fetch("/api/me")
       .then((res) => (res.ok ? res.json() : null))
       .then((data) => {
         if (cancelled || !data) return;
@@ -98,7 +97,7 @@ export function NavbarClient() {
             <Link href="/" className="inline-flex items-center gap-3 shrink-0" aria-label="Rehnüma ana sayfa">
               <span className="sr-only">Rehnüma</span>
               <span className="logo-shine">
-                <Image src={logo} alt="Rehnüma" className="logo-glow h-11 w-auto md:h-12" priority />
+                <img src={logo.src} alt="Rehnüma" className="logo-glow h-11 w-auto md:h-12" loading="eager" />
               </span>
             </Link>
             <nav className="hidden lg:flex items-center gap-1 text-sm">

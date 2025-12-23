@@ -1,15 +1,18 @@
 import { prisma } from "@/db/prisma";
-import { getSession } from "@/lib/auth";
 import { ArticleReader } from "@/components/articles/article-reader";
 import { ArticleCard } from "@/components/articles/article-card";
 import { toExcerpt } from "@/utils/excerpt";
 import type { Metadata } from "next";
 import { getBaseUrl } from "@/lib/url";
 import Link from "next/link";
+import { cache } from "react";
+import { normalizeEmphasisSpacing } from "@/utils/markdown";
+
+export const revalidate = 600;
 
 type Props = { params: Promise<{ slug: string }> };
 
-async function fetchArticle(slug: string) {
+const fetchArticle = cache(async (slug: string) => {
   try {
     return await prisma.article.findUnique({
       where: { slug, status: "published" },
@@ -19,7 +22,7 @@ async function fetchArticle(slug: string) {
     console.error("[article] article fetch failed", error);
     return null;
   }
-}
+});
 
 async function fetchRelated(articleId: string, categorySlug?: string | null) {
   try {
@@ -48,13 +51,21 @@ async function fetchRelated(articleId: string, categorySlug?: string | null) {
   }
 }
 
+function buildPreview(text: string) {
+  const blocks = text.split(/\n{2,}/).map((b) => b.trim()).filter(Boolean);
+  if (!blocks.length) return text.slice(0, 900);
+  const preview = blocks.slice(0, 3).join("\n\n");
+  if (preview.length < 400 && blocks[3]) return `${preview}\n\n${blocks[3].slice(0, 240)}`;
+  return preview;
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const article = await fetchArticle(slug);
   const baseUrl = getBaseUrl();
   const description = article?.content ? toExcerpt(article.content, 160) : "Rehnüma yazısı";
   const canonical = `${baseUrl}/yazi/${slug}`;
-  const ogImage = article?.coverUrl || `${baseUrl}/og?title=${encodeURIComponent(article?.title ?? "Rehnüma")}&type=article`;
+  const ogImage = article?.coverUrl || `${baseUrl}/og-default.png`;
 
   return {
     title: article ? `${article.title} | Rehnüma` : "Yazı | Rehnüma",
@@ -79,10 +90,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ArticlePage({ params }: Props) {
   const { slug } = await params;
   const article = await fetchArticle(slug);
-  const session = await getSession();
-  const isSignedIn = Boolean(session.user);
-  const isAdmin = session.user?.role === "admin";
-  const isSubscriber = isAdmin || session.user?.subscriptionStatus === "active";
 
   if (!article) {
     return (
@@ -96,25 +103,13 @@ export default async function ArticlePage({ params }: Props) {
 
   const wordCount = article.content.split(/\s+/).filter(Boolean).length;
   const readingMinutes = Math.max(1, Math.round(wordCount / 190));
+  const previewContent = buildPreview(normalizeEmphasisSpacing(article.content));
+  const readerContent = previewContent;
   const publishedDate = new Intl.DateTimeFormat("tr-TR", { dateStyle: "long" }).format(article.createdAt);
   const baseUrl = getBaseUrl();
   const shareUrl = `${baseUrl}/yazi/${slug}`;
   const loginUrl = `/giris?returnTo=${encodeURIComponent(`/yazi/${slug}`)}`;
   const related = await fetchRelated(article.id, article.category?.slug);
-
-  let saved: Awaited<ReturnType<typeof prisma.savedArticle.findUnique>> | null = null;
-  let readingProgress: Awaited<ReturnType<typeof prisma.readingProgress.findUnique>> | null = null;
-
-  if (session.user) {
-    try {
-      [saved, readingProgress] = await Promise.all([
-        prisma.savedArticle.findUnique({ where: { userId_articleId: { userId: session.user.id, articleId: article.id } } }),
-        prisma.readingProgress.findUnique({ where: { userId_articleId: { userId: session.user.id, articleId: article.id } } })
-      ]);
-    } catch (error) {
-      console.error("[article] user state fetch failed", error);
-    }
-  }
 
   const authorLd = article.author?.name
     ? { "@type": "Person", name: article.author.name, url: `${baseUrl}/yazarlar/${article.author.slug}` }
@@ -183,16 +178,14 @@ export default async function ArticlePage({ params }: Props) {
             article={{
               slug: article.slug,
               title: article.title,
-              content: article.content,
-              audioUrl: article.audioUrl,
+              content: readerContent,
+              contentIsPreview: true,
+              audioUrl: null,
               shareUrl,
               readingMinutes,
               wordCount
             }}
-            isSubscriber={!!isSubscriber}
-            isSignedIn={isSignedIn}
-            initialSaved={!!saved}
-            initialProgress={readingProgress?.progress ?? 0}
+            isSubscriber={false}
             loginUrl={loginUrl}
             subscribeUrl="/abonelik"
           />

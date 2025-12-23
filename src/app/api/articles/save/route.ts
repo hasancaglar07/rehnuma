@@ -1,5 +1,4 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { prisma } from "@/db/prisma";
 import { requireAuthGuard, requireCsrfGuard, requestIp } from "@/lib/api-guards";
@@ -33,11 +32,9 @@ export async function POST(req: NextRequest) {
       create: { userId: auth.user.id, articleId: article.id },
       update: {}
     });
-    revalidatePath("/profil/kaydedilenler");
     return NextResponse.json({ saved: true });
   }
 
   await prisma.savedArticle.deleteMany({ where: { userId: auth.user.id, articleId: article.id } });
-  revalidatePath("/profil/kaydedilenler");
   return NextResponse.json({ saved: false });
 }

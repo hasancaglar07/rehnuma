@@ -1,5 +1,6 @@
 "use client";
-import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
+import { useUser } from "@clerk/nextjs";
 import { ArticleAudio } from "./audio-player";
 import { ArticleContent } from "./article-content";
 import { getCsrfToken } from "@/utils/client-cookies";
@@ -10,6 +11,7 @@ type Props = {
     slug: string;
     title: string;
     content: string;
+    contentIsPreview?: boolean;
     audioUrl?: string | null;
     shareUrl?: string;
     readingMinutes?: number;
@@ -104,6 +106,7 @@ export function ArticleReader({
   loginUrl: loginUrlProp,
   subscribeUrl: subscribeUrlProp
 }: Props) {
+  const { isSignedIn: clerkSignedIn, isLoaded: isClerkLoaded } = useUser();
   const [fontScale, setFontScale] = useState(100);
   const [saved, setSaved] = useState(initialSaved);
   const [progress, setProgress] = useState(initialProgress);
@@ -111,6 +114,15 @@ export function ArticleReader({
   const [themeId, setThemeId] = useState<ReadingTheme["id"]>("clean");
   const [shareCopied, setShareCopied] = useState(false);
   const progressRef = useRef(initialProgress);
+  const lastSentProgress = useRef(initialProgress);
+  const [effectiveSubscriber, setEffectiveSubscriber] = useState(isSubscriber);
+  const [content, setContent] = useState(article.content);
+  const [contentIsPreview, setContentIsPreview] = useState(Boolean(article.contentIsPreview));
+  const [audioUrl, setAudioUrl] = useState<string | null | undefined>(article.audioUrl);
+  const [readingMinutes, setReadingMinutes] = useState(article.readingMinutes);
+  const [wordCount, setWordCount] = useState(article.wordCount);
+  const [isLoadingFull, setIsLoadingFull] = useState(false);
+  const hasRestoredProgress = useRef(false);
 
   const theme = useMemo(() => themes.find((t) => t.id === themeId) || themes[0], [themeId]);
   const shareUrl = useMemo(() => article.shareUrl || (typeof window !== "undefined" ? window.location.href : ""), [article.shareUrl]);
@@ -119,23 +131,74 @@ export function ArticleReader({
     [article.slug, loginUrlProp]
   );
   const subscribeUrl = useMemo(() => subscribeUrlProp || "/abonelik", [subscribeUrlProp]);
+  const signedIn = isClerkLoaded ? clerkSignedIn : isSignedIn;
 
   const clampFont = (next: number) => Math.min(120, Math.max(90, next));
+
+  useEffect(() => {
+    setContent(article.content);
+    setContentIsPreview(Boolean(article.contentIsPreview));
+    setAudioUrl(article.audioUrl);
+    setReadingMinutes(article.readingMinutes);
+    setWordCount(article.wordCount);
+    setEffectiveSubscriber(isSubscriber);
+    setSaved(initialSaved);
+    setProgress(initialProgress);
+    progressRef.current = initialProgress;
+    lastSentProgress.current = initialProgress;
+    hasRestoredProgress.current = false;
+  }, [article.slug, article.content, article.contentIsPreview, article.audioUrl, article.readingMinutes, article.wordCount, initialProgress, initialSaved, isSubscriber]);
 
   useEffect(() => {
     document.body.classList.add("no-sakura");
     return () => document.body.classList.remove("no-sakura");
   }, []);
 
-  useEffect(() => {
-    if (!initialProgress) return;
+  const restoreProgress = useCallback((value: number) => {
+    if (!value || hasRestoredProgress.current) return;
     const doc = document.documentElement;
     const scrollable = doc.scrollHeight - doc.clientHeight;
     if (scrollable > 0) {
-      const target = Math.min(scrollable, Math.round((initialProgress / 100) * scrollable));
+      hasRestoredProgress.current = true;
+      const target = Math.min(scrollable, Math.round((value / 100) * scrollable));
       window.scrollTo({ top: target, behavior: "smooth" });
     }
-  }, [initialProgress]);
+  }, []);
+
+  useEffect(() => {
+    if (!initialProgress) return;
+    restoreProgress(initialProgress);
+  }, [initialProgress, restoreProgress]);
+
+  useEffect(() => {
+    if (effectiveSubscriber || !signedIn || !contentIsPreview) return;
+    let cancelled = false;
+    setIsLoadingFull(true);
+    fetch(`/api/articles/full?slug=${encodeURIComponent(article.slug)}`)
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (cancelled || !data?.content) return;
+        setContent(data.content);
+        setContentIsPreview(false);
+        setAudioUrl(data.audioUrl ?? null);
+        if (typeof data.readingMinutes === "number") setReadingMinutes(data.readingMinutes);
+        if (typeof data.wordCount === "number") setWordCount(data.wordCount);
+        if (typeof data.saved === "boolean") setSaved(data.saved);
+        if (typeof data.progress === "number") {
+          setProgress(data.progress);
+          progressRef.current = data.progress;
+          lastSentProgress.current = data.progress;
+          restoreProgress(data.progress);
+        }
+        setEffectiveSubscriber(true);
+      })
+      .finally(() => {
+        if (!cancelled) setIsLoadingFull(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [article.slug, contentIsPreview, effectiveSubscriber, restoreProgress, signedIn]);
 
   useEffect(() => {
     let ticking = false;
@@ -164,7 +227,8 @@ export function ArticleReader({
   }, []);
 
   useEffect(() => {
-    if (!isSubscriber) return;
+    if (!effectiveSubscriber) return;
+    if (Math.abs(progress - lastSentProgress.current) < 5 && progress !== 100) return;
     const controller = new AbortController();
     const timeout = setTimeout(async () => {
       try {
@@ -177,15 +241,16 @@ export function ArticleReader({
           body: JSON.stringify({ slug: article.slug, progress }),
           signal: controller.signal
         });
+        lastSentProgress.current = progress;
       } catch {
-        // ignore
+        lastSentProgress.current = progress;
       }
-    }, 500);
+    }, 2000);
     return () => {
       controller.abort();
       clearTimeout(timeout);
     };
-  }, [article.slug, isSubscriber, progress]);
+  }, [article.slug, effectiveSubscriber, progress]);
 
   const toggleSave = async () => {
     setStatusMessage(null);
@@ -216,29 +281,31 @@ export function ArticleReader({
   const articleBody = useMemo(
     () => (
       <ArticleContent
-        content={article.content}
-        isSubscriber={isSubscriber}
+        content={content}
+        isSubscriber={effectiveSubscriber}
         fontScale={fontScale}
         className={theme.proseClass}
+        contentIsPreview={!effectiveSubscriber && contentIsPreview}
         paywallMeta={{
           returnTo: loginUrl,
-          isSignedIn,
-          hasAudio: Boolean(article.audioUrl),
-          wordCount: article.wordCount,
-          readingMinutes: article.readingMinutes
+          isSignedIn: signedIn,
+          hasAudio: Boolean(audioUrl),
+          wordCount,
+          readingMinutes
         }}
       />
     ),
     [
-      article.audioUrl,
-      article.content,
-      article.readingMinutes,
-      article.wordCount,
+      audioUrl,
+      content,
+      contentIsPreview,
       fontScale,
-      isSignedIn,
-      isSubscriber,
+      readingMinutes,
+      signedIn,
+      effectiveSubscriber,
       loginUrl,
-      theme.proseClass
+      theme.proseClass,
+      wordCount
     ]
   );
 
@@ -337,7 +404,7 @@ export function ArticleReader({
           </button>
           {statusMessage && <span className="text-xs opacity-80">{statusMessage}</span>}
         </div>
-        {isSubscriber && (
+        {effectiveSubscriber && (
           <div className="ml-auto flex items-center gap-2 min-w-[180px]">
             <div className={cn("h-2 flex-1 rounded-full overflow-hidden", progressTrack)}>
               <div className="h-full bg-primary transition-all" style={{ width: `${progress}%` }} />
@@ -346,7 +413,10 @@ export function ArticleReader({
           </div>
         )}
       </div>
-      <ArticleAudio src={article.audioUrl || undefined} />
+      {isLoadingFull && signedIn && (
+        <p className="text-xs text-muted-foreground">Tam içerik yükleniyor…</p>
+      )}
+      <ArticleAudio src={audioUrl || undefined} />
       <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
         <button
           type="button"

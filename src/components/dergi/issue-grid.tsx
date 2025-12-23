@@ -71,7 +71,7 @@ export function IssueGrid({ isSubscriber = false }: IssueGridProps) {
   useEffect(() => {
     let cancelled = false;
     setIsFetching(true);
-    fetch("/api/issues?lite=1", { cache: "no-store" })
+    fetch("/api/issues?lite=1")
       .then((res) => (res.ok ? res.json() : null))
       .then((data) => {
         if (cancelled) return;

@@ -28,7 +28,7 @@ async function issueMetadata(params: Props["params"], basePath: string): Promise
   const canonical = `${baseUrl}${basePath}/${slug}`;
   const title = issue ? `${issue.month}/${issue.year} Sayı | Rehnüma` : "Sayı | Rehnüma";
   const description = issue ? "Rehnüma dijital sayı" : "Dijital sayı arşivi";
-  const ogImage = issue?.coverUrl || `${baseUrl}/og?title=${encodeURIComponent(title)}&type=issue`;
+  const ogImage = issue?.coverUrl || `${baseUrl}/og-default.png`;
 
   return {
     title,

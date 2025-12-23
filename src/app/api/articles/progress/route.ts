@@ -1,5 +1,4 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { prisma } from "@/db/prisma";
 import { requireAuthGuard, requireCsrfGuard, requestIp } from "@/lib/api-guards";
@@ -32,8 +31,6 @@ export async function POST(req: NextRequest) {
     update: { progress: Math.min(100, Math.max(0, Math.round(parsed.data.progress))) },
     create: { userId: auth.user.id, articleId: article.id, progress: Math.round(parsed.data.progress) }
   });
-
-  revalidatePath("/profil/okuma-gecmisi");
 
   return NextResponse.json({ progress: record.progress });
 }
