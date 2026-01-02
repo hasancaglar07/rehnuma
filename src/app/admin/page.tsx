@@ -35,6 +35,7 @@ export default async function AdminDashboard() {
 
   const modules = [
     { href: "/admin/anasayfa", title: "Anasayfa", desc: "Hero ve tavsiyeler metinleri", cta: "Düzenle" },
+    { href: "/admin/kurumsal", title: "Kurumsal", desc: "Hakkımızda, misyon, vizyon, künye", cta: "Düzenle" },
     { href: "/admin/yazilar", title: "Yazılar", desc: "Listele, filtrele, düzenle", cta: "Yönet" },
     { href: "/admin/yazi-yeni", title: "Yeni Yazı", desc: "Başlık, içerik, medya ekle", cta: "Oluştur" },
     { href: "/admin/dergi", title: "Dergi", desc: "PDF & kapak yükle, arşivi yönet", cta: "Yönet" },

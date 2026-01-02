@@ -1,47 +1,29 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-
-const sections = [
-  {
-    title: "Hakkımızda",
-    href: "/kurumsal/hakkimizda",
-    description:
-      "Rehnüma, kadınların ruhsal, entelektüel ve kültürel gelişimini destekleyen bir yaşam dergisi. Modern dünyanın akışına karşı sakinlik ve ilham sunuyor."
-  },
-  {
-    title: "Misyon",
-    href: "/kurumsal/misyon",
-    description: "Kadınların iç dünyasını zenginleştiren, aileyi güçlendiren, kültür ve sanatla hayatı güzelleştiren içerikler üretmek."
-  },
-  {
-    title: "Vizyon",
-    href: "/kurumsal/vizyon",
-    description:
-      "Zarafeti, bilgeliği ve üretkenliği birleştiren; kadınlara manevi ve kültürel derinlik kazandıran bir yayın olmak."
-  },
-  {
-    title: "Künye",
-    href: "/kurumsal/kunye",
-    description: "Editoryal ekip, iletişim ve yasal bilgilere dair güncel özet. Güncellemeler için yer tutucu içerik."
-  }
-];
+import { getCorporateContent } from "@/lib/kurumsal-data";
 
 export const metadata: Metadata = {
   title: "Kurumsal | Rehnüma Kadın Dergisi",
   description: "Rehnüma'nın misyonu, vizyonu, hikayesi ve künye bilgileri."
 };
 
-export default function KurumsalPage() {
+export const revalidate = 60;
+
+export default async function KurumsalPage() {
+  const content = await getCorporateContent();
+  const sections = [
+    { title: content.hakkimizda.title, href: "/kurumsal/hakkimizda", description: content.cards.hakkimizda },
+    { title: content.misyon.title, href: "/kurumsal/misyon", description: content.cards.misyon },
+    { title: content.vizyon.title, href: "/kurumsal/vizyon", description: content.cards.vizyon },
+    { title: content.kunye.title, href: "/kurumsal/kunye", description: content.cards.kunye }
+  ];
   return (
     <div className="min-h-screen">
       <main className="container space-y-10 py-12 lg:py-16">
         <div className="space-y-4 max-w-3xl">
           <p className="text-xs uppercase tracking-[0.18em] text-primary/80">Kurumsal</p>
-          <h1 className="text-3xl md:text-4xl font-serif leading-tight">Zarafetin ve bilgeliğin izinde bir yayın.</h1>
-          <p className="text-lg text-muted-foreground">
-            Rehnüma, kadınların duygu, düşünce ve üretim yolculuğunda sakinlik, derinlik ve ilham sunmak için var. Burada
-            misyonumuzu, vizyonumuzu ve ekip bilgilerimizi bulabilirsiniz.
-          </p>
+          <h1 className="text-3xl md:text-4xl font-serif leading-tight">{content.landingTitle}</h1>
+          <p className="text-lg text-muted-foreground">{content.landingDescription}</p>
         </div>
 
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">

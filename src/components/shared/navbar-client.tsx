@@ -68,6 +68,7 @@ export function NavbarClient() {
     ? [
         { href: "/admin", label: "Admin" },
         { href: "/admin/anasayfa", label: "Anasayfa" },
+        { href: "/admin/kurumsal", label: "Kurumsal" },
         { href: "/admin/kullanicilar", label: "Kullanıcılar" },
         { href: "/admin/yazarlar", label: "Yazarlar" },
         { href: "/admin/yazilar", label: "Yönetim" }

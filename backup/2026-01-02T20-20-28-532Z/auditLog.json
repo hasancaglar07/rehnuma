@@ -1,0 +1,6273 @@
+[
+  {
+    "id": "cmiql0u7u0001nx4k6zr1rcum",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1764801121893-6831c5b254fb6196-coverUrl-hero-NR4rpm4I7MO5vlXjDdxMcnpEZSV8Lu.png",
+    "metadata": {
+      "mime": "image/png"
+    },
+    "createdAt": "2025-12-03T22:32:03.834Z"
+  },
+  {
+    "id": "cmiql1t030003nx4kauv89ewg",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmip2f5ln0007zmqejc7xaxg0",
+    "metadata": {
+      "slug": "ilk-yazi",
+      "status": "published"
+    },
+    "createdAt": "2025-12-03T22:32:48.916Z"
+  },
+  {
+    "id": "cmiqlc28w0007nx4kulfyku7r",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1764801643026-26af725dba718454-pdfUrl-Untitled_design__1_-QohBrniugqhY5KiHWyazh7VzruD5Vd.pdf",
+    "metadata": {
+      "mime": "application/pdf"
+    },
+    "createdAt": "2025-12-03T22:40:47.456Z"
+  },
+  {
+    "id": "cmiqlcknw0009nx4kcvlcnfsz",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1764801667812-fa28522a7f0179bc-coverUrl-Gemini_Generated_Image_oj42l5oj42l5oj42-HGDNokNvnkELDBkMPIgXWrYnf4Pe9N.png",
+    "metadata": {
+      "mime": "image/png"
+    },
+    "createdAt": "2025-12-03T22:41:11.325Z"
+  },
+  {
+    "id": "cmiqlcui8000cnx4kl47svzgg",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "create",
+    "targetType": "issue",
+    "targetId": "cmiqlcud7000anx4kdj84k5w4",
+    "metadata": {
+      "year": 2025,
+      "month": 12
+    },
+    "createdAt": "2025-12-03T22:41:24.080Z"
+  },
+  {
+    "id": "cmiqlwg7q000enx4kq7qf0cq7",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmip2f5ln0007zmqejc7xaxg0",
+    "metadata": {
+      "slug": "ilk-yazi",
+      "status": "published"
+    },
+    "createdAt": "2025-12-03T22:56:38.679Z"
+  },
+  {
+    "id": "cmiqpdq0y0001quadfvibqfez",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1764808440615-a43d168e9611ea28-pdfUrl-dualar_ve_zikirler-m.sami_ramazano_C4_9Flu-V5R9vKDGTpnxSHTgTV177haSg8YTyY.pdf",
+    "metadata": {
+      "mime": "application/pdf"
+    },
+    "createdAt": "2025-12-04T00:34:03.332Z"
+  },
+  {
+    "id": "cmiqpeeio0003quadjpkq3ldo",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1764808472478-866afd68b7131851-coverUrl-GGKEY_AN62R9C2A93_frontcover-yHdzldcFzz0txxoQXHb3DNcnn3B9OX.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-04T00:34:35.136Z"
+  },
+  {
+    "id": "cmiqpele30006quadv0vo89ym",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "update",
+    "targetType": "issue",
+    "targetId": "cmiqlcud7000anx4kdj84k5w4",
+    "metadata": {
+      "year": 2025,
+      "month": 12
+    },
+    "createdAt": "2025-12-04T00:34:44.043Z"
+  },
+  {
+    "id": "cmiqph6vy0008quadkg0y036n",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1764808603552-db844b463d58b72d-pdfUrl-Sufi__ifa_Yolu_v2.3-PiBTHnstZkYOUfaVsmMyu0Kgv4oTYz.pdf",
+    "metadata": {
+      "mime": "application/pdf"
+    },
+    "createdAt": "2025-12-04T00:36:45.214Z"
+  },
+  {
+    "id": "cmiqphbja000bquadl87mq73q",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "update",
+    "targetType": "issue",
+    "targetId": "cmiqlcud7000anx4kdj84k5w4",
+    "metadata": {
+      "year": 2025,
+      "month": 12
+    },
+    "createdAt": "2025-12-04T00:36:51.238Z"
+  },
+  {
+    "id": "cmircz0jp000agbushtr5j3hi",
+    "userId": "user_36MBfqZfk1Kc7djrjsN4pbpjfTc",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmircz02n0008gbusf75m8v6o",
+    "metadata": {
+      "slug": "evlilikte-guven-sadakat-ve-seffafligin-onemi",
+      "status": "published"
+    },
+    "createdAt": "2025-12-04T11:34:27.973Z"
+  },
+  {
+    "id": "cmird36uz000ngbusikwi4seu",
+    "userId": "user_36MBfqZfk1Kc7djrjsN4pbpjfTc",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmird36gt000lgbusi617wsdg",
+    "metadata": {
+      "slug": "kadini-isiten-var",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-04T11:37:42.779Z"
+  },
+  {
+    "id": "cmird4k4g000pgbusk5hz81b3",
+    "userId": "user_36MBfqZfk1Kc7djrjsN4pbpjfTc",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmird36gt000lgbusi617wsdg",
+    "metadata": {
+      "slug": "kadini-isiten-var",
+      "status": "published"
+    },
+    "createdAt": "2025-12-04T11:38:46.624Z"
+  },
+  {
+    "id": "cmird6kkk000rgbusa4qajh2x",
+    "userId": "user_36MBfqZfk1Kc7djrjsN4pbpjfTc",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1764848418800-dba0a31b5ab9b95b-coverUrl-hero-1fpmdzQvxbik1k9WKvxUw2c96pG51T.png",
+    "metadata": {
+      "mime": "image/png"
+    },
+    "createdAt": "2025-12-04T11:40:20.516Z"
+  },
+  {
+    "id": "cmird6o6f000ugbusdl07woy6",
+    "userId": "user_36MBfqZfk1Kc7djrjsN4pbpjfTc",
+    "action": "update",
+    "targetType": "issue",
+    "targetId": "cmiqlcud7000anx4kdj84k5w4",
+    "metadata": {
+      "year": 2025,
+      "month": 12
+    },
+    "createdAt": "2025-12-04T11:40:25.191Z"
+  },
+  {
+    "id": "cmirjt2y50001rhp2rk9rt2oj",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiremozi00842x2oo04h9dib",
+    "metadata": {
+      "slug": "limonlu-kurabiye-kubra-kilic"
+    },
+    "createdAt": "2025-12-04T14:45:48.461Z"
+  },
+  {
+    "id": "cmirk046u0001u0jm5ogjpxjf",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "delete",
+    "targetType": "category",
+    "targetId": "cmip2f56r0003zmqeyxe1rqa1",
+    "metadata": null,
+    "createdAt": "2025-12-04T14:51:16.663Z"
+  },
+  {
+    "id": "cmirlknx7001hi638lyjgmqb3",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1764862511270-c5ba5a88ed613041-coverUrl-ChatGPT_Image_13_A_u_2025_11_55_07-P2BV5VBIXJFjLrXrggjf40OGbgA2Om.png",
+    "metadata": {
+      "mime": "image/png"
+    },
+    "createdAt": "2025-12-04T15:35:14.972Z"
+  },
+  {
+    "id": "cmirlkr6j001ki6382dy1hbhk",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "update",
+    "targetType": "issue",
+    "targetId": "seed-issue",
+    "metadata": {
+      "year": 2024,
+      "month": 1
+    },
+    "createdAt": "2025-12-04T15:35:19.195Z"
+  },
+  {
+    "id": "cmirlmiom0002o7g0iwuwhi7k",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "update",
+    "targetType": "issue",
+    "targetId": "seed-issue",
+    "metadata": {
+      "year": 2024,
+      "month": 1
+    },
+    "createdAt": "2025-12-04T15:36:41.494Z"
+  },
+  {
+    "id": "cmiunpka30009utmf1vhrluy1",
+    "userId": "user_36MBfqZfk1Kc7djrjsN4pbpjfTc",
+    "action": "promote",
+    "targetType": "user",
+    "targetId": "user_36U2YJyTHd9nVwTJIDz9aUpOlAM",
+    "metadata": null,
+    "createdAt": "2025-12-06T18:58:21.292Z"
+  },
+  {
+    "id": "cmiunpl2n000butmftzqi8f9u",
+    "userId": "user_36MBfqZfk1Kc7djrjsN4pbpjfTc",
+    "action": "promote",
+    "targetType": "user",
+    "targetId": "user_36U2YJyTHd9nVwTJIDz9aUpOlAM",
+    "metadata": null,
+    "createdAt": "2025-12-06T18:58:22.320Z"
+  },
+  {
+    "id": "cmivmscr700011f8033kp08v7",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmivmn27i001slmihzgrcdzdw",
+    "metadata": {
+      "slug": "ailede-rahmet",
+      "status": "published"
+    },
+    "createdAt": "2025-12-07T11:20:18.067Z"
+  },
+  {
+    "id": "cmivo71mr000f1f80wsetqjvd",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "setRole",
+    "targetType": "user",
+    "targetId": "user_36MBfqZfk1Kc7djrjsN4pbpjfTc",
+    "metadata": null,
+    "createdAt": "2025-12-07T11:59:43.107Z"
+  },
+  {
+    "id": "cmivo72v1000h1f80guchhtvz",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "setRole",
+    "targetType": "user",
+    "targetId": "user_36MBfqZfk1Kc7djrjsN4pbpjfTc",
+    "metadata": null,
+    "createdAt": "2025-12-07T11:59:44.702Z"
+  },
+  {
+    "id": "cmivo7axc000j1f80ytt72ss0",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "setRole",
+    "targetType": "user",
+    "targetId": "user_36MBfqZfk1Kc7djrjsN4pbpjfTc",
+    "metadata": null,
+    "createdAt": "2025-12-07T11:59:55.153Z"
+  },
+  {
+    "id": "cmivoksd3000l1f80llx1h5sf",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "setRole",
+    "targetType": "user",
+    "targetId": "user_36MBfqZfk1Kc7djrjsN4pbpjfTc",
+    "metadata": null,
+    "createdAt": "2025-12-07T12:10:24.280Z"
+  },
+  {
+    "id": "cmivol441000n1f809do2hmg3",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "setRole",
+    "targetType": "user",
+    "targetId": "user_36MBfqZfk1Kc7djrjsN4pbpjfTc",
+    "metadata": null,
+    "createdAt": "2025-12-07T12:10:39.505Z"
+  },
+  {
+    "id": "cmivtsy3d0007rc33j37a3xd8",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirem9ku007e2x2o6ufstnme",
+    "metadata": {
+      "slug": "tavuk-mu-katsak-bamya-kubra-kilic",
+      "status": "published"
+    },
+    "createdAt": "2025-12-07T14:36:43.033Z"
+  },
+  {
+    "id": "cmivu2282000hjc1ouv6f2k51",
+    "userId": "user_36U2YJyTHd9nVwTJIDz9aUpOlAM",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmivmn0f9001plmihgl7ed4ew",
+    "metadata": {
+      "slug": "annelikte-sefkat",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-07T14:43:48.290Z"
+  },
+  {
+    "id": "cmivvyg490001zv6j9a5z9qe9",
+    "userId": "user_36U2YJyTHd9nVwTJIDz9aUpOlAM",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmivmn0f9001plmihgl7ed4ew",
+    "metadata": {
+      "slug": "annelikte-sefkat",
+      "status": "published"
+    },
+    "createdAt": "2025-12-07T15:36:58.905Z"
+  },
+  {
+    "id": "cmiw4vw1j000jd98m0ear734l",
+    "userId": "user_36U2YJyTHd9nVwTJIDz9aUpOlAM",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmivmn0f9001plmihgl7ed4ew",
+    "metadata": {
+      "slug": "annelikte-sefkat",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-07T19:46:56.119Z"
+  },
+  {
+    "id": "cmiw50o8z000ld98msugxlrro",
+    "userId": "user_36U2YJyTHd9nVwTJIDz9aUpOlAM",
+    "action": "setRole",
+    "targetType": "user",
+    "targetId": "user_36Wz4MAtU1VhqDMjKWv8u1qshjf",
+    "metadata": null,
+    "createdAt": "2025-12-07T19:50:39.300Z"
+  },
+  {
+    "id": "cmiw50pvd000nd98mczrfl5w9",
+    "userId": "user_36U2YJyTHd9nVwTJIDz9aUpOlAM",
+    "action": "setRole",
+    "targetType": "user",
+    "targetId": "user_36Wz4MAtU1VhqDMjKWv8u1qshjf",
+    "metadata": null,
+    "createdAt": "2025-12-07T19:50:41.401Z"
+  },
+  {
+    "id": "cmiw50u11000pd98mti7c4u5u",
+    "userId": "user_36U2YJyTHd9nVwTJIDz9aUpOlAM",
+    "action": "setRole",
+    "targetType": "user",
+    "targetId": "user_36Wz4MAtU1VhqDMjKWv8u1qshjf",
+    "metadata": null,
+    "createdAt": "2025-12-07T19:50:46.789Z"
+  },
+  {
+    "id": "cmiw50umq000rd98mxdqgklkl",
+    "userId": "user_36U2YJyTHd9nVwTJIDz9aUpOlAM",
+    "action": "setRole",
+    "targetType": "user",
+    "targetId": "user_36Wz4MAtU1VhqDMjKWv8u1qshjf",
+    "metadata": null,
+    "createdAt": "2025-12-07T19:50:47.571Z"
+  },
+  {
+    "id": "cmiw50v5j000td98mpl2dr5zv",
+    "userId": "user_36U2YJyTHd9nVwTJIDz9aUpOlAM",
+    "action": "setRole",
+    "targetType": "user",
+    "targetId": "user_36Wz4MAtU1VhqDMjKWv8u1qshjf",
+    "metadata": null,
+    "createdAt": "2025-12-07T19:50:48.247Z"
+  },
+  {
+    "id": "cmiw50v8j000vd98m0sfxhi9l",
+    "userId": "user_36U2YJyTHd9nVwTJIDz9aUpOlAM",
+    "action": "setRole",
+    "targetType": "user",
+    "targetId": "user_36Wz4MAtU1VhqDMjKWv8u1qshjf",
+    "metadata": null,
+    "createdAt": "2025-12-07T19:50:48.356Z"
+  },
+  {
+    "id": "cmiysnvqu000pihnttzg8zfvz",
+    "userId": "user_36Wz4MAtU1VhqDMjKWv8u1qshjf",
+    "action": "reorder",
+    "targetType": "category",
+    "targetId": null,
+    "metadata": {
+      "count": 31
+    },
+    "createdAt": "2025-12-09T16:28:05.623Z"
+  },
+  {
+    "id": "cmiysnxzv000rihnt0jix1u3t",
+    "userId": "user_36Wz4MAtU1VhqDMjKWv8u1qshjf",
+    "action": "reorder",
+    "targetType": "category",
+    "targetId": null,
+    "metadata": {
+      "count": 31
+    },
+    "createdAt": "2025-12-09T16:28:08.540Z"
+  },
+  {
+    "id": "cmj16myej000d11l0t4xj4d6g",
+    "userId": "user_36U2YJyTHd9nVwTJIDz9aUpOlAM",
+    "action": "setRole",
+    "targetType": "user",
+    "targetId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "metadata": null,
+    "createdAt": "2025-12-11T08:34:49.388Z"
+  },
+  {
+    "id": "cmj16n24a000f11l0xwnfhf0p",
+    "userId": "user_36U2YJyTHd9nVwTJIDz9aUpOlAM",
+    "action": "setRole",
+    "targetType": "user",
+    "targetId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "metadata": null,
+    "createdAt": "2025-12-11T08:34:54.202Z"
+  },
+  {
+    "id": "cmj16n2wu000h11l0d6o3yg28",
+    "userId": "user_36U2YJyTHd9nVwTJIDz9aUpOlAM",
+    "action": "setRole",
+    "targetType": "user",
+    "targetId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "metadata": null,
+    "createdAt": "2025-12-11T08:34:55.231Z"
+  },
+  {
+    "id": "cmjgvju950001h1zz0lkry8ul",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766390926338-ea296e231184d153-coverUrl-Kokler-ve-evler_Gulay-Turkmen-scaled-e1713353707481-pwCUhsGqEKU1jtivo6GKqJ0wLUYzRl.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T08:08:47.081Z"
+  },
+  {
+    "id": "cmjgvkqsy0001xz17rsrb3to3",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766390968820-143562b81c9143df-coverUrl-shutterstock_2511777591-scaled-e1728917650915-3OdWSlepAORuZ9bMryf4A1IKqULPxp.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T08:09:29.267Z"
+  },
+  {
+    "id": "cmjgvqvp8000txz17h20w2lel",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjgvquyy000rxz17v7208pgh",
+    "metadata": {
+      "slug": "yeni-nesil-yoksunluk-aidiyet-bilincinin-zedelenmesi-sema-bayar",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T08:14:15.548Z"
+  },
+  {
+    "id": "cmjgvxy4t000111yy9apa4j1j",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjgvquyy000rxz17v7208pgh",
+    "metadata": {
+      "slug": "yeni-nesil-yoksunluk-aidiyet-bilincinin-zedelenmesi-sema-bayar",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T08:19:45.293Z"
+  },
+  {
+    "id": "cmjgvyapr000311yyrw9txi6m",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjgvquyy000rxz17v7208pgh",
+    "metadata": {
+      "slug": "yeni-nesil-yoksunluk-aidiyet-bilincinin-zedelenmesi-sema-bayar",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T08:20:01.600Z"
+  },
+  {
+    "id": "cmjgvzmqb000p11yyfq2kgnv6",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjgvquyy000rxz17v7208pgh",
+    "metadata": {
+      "slug": "yeni-nesil-yoksunluk-aidiyet-bilincinin-zedelenmesi-sema-bayar",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T08:21:03.827Z"
+  },
+  {
+    "id": "cmjgwbjw4001hxz1755ea4iq2",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766392219375-a58766373df99af6-coverUrl-DNA-genetik-kalitim-kromozomlar-700x700-Jr9KxIkdl0It43NDaaEC9Uzba44b2y.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T08:30:20.020Z"
+  },
+  {
+    "id": "cmjgwdmax001kxz17rosg13kv",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjgwdll3001ixz17103qxs5a",
+    "metadata": {
+      "slug": "ben-kimim-koklerden-kimlige-uzanan-yolculuk-uzm-psk-serap-buharali",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T08:31:56.458Z"
+  },
+  {
+    "id": "cmjgwprr90001lugbqpf7cqfo",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766392882803-9598925515b2774c-coverUrl-IdCZOw5g-wF3aaM3soThyShF4HlHZH4aWd9RhxZ.png",
+    "metadata": {
+      "mime": "image/png"
+    },
+    "createdAt": "2025-12-22T08:41:23.398Z"
+  },
+  {
+    "id": "cmjgwpxc00004lugbme2vyi8j",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjgwpwlx0002lugb5k6plkjj",
+    "metadata": {
+      "slug": "unutulan-kokler-modernlesmenin-izinde-aidiyet-krizi-docdr-nergis-dama",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T08:41:30.624Z"
+  },
+  {
+    "id": "cmjgwshyk0001j2gcwvr8ya5b",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmiremn4e00822x2ozwsq25qk",
+    "metadata": {
+      "slug": "anne-baba-cocuklarina-mahremiyet-egitimini-ne-zaman-vermeye-baslar-jale-simsek",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T08:43:30.668Z"
+  },
+  {
+    "id": "cmjgwz7220003j2gch7gzh8n5",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirem9ku007e2x2o6ufstnme",
+    "metadata": {
+      "slug": "tavuk-mu-katsak-bamya-kubra-kilic",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T08:48:43.130Z"
+  },
+  {
+    "id": "cmjgwzxny0005j2gc40y0j4ya",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmiremdhf007l2x2oaifsesiu",
+    "metadata": {
+      "slug": "modern-dunyanin-guncel-sikintisi-depresyon-psk-rumeysa-sudiye-atar",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T08:49:17.614Z"
+  },
+  {
+    "id": "cmjgx09qm0007j2gcs2ape2e5",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmiremmlf00812x2oud4qativ",
+    "metadata": {
+      "slug": "alisveris-cilginligi-seyda-betul-kilic-psikoterapist",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T08:49:33.262Z"
+  },
+  {
+    "id": "cmjgx2ajq0009j2gcaxmck0w0",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejwlp00332x2oaxotufae",
+    "metadata": {
+      "slug": "tarihlerle-yemek-tarifleri-helva-i-hakani-aysenur-kara"
+    },
+    "createdAt": "2025-12-22T08:51:07.622Z"
+  },
+  {
+    "id": "cmjgx4lq5000bj2gcaj19da7y",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirek258003d2x2orqr5uall",
+    "metadata": {
+      "slug": "sigarayi-birakma-zamani-dr-hakan-bayraktar-2"
+    },
+    "createdAt": "2025-12-22T08:52:55.422Z"
+  },
+  {
+    "id": "cmjgx4wuq000dj2gcx8fyrl19",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirek9zp003s2x2oym5burxw",
+    "metadata": {
+      "slug": "ramazan-i-serif-ruhunu-surdurmek-irem-baysal"
+    },
+    "createdAt": "2025-12-22T08:53:09.749Z"
+  },
+  {
+    "id": "cmjgx5gon000fj2gci0z5omin",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirekdma003z2x2oo66v1q2e",
+    "metadata": {
+      "slug": "cennet-meyvesi-nar-diyetisyen-fatma-celebi",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T08:53:35.543Z"
+  },
+  {
+    "id": "cmjgx5ruc000hj2gc7ndtokt0",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekhas00462x2ovk9yiwzt",
+    "metadata": {
+      "slug": "cocuk-egitiminde-zamani-dogru-okuyabilmek-m-emin-karabacak"
+    },
+    "createdAt": "2025-12-22T08:53:50.005Z"
+  },
+  {
+    "id": "cmjgx5xhp000jj2gc8p9ekn9m",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekosh004i2x2o9ppqogfd",
+    "metadata": {
+      "slug": "musluman-mahallesi-prof-dr-sadi-eren"
+    },
+    "createdAt": "2025-12-22T08:53:57.326Z"
+  },
+  {
+    "id": "cmjgx6kmq000olugbukbg0ohz",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirekvwy004v2x2o1y2drd07",
+    "metadata": {
+      "slug": "zencefilli-pirinc-salatasi-kubra-kilic-1",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T08:54:27.314Z"
+  },
+  {
+    "id": "cmjgx77rc000qlugbkdf9onpi",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirel1ft00562x2ovd7az2hq",
+    "metadata": {
+      "slug": "lahana-sarmasi-kubra-kilic",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T08:54:57.288Z"
+  },
+  {
+    "id": "cmjgx7eea000slugb1x0wesy2",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirel6u4005h2x2on8e2iqkv",
+    "metadata": {
+      "slug": "okumayip-bilgiyi-nasil-isleyecegini-bilmeyen-milletler-kole-oluyor-m-emin-karabacak"
+    },
+    "createdAt": "2025-12-22T08:55:05.890Z"
+  },
+  {
+    "id": "cmjgx7lmt000ulugb5ob6u9l6",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelie500612x2o9ilsfn6b",
+    "metadata": {
+      "slug": "cocuklariniza-deger-verin-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T08:55:15.269Z"
+  },
+  {
+    "id": "cmjgx7u5r000wlugbl1jv621i",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirembto007i2x2oeanq0i05",
+    "metadata": {
+      "slug": "dalindan-topladigin-gibi-seftalili-yaz-keki-kubra-kilic"
+    },
+    "createdAt": "2025-12-22T08:55:26.319Z"
+  },
+  {
+    "id": "cmjgx89kb000ylugbl3u3mouk",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiremh3n007r2x2o6sw2b4mu",
+    "metadata": {
+      "slug": "olumden-sonrasina-hazirlikli-olmak-abdulkadir-geylani-rha"
+    },
+    "createdAt": "2025-12-22T08:55:46.283Z"
+  },
+  {
+    "id": "cmjgx8h120010lugb1dq75a6r",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelkk100652x2of03tn2jz",
+    "metadata": {
+      "slug": "nedir-sabir-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T08:55:55.958Z"
+  },
+  {
+    "id": "cmjgx8val0012lugbqnn64uhs",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiremlh3007z2x2onv24q2pi",
+    "metadata": {
+      "slug": "insanin-hatirinda-dogan-dusunceler-abdulkadir-geylani-rha"
+    },
+    "createdAt": "2025-12-22T08:56:14.446Z"
+  },
+  {
+    "id": "cmjgx9tal0014lugbdt8aaasr",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmircz02n0008gbusf75m8v6o",
+    "metadata": {
+      "slug": "evlilikte-guven-sadakat-ve-seffafligin-onemi",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T08:56:58.509Z"
+  },
+  {
+    "id": "cmjgxa0nc0016lugbmcorlgnr",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiremg7y007q2x2oxhaiwquv",
+    "metadata": {
+      "slug": "allaha-cc-tutunmali-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T08:57:08.041Z"
+  },
+  {
+    "id": "cmjgxa4640018lugbkx5sbtc9",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiremi43007t2x2odamkp7vz",
+    "metadata": {
+      "slug": "iman-umittir-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T08:57:12.604Z"
+  },
+  {
+    "id": "cmjgxa7fs001alugbp1j6p7n1",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiremj8h007v2x2ohtzmloxx",
+    "metadata": {
+      "slug": "hakiki-tevhid-abdulkadir-geylani-rha"
+    },
+    "createdAt": "2025-12-22T08:57:16.840Z"
+  },
+  {
+    "id": "cmjgxadly001clugblmph1fhf",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiremjq1007w2x2ol3fdy31b",
+    "metadata": {
+      "slug": "kuskonmazli-karnabahar-pizza-kubra-kilic"
+    },
+    "createdAt": "2025-12-22T08:57:24.839Z"
+  },
+  {
+    "id": "cmjgxbdsv001elugbvup4rdgn",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefvat000w12khdpkvccr7",
+    "metadata": {
+      "slug": "tarihlerle-yemek-tarifleri-aysenur-kara-3"
+    },
+    "createdAt": "2025-12-22T08:58:11.743Z"
+  },
+  {
+    "id": "cmjgxbiv9001glugbnolwv6hh",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireghy7002112khp5yut4qi",
+    "metadata": {
+      "slug": "gaflet-uykusu-icin-omur-kisa-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T08:58:18.310Z"
+  },
+  {
+    "id": "cmjgxbqql001ilugb1wm2cmgu",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekekr00412x2o9by142w1",
+    "metadata": {
+      "slug": "ozgurluk-hayati-allaha-cc-adamaktir-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T08:58:28.509Z"
+  },
+  {
+    "id": "cmjgxbvgo001klugb0l1jhaq6",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekj4800482x2oh2rw5nmh",
+    "metadata": {
+      "slug": "kuran-kainati-nasil-okur-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T08:58:34.633Z"
+  },
+  {
+    "id": "cmjgxcd3e001mlugb02xd8lx6",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekn41004f2x2ouo2sfm4y",
+    "metadata": {
+      "slug": "cocuklarda-okul-korkusu-ve-cozum-yollari-klinik-psikolog-elif-ozcelik"
+    },
+    "createdAt": "2025-12-22T08:58:57.482Z"
+  },
+  {
+    "id": "cmjgxchkk001olugbb464kiv4",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirel7dt005i2x2out7jt8ud",
+    "metadata": {
+      "slug": "neye-kulluk-ediyorsunuz-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T08:59:03.284Z"
+  },
+  {
+    "id": "cmjgxcl1x001qlugb1rjsgduy",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireld1a005r2x2onzv3d0mx",
+    "metadata": {
+      "slug": "gercek-mutluluk-icin-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T08:59:07.797Z"
+  },
+  {
+    "id": "cmjgxf64e000lj2gcx053lp83",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirelp60006e2x2o7rvivrc2",
+    "metadata": {
+      "slug": "tesirli-teselli-teslimiyet-fatma-beyza-zortul",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T09:01:08.414Z"
+  },
+  {
+    "id": "cmjgxffct000nj2gcin31u77b",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirem1vi00702x2ov90kgji7",
+    "metadata": {
+      "slug": "karnabaharli-kek-kubra-kilic"
+    },
+    "createdAt": "2025-12-22T09:01:20.382Z"
+  },
+  {
+    "id": "cmjgxfu0t000pj2gc98570ozf",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmip2f5ln0007zmqejc7xaxg0",
+    "metadata": {
+      "slug": "ilk-yazi",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T09:01:39.389Z"
+  },
+  {
+    "id": "cmjgxi5vu000vj2gcijr6bsjv",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejmgb002l2x2ot9v0cpke",
+    "metadata": {
+      "slug": "lubnan-semalari-sous-le-ciel-dalice-rabia-andic"
+    },
+    "createdAt": "2025-12-22T09:03:28.074Z"
+  },
+  {
+    "id": "cmjgxibds000xj2gcsrjzhvll",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirel4fg005c2x2o0gig6vco",
+    "metadata": {
+      "slug": "gozu-pek-bir-dadas-menekse-ozkaya-tutum"
+    },
+    "createdAt": "2025-12-22T09:03:35.200Z"
+  },
+  {
+    "id": "cmjgxifmv000zj2gcz6vjt9zt",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiremcbc007j2x2ofbylygi3",
+    "metadata": {
+      "slug": "savasin-ortasinda-anne-olmak-zeynep-ceylan-kadi"
+    },
+    "createdAt": "2025-12-22T09:03:40.712Z"
+  },
+  {
+    "id": "cmjgxjagy0011j2gc11ewcnpy",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirefe4s000412khpttvl2w1",
+    "metadata": {
+      "slug": "ozbekistan-bes-sehir-bes-vakit-bir-kalp-dolusu-huzur-fatmanur-ozturk",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T09:04:20.674Z"
+  },
+  {
+    "id": "cmjgxmaa0002clugbjt9akt9f",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirem6ty00792x2okgvjxiww",
+    "metadata": {
+      "slug": "firinda-baharatli-patates-kubra-kilic",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T09:06:40.392Z"
+  },
+  {
+    "id": "cmjgxmla4002elugbbzk6j6ss",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelw03006r2x2o6uxewivv",
+    "metadata": {
+      "slug": "bol-cevizli-ve-yogurtlu-brokolili-karnabahar-salatasi-kubra-kilic"
+    },
+    "createdAt": "2025-12-22T09:06:54.653Z"
+  },
+  {
+    "id": "cmjgxcqeg001slugbivihjyuq",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelo5r006c2x2o8hyig63p",
+    "metadata": {
+      "slug": "ibnul-vakt-vaktin-cocugu-olmali-abdulkadir-geylani-ks"
+    },
+    "createdAt": "2025-12-22T08:59:14.728Z"
+  },
+  {
+    "id": "cmjgxcvmv001ulugb0mk8uhc6",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelpok006f2x2oklvs4wro",
+    "metadata": {
+      "slug": "yuva-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T08:59:21.512Z"
+  },
+  {
+    "id": "cmjgxczt0001wlugb0ghftfyd",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelwjg006s2x2o2ful6kfh",
+    "metadata": {
+      "slug": "evlilikler-ii-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T08:59:26.917Z"
+  },
+  {
+    "id": "cmjgxd8ed001ylugbin9i7fh1",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirem07l006x2x2oan0fqied",
+    "metadata": {
+      "slug": "evlilikler-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T08:59:38.053Z"
+  },
+  {
+    "id": "cmjgxddg60020lugbao1h1d8i",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirem0vz006y2x2o4lxwhrg1",
+    "metadata": {
+      "slug": "catkapi-ebru-coruk"
+    },
+    "createdAt": "2025-12-22T08:59:44.599Z"
+  },
+  {
+    "id": "cmjgxdhva0022lugbmxwz3qzm",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirem42800742x2ol9sy0dlg",
+    "metadata": {
+      "slug": "tabak-tabak-yenir-mantar-kavurma-kubra-kilic"
+    },
+    "createdAt": "2025-12-22T08:59:50.326Z"
+  },
+  {
+    "id": "cmjgxdmcf0024lugb1py8j72e",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirem4k900752x2olu9rypky",
+    "metadata": {
+      "slug": "fisiltilarini-duyuyor-musunuz-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T08:59:56.127Z"
+  },
+  {
+    "id": "cmjgxe4yi0026lugbvnzqm0nc",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekchk003x2x2o8agj0uw0",
+    "metadata": {
+      "slug": "brokolili-kis-kubra-kilic"
+    },
+    "createdAt": "2025-12-22T09:00:20.251Z"
+  },
+  {
+    "id": "cmjgxeabi0028lugb6stc3yyw",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirek7z6003o2x2o5yygbwdw",
+    "metadata": {
+      "slug": "semizotu-salatasi-kubra-kilic"
+    },
+    "createdAt": "2025-12-22T09:00:27.198Z"
+  },
+  {
+    "id": "cmjgxekdq002alugb5a6s9k65",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmireke3e00402x2o66i9tq6p",
+    "metadata": {
+      "slug": "yumurtali-sogan-kavurmasi-kubra-kilic",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T09:00:40.238Z"
+  },
+  {
+    "id": "cmjgxkija0013j2gc3vphxc2j",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirekhsr00472x2oh2f68r81",
+    "metadata": {
+      "slug": "kereviz-sapi-salatasi-kubra-kilic",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T09:05:17.782Z"
+  },
+  {
+    "id": "cmjgxkzst0015j2gcn3luifw5",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirelazz005n2x2o0uu0cgbn",
+    "metadata": {
+      "slug": "ali-nazik-kubra-kilic",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T09:05:40.157Z"
+  },
+  {
+    "id": "cmjgxleu00017j2gcwewoqpur",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirell1o00662x2oznom1hgp",
+    "metadata": {
+      "slug": "editor-1"
+    },
+    "createdAt": "2025-12-22T09:05:59.640Z"
+  },
+  {
+    "id": "cmjgxh44o000rj2gcux01jyf6",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelc17005p2x2osqehvt6o",
+    "metadata": {
+      "slug": "karpuzun-saglik-uzerine-faydalari-fatma-celebi"
+    },
+    "createdAt": "2025-12-22T09:02:39.144Z"
+  },
+  {
+    "id": "cmjgxhv5t000tj2gc5035mzem",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmireg59i001f12khtwipa0ag",
+    "metadata": {
+      "slug": "ebru-sanati-suya-islenen-sir-merve-nur-vatansever",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T09:03:14.178Z"
+  },
+  {
+    "id": "cmjgxz3nh0019j2gcccw8lu0a",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefgh9000712khk7xsdc03",
+    "metadata": {
+      "slug": "kadini-isiten-var-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T09:16:38.334Z"
+  },
+  {
+    "id": "cmjgxznjo001bj2gcrwn5so45",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefhkd000912khgldpgr8a",
+    "metadata": {
+      "slug": "hello-amerika-fatmanur-ozturk"
+    },
+    "createdAt": "2025-12-22T09:17:04.116Z"
+  },
+  {
+    "id": "cmjgxzro5001dj2gc6ej810ru",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefkxb000d12khqkigi6m4",
+    "metadata": {
+      "slug": "allah-tutar-elimizden-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T09:17:09.462Z"
+  },
+  {
+    "id": "cmjgy007b001fj2gcocw2hiut",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefmfa000g12khj4uyeoh9",
+    "metadata": {
+      "slug": "merve-nur-vatansever-nagmelerle-anlatilan-hikmet-musiki"
+    },
+    "createdAt": "2025-12-22T09:17:20.520Z"
+  },
+  {
+    "id": "cmjgy045w001hj2gc6ucbfp9h",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefnhi000i12khfi52bl6v",
+    "metadata": {
+      "slug": "kodokushi-rabia-andic"
+    },
+    "createdAt": "2025-12-22T09:17:25.652Z"
+  },
+  {
+    "id": "cmjgy0ycq001jj2gcnsm4xsds",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefomn000k12khsnt56qt9",
+    "metadata": {
+      "slug": "aile-yili-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T09:18:04.778Z"
+  },
+  {
+    "id": "cmjgy13nu001lj2gcij8asqvb",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefqj2000o12khd3bq94v5",
+    "metadata": {
+      "slug": "seker-tukenmeden-insulin-direncini-anlamak-ve-asmak-defne-yalin"
+    },
+    "createdAt": "2025-12-22T09:18:11.659Z"
+  },
+  {
+    "id": "cmjgy18y7001nj2gcjxu0uqew",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefrr2000q12khdkidw3av",
+    "metadata": {
+      "slug": "gulden-gelen-zarafet-serbetli-irmik-tatlisi-kubra-kilic"
+    },
+    "createdAt": "2025-12-22T09:18:18.511Z"
+  },
+  {
+    "id": "cmjgy1v7l001pj2gc7tsenvr8",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefd76000212khs3oivsqj",
+    "metadata": {
+      "slug": "vakt-i-seher-kalbin-uyanisi-zehra-okcanoglu"
+    },
+    "createdAt": "2025-12-22T09:18:47.361Z"
+  },
+  {
+    "id": "cmjgy24gv001rj2gcdii9mavz",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmircz02n0008gbusf75m8v6o",
+    "metadata": {
+      "slug": "evlilikte-guven-sadakat-ve-seffafligin-onemi",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T09:18:59.359Z"
+  },
+  {
+    "id": "cmjgy29nd001tj2gcv8zp47wf",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefbzx000012khah83bboh",
+    "metadata": {
+      "slug": "evlilikte-guven-sadakat-ve-seffafligin-onemi-selva-yilmaz"
+    },
+    "createdAt": "2025-12-22T09:19:06.073Z"
+  },
+  {
+    "id": "cmjgy2fw9001vj2gcr2g2nzy4",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireft87000t12khch59qsdl",
+    "metadata": {
+      "slug": "hz-zeyneb-ranha-babasinin-susu-imanin-zarafet-tugba-cakir"
+    },
+    "createdAt": "2025-12-22T09:19:14.169Z"
+  },
+  {
+    "id": "cmjgy2pue001xj2gciklsih8u",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefwjw000y12khsjoafxv1",
+    "metadata": {
+      "slug": "bir-biletle-dunyayi-dolasmak-cinin-kalbinden-venedike-fatmanur-ozturk"
+    },
+    "createdAt": "2025-12-22T09:19:27.062Z"
+  },
+  {
+    "id": "cmjgy2tbn001zj2gcxykp3o78",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiregf4e001v12khatoomj0i",
+    "metadata": {
+      "slug": "esmaul-husna-ile-yolculuk-halime-husna-ozudogru"
+    },
+    "createdAt": "2025-12-22T09:19:31.572Z"
+  },
+  {
+    "id": "cmjgy2xsj0021j2gcdeuvvcs3",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefyb8001112khfdgk55a2",
+    "metadata": {
+      "slug": "seven-ve-sevdiren-el-vedud-halime-husna-ozudogru"
+    },
+    "createdAt": "2025-12-22T09:19:37.364Z"
+  },
+  {
+    "id": "cmjgy33vp0023j2gcvli1ek8j",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefz9s001312khufox0y2l",
+    "metadata": {
+      "slug": "pavlova"
+    },
+    "createdAt": "2025-12-22T09:19:45.254Z"
+  },
+  {
+    "id": "cmjgy39b90025j2gc51sousd8",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireg0af001512kh91n3zi7b",
+    "metadata": {
+      "slug": "hz-meymune-ranha-tugba-cakir"
+    },
+    "createdAt": "2025-12-22T09:19:52.294Z"
+  },
+  {
+    "id": "cmjgy3q7s0001of1x5ker5k2l",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireg19u001712khb61agcfq",
+    "metadata": {
+      "slug": "tezhip-sanati-guzelligin-hakka-acilan-kapisi-merve-nur-vatansever"
+    },
+    "createdAt": "2025-12-22T09:20:14.200Z"
+  },
+  {
+    "id": "cmjgy3tsf0003of1xv06bddd8",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireg297001912khl6ls86xx",
+    "metadata": {
+      "slug": "varliklara-sekil-ozellik-ve-suret-veren-el-musavvir-halime-husna-ozudogru"
+    },
+    "createdAt": "2025-12-22T09:20:18.831Z"
+  },
+  {
+    "id": "cmjgy3wlz0005of1xk9049zex",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireg38u001b12khzmgesfk9",
+    "metadata": {
+      "slug": "tarihlerle-yemek-tarifleri-aysenur-kara-2"
+    },
+    "createdAt": "2025-12-22T09:20:22.487Z"
+  },
+  {
+    "id": "cmjgy41w20007of1x3j5qagb6",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireg5t2001g12khmo20c9ds",
+    "metadata": {
+      "slug": "evlilikte-krizler-ve-basa-cikma-yontemleri-uzm-aile-danismani-selva-yilmaz"
+    },
+    "createdAt": "2025-12-22T09:20:29.330Z"
+  },
+  {
+    "id": "cmjgy45b00009of1x0nin0ra6",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireg48g001d12khdu3je5zi",
+    "metadata": {
+      "slug": "balkan-ruzgari-fatmanur-ozturk"
+    },
+    "createdAt": "2025-12-22T09:20:33.757Z"
+  },
+  {
+    "id": "cmjgy49o2000bof1xtokks6w5",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireg6s7001i12kh285wbmu9",
+    "metadata": {
+      "slug": "fatiha-suresi-tefsiri-mahmud-sami-ramazanogluks-halime-husna-ozudogru"
+    },
+    "createdAt": "2025-12-22T09:20:39.411Z"
+  },
+  {
+    "id": "cmjgy4ctk000dof1xkw0uflgf",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireg9xo001m12kh5pzkgumk",
+    "metadata": {
+      "slug": "hz-ummu-habibe-tugba-cakir"
+    },
+    "createdAt": "2025-12-22T09:20:43.496Z"
+  },
+  {
+    "id": "cmjgy4p2b000fof1x0v9evc08",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirek911003q2x2o3lmw1y90",
+    "metadata": {
+      "slug": "dunyanin-cikis-kapisinda-duruyor-insanlik-nuriye-eycan"
+    },
+    "createdAt": "2025-12-22T09:20:59.364Z"
+  },
+  {
+    "id": "cmjgy4snj000hof1xbmdg4c7j",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejj5f002f2x2ok5vymf5k",
+    "metadata": {
+      "slug": "tarihlerle-yemek-tarifleri-aysenur-kara"
+    },
+    "createdAt": "2025-12-22T09:21:04.015Z"
+  },
+  {
+    "id": "cmjgy4y4n000jof1xtx1gesgf",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefpmp000m12kh2ytgt4sz",
+    "metadata": {
+      "slug": "zihinsel-detoks-dijital-tukenmislik-karsisinda-psikolojik-ve-norobilimsel-bir-yaklasim-egitimci-betul-sare-temel"
+    },
+    "createdAt": "2025-12-22T09:21:11.111Z"
+  },
+  {
+    "id": "cmjgy54u7000lof1xbso37i48",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefenn000512kh9xqgisgp",
+    "metadata": {
+      "slug": "arpa-cimi-en-iyi-gida-maddesi-ferda-umit-gedik"
+    },
+    "createdAt": "2025-12-22T09:21:19.807Z"
+  },
+  {
+    "id": "cmjgy59ib000nof1x1hqpm9qq",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirels7p006k2x2osfztdrji",
+    "metadata": {
+      "slug": "yenilenmek-yenilenirken-yenilmemek-fatma-beyza-zortul"
+    },
+    "createdAt": "2025-12-22T09:21:25.860Z"
+  },
+  {
+    "id": "cmjgy6glp000pof1x5emz21vc",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirelbj1005o2x2olv8y4cgz",
+    "metadata": {
+      "slug": "abdulkadir-geylani-hazretlerinin-vefati",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T09:22:21.709Z"
+  },
+  {
+    "id": "cmjgy6pw4000rof1x6rtskw9q",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelqqh006h2x2ozs1vrqh5",
+    "metadata": {
+      "slug": "takva-abdulkadir-geylani-rha"
+    },
+    "createdAt": "2025-12-22T09:22:33.749Z"
+  },
+  {
+    "id": "cmjgy76pq000tof1xbnhki17b",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmiremm1600802x2o2dt86bk7",
+    "metadata": {
+      "slug": "korku-ve-umut-elif-e-bayraktar",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T09:22:55.550Z"
+  },
+  {
+    "id": "cmjgy83sa000vof1x91gbb0av",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmiremilb007u2x2oov7oorx9",
+    "metadata": {
+      "slug": "gercek-dostluk-hatice-beyazitli",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T09:23:38.411Z"
+  },
+  {
+    "id": "cmjgy86az000xof1xvq706u0b",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiremfr2007p2x2ocyx8c4r7",
+    "metadata": {
+      "slug": "zencefilli-pirinc-salatasi-kubra-kilic"
+    },
+    "createdAt": "2025-12-22T09:23:41.675Z"
+  },
+  {
+    "id": "cmjgy8dj0000zof1xa1pkf0dv",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiremeg3007n2x2osy5qlxxa",
+    "metadata": {
+      "slug": "sevgi-kazanir-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T09:23:51.037Z"
+  },
+  {
+    "id": "cmjgy8gk50011of1xxslakz2x",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiremalf007g2x2o2x36d0ux",
+    "metadata": {
+      "slug": "sadece-maddiyat-okul-basarisi-getirmez-m-emin-karabacak"
+    },
+    "createdAt": "2025-12-22T09:23:54.965Z"
+  },
+  {
+    "id": "cmjgy8j770013of1xokrc117k",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirem7tz007b2x2oct2eypvw",
+    "metadata": {
+      "slug": "dijital-cagda-odaklanma-fatma-nur-kara"
+    },
+    "createdAt": "2025-12-22T09:23:58.388Z"
+  },
+  {
+    "id": "cmjig96e10002hm9u2ol1omk9",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "homepage",
+    "targetId": "cmjig968p0000hm9uwgo1f36v",
+    "metadata": null,
+    "createdAt": "2025-12-23T10:36:07.706Z"
+  },
+  {
+    "id": "cmjgy8moc0015of1xc24kipog",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirem53500762x2oa5suok2u",
+    "metadata": {
+      "slug": "bu-asilik-nereden-aysenur-kina"
+    },
+    "createdAt": "2025-12-22T09:24:02.892Z"
+  },
+  {
+    "id": "cmjgy8p6v0017of1xanz360ww",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirel9zu005l2x2omioh2oxo",
+    "metadata": {
+      "slug": "hayatin-cekilmezligi-titizlik-m-emin-karabacak"
+    },
+    "createdAt": "2025-12-22T09:24:06.152Z"
+  },
+  {
+    "id": "cmjgyqluh0002yd4a3ax5iyty",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjgyql4g0000yd4aaki8lwax",
+    "metadata": {
+      "slug": "fdbh",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T09:38:01.626Z"
+  },
+  {
+    "id": "cmjgz8jvl0001datdddqmwdt8",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmiremilb007u2x2oov7oorx9",
+    "metadata": {
+      "slug": "gercek-dostluk-hatice-beyazitli",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T09:51:58.882Z"
+  },
+  {
+    "id": "cmjgz8n9b0003datdngv08wxg",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjgyql4g0000yd4aaki8lwax",
+    "metadata": {
+      "slug": "fdbh",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T09:52:03.264Z"
+  },
+  {
+    "id": "cmjh0yycf0001brtkoev98sge",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766400029800-47b275d16bafa996-coverUrl-depositphotos_97795438-stock-photo-mother-and-daughter-WuVQ2gI3Xsyk7ooSorRfvJmVKW3r1e.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T10:40:30.304Z"
+  },
+  {
+    "id": "cmjh11ztu0004brtkb62ow1dv",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjh11z3v0002brtkuyd9e7pq",
+    "metadata": {
+      "slug": "annemin-elleri-ayse-altintas",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T10:42:52.195Z"
+  },
+  {
+    "id": "cmjh15vzu0006brtkk5q5nzwc",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766400353308-ae034c2813841955-coverUrl-toprak-temizleme-hizmetleri-intergeo-nXudbMrlc8IqZoF8kmdZj7kOdCyduo.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T10:45:53.850Z"
+  },
+  {
+    "id": "cmjh1623f0009brtkx7zcl4ev",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjh161db0007brtkjslq7ox7",
+    "metadata": {
+      "slug": "topraklasmak-naime-erkovan",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T10:46:01.756Z"
+  },
+  {
+    "id": "cmjh1ehrz0001fa4kgszb3ili",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766400754578-01e556ab97f08d0d-coverUrl-thumbs_b_c_02bdbfd2d661785d7bcdb0079d9bdc6c-MVRHtT2pYfh7g1bIZm3vVmDM5g00Ei.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T10:52:35.328Z"
+  },
+  {
+    "id": "cmjh1elnw0004fa4k5zhreuts",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjh1eky10002fa4kon52xiai",
+    "metadata": {
+      "slug": "asirlara-direnen-kadin-izleri-toplumun-temelini-atanlarin-yolculugu-dr-gokce-bozca",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T10:52:40.364Z"
+  },
+  {
+    "id": "cmjh1fvl00006fa4k6lss081w",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefly5000f12khh5x7d5ed",
+    "metadata": {
+      "slug": "demir-kuleden-mermer-saraya-iki-sehir-bir-ruya-fransa-floransa-fatmanur-ozturk"
+    },
+    "createdAt": "2025-12-22T10:53:39.877Z"
+  },
+  {
+    "id": "cmjh1fxuo0008fa4kqev2cm9a",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiregdhi001s12khpudwnw7s",
+    "metadata": {
+      "slug": "kilis-tava-aysenur-kara"
+    },
+    "createdAt": "2025-12-22T10:53:42.816Z"
+  },
+  {
+    "id": "cmjh1g601000afa4kp6jc0pdz",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirelf58005v2x2o45toccc4",
+    "metadata": {
+      "slug": "ulug-bey-rasathanesinden-goklere-bakis-mervenur-vatansever",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T10:53:53.377Z"
+  },
+  {
+    "id": "cmjh1g8i4000cfa4k6ubzb4yw",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejuzz00302x2oo1nxthli",
+    "metadata": {
+      "slug": "hz-hafsa-tugba-cakir"
+    },
+    "createdAt": "2025-12-22T10:53:56.621Z"
+  },
+  {
+    "id": "cmjh1gj1p000efa4k4cu6mhhc",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmivmn1oh001rlmihl4rfea1n",
+    "metadata": {
+      "slug": "siirle-sukunet",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T10:54:10.286Z"
+  },
+  {
+    "id": "cmjh1gry9000gfa4kj77eezh1",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmivmn1oh001rlmihl4rfea1n",
+    "metadata": {
+      "slug": "siirle-sukunet",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T10:54:21.825Z"
+  },
+  {
+    "id": "cmjh1gxef000ifa4kimz5bdxx",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmivmn1oh001rlmihl4rfea1n",
+    "metadata": {
+      "slug": "siirle-sukunet",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T10:54:28.887Z"
+  },
+  {
+    "id": "cmjh1h2l3000kfa4kuh2izhdc",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh1eky10002fa4kon52xiai",
+    "metadata": {
+      "slug": "asirlara-direnen-kadin-izleri-toplumun-temelini-atanlarin-yolculugu-dr-gokce-bozca",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T10:54:35.607Z"
+  },
+  {
+    "id": "cmjh1hm5w000mfa4kfyg90mv3",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh1eky10002fa4kon52xiai",
+    "metadata": {
+      "slug": "asirlara-direnen-kadin-izleri-toplumun-temelini-atanlarin-yolculugu-dr-gokce-bozca",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T10:55:00.981Z"
+  },
+  {
+    "id": "cmjh1iuay000lbrtkq6boez8d",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefsqe000s12khtx00f2qg",
+    "metadata": {
+      "slug": "ozbekistanda-bes-sehir-bes-vakit-fatmanur-ozturk"
+    },
+    "createdAt": "2025-12-22T10:55:58.186Z"
+  },
+  {
+    "id": "cmjh1j0tr000nbrtknq057leu",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejviu00312x2oh1k1cj9f",
+    "metadata": {
+      "slug": "cocuklarda-ozur-dileme-davranisi-nasil-kazandirilir-asuman-duzgun-egitimci"
+    },
+    "createdAt": "2025-12-22T10:56:06.640Z"
+  },
+  {
+    "id": "cmjh1j7na000pbrtkqbb925wf",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelt8b006m2x2outhy79y8",
+    "metadata": {
+      "slug": "onlar-cicektir-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T10:56:15.478Z"
+  },
+  {
+    "id": "cmjh1jc5y000rbrtkc1iamhin",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiregkiq002612kh7yce7c7n",
+    "metadata": {
+      "slug": "mantikut-tayr-feriduddin-attar-halime-husna-ozudogru"
+    },
+    "createdAt": "2025-12-22T10:56:21.334Z"
+  },
+  {
+    "id": "cmjh1oap4000tbrtke68xw12f",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766401211814-a415416cd8e68947-coverUrl-el-sanatlari-MsfHK5Xs91zqym3ubwtUtJKEzfEKfA.webp",
+    "metadata": {
+      "mime": "image/webp"
+    },
+    "createdAt": "2025-12-22T11:00:12.713Z"
+  },
+  {
+    "id": "cmjh1oidn000wbrtk1ug3dots",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjh1ohnv000ubrtkum1jxpwl",
+    "metadata": {
+      "slug": "guzeli-aramanin-izinde-geleneksel-sanatlarin-ruhu",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T11:00:22.668Z"
+  },
+  {
+    "id": "cmjh1ph7t000ybrtkze23tzkp",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh1ohnv000ubrtkum1jxpwl",
+    "metadata": {
+      "slug": "guzeli-aramanin-izinde-geleneksel-sanatlarin-ruhu",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T11:01:07.818Z"
+  },
+  {
+    "id": "cmjh1qjrm0010brtkk7jecrq6",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmivmn27i001slmihzgrcdzdw",
+    "metadata": {
+      "slug": "ailede-rahmet",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T11:01:57.778Z"
+  },
+  {
+    "id": "cmjh1vopn0012brtk2um0dwue",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766401557031-3e5a61068cf40e95-coverUrl-abstract-elegance-seamless-floral-pattern-260nw-2630730401-N1zYLSuHVRwg2p51EU2NvEmTMwhJ05.webp",
+    "metadata": {
+      "mime": "image/webp"
+    },
+    "createdAt": "2025-12-22T11:05:57.467Z"
+  },
+  {
+    "id": "cmjh1vszf0015brtkb640wnfo",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjh1vs9j0013brtklh7lm9m1",
+    "metadata": {
+      "slug": "zarafetin-izinde-bir-kadin-hz-hatice-ra-yeliz-can",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T11:06:03.004Z"
+  },
+  {
+    "id": "cmjh21yh70017brtk1k9gsgyy",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766401849686-07b08767c8f89a73-coverUrl-images__1_-CoYGsWL8WNDPOZqFVap1zeASUSgR5b.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T11:10:50.059Z"
+  },
+  {
+    "id": "cmjh221ea001abrtkc9997ddr",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjh220yk0018brtkavv6kgov",
+    "metadata": {
+      "slug": "imanimizin-sesi-filistin-meryem-dinc",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T11:10:53.842Z"
+  },
+  {
+    "id": "cmjh2305200019jry5xfsathx",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766401898279-aec16f577d26fe18-coverUrl-resized_b7709-5e01ba45aa202310103236050232360496israikswm-EhwMtULMTBvMlLFyU6kidAxbrqhixB.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T11:11:38.870Z"
+  },
+  {
+    "id": "cmjh236dj00039jry8y4qxji4",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh220yk0018brtkavv6kgov",
+    "metadata": {
+      "slug": "imanimizin-sesi-filistin-meryem-dinc",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T11:11:46.951Z"
+  },
+  {
+    "id": "cmjh274lp00059jry2qjmrorn",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejlx9002k2x2o8cl2p3bl",
+    "metadata": {
+      "slug": "hayat-sanati-ali-ramazan-dinc-halime-husna-ozudogru"
+    },
+    "createdAt": "2025-12-22T11:14:51.277Z"
+  },
+  {
+    "id": "cmjh27anb00079jrydutspw5j",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejyu800372x2ooe8d3y1v",
+    "metadata": {
+      "slug": "ilim-ve-edebin-timsali-hz-aise"
+    },
+    "createdAt": "2025-12-22T11:14:59.111Z"
+  },
+  {
+    "id": "cmjh2bwk700099jryvjwee36s",
+    "userId": "user_36U2YJyTHd9nVwTJIDz9aUpOlAM",
+    "action": "setRole",
+    "targetType": "user",
+    "targetId": "user_37CLa15CE8kmOdMtDc1DaeINXii",
+    "metadata": null,
+    "createdAt": "2025-12-22T11:18:34.136Z"
+  },
+  {
+    "id": "cmjh2cxvv001cbrtkt0bx1vz7",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766402361707-eca63eccf74b72b4-coverUrl-kayseri-gezilecek-yerler_d7vz-hbeOPZy2EM2G9r0xnUmqlezOwHt8xZ.webp",
+    "metadata": {
+      "mime": "image/webp"
+    },
+    "createdAt": "2025-12-22T11:19:22.507Z"
+  },
+  {
+    "id": "cmjh2d4rf001fbrtk4fhzdusc",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjh2d41o001dbrtkbcj6tojk",
+    "metadata": {
+      "slug": "kayserinin-davetiyle-baslayan-uc-kisilik-yolculugumuz-busra-karayoluk",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T11:19:31.420Z"
+  },
+  {
+    "id": "cmjh2e9r8001hbrtkoks2p5fq",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekxgv004y2x2oofrg22eo",
+    "metadata": {
+      "slug": "brokolili-karnabahar-salatasi-kubra-kilic"
+    },
+    "createdAt": "2025-12-22T11:20:24.548Z"
+  },
+  {
+    "id": "cmjh2egay001jbrtknhuys9zb",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirem6cw00782x2ont7vfi1r",
+    "metadata": {
+      "slug": "riziklar-allah-katinda-taksim-edilir-abdulkadir-geylani-rha",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T11:20:33.034Z"
+  },
+  {
+    "id": "cmjh2ekm6001lbrtk9az9z092",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelr7f006i2x2olsuhh967",
+    "metadata": {
+      "slug": "ispanakli-tavuk-sarma-kubra-kilic"
+    },
+    "createdAt": "2025-12-22T11:20:38.622Z"
+  },
+  {
+    "id": "cmjh2n0hh000b9jry6tg6wuxb",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766402831900-74c7ad26401192e8-coverUrl-9f11508e-b175-4249-8975-7a215a212c5b-YfXa3FC9R7G5cJrHJFQwKEmwrB8P05.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T11:27:12.437Z"
+  },
+  {
+    "id": "cmjh2n83h000e9jryvd8xel1w",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjh2n7dq000c9jry5npe6w2a",
+    "metadata": {
+      "slug": "guzellik-koklerden-gelen-sessiz-isik-safiye-nur-simsek",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T11:27:22.301Z"
+  },
+  {
+    "id": "cmjh2uord000n9jry1paswc86",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirelazz005n2x2o0uu0cgbn",
+    "metadata": {
+      "slug": "ali-nazik-kubra-kilic",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T11:33:10.489Z"
+  },
+  {
+    "id": "cmjh2uq3b000p9jryy5otu6d4",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirel1ft00562x2ovd7az2hq",
+    "metadata": {
+      "slug": "lahana-sarmasi-kubra-kilic"
+    },
+    "createdAt": "2025-12-22T11:33:12.215Z"
+  },
+  {
+    "id": "cmjh2uwhl000r9jry9xxg4gbu",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirem9ku007e2x2o6ufstnme",
+    "metadata": {
+      "slug": "tavuk-mu-katsak-bamya-kubra-kilic",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T11:33:20.506Z"
+  },
+  {
+    "id": "cmjh2tdkw000g9jrym8mujy3j",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766403128443-95fce3699832d39d-coverUrl-gulmayasi-lE96H6k8riLfXgSPCu1z9yJ2Yv7ab0.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T11:32:09.345Z"
+  },
+  {
+    "id": "cmjh2this000j9jry8dvb8fps",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjh2tgsz000h9jrywftta486",
+    "metadata": {
+      "slug": "gul-asi-esra-cakmak",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T11:32:14.452Z"
+  },
+  {
+    "id": "cmjh2ujb2000l9jrydvxcruq9",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmjgyql4g0000yd4aaki8lwax",
+    "metadata": {
+      "slug": "fdbh"
+    },
+    "createdAt": "2025-12-22T11:33:03.423Z"
+  },
+  {
+    "id": "cmjh2uzsr000u9jry3l2zbdcy",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "setRole",
+    "targetType": "user",
+    "targetId": "user_36Wz4MAtU1VhqDMjKWv8u1qshjf",
+    "metadata": null,
+    "createdAt": "2025-12-22T11:33:24.795Z"
+  },
+  {
+    "id": "cmjh2v0s3000w9jryt6v9156m",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "setRole",
+    "targetType": "user",
+    "targetId": "user_36Wz4MAtU1VhqDMjKWv8u1qshjf",
+    "metadata": null,
+    "createdAt": "2025-12-22T11:33:26.068Z"
+  },
+  {
+    "id": "cmjh2v71n000y9jry1rpsr3eu",
+    "userId": "user_37CLa15CE8kmOdMtDc1DaeINXii",
+    "action": "setRole",
+    "targetType": "user",
+    "targetId": "user_36Wz4MAtU1VhqDMjKWv8u1qshjf",
+    "metadata": null,
+    "createdAt": "2025-12-22T11:33:34.188Z"
+  },
+  {
+    "id": "cmjh2vj1y00109jryholy8pke",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "setRole",
+    "targetType": "user",
+    "targetId": "user_36Wz4MAtU1VhqDMjKWv8u1qshjf",
+    "metadata": null,
+    "createdAt": "2025-12-22T11:33:49.751Z"
+  },
+  {
+    "id": "cmjh2voxu00129jryp5f7viwb",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirekvwy004v2x2o1y2drd07",
+    "metadata": {
+      "slug": "zencefilli-pirinc-salatasi-kubra-kilic-1",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T11:33:57.379Z"
+  },
+  {
+    "id": "cmjh2vs5j00149jryuqkjjeou",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirefj4g000a12khhnmj7vu0",
+    "metadata": {
+      "slug": "her-isi-ovguye-layik-olan-el-hamid-halime-husna-ozudogru",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T11:34:01.543Z"
+  },
+  {
+    "id": "cmjh2wsvs001e9jryp6hr0ak3",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefk3y000c12kh7azpd8ip",
+    "metadata": {
+      "slug": "osmanli-mutfaginin-zarif-icecegi-demirhindi-serbeti-aysenur-kara"
+    },
+    "createdAt": "2025-12-22T11:34:49.144Z"
+  },
+  {
+    "id": "cmjh34k080001xpgrlq0i62ax",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766403650451-7bfe7deccf892696-coverUrl-hq720-RxcwLIMNS0TImlAdyt86Y1jZQ11ZN7.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T11:40:50.888Z"
+  },
+  {
+    "id": "cmjh34n7t0004xpgrdba6mog4",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjh34mi30002xpgr5qwfhxqb",
+    "metadata": {
+      "slug": "sonilden-lilyum-cicegi-yapilisi-ayse-dogan",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T11:40:55.050Z"
+  },
+  {
+    "id": "cmjh35fat0006xpgrvxpzjagi",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirelnnu006b2x2of6r3sbg0",
+    "metadata": {
+      "slug": "editorden-61",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T11:41:31.446Z"
+  },
+  {
+    "id": "cmjh360570008xpgrrxwlpg7e",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiremhl3007s2x2oyy3b66hv",
+    "metadata": {
+      "slug": "saglikli-mutfaklara-baklali-enginar-kubra-kilic"
+    },
+    "createdAt": "2025-12-22T11:41:58.459Z"
+  },
+  {
+    "id": "cmjh3647b000axpgrr5rzbkr2",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirek9id003r2x2ot0v7jsng",
+    "metadata": {
+      "slug": "bayramda-beslenme-diyetisyen-hatice-yildirim"
+    },
+    "createdAt": "2025-12-22T11:42:03.720Z"
+  },
+  {
+    "id": "cmjh39wfp000kxpgrsw36z5cq",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766403899643-141bc44d1d6c52d8-coverUrl-islamda_zarafet2-702x336-2E9ZxJjTqNIckGOulSwaRfRLXuiJnW.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T11:45:00.277Z"
+  },
+  {
+    "id": "cmjh3a15j000nxpgrbespv3ry",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjh3a0fo000lxpgrrwblikap",
+    "metadata": {
+      "slug": "zarafetin-ilmi-sumeyra-ildes",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T11:45:06.391Z"
+  },
+  {
+    "id": "cmjh3aznl000pxpgr1nkbyje7",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirel9h8005k2x2o3yohkp2h",
+    "metadata": {
+      "slug": "hakikate-davet-davete-icabet-fatma-beyza-zortul-semiha-marufoglu"
+    },
+    "createdAt": "2025-12-22T11:45:51.105Z"
+  },
+  {
+    "id": "cmjh3b1t7000rxpgrx9sia51n",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmivmn154001qlmiht4hfk6mm",
+    "metadata": {
+      "slug": "evde-sukunet-kosesi",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T11:45:53.900Z"
+  },
+  {
+    "id": "cmjh3jci00001p1h8nixrw43p",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766404340377-20507255a1f19fde-coverUrl-ISPARTA-GULU-576x576-i7XIGbWkAAynVMRQmldzVoS7Elm5II.webp",
+    "metadata": {
+      "mime": "image/webp"
+    },
+    "createdAt": "2025-12-22T11:52:21.000Z"
+  },
+  {
+    "id": "cmjh3jgba0004p1h85g1l9b9q",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjh3jfle0002p1h8ztsdkzh7",
+    "metadata": {
+      "slug": "gulun-hikayesi-gulsum-yilmaz",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T11:52:25.942Z"
+  },
+  {
+    "id": "cmjh3kf9n000cp1h8iwt2q6e6",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh3jfle0002p1h8ztsdkzh7",
+    "metadata": {
+      "slug": "gulun-hikayesi-gulsum-yilmaz",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T11:53:11.243Z"
+  },
+  {
+    "id": "cmjh3lche000ep1h83xpkhohu",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh3jfle0002p1h8ztsdkzh7",
+    "metadata": {
+      "slug": "gulun-hikayesi-gulsum-yilmaz",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T11:53:54.290Z"
+  },
+  {
+    "id": "cmjh3ru4t000sp1h8psy29mjl",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766404736680-d0f6439de55091c0-coverUrl-gurbette-tesetture-kavusmak-188743-TALuc7eLMK953guw9OtBvMmUfmd4Fp.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T11:58:57.101Z"
+  },
+  {
+    "id": "cmjh3s2j4000vp1h890qdmlny",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjh3s1t4000tp1h83jjpjpqo",
+    "metadata": {
+      "slug": "nefsin-golgesinden-tesetturun-isigina-ozge-yesilirmak",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T11:59:07.985Z"
+  },
+  {
+    "id": "cmjh5kas80001ytdzzsg2awmh",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766407744186-8cd7259233f0cb50-coverUrl-10-aile-1-M1OlLmDAUofx617lXjczdJ4HudeAgD.webp",
+    "metadata": {
+      "mime": "image/webp"
+    },
+    "createdAt": "2025-12-22T12:49:04.664Z"
+  },
+  {
+    "id": "cmjh5kfzt0004ytdzxeup31zl",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjh5kf9w0002ytdzrlf1qx0m",
+    "metadata": {
+      "slug": "inanc-kimlik-ortu-ve-olcu-busra-elvan",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T12:49:11.418Z"
+  },
+  {
+    "id": "cmjh60hqs0001sypisxd4l8cr",
+    "userId": "user_37CLa15CE8kmOdMtDc1DaeINXii",
+    "action": "setRole",
+    "targetType": "user",
+    "targetId": "user_36MBfqZfk1Kc7djrjsN4pbpjfTc",
+    "metadata": null,
+    "createdAt": "2025-12-22T13:01:40.181Z"
+  },
+  {
+    "id": "cmjh60ilx0003sypi9fd0ioeg",
+    "userId": "user_37CLa15CE8kmOdMtDc1DaeINXii",
+    "action": "setRole",
+    "targetType": "user",
+    "targetId": "user_36MBfqZfk1Kc7djrjsN4pbpjfTc",
+    "metadata": null,
+    "createdAt": "2025-12-22T13:01:41.301Z"
+  },
+  {
+    "id": "cmjh618iw0006sypibh35564r",
+    "userId": "user_37CLa15CE8kmOdMtDc1DaeINXii",
+    "action": "setRole",
+    "targetType": "user",
+    "targetId": "cmiqbgxvu000089lg9ds601xz",
+    "metadata": null,
+    "createdAt": "2025-12-22T13:02:14.888Z"
+  },
+  {
+    "id": "cmjh65t640008sypihqgi7c94",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766408747765-1bfa37dadda413ea-coverUrl-sddefault-P2Cgp6fY8wqDmQVh1wUOdI5DDmB2Ab.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T13:05:48.269Z"
+  },
+  {
+    "id": "cmjh65wzn000bsypivleig6w4",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjh65w9e0009sypiz3cegabj",
+    "metadata": {
+      "slug": "eglence-ahlaki-ve-gunumuz-tugba-kismir",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T13:05:53.220Z"
+  },
+  {
+    "id": "cmjh6bl3y000dsypin7m60dhz",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766409017061-2eff18d41aa8e1d8-coverUrl-11-288-TgPnohf7Aetc8MITxofH2f9E4kGX4v.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T13:10:17.758Z"
+  },
+  {
+    "id": "cmjh6bocb000gsypivi2ugy4k",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjh6bnwh000esypiakmqu3df",
+    "metadata": {
+      "slug": "podyumdan-hakikate-yuruyus-tugce-karas",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T13:10:21.948Z"
+  },
+  {
+    "id": "cmjhap4lw000113gkypknfppb",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766416367431-c6c561e96e82d7e1-coverUrl-okuyarak_tedavi2-702x336-FFSswpVajyrXbDKSwvgvnU0SVyKXDR.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T15:12:48.020Z"
+  },
+  {
+    "id": "cmjhapbv9000413gkrmas94h0",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjhapb5i000213gkgau1wbaf",
+    "metadata": {
+      "slug": "sif-bint-abdullh-ilmin-hikmetin-ve-emanetin-izinde-bir-hanim-sadiye-tasoz",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T15:12:57.430Z"
+  },
+  {
+    "id": "cmjhaxy8o000613gky87kosqt",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766416779054-1d53b41764a247d7-coverUrl-efcf6304d55f109e10657d1705e00942-9D4hYugn3eVy92v6InAr3E3V4J0eM0.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T15:19:39.673Z"
+  },
+  {
+    "id": "cmjhay77p000913gkac3zvduo",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjhay6ho000713gkivz2jmkd",
+    "metadata": {
+      "slug": "dogumla-baslayan-psikolojik-gelisim-aidiyetin-yasam-boyu-etkisi-sumeyye-lambrecht",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T15:19:51.301Z"
+  },
+  {
+    "id": "cmjhazrln000b13gkusxorkul",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirefcpn000112kh8efcct39",
+    "metadata": {
+      "slug": "muminin-dostluk-halkasi-elif-e-bayraktar",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T15:21:04.286Z"
+  },
+  {
+    "id": "cmjhazw6k000d13gkqkngyb9c",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefleu000e12khlirfk1c1",
+    "metadata": {
+      "slug": "hz-ummu-gulsum-ranha-sabir-ve-edep-incisi-tugba-cakir"
+    },
+    "createdAt": "2025-12-22T15:21:10.316Z"
+  },
+  {
+    "id": "cmjhazzzu000f13gkc89lnlsw",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireffgu000612khgam3nvw6",
+    "metadata": {
+      "slug": "osmanli-saray-mutfaginin-mucevheri-mutancana-aysenur-kara"
+    },
+    "createdAt": "2025-12-22T15:21:15.258Z"
+  },
+  {
+    "id": "cmjhb06q1000h13gkdlp9ma9k",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefmxx000h12khqti969hk",
+    "metadata": {
+      "slug": "kendisine-guvenip-dayanilan-el-vekil-halime-husna-ozudogru"
+    },
+    "createdAt": "2025-12-22T15:21:23.977Z"
+  },
+  {
+    "id": "cmjhb0ayl000j13gkizmee6c2",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefo2t000j12khkt0isyia",
+    "metadata": {
+      "slug": "pasteis-de-nata-aysenur-kara"
+    },
+    "createdAt": "2025-12-22T15:21:29.470Z"
+  },
+  {
+    "id": "cmjhb0hio000l13gkcpmr6s8j",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefqzs000p12khf6sh84um",
+    "metadata": {
+      "slug": "hz-rukiyye-ranha-nezaketin-ve-fedakarligin-sessiz-yildizi-tugba-cakir"
+    },
+    "createdAt": "2025-12-22T15:21:37.968Z"
+  },
+  {
+    "id": "cmjhb0mg2000n13gk3sbs7o83",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefs9j000r12kh489ofppr",
+    "metadata": {
+      "slug": "allah-karib-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T15:21:44.354Z"
+  },
+  {
+    "id": "cmjhb0rhw000p13gkhd3mejth",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireftrr000u12kh7rlge3tc",
+    "metadata": {
+      "slug": "minyatur-renklerle-anlatilan-sessiz-hikaye-merve-nur-vatansever"
+    },
+    "createdAt": "2025-12-22T15:21:50.900Z"
+  },
+  {
+    "id": "cmjhb5hg6000r13gkbgg2mm9m",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirefw1l000x12khifve170r",
+    "metadata": {
+      "slug": "evlilikte-ben-olmadan-biz-olmaz-uzm-aile-danismani-selva-yilmaz",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T15:25:31.158Z"
+  },
+  {
+    "id": "cmjhcw4o400014ciecp9rw161",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirekob5004h2x2ovjsh1enl",
+    "metadata": {
+      "slug": "asure-kubra-kilic",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T16:14:13.924Z"
+  },
+  {
+    "id": "cmjhcwcf900034cienjrcpjj5",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirem5mh00772x2oguhkmon9",
+    "metadata": {
+      "slug": "bir-dost-yuzu-hamidiye-carsisi-ceyda-gulener",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T16:14:23.974Z"
+  },
+  {
+    "id": "cmjhcxafw00054cie3rvuhl45",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmiremilb007u2x2oov7oorx9",
+    "metadata": {
+      "slug": "gercek-dostluk-hatice-beyazitli",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T16:15:08.060Z"
+  },
+  {
+    "id": "cmjhcxjgz00074cie7pmvivfk",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiregh04001z12khdwrajpmw",
+    "metadata": {
+      "slug": "muhammad-the-messenger-of-god-hz-muhammed-allahin-elcisi-rabia-andic"
+    },
+    "createdAt": "2025-12-22T16:15:19.764Z"
+  },
+  {
+    "id": "cmjhcxods00094cieu0g1kome",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireglf6002812khzv0cngtu",
+    "metadata": {
+      "slug": "medovik-pasta-aysenur-kara"
+    },
+    "createdAt": "2025-12-22T16:15:26.128Z"
+  },
+  {
+    "id": "cmjhcxx2a000b4ciei4klu25d",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiregmj6002a12khmb1tebkl",
+    "metadata": {
+      "slug": "hz-ummu-seleme-islamin-ilk-musluman-kadinlarindan-ve-peygamberimizin-sadik-dostu-tugba-cakir"
+    },
+    "createdAt": "2025-12-22T16:15:37.379Z"
+  },
+  {
+    "id": "cmjhcy2e4000d4ciei3oh4tv5",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejkdm002h2x2o07f0kr6i",
+    "metadata": {
+      "slug": "cocuklarda-tirnak-yeme-davranisi-psk-dan-feyza-sener-baris"
+    },
+    "createdAt": "2025-12-22T16:15:44.284Z"
+  },
+  {
+    "id": "cmjhcybnk000f4cied2lvjkrr",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejhjf002c2x2ovu12qrkk",
+    "metadata": {
+      "slug": "bir-nil-yolculugu-fatmanur-ozturk"
+    },
+    "createdAt": "2025-12-22T16:15:56.288Z"
+  },
+  {
+    "id": "cmjhcyj57000h4cieb8o8wyda",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejnie002n2x2ooq9uz0j8",
+    "metadata": {
+      "slug": "tarihlerle-yemek-tarifleri-humus-aysenur-kara"
+    },
+    "createdAt": "2025-12-22T16:16:05.995Z"
+  },
+  {
+    "id": "cmjhcyp67000j4cieo2xk9k3y",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejppb002r2x2o4qzib8rw",
+    "metadata": {
+      "slug": "limon-agaci-lemon-tree-rabia-andic"
+    },
+    "createdAt": "2025-12-22T16:16:13.808Z"
+  },
+  {
+    "id": "cmjhcyxe0000l4cietdekcskx",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejqpo002t2x2odr0yi2pr",
+    "metadata": {
+      "slug": "filistin-uzerine-konusmalar-yazar-noam-chomsky-halime-husna-ozudogru"
+    },
+    "createdAt": "2025-12-22T16:16:24.456Z"
+  },
+  {
+    "id": "cmjhcz4mx000n4cielv3j4q0v",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejrnw002v2x2osk5rumoj",
+    "metadata": {
+      "slug": "cocugun-kalbine-sevgi-ekmeli-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:16:33.849Z"
+  },
+  {
+    "id": "cmjhczevf000p4ciehrybro6d",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejuiq002z2x2om8nv2m1i",
+    "metadata": {
+      "slug": "the-social-dilemma-film-onerisi-rabia-andic"
+    },
+    "createdAt": "2025-12-22T16:16:47.116Z"
+  },
+  {
+    "id": "cmjhczihi000r4cie256edvzp",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejx3100342x2o2brqbf7p",
+    "metadata": {
+      "slug": "allahin-adalet-ve-merhametinden-emin-olmak-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:16:51.798Z"
+  },
+  {
+    "id": "cmjhcznj4000t4ciexql5s06p",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirek14e003b2x2ofjib0w60",
+    "metadata": {
+      "slug": "hani-kalu-belada-vermistik-unuttugumuz-kulluk-sozunu-nuriye-eycan"
+    },
+    "createdAt": "2025-12-22T16:16:58.337Z"
+  },
+  {
+    "id": "cmjhcztbo000v4cie14iwmdtx",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirek35n003f2x2o3u1rksbj",
+    "metadata": {
+      "slug": "ilahi-mukafat-akil-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:17:05.845Z"
+  },
+  {
+    "id": "cmjhd03bj000x4ciewck0zdea",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejyaj00362x2ormbi0ach",
+    "metadata": {
+      "slug": "zamansizlik-ikliminin-gizemli-yolcusu-insan-nuriye-eycan"
+    },
+    "createdAt": "2025-12-22T16:17:18.799Z"
+  },
+  {
+    "id": "cmjhd0hgn000z4ciez9eiw93j",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirek5ab003j2x2opzm0ea0j",
+    "metadata": {
+      "slug": "soylenen-sozler-ancak-soyleyen-kiside-vucut-bulunca-kabul-gorur-nuriye-eycan-1"
+    },
+    "createdAt": "2025-12-22T16:17:37.128Z"
+  },
+  {
+    "id": "cmjhd0o2200114ciex5pqdzxn",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirek6dz003l2x2oytxslk3v",
+    "metadata": {
+      "slug": "hatadan-dert-degil-ders-cikar-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:17:45.675Z"
+  },
+  {
+    "id": "cmjhd0x4e00134cie8to223x2",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekahm003t2x2oyyqitea6",
+    "metadata": {
+      "slug": "firinda-levrek-kubra-kilic"
+    },
+    "createdAt": "2025-12-22T16:17:57.423Z"
+  },
+  {
+    "id": "cmjhd11xp00154cieydxxyhrb",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekcyk003y2x2o71c563ie",
+    "metadata": {
+      "slug": "dinlediler-ve-baskaldirdilar-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:18:03.661Z"
+  },
+  {
+    "id": "cmjhd198q00174ciemtwcnxvf",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekgl700452x2o3azh2ihl",
+    "metadata": {
+      "slug": "olum-gazzede-cocuk-isi-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:18:13.131Z"
+  },
+  {
+    "id": "cmjhd1cl200194ciew745teqo",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekfme00432x2oc0zqz90y",
+    "metadata": {
+      "slug": "hazir-yogurt-yoksa-okula-gitmeeem-m-emin-karabacak"
+    },
+    "createdAt": "2025-12-22T16:18:17.463Z"
+  },
+  {
+    "id": "cmjhd1gzs001b4ciepkopbw3w",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireklix004c2x2oclbdkxqo",
+    "metadata": {
+      "slug": "yeni-sezona-merhaba-dyt-hatice-yildirim"
+    },
+    "createdAt": "2025-12-22T16:18:23.176Z"
+  },
+  {
+    "id": "cmjhd1p56001d4ciej9fwssqn",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekk9i004a2x2ofxq45vtf",
+    "metadata": {
+      "slug": "nar-receli-kubra-kilic"
+    },
+    "createdAt": "2025-12-22T16:18:33.738Z"
+  },
+  {
+    "id": "cmjhd1udi001f4ciekifxght3",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekprb004k2x2ob2jci4ik",
+    "metadata": {
+      "slug": "pismeyen-cheesecake-kubra-kilic"
+    },
+    "createdAt": "2025-12-22T16:18:40.518Z"
+  },
+  {
+    "id": "cmjhd24lg001h4ciex6mosfcj",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekqwk004m2x2o145d3n7t",
+    "metadata": {
+      "slug": "yasa-gore-din-egitimi-uzm-psk-abdulaziz-yilmaz"
+    },
+    "createdAt": "2025-12-22T16:18:53.764Z"
+  },
+  {
+    "id": "cmjhd2ane001j4ciewvqsm3zh",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekrvd004o2x2onfp5xq59",
+    "metadata": {
+      "slug": "iyilikle-kotuluk-esit-olur-mu"
+    },
+    "createdAt": "2025-12-22T16:19:01.610Z"
+  },
+  {
+    "id": "cmjhd2fkf001l4cie3pu9qf2d",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekub7004s2x2oiuflk493",
+    "metadata": {
+      "slug": "ertelemek-aldanistir-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:19:07.983Z"
+  },
+  {
+    "id": "cmjhd2jum001n4ciecxpdkmdi",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekwec004w2x2oyr7havlz",
+    "metadata": {
+      "slug": "niyet-tazelemek-irem-baysal"
+    },
+    "createdAt": "2025-12-22T16:19:13.535Z"
+  },
+  {
+    "id": "cmjhd2qc6001p4ciev0zyq60t",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekxyd004z2x2ofi3c39uz",
+    "metadata": {
+      "slug": "anne-baba-cocuklarina-mahremiyet-egitimini-ne-zaman-vermeye-baslar-jale-simsek-1"
+    },
+    "createdAt": "2025-12-22T16:19:21.942Z"
+  },
+  {
+    "id": "cmjhd2ubm001r4cieb8mpy4fp",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekbgq003v2x2o21gs62aq",
+    "metadata": {
+      "slug": "bagimsiz-nesiller-yetistirebilmek-nuray-bastan-aydin-1"
+    },
+    "createdAt": "2025-12-22T16:19:27.106Z"
+  },
+  {
+    "id": "cmjhd2yyn001t4cie80o0tqmo",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekt9i004q2x2owxjgk6gl",
+    "metadata": {
+      "slug": "cocuklarla-iletisimde-sevgi-dili-m-emin-karabacak"
+    },
+    "createdAt": "2025-12-22T16:19:33.119Z"
+  },
+  {
+    "id": "cmjhd375k001v4cie3c3phgx5",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirel6cn005g2x2ox8anxaze",
+    "metadata": {
+      "slug": "cagimizin-hastaligi-sismanlik-obezite-fatma-celebi"
+    },
+    "createdAt": "2025-12-22T16:19:43.736Z"
+  },
+  {
+    "id": "cmjhd3skh001x4cieomm2yz1c",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelgrz005y2x2odfyjlri7",
+    "metadata": {
+      "slug": "mursid-i-kamil-gereklidir-abdulkadir-geylani-rha"
+    },
+    "createdAt": "2025-12-22T16:20:11.490Z"
+  },
+  {
+    "id": "cmjhd4382001z4ciekb0gv2l1",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirele4b005t2x2o3irfw8r7",
+    "metadata": {
+      "slug": "yoresel-kiyafetin-goc-ile-degisimi-busra-ete"
+    },
+    "createdAt": "2025-12-22T16:20:25.299Z"
+  },
+  {
+    "id": "cmjhd4amm00214ciek7nfa1in",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekveo004u2x2osnjgj3mm",
+    "metadata": {
+      "slug": "ders-yapma-elleme-ile-buyutulen-cocuklar-m-emin-karabacak"
+    },
+    "createdAt": "2025-12-22T16:20:34.894Z"
+  },
+  {
+    "id": "cmjhd4f3b00234cievzj16n8u",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirel1x200572x2o7duk6nvo",
+    "metadata": {
+      "slug": "ahir-zaman-nimeti-internet-elif-alaca"
+    },
+    "createdAt": "2025-12-22T16:20:40.680Z"
+  },
+  {
+    "id": "cmjhd5jqy002h4cie3zkhrenf",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirel2xp00592x2oqwp16g79",
+    "metadata": {
+      "slug": "insan-aczini-bilse-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:21:33.370Z"
+  },
+  {
+    "id": "cmjhdd53u0005onh6saiwoe1d",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefxa5000z12khodmgk14a",
+    "metadata": {
+      "slug": "hz-mariye-ranha-tugba-cakir"
+    },
+    "createdAt": "2025-12-22T16:27:27.643Z"
+  },
+  {
+    "id": "cmjhdd92b0007onh6geotl1wu",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefzqc001412kh5meh2yaz",
+    "metadata": {
+      "slug": "cold-cities-fatmanur-ozturk"
+    },
+    "createdAt": "2025-12-22T16:27:32.771Z"
+  },
+  {
+    "id": "cmjhddoge0009onh6vloc8ipl",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireg0t2001612khe9p9itkx",
+    "metadata": {
+      "slug": "mutlu-ve-saglikli-bir-evlilik-uzun-sureli-sevgiyi-beslemek-uzm-aile-danismani-selva-yilmaz"
+    },
+    "createdAt": "2025-12-22T16:27:52.718Z"
+  },
+  {
+    "id": "cmjhddt6b000bonh6vhahmwgw",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireg2ra001a12khd9jppprw",
+    "metadata": {
+      "slug": "no-other-land-gidecek-yer-yok-rabia-andic"
+    },
+    "createdAt": "2025-12-22T16:27:58.835Z"
+  },
+  {
+    "id": "cmjhddxb0000donh657d9m26d",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireg3ra001c12kh6tifriyn",
+    "metadata": {
+      "slug": "allaha-guzel-isimleriyle-dua-edin-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:28:04.188Z"
+  },
+  {
+    "id": "cmjhde44j000fonh6rurge0cg",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireg4r8001e12khojhjf07v",
+    "metadata": {
+      "slug": "hz-safiyye-tugba-cakir"
+    },
+    "createdAt": "2025-12-22T16:28:13.027Z"
+  },
+  {
+    "id": "cmjhdeah3000honh6ts61xr9x",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireg6ap001h12kh86b6n1bb",
+    "metadata": {
+      "slug": "erken-cocuklukta-oyunun-gelisime-katkisi-pskdan-feyza-sener-baris"
+    },
+    "createdAt": "2025-12-22T16:28:21.256Z"
+  },
+  {
+    "id": "cmjhd4iyn00254cieikovo1sj",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekzw400532x2o9hu84114",
+    "metadata": {
+      "slug": "etkili-ogretmenlikte-10-altin-kural-yusuf-yesilkaya"
+    },
+    "createdAt": "2025-12-22T16:20:45.695Z"
+  },
+  {
+    "id": "cmjhd4oob00274cieeqfeff6o",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelfml005w2x2o0lv006m7",
+    "metadata": {
+      "slug": "en-guzel-hayat-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:20:53.099Z"
+  },
+  {
+    "id": "cmjhd4udj00294cie3wupovh6",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelhv700602x2of8k2sfzm",
+    "metadata": {
+      "slug": "ruhun-sukutunu-saglayan-ibadet-tefekkur-fatma-beyza-zortul-semiha-marufoglu"
+    },
+    "createdAt": "2025-12-22T16:21:00.488Z"
+  },
+  {
+    "id": "cmjhd52fv002b4cieks7n8md3",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireliyc00622x2oigezuskq",
+    "metadata": {
+      "slug": "editorden-65"
+    },
+    "createdAt": "2025-12-22T16:21:10.939Z"
+  },
+  {
+    "id": "cmjhd596u002d4cie4hoa4lcw",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelk0c00642x2o8j84d935",
+    "metadata": {
+      "slug": "cennet-bahcesine-aday-tebessum-ciceklerine-fatma-beyza-zortul-semiha-marufoglu"
+    },
+    "createdAt": "2025-12-22T16:21:19.686Z"
+  },
+  {
+    "id": "cmjhd5dym002f4ciezayyd0eo",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirellng00672x2o8ujfz6cj",
+    "metadata": {
+      "slug": "guzel-ahlak-sahibi-olmali-abdulkadir-geylani-ks"
+    },
+    "createdAt": "2025-12-22T16:21:25.871Z"
+  },
+  {
+    "id": "cmjhd5o5m002j4ciedacurjr0",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirel3xl005b2x2oari48zri",
+    "metadata": {
+      "slug": "sonbaharda-beslenme-fatma-celebi"
+    },
+    "createdAt": "2025-12-22T16:21:39.082Z"
+  },
+  {
+    "id": "cmjhd5rot002l4ciepak9yccd",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelmlt00692x2obc6xy62b",
+    "metadata": {
+      "slug": "orucu-tutmak-oruca-tutunmak-fatma-beyza-zortul"
+    },
+    "createdAt": "2025-12-22T16:21:43.661Z"
+  },
+  {
+    "id": "cmjhd5x2q002n4ciemnzcst47",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirel5dy005e2x2or5simo4u",
+    "metadata": {
+      "slug": "hatiralarla-yasanir-mi-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:21:50.642Z"
+  },
+  {
+    "id": "cmjhd619v002p4ciedr9wzmv8",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelz4d006v2x2okwcn4r46",
+    "metadata": {
+      "slug": "allah-ona-ilahi-fetihler-nasib-eder-abdulkadir-geylani-rha"
+    },
+    "createdAt": "2025-12-22T16:21:56.084Z"
+  },
+  {
+    "id": "cmjhd67ck002r4ciez5nru9td",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirem1dz006z2x2ov6ehzwnm",
+    "metadata": {
+      "slug": "sukur-bir-itaattir-abdulkadir-geylani-rha"
+    },
+    "createdAt": "2025-12-22T16:22:03.956Z"
+  },
+  {
+    "id": "cmjhd6dhw002t4cieuioxlf9p",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirem31g00722x2o0yynsxql",
+    "metadata": {
+      "slug": "cok-aciyor-doc-dr-zeyep-aksu"
+    },
+    "createdAt": "2025-12-22T16:22:11.924Z"
+  },
+  {
+    "id": "cmjhd6ha3002v4cierhdexsq2",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiregcif001q12khrkn6ldn6",
+    "metadata": {
+      "slug": "samanyolunda-ziyafet-sezai-karakoc-halime-husna-ozudogru"
+    },
+    "createdAt": "2025-12-22T16:22:16.828Z"
+  },
+  {
+    "id": "cmjhd6q3h002x4cie8kvim0fw",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireg8o4001k12kh3rj2yqf6",
+    "metadata": {
+      "slug": "misoriz-aysenur-kara"
+    },
+    "createdAt": "2025-12-22T16:22:28.253Z"
+  },
+  {
+    "id": "cmjhd6vop002z4ciet8mz410m",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiregb28001o12kh239tihgr",
+    "metadata": {
+      "slug": "evliligin-sessiz-kahramani-iletisim-uzm-psk-selva-yilmaz"
+    },
+    "createdAt": "2025-12-22T16:22:35.497Z"
+  },
+  {
+    "id": "cmjhd6z5300314cie8ufcacyd",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiregdyb001t12kh06q4ax71",
+    "metadata": {
+      "slug": "bize-her-istedigimizi-verdi-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:22:39.976Z"
+  },
+  {
+    "id": "cmjhd72rw00334ciee2qc9krd",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiregg3z001x12khfv0ch44u",
+    "metadata": {
+      "slug": "namaste-hindistan-fatmanur-ozturk"
+    },
+    "createdAt": "2025-12-22T16:22:44.685Z"
+  },
+  {
+    "id": "cmjhd7ai500354ciesol7uwz1",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejon6002p2x2of6mcdkn4",
+    "metadata": {
+      "slug": "evlilik-oncesi-aile-dinamiklerini-anlamak-ve-yonetmek-uzm-selva-yilmaz"
+    },
+    "createdAt": "2025-12-22T16:22:54.701Z"
+  },
+  {
+    "id": "cmjhd7ly700374cieneq0vfs9",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejthb002x2x2oss2y61g1",
+    "metadata": {
+      "slug": "evlilik-oncesi-saglam-temeller-dogru-es-secimi-selva-yilmaz"
+    },
+    "createdAt": "2025-12-22T16:23:09.536Z"
+  },
+  {
+    "id": "cmjhd7oc400394cieci9smxzw",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejleg002j2x2oavxoend1",
+    "metadata": {
+      "slug": "evlilik-karari-dogru-kisiyle-dogru-sebeplerle-evlenmek-uzm-selva-yilmaz"
+    },
+    "createdAt": "2025-12-22T16:23:12.628Z"
+  },
+  {
+    "id": "cmjhd7tod003b4cie6f0st638",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekyxi00512x2o11svdun0",
+    "metadata": {
+      "slug": "kalbindeki-sefkatine-sigindigimiz-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:23:19.549Z"
+  },
+  {
+    "id": "cmjhd7xde003d4cieub5ur99e",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiregj60002312khss9mal9i",
+    "metadata": {
+      "slug": "evlilikte-uyum-ve-doyum-birlikte-yol-almak-uzm-selva-yilmaz"
+    },
+    "createdAt": "2025-12-22T16:23:24.338Z"
+  },
+  {
+    "id": "cmjhd83ak003f4cie7wphj366",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiregk28002512khpjtuo4w6",
+    "metadata": {
+      "slug": "jet-lag-fatmanur-ozturk"
+    },
+    "createdAt": "2025-12-22T16:23:32.012Z"
+  },
+  {
+    "id": "cmjhd8law003h4ciezmle4xy9",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireltpk006n2x2oyo0qidiy",
+    "metadata": {
+      "slug": "gemileri-yakmak-gibi-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:23:55.353Z"
+  },
+  {
+    "id": "cmjhd8o6m003j4cie8av88vmz",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirelurl006p2x2oh22n1p7q",
+    "metadata": {
+      "slug": "mutluluk-balonu-hatice-beyazitli",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T16:23:59.086Z"
+  },
+  {
+    "id": "cmjhd8syn003l4cie37ftmrj7",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelurl006p2x2oh22n1p7q",
+    "metadata": {
+      "slug": "mutluluk-balonu-hatice-beyazitli"
+    },
+    "createdAt": "2025-12-22T16:24:05.279Z"
+  },
+  {
+    "id": "cmjhd92mw003n4ciescqzb34r",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejzuv00392x2oe9uhoyga",
+    "metadata": {
+      "slug": "samimiyet-kurtulustur-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:24:17.816Z"
+  },
+  {
+    "id": "cmjhd98ot003p4cieuzthy6pq",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirel0x100552x2oa2r8oek9",
+    "metadata": {
+      "slug": "hayatin-sirri-olumde-gizli-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:24:25.661Z"
+  },
+  {
+    "id": "cmjhd9iao003r4cie60abovwk",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmiremkpy007y2x2o08f4h3qb",
+    "metadata": {
+      "slug": "kendin-olmak-en-buyuk-mutluluktur-hatice-beyazitli",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T16:24:38.113Z"
+  },
+  {
+    "id": "cmjhda9pe0001onh6j3rkvkh1",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirek4ar003h2x2oik1mfuup",
+    "metadata": {
+      "slug": "ebeveyn-tutumlarinin-cocugun-gelisimine-etkisi-psk-dan-feyza-sener-baris",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T16:25:13.635Z"
+  },
+  {
+    "id": "cmjhdc7bj0003onh6p5ebnlza",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefysz001212khcig00jw9",
+    "metadata": {
+      "slug": "iyi-olum-the-good-death-ve-meryem-ana-mother-mariam-rabia-andic"
+    },
+    "createdAt": "2025-12-22T16:26:43.855Z"
+  },
+  {
+    "id": "cmjhder52000jonh63k5t6ned",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejh09002b2x2o2sfhmi71",
+    "metadata": {
+      "slug": "kulun-fitratinda-dogruyu-gormek-vardir-nuriye-eycan"
+    },
+    "createdAt": "2025-12-22T16:28:42.855Z"
+  },
+  {
+    "id": "cmjhdezv4000lonh6forkwwt1",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireg7ab001j12khcfotsm2w",
+    "metadata": {
+      "slug": "gassal-rabia-andic"
+    },
+    "createdAt": "2025-12-22T16:28:54.160Z"
+  },
+  {
+    "id": "cmjhdf4e7000nonh6387vox7v",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireg96e001l12khyvmompqh",
+    "metadata": {
+      "slug": "korku-ve-umit-arasinda-yasamali-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:29:00.031Z"
+  },
+  {
+    "id": "cmjhdfadf000ponh6uzptzcts",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiregai6001n12khi6zdo3og",
+    "metadata": {
+      "slug": "islamda-estetik-ve-sanat-hat-sanati-mervenur-vatansever"
+    },
+    "createdAt": "2025-12-22T16:29:07.780Z"
+  },
+  {
+    "id": "cmjhdff72000ronh62servuar",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiregbzw001p12kh21a4z9gi",
+    "metadata": {
+      "slug": "kirmizi-topraklarin-masali-madagaskarin-buyusu-ve-gercekleri-fatmanur-ozturk"
+    },
+    "createdAt": "2025-12-22T16:29:14.031Z"
+  },
+  {
+    "id": "cmjhdfpzz000tonh6d0eprqxe",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefq32000n12khkw7qeqdg",
+    "metadata": {
+      "slug": "zor-insanlarla-bas-etmek-psikolojik-dayaniklilik-ve-iletisim-stratejileri-uzm-klinik-psikolog-bedia-turkan"
+    },
+    "createdAt": "2025-12-22T16:29:28.031Z"
+  },
+  {
+    "id": "cmjhdfw88000vonh64begy93c",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiregem1001u12kh1f79yo0b",
+    "metadata": {
+      "slug": "hz-cuveyriye-ranha-tugba-cakir"
+    },
+    "createdAt": "2025-12-22T16:29:36.105Z"
+  },
+  {
+    "id": "cmjhdg1ey000xonh6ugu3zldn",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireggk2001y12kh5rv0qelt",
+    "metadata": {
+      "slug": "yansimalar-ali-ramazan-dinc-halime-husna-ozudogru"
+    },
+    "createdAt": "2025-12-22T16:29:42.826Z"
+  },
+  {
+    "id": "cmjhdg7hu000zonh6yl1wv36e",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiregfl2001w12kh8gzgex41",
+    "metadata": {
+      "slug": "akdeniz-diyeti-dunyanin-en-saglikli-beslenme-modellerinden-biri-defne-yalin"
+    },
+    "createdAt": "2025-12-22T16:29:50.707Z"
+  },
+  {
+    "id": "cmjhdgej40011onh6abe0gnxz",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireghfo002012khvrw1yzlw",
+    "metadata": {
+      "slug": "tarihlerle-yemek-tarifleri-aysenur-kara-1"
+    },
+    "createdAt": "2025-12-22T16:29:59.825Z"
+  },
+  {
+    "id": "cmjhdgj2s0013onh6mq7j3paq",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiregjlu002412khfgh9lg73",
+    "metadata": {
+      "slug": "kisin-psikolojik-etkileri-ve-duygusal-yeme-davranislari-saglikli-beslenme-stratejileri"
+    },
+    "createdAt": "2025-12-22T16:30:05.717Z"
+  },
+  {
+    "id": "cmjhdgo7j0015onh63ex51p1i",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiregkyk002712kh72dazqkm",
+    "metadata": {
+      "slug": "the-message-cagri-rabia-andic"
+    },
+    "createdAt": "2025-12-22T16:30:12.367Z"
+  },
+  {
+    "id": "cmjhdgs2s0017onh6mtd2mf3b",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireglvm002912khxww43oov",
+    "metadata": {
+      "slug": "mutlulugun-anahtari-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:30:17.380Z"
+  },
+  {
+    "id": "cmjhdgwqg0019onh6np8sjc5c",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireginc002212khoim4vpef",
+    "metadata": {
+      "slug": "zeyneb-bint-cahs-nikahi-allah-tarafindan-kuranda-ilan-edilen-annemiz-tugba-cakir"
+    },
+    "createdAt": "2025-12-22T16:30:23.416Z"
+  },
+  {
+    "id": "cmjhdgzqg001bonh64twiium6",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejjmp002g2x2os5fxcawg",
+    "metadata": {
+      "slug": "kalpteki-hastaligin-sifasi-var-mi-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:30:27.304Z"
+  },
+  {
+    "id": "cmjhdh41x001donh6rrzjjv9d",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejo65002o2x2ob0dsi01i",
+    "metadata": {
+      "slug": "her-zorluk-bir-ogretmen-her-aci-bir-ders-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:30:32.902Z"
+  },
+  {
+    "id": "cmjhdh804001fonh6y59vn7aw",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejmzo002m2x2o7rnt8cye",
+    "metadata": {
+      "slug": "hz-zeyneb-binti-huzeyme-tugba-cakir"
+    },
+    "createdAt": "2025-12-22T16:30:38.020Z"
+  },
+  {
+    "id": "cmjhdhg99001honh6v1xpgbwk",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejq6v002s2x2oi2fo5fsu",
+    "metadata": {
+      "slug": "erken-cocuklukta-sosyal-becerilerin-drama-ile-kazandirilmasi-psk-dan-feyza-sener-baris"
+    },
+    "createdAt": "2025-12-22T16:30:48.717Z"
+  },
+  {
+    "id": "cmjhdhl9w001jonh6atoxrsxe",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejr6j002u2x2o19asuffb",
+    "metadata": {
+      "slug": "tarihlerle-yemek-tarifleri-falafel-aysenur-kara"
+    },
+    "createdAt": "2025-12-22T16:30:55.220Z"
+  },
+  {
+    "id": "cmjhdhp8l001lonh6v2av5p0f",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejp7c002q2x2ol5a7rspd",
+    "metadata": {
+      "slug": "surgundeki-sevda-filistin-fatmanur-kara"
+    },
+    "createdAt": "2025-12-22T16:31:00.358Z"
+  },
+  {
+    "id": "cmjhdhulh001nonh6q2fdhdi1",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireju1u002y2x2ot3kjt1ld",
+    "metadata": {
+      "slug": "hazirlanin-enduluse-gidiyoruz-gezi-yazisi-fatmanur-kara"
+    },
+    "createdAt": "2025-12-22T16:31:07.302Z"
+  },
+  {
+    "id": "cmjhdhyqe001ponh6xkawas0h",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejs5p002w2x2of16zk5mh",
+    "metadata": {
+      "slug": "erasmus-ve-aptalligin-ovgusu"
+    },
+    "createdAt": "2025-12-22T16:31:12.662Z"
+  },
+  {
+    "id": "cmjhdi289001ronh6sjutp77c",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejxr900352x2o4dfmopg8",
+    "metadata": {
+      "slug": "diyet-surecinde-danisanin-psikolojik-motivasyonu-diyetisyen-hatice-yildirim"
+    },
+    "createdAt": "2025-12-22T16:31:17.194Z"
+  },
+  {
+    "id": "cmjhdi62p001tonh6olwp43a1",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejzda00382x2owncjxzhm",
+    "metadata": {
+      "slug": "pismeyen-cheesecake-kubra-kilic-1"
+    },
+    "createdAt": "2025-12-22T16:31:22.177Z"
+  },
+  {
+    "id": "cmjhdi8lx001vonh6x21o550s",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirek1ly003c2x2ofeaei34b",
+    "metadata": {
+      "slug": "hz-sevde-ranha-tugba-cakir"
+    },
+    "createdAt": "2025-12-22T16:31:25.461Z"
+  },
+  {
+    "id": "cmjhdiesg001xonh6u8rkcza7",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirek4t9003i2x2o0b8vq17x",
+    "metadata": {
+      "slug": "saglikli-yaz-gunlerinde-beslenme-ipuclari-ve-oneriler-diyetisyen-hatice-yildirim"
+    },
+    "createdAt": "2025-12-22T16:31:33.472Z"
+  },
+  {
+    "id": "cmjhdih4e001zonh6nyux9avx",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirek2o2003e2x2o2ep9729y",
+    "metadata": {
+      "slug": "soslu-salatalik-kubra-kilic"
+    },
+    "createdAt": "2025-12-22T16:31:36.494Z"
+  },
+  {
+    "id": "cmjhdiluz0021onh6nbevtapr",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirek3mp003g2x2ouln42ld6",
+    "metadata": {
+      "slug": "tesettur-ve-imaj-degisikligi-aysegul-baltaci"
+    },
+    "createdAt": "2025-12-22T16:31:42.636Z"
+  },
+  {
+    "id": "cmjhdiqvu0023onh6n8mux9lx",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirek6us003m2x2opyyqiwim",
+    "metadata": {
+      "slug": "soylenen-sozler-ancak-soyleyen-kiside-vucut-bulunca-kabul-gorur-nuriye-eycan"
+    },
+    "createdAt": "2025-12-22T16:31:49.147Z"
+  },
+  {
+    "id": "cmjhdiwuy0025onh6yc67xaba",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirek5tn003k2x2o3ietr3tg",
+    "metadata": {
+      "slug": "vefanin-ve-asaletin-temsilcisi-hz-hatice-tugba-cakir"
+    },
+    "createdAt": "2025-12-22T16:31:56.890Z"
+  },
+  {
+    "id": "cmjhdj17c0027onh6x7njbsjs",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireknt2004g2x2ofhsrwfv4",
+    "metadata": {
+      "slug": "hayat-okulu-elif-e-bayraktar-1"
+    },
+    "createdAt": "2025-12-22T16:32:02.520Z"
+  },
+  {
+    "id": "cmjhdj6890029onh6zntsiz6k",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirek8iq003p2x2oj7tkvar3",
+    "metadata": {
+      "slug": "insan-vicdani-yasadikca-insanca-yasar-elif-e-bayrakatar"
+    },
+    "createdAt": "2025-12-22T16:32:09.034Z"
+  },
+  {
+    "id": "cmjhdjc1v002bonh6j0bpiea5",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekbxt003w2x2okg55mnsk",
+    "metadata": {
+      "slug": "okullar-acilirken-basarinin-sirri-anne-babalarda-m-emin-karabacak"
+    },
+    "createdAt": "2025-12-22T16:32:16.579Z"
+  },
+  {
+    "id": "cmjhdjh6k002donh64nhz53j4",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekazl003u2x2orqmb34zz",
+    "metadata": {
+      "slug": "sevgisizlik-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:32:23.229Z"
+  },
+  {
+    "id": "cmjhdjkhy002fonh6vlu62qoe",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekf5000422x2o02wdpx6z",
+    "metadata": {
+      "slug": "alisveris-cilginligi-seyda-betul-kilic-psikoterapist-1"
+    },
+    "createdAt": "2025-12-22T16:32:27.527Z"
+  },
+  {
+    "id": "cmjhdjplr002honh67x4lnyim",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekjs800492x2o0zed9s1h",
+    "metadata": {
+      "slug": "uzun-bir-yazdan-sonra-cetin-bir-kistan-once-sonbahar-dyt-hatice-yildirim"
+    },
+    "createdAt": "2025-12-22T16:32:34.143Z"
+  },
+  {
+    "id": "cmjhdjtjh002jonh68wqw3eqp",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekg4a00442x2ogssclq3g",
+    "metadata": {
+      "slug": "limon-tursusu-kubra-kilic"
+    },
+    "createdAt": "2025-12-22T16:32:39.245Z"
+  },
+  {
+    "id": "cmjhdjy0o002lonh6hqa2swn6",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekpa8004j2x2oi05e2oti",
+    "metadata": {
+      "slug": "esim-kapida-karsilanmak-istiyor-jale-simsek"
+    },
+    "createdAt": "2025-12-22T16:32:45.048Z"
+  },
+  {
+    "id": "cmjhdk3ix002nonh60m2pjlwq",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekkty004b2x2ocyqsjo4v",
+    "metadata": {
+      "slug": "en-karli-ticareti-haber-vereyim-mi-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:32:52.185Z"
+  },
+  {
+    "id": "cmjhdk7my002ponh6idfeuod1",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekm1k004d2x2o5stm0sry",
+    "metadata": {
+      "slug": "guzel-amel-abdulkadir-geylani-rha"
+    },
+    "createdAt": "2025-12-22T16:32:57.514Z"
+  },
+  {
+    "id": "cmjhdkb0w002ronh6pn7y9cqt",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekq8k004l2x2ooyealjxk",
+    "metadata": {
+      "slug": "allah-sevgisi-ve-korkusu-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:33:01.904Z"
+  },
+  {
+    "id": "cmjhdkew2002tonh60smqa31d",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekrdy004n2x2o0p8hgl9b",
+    "metadata": {
+      "slug": "sarimsakli-ekmek-kubra-kilic"
+    },
+    "createdAt": "2025-12-22T16:33:06.914Z"
+  },
+  {
+    "id": "cmjhdkiwr002vonh6e049rykj",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirektr4004r2x2otcf92jd0",
+    "metadata": {
+      "slug": "beslenmede-dogru-bilinen-yanlislar-dyt-uzm-fatma-yildiz-arslan"
+    },
+    "createdAt": "2025-12-22T16:33:12.031Z"
+  },
+  {
+    "id": "cmjhdkriq002xonh6yipa9etc",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekuwp004t2x2oty6na27i",
+    "metadata": {
+      "slug": "editorden-92"
+    },
+    "createdAt": "2025-12-22T16:33:23.282Z"
+  },
+  {
+    "id": "cmjhdkz84002zonh68up34lsz",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekyg700502x2oubmiowhw",
+    "metadata": {
+      "slug": "esiniz-dava-arkadasiniz-olsun-huriye-dogan"
+    },
+    "createdAt": "2025-12-22T16:33:33.269Z"
+  },
+  {
+    "id": "cmjhdl3a70031onh6966o8qz8",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekzey00522x2otlpm09kh",
+    "metadata": {
+      "slug": "greyfurtlu-kek-kubra-kilic"
+    },
+    "createdAt": "2025-12-22T16:33:38.527Z"
+  },
+  {
+    "id": "cmjhdla6l0033onh6gchgkouv",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirel2fq00582x2ole26n2dy",
+    "metadata": {
+      "slug": "evlilikte-ben-olmadan-biz-olmak-klinik-psikolog-fatma-ulger"
+    },
+    "createdAt": "2025-12-22T16:33:47.470Z"
+  },
+  {
+    "id": "cmjhdldjz0035onh6ig1y5807",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekspn004p2x2orn7ztizl",
+    "metadata": {
+      "slug": "kubra-kilic-mucver"
+    },
+    "createdAt": "2025-12-22T16:33:51.839Z"
+  },
+  {
+    "id": "cmjhdljyt0037onh69o9taddf",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirel7vo005j2x2omn1rho77",
+    "metadata": {
+      "slug": "vitamin-zengini-kizilcik-serbeti-tarifi-kubra-kilic"
+    },
+    "createdAt": "2025-12-22T16:34:00.149Z"
+  },
+  {
+    "id": "cmjhdlnuj0039onh6cvqua1ly",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirel3g7005a2x2o0320iqv4",
+    "metadata": {
+      "slug": "firinda-kereviz-kubra-kilic"
+    },
+    "createdAt": "2025-12-22T16:34:05.179Z"
+  },
+  {
+    "id": "cmjhdlr09003bonh601h5fftc",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelcjc005q2x2omqtu8zqf",
+    "metadata": {
+      "slug": "her-imkan-bir-imtihan-her-imtihan-bir-imkan-fatma-beyza-zortul"
+    },
+    "createdAt": "2025-12-22T16:34:09.274Z"
+  },
+  {
+    "id": "cmjhdlu42003donh6iqkinox7",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirekwzd004x2x2ovdtn0j54",
+    "metadata": {
+      "slug": "kareleri-gorebilmek-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:34:13.299Z"
+  },
+  {
+    "id": "cmjhdlwqo003fonh64wvo1j34",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireldkt005s2x2o68882b4o",
+    "metadata": {
+      "slug": "bu-zaman-ahir-zamandi-abdulkadir-geylani-rha"
+    },
+    "createdAt": "2025-12-22T16:34:16.704Z"
+  },
+  {
+    "id": "cmjhdlzbr003honh6bgaq7f6k",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelenu005u2x2odu6egk7a",
+    "metadata": {
+      "slug": "infak-psikolojisi-ve-toplumsal-esitlik-psk-rumeysa-sudiye-atar"
+    },
+    "createdAt": "2025-12-22T16:34:20.055Z"
+  },
+  {
+    "id": "cmjhdm2tq003jonh64l5pxtoj",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelhbl005z2x2ouipesj3m",
+    "metadata": {
+      "slug": "cocuklarla-iletisimde-ben-dili-m-emin-karabacak"
+    },
+    "createdAt": "2025-12-22T16:34:24.591Z"
+  },
+  {
+    "id": "cmjhdm5ip003lonh6oemq8246",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirel0di00542x2otnv61kav",
+    "metadata": {
+      "slug": "evlilik-ve-ese-yonelik-takintilar-obsesif-kompulsif-bozuklugun-bir-diger-seklidir-fatma-ulger"
+    },
+    "createdAt": "2025-12-22T16:34:28.081Z"
+  },
+  {
+    "id": "cmjhdm8c2003nonh6ogec399n",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireljh800632x2ojti49hp0",
+    "metadata": {
+      "slug": "allahin-dinine-yardim-ediniz-abdulkadir-geylani-rha"
+    },
+    "createdAt": "2025-12-22T16:34:31.730Z"
+  },
+  {
+    "id": "cmjhdmao0003ponh6hksa4duh",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelm4o00682x2oldypvvgn",
+    "metadata": {
+      "slug": "ey-ortusune-burunen-kalk-semiha-marufoglu"
+    },
+    "createdAt": "2025-12-22T16:34:34.753Z"
+  },
+  {
+    "id": "cmjhdme7z003ronh6yu4pn6qp",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireln2w006a2x2ovk6kus6m",
+    "metadata": {
+      "slug": "hatadan-duyulan-pismanlik-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:34:39.360Z"
+  },
+  {
+    "id": "cmjhdmh28003tonh6zxy2quus",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelu8w006o2x2odjxizudy",
+    "metadata": {
+      "slug": "esaret-kilifi-fatma-beyza-zortul-semiha-marufoglu"
+    },
+    "createdAt": "2025-12-22T16:34:43.040Z"
+  },
+  {
+    "id": "cmjhdmji6003vonh6bdjxnxba",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirel4ws005d2x2o3hdzidbz",
+    "metadata": {
+      "slug": "korkmaktan-korkmayiniz"
+    },
+    "createdAt": "2025-12-22T16:34:46.206Z"
+  },
+  {
+    "id": "cmjhdmlxw003xonh6xrrqectc",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirel5vd005f2x2odzkq291x",
+    "metadata": {
+      "slug": "patates-muffin-kubra-kilic"
+    },
+    "createdAt": "2025-12-22T16:34:49.364Z"
+  },
+  {
+    "id": "cmjhdmqp0003zonh6w4ltb3e1",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelzn1006w2x2oemxyxc7p",
+    "metadata": {
+      "slug": "kestane-asi-kubra-kilic"
+    },
+    "createdAt": "2025-12-22T16:34:55.524Z"
+  },
+  {
+    "id": "cmjhdmvwr0041onh69866xxf7",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirem2de00712x2oksq5dwuf",
+    "metadata": {
+      "slug": "guven-nimettir-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:35:02.283Z"
+  },
+  {
+    "id": "cmjhdmx8v0043onh6d4j1uadg",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelvj9006q2x2oqln0vely",
+    "metadata": {
+      "slug": "allaha-kul-olmak-icin-yaratildik-abdulkadir-geylani-rha"
+    },
+    "createdAt": "2025-12-22T16:35:04.015Z"
+  },
+  {
+    "id": "cmjhdn7ko0045onh68wq3eqhh",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelahu005m2x2obxuzfdnl",
+    "metadata": {
+      "slug": "korkularla-imtihan-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:35:17.401Z"
+  },
+  {
+    "id": "cmjhdnb4e0047onh6nwp58k2z",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirem7c9007a2x2o5zwqtyc2",
+    "metadata": {
+      "slug": "hakkiyla-tevekkul-etseydiniz-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:35:21.999Z"
+  },
+  {
+    "id": "cmjhdnf9z0049onh6iqswrmgb",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirembax007h2x2oyjzzm9ia",
+    "metadata": {
+      "slug": "oiumu-tefekkur-etmek-abdulkadir-geylani-rha"
+    },
+    "createdAt": "2025-12-22T16:35:27.383Z"
+  },
+  {
+    "id": "cmjhdnl37004bonh639f5sa7g",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiremcsh007k2x2oup4dns44",
+    "metadata": {
+      "slug": "aile-ve-lgbt-elif-e-bayraktar"
+    },
+    "createdAt": "2025-12-22T16:35:34.916Z"
+  },
+  {
+    "id": "cmjhdnr20004donh6enzmk27f",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelg8t005x2x2owfspgqph",
+    "metadata": {
+      "slug": "editorden-68"
+    },
+    "createdAt": "2025-12-22T16:35:42.649Z"
+  },
+  {
+    "id": "cmjhdnu2g004fonh6fgc2rjhg",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiremdys007m2x2owhuqju4m",
+    "metadata": {
+      "slug": "gercek-mumin-butun-hallerinde-iyi-niyetlidir-abdulkadir-geylani-rha"
+    },
+    "createdAt": "2025-12-22T16:35:46.552Z"
+  },
+  {
+    "id": "cmjhn0lng00015r3b1nyjq08b",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766437057015-8d1554414795545e-coverUrl-fonksiyonel-tip-Whfjyx83puUEl4MeUy9RZZNQoNCPLF.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T20:57:38.717Z"
+  },
+  {
+    "id": "cmjhn0qyq00045r3bt0fzqblf",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjhn0q8f00025r3bl6rg8gxy",
+    "metadata": {
+      "slug": "fonksiyonel-tipta-kok-nedene-yolculuk",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T20:57:45.603Z"
+  },
+  {
+    "id": "cmjhn4so200065r3bf1shh8v3",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766437253685-7c556274792a95b3-coverUrl-cocuklarda-bagisiklik-sistemi-x77TNGjbRIsfClT6IBZbVzGOFtWrw4.jpeg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T21:00:54.434Z"
+  },
+  {
+    "id": "cmjhn4wi900095r3b7m44izd8",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjhn4w0200075r3b0gawwevw",
+    "metadata": {
+      "slug": "cocuklarda-bagisiklik-guclu-bir-savunma-dogru-bir-denge",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T21:00:59.409Z"
+  },
+  {
+    "id": "cmjhn8ey5000b5r3bm6cgwrzg",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766437422306-30fdecc8b1af0749-coverUrl-Kalp-sagligi-ve-beslenme-kalbe-iyi-gelen-besinler-z06AgGxYc3aYW3SP0lWtdOlbl80rdV.webp",
+    "metadata": {
+      "mime": "image/webp"
+    },
+    "createdAt": "2025-12-22T21:03:43.277Z"
+  },
+  {
+    "id": "cmjhn8ktb000e5r3b0bf8b1pn",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjhn8k3c000c5r3bvcrizypy",
+    "metadata": {
+      "slug": "helal-beslenme-bedenin-ve-kalbin-safligi",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T21:03:50.879Z"
+  },
+  {
+    "id": "cmjhnk12v001q5r3ba9dcln90",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766437964677-1db8564c55cbe28b-coverUrl-channels4_profile-yJNDX8it0HAu3wLDA1kXmo6sDkRbEa.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T21:12:45.175Z"
+  },
+  {
+    "id": "cmjhnk7su001t5r3bs3zkg1c2",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjhnk730001r5r3b9ir57i6b",
+    "metadata": {
+      "slug": "kadin-sagliginin-temel-taslari-yasa-gore-rutin-kontroller-ve-erken-teshisin-gucu-dr-mine-sidika-kermalli",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T21:12:53.887Z"
+  },
+  {
+    "id": "cmjhnnbh00001ezu9jj2sq8i9",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766438118244-ac61164f10956378-coverUrl-images__2_-FmK0UrXF7nkA6E44kNlAtkpeDfWzVx.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T21:15:18.613Z"
+  },
+  {
+    "id": "cmjhnnejl0003ezu9wxk3bjdk",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjhnk730001r5r3b9ir57i6b",
+    "metadata": {
+      "slug": "kadin-sagliginin-temel-taslari-yasa-gore-rutin-kontroller-ve-erken-teshisin-gucu-dr-mine-sidika-kermalli",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T21:15:22.594Z"
+  },
+  {
+    "id": "cmjhnnwnb000bezu9giy6ld9l",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766438145539-96106f032b766a94-coverUrl-wVXYk7UnZGfDAO1z6hujP8atliMKJp-f2DIAqcGEYlA3uHtABBuFogVYGXgge.png",
+    "metadata": {
+      "mime": "image/png"
+    },
+    "createdAt": "2025-12-22T21:15:46.055Z"
+  },
+  {
+    "id": "cmjhnnzwu000dezu9blph6k31",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjhnk730001r5r3b9ir57i6b",
+    "metadata": {
+      "slug": "kadin-sagliginin-temel-taslari-yasa-gore-rutin-kontroller-ve-erken-teshisin-gucu-dr-mine-sidika-kermalli",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T21:15:50.287Z"
+  },
+  {
+    "id": "cmjhnpauc000fezu9usxghj7n",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766438210444-0448e6626794cd54-coverUrl-2-2-scaled-imKSbinKNgiECN9sLBJ3y4atcqqkb5.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T21:16:51.108Z"
+  },
+  {
+    "id": "cmjhnpdig000hezu97zx0ams0",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjhnk730001r5r3b9ir57i6b",
+    "metadata": {
+      "slug": "kadin-sagliginin-temel-taslari-yasa-gore-rutin-kontroller-ve-erken-teshisin-gucu-dr-mine-sidika-kermalli",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T21:16:54.569Z"
+  },
+  {
+    "id": "cmjhnpz7m000lezu9qopd9gp8",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjhnk730001r5r3b9ir57i6b",
+    "metadata": {
+      "slug": "kadin-sagliginin-temel-taslari-yasa-gore-rutin-kontroller-ve-erken-teshisin-gucu-dr-mine-sidika-kermalli",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T21:17:22.690Z"
+  },
+  {
+    "id": "cmjhnqrdt000zezu97exntxer",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjhnk730001r5r3b9ir57i6b",
+    "metadata": {
+      "slug": "kadin-sagliginin-temel-taslari-yasa-gore-rutin-kontroller-ve-erken-teshisin-gucu-dr-mine-sidika-kermalli",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T21:17:59.201Z"
+  },
+  {
+    "id": "cmjho3twq0001o71c7dfx76ic",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766438888585-86ced9ce948d6a51-coverUrl-istockphoto-1127245421-612x612-6SWLmPgcBA8vWyPiZPKhpIOL1IR7jH.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T21:28:09.003Z"
+  },
+  {
+    "id": "cmjho3xn00004o71c7text35g",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjho3wwz0002o71cngip8ohh",
+    "metadata": {
+      "slug": "kureysten-ummete-asabiyetin-aidiyete-donusu",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T21:28:13.836Z"
+  },
+  {
+    "id": "cmjho4y1f0006o71c16si708x",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjho3wwz0002o71cngip8ohh",
+    "metadata": {
+      "slug": "kureysten-ummete-asabiyetin-aidiyete-donusu",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T21:29:01.012Z"
+  },
+  {
+    "id": "cmjho7ot1000ao71c5wfa6avt",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "category",
+    "targetId": "cmjho7ono0008o71c93wc49dl",
+    "metadata": {
+      "slug": "İyilik Hikayeleri"
+    },
+    "createdAt": "2025-12-22T21:31:09.013Z"
+  },
+  {
+    "id": "cmjhodhbm000co71c8rk1goj7",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766439338466-0d0a8bf4c0984ae2-coverUrl-WhatsApp_Image_2025-12-20_at_16.33.41-xmWDnSy6lr0diBpVaV3jR42tP9S7qn.jpeg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T21:35:39.250Z"
+  },
+  {
+    "id": "cmjhodlfm000fo71co8ta68wj",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjhodkps000do71cgh5kqn3y",
+    "metadata": {
+      "slug": "bir-tebessumle-baslayan-iyilik-hareketi-sukran-tuncer",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T21:35:44.578Z"
+  },
+  {
+    "id": "cmjhoejfx000ho71ctay1bxht",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "category",
+    "targetId": "cmjho7ono0008o71c93wc49dl",
+    "metadata": {
+      "slug": "birr yolcu"
+    },
+    "createdAt": "2025-12-22T21:36:28.653Z"
+  },
+  {
+    "id": "cmjhofwwj00019hukhfba41xr",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjhodkps000do71cgh5kqn3y",
+    "metadata": {
+      "slug": "bir-tebessumle-baslayan-iyilik-hareketi-sukran-tuncer",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T21:37:32.756Z"
+  },
+  {
+    "id": "cmjhohtt700099hukdrei6bzo",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelx0g006t2x2o3b1a8ktm",
+    "metadata": {
+      "slug": "beni-yaratan-elbette-yolumu-gosterir-hatice-beyazitli"
+    },
+    "createdAt": "2025-12-22T21:39:02.059Z"
+  },
+  {
+    "id": "cmjhohx44000b9huk3p6zzf75",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejw4r00322x2opdepslf4",
+    "metadata": {
+      "slug": "robert-irwin-elhamra-kitap-onerileri-halime-husna-ozudogru"
+    },
+    "createdAt": "2025-12-22T21:39:06.341Z"
+  },
+  {
+    "id": "cmjhoi1ew000d9huk16xybmpp",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejikm002e2x2o3uzlddf6",
+    "metadata": {
+      "slug": "babaziz-ruhunu-tefekkur-eden-prens-rabia-andic"
+    },
+    "createdAt": "2025-12-22T21:39:11.913Z"
+  },
+  {
+    "id": "cmjhoi8e8000f9huk35ocykwz",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefxuk001012khzzli91xi",
+    "metadata": {
+      "slug": "bir-medeniyetin-izleri-islam-mimarisine-yolculuk-merve-nur-vatansever"
+    },
+    "createdAt": "2025-12-22T21:39:20.960Z"
+  },
+  {
+    "id": "cmjhoidwv000h9huk8n2bs3f3",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelsqs006l2x2o1l2ojnz1",
+    "metadata": {
+      "slug": "yuregimizdeki-niyetlerimiz-kadariz-semiha-marufoglu"
+    },
+    "createdAt": "2025-12-22T21:39:28.112Z"
+  },
+  {
+    "id": "cmjhoh95m00039huk3nh6tdlk",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirekmlx004e2x2oz2m2co81",
+    "metadata": {
+      "slug": "kereviz-mucver-kubra-kilic",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T21:38:35.291Z"
+  },
+  {
+    "id": "cmjhohbv500059huk26mjmypk",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefut8000v12khr5mlb13s",
+    "metadata": {
+      "slug": "hemmenin-oldugu-gunlerden-biri-rabia-andic"
+    },
+    "createdAt": "2025-12-22T21:38:38.802Z"
+  },
+  {
+    "id": "cmjhohkxm00079hukjypuhses",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirem8b5007c2x2othhv8vx0",
+    "metadata": {
+      "slug": "bir-sahil-seridi-guzellemesi-emine-donukara",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T21:38:50.554Z"
+  },
+  {
+    "id": "cmjhoii4z000j9hukuvopcdjr",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefdo5000312kheprbmb1c",
+    "metadata": {
+      "slug": "cini-renklerin-sessiz-zikri-merve-nur-vatansever"
+    },
+    "createdAt": "2025-12-22T21:39:33.588Z"
+  },
+  {
+    "id": "cmjhoiop0000l9hukc2o2yrm7",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmird36gt000lgbusi617wsdg",
+    "metadata": {
+      "slug": "kadini-isiten-var",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T21:39:42.084Z"
+  },
+  {
+    "id": "cmjhoivsl000n9hukmyxomwl7",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefgz4000812khnzn5yqd2",
+    "metadata": {
+      "slug": "anne-beslenmesi-cocuga-yansiyan-enerji-defne-yalin"
+    },
+    "createdAt": "2025-12-22T21:39:51.286Z"
+  },
+  {
+    "id": "cmjhoj0op000p9hukrlq28lew",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefjmm000b12khkp3ems5i",
+    "metadata": {
+      "slug": "asr-suresinde-zamanin-hakikati-egitim-danismani-zehra-okcanoglu"
+    },
+    "createdAt": "2025-12-22T21:39:57.626Z"
+  },
+  {
+    "id": "cmjhojlcc000r9huke5ignm0k",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmiremogf00832x2ot0dd6hyx",
+    "metadata": {
+      "slug": "islam-ve-iman-odunc-olmaz-abdulkadir-geylani-rha",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T21:40:24.397Z"
+  },
+  {
+    "id": "cmjhojniw000t9hukmn38r2y0",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmiremk72007x2x2o8nqgf1tr",
+    "metadata": {
+      "slug": "bagislayan-bir-rabbiniz-var-elif-e-bayraktar",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T21:40:27.132Z"
+  },
+  {
+    "id": "cmjhojuzn000v9hukazzqmnrv",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiremf9h007o2x2o747bm29s",
+    "metadata": {
+      "slug": "allah-dostlari-gonul-mimarlaridir-abdulkadir-geylani-rha"
+    },
+    "createdAt": "2025-12-22T21:40:36.900Z"
+  },
+  {
+    "id": "cmjhojzx9000x9huke5omhudp",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirefp64000l12kho0wwqkvr",
+    "metadata": {
+      "slug": "evlenmeden-once-kopan-firtinalar-uzm-aile-danismani-selva-yilmaz"
+    },
+    "createdAt": "2025-12-22T21:40:43.293Z"
+  },
+  {
+    "id": "cmjhok4cp000z9hukfegv3t8v",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireg1qo001812khtv26km5d",
+    "metadata": {
+      "slug": "ateslenen-cocuga-evde-neler-yapabiliriz-neslihan-dolas"
+    },
+    "createdAt": "2025-12-22T21:40:49.034Z"
+  },
+  {
+    "id": "cmjhok8ac00119hukwvrjly03",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmiregd18001r12khm2spjpas",
+    "metadata": {
+      "slug": "hep-otuz-uc-yasinda-rabia-andic"
+    },
+    "createdAt": "2025-12-22T21:40:54.132Z"
+  },
+  {
+    "id": "cmjhokdbb00139hukaa9cx4w5",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelrp7006j2x2o3gxmmpsu",
+    "metadata": {
+      "slug": "gunumuzde-cenaze-yemekleri-rukiye-coruk"
+    },
+    "createdAt": "2025-12-22T21:41:00.647Z"
+  },
+  {
+    "id": "cmjhokgwg00159hukoj77yv4i",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirejkwm002i2x2otnb7uag3",
+    "metadata": {
+      "slug": "samdan-beyruta-suzulen-bir-kus-fatmanur-kara"
+    },
+    "createdAt": "2025-12-22T21:41:05.297Z"
+  },
+  {
+    "id": "cmjhokork00179huku1u9bjl9",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmirema29007f2x2ovhtfpj40",
+    "metadata": {
+      "slug": "allahtan-neden-korkalim-elif-e-bayraktar",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-22T21:41:15.396Z"
+  },
+  {
+    "id": "cmjhol1jl00199huk2x8r4z0k",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmireji1r002d2x2o3p27ykml",
+    "metadata": {
+      "slug": "imam-gazali-hakikat-cagrisi-ledunni-ilim-risalesi-halime-husna-ozudogru"
+    },
+    "createdAt": "2025-12-22T21:41:32.049Z"
+  },
+  {
+    "id": "cmjholc79001b9hukw34d43ez",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirek7e2003n2x2o5o6vaos0",
+    "metadata": {
+      "slug": "esler-arasindaki-denklik-ailenin-temel-sartidir-prof-dr-halis-ayhan"
+    },
+    "createdAt": "2025-12-22T21:41:45.862Z"
+  },
+  {
+    "id": "cmjholg8s001d9huk1389xfp3",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirem3iu00732x2osxbq4ism",
+    "metadata": {
+      "slug": "pencere-tuba-karatop"
+    },
+    "createdAt": "2025-12-22T21:41:51.100Z"
+  },
+  {
+    "id": "cmjholj2l001f9huk9kgc2gh2",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelq8y006g2x2ox7card5e",
+    "metadata": {
+      "slug": "editorden-59"
+    },
+    "createdAt": "2025-12-22T21:41:54.766Z"
+  },
+  {
+    "id": "cmjholnxp001h9huk48mpk2mt",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirem91n007d2x2o3oqhuamn",
+    "metadata": {
+      "slug": "tevhid-nedir-abdulkadir-geylani-rha"
+    },
+    "createdAt": "2025-12-22T21:42:01.069Z"
+  },
+  {
+    "id": "cmjholra1001j9huksbqyq1yw",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelylv006u2x2o9rzw9rl2",
+    "metadata": {
+      "slug": "bir-durusu-olmali-insanin-suurlu-ve-muslumanca-fatma-beyza-zontul-semiha-marufoglu"
+    },
+    "createdAt": "2025-12-22T21:42:05.401Z"
+  },
+  {
+    "id": "cmjholulf001l9huk5tqgpcgx",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirelons006d2x2o963ywa4t",
+    "metadata": {
+      "slug": "olum-dersinden-okumak-semiha-marufoglu"
+    },
+    "createdAt": "2025-12-22T21:42:09.700Z"
+  },
+  {
+    "id": "cmjholzwb001n9huklg9fyj29",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "article",
+    "targetId": "cmirek0kn003a2x2o28v0l7c5",
+    "metadata": {
+      "slug": "eliminasyon-diyeti-diyetisyen-hatice-yildirim"
+    },
+    "createdAt": "2025-12-22T21:42:16.571Z"
+  },
+  {
+    "id": "cmjhooz1u000jo71c9ev2m4sz",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjhnk730001r5r3b9ir57i6b",
+    "metadata": {
+      "slug": "kadin-sagliginin-temel-taslari-yasa-gore-rutin-kontroller-ve-erken-teshisin-gucu-dr-mine-sidika-kermalli",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T21:44:35.442Z"
+  },
+  {
+    "id": "cmjhopz6s0001nyam6e6a351q",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjhnk730001r5r3b9ir57i6b",
+    "metadata": {
+      "slug": "kadin-sagliginin-temel-taslari-yasa-gore-rutin-kontroller-ve-erken-teshisin-gucu-dr-mine-sidika-kermalli",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T21:45:22.274Z"
+  },
+  {
+    "id": "cmjhos8zd0005nyam9lg9u2rf",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "setRole",
+    "targetType": "user",
+    "targetId": "user_36Wz4MAtU1VhqDMjKWv8u1qshjf",
+    "metadata": null,
+    "createdAt": "2025-12-22T21:47:08.281Z"
+  },
+  {
+    "id": "cmjhosh80000lo71cw8uulq97",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766440038446-97ff78a070f11775-coverUrl-thumbs_b_c_45b0bf3f331d42a1c2c168c1c16b2a3e-eypeMxfmxeFRBcosp7thxHICNbqUAK.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-22T21:47:18.960Z"
+  },
+  {
+    "id": "cmjhoskba000oo71cvaqmua21",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjhosjta000mo71cit4319g8",
+    "metadata": {
+      "slug": "sessizlige-direnen-bir-cografya-dogu-turkistan",
+      "status": "published"
+    },
+    "createdAt": "2025-12-22T21:47:22.966Z"
+  },
+  {
+    "id": "cmjhpj8qr0007nyamie70jyyn",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmivmmz7m001nlmih3czb3llq",
+    "metadata": {
+      "slug": "seda-aksoy"
+    },
+    "createdAt": "2025-12-22T22:08:07.683Z"
+  },
+  {
+    "id": "cmjhpjg240009nyamomvnght8",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmivmmz7m001nlmih3czb3llq",
+    "metadata": {
+      "slug": "seda-aksoy"
+    },
+    "createdAt": "2025-12-22T22:08:17.165Z"
+  },
+  {
+    "id": "cmjibgrdo0001w7qd8h5o5v8w",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766478122552-95ce7ed8a78bc22a-coverUrl-ahlat-agaci-1152x768-KSxwVt5ocmnZgsEC4ygXskpGFkyDzN.webp",
+    "metadata": {
+      "mime": "image/webp"
+    },
+    "createdAt": "2025-12-23T08:22:03.421Z"
+  },
+  {
+    "id": "cmjibgwmu0004w7qdlcoz2szr",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjibgvwq0002w7qdrxfs1t19",
+    "metadata": {
+      "slug": "yalnizligin-kokleri-veya-schutz-ile-birlikte-ahlat-agacini-izlemek-docdr-fahrunnisa-kazan",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T08:22:10.230Z"
+  },
+  {
+    "id": "cmjibjanr0001lu1wxfedwblf",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjhnk730001r5r3b9ir57i6b",
+    "metadata": {
+      "slug": "kadin-sagliginin-temel-taslari-yasa-gore-rutin-kontroller-ve-erken-teshisin-gucu-dr-mine-sidika-kermalli",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T08:24:01.719Z"
+  },
+  {
+    "id": "cmjibmas60004lu1wl9pakikh",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjibmamu0002lu1wh53h99vw",
+    "metadata": {
+      "slug": "doc-dr-fahrunnisa-kazan"
+    },
+    "createdAt": "2025-12-23T08:26:21.846Z"
+  },
+  {
+    "id": "cmjibn8hf0006lu1wzfbu4gam",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjibgvwq0002w7qdrxfs1t19",
+    "metadata": {
+      "slug": "yalnizligin-kokleri-veya-schutz-ile-birlikte-ahlat-agacini-izlemek-docdr-fahrunnisa-kazan",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T08:27:05.523Z"
+  },
+  {
+    "id": "cmjibyjpw000114hnczphwxo5",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjhodkps000do71cgh5kqn3y",
+    "metadata": {
+      "slug": "bir-tebessumle-baslayan-iyilik-hareketi-sukran-tuncer",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T08:35:53.300Z"
+  },
+  {
+    "id": "cmjibzj15000414hn38rbz5it",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjibzivw000214hnxk5gxip3",
+    "metadata": {
+      "slug": "sumeyra-ildes"
+    },
+    "createdAt": "2025-12-23T08:36:39.065Z"
+  },
+  {
+    "id": "cmjibzrs9000714hn37i6to5s",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjibzrpn000514hnpgkc54ta",
+    "metadata": {
+      "slug": "esra-cakmak"
+    },
+    "createdAt": "2025-12-23T08:36:50.410Z"
+  },
+  {
+    "id": "cmjic0sg1000a14hn7wftzba0",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjic0sde000814hn5b3czx9k",
+    "metadata": {
+      "slug": "yeliz-can"
+    },
+    "createdAt": "2025-12-23T08:37:37.921Z"
+  },
+  {
+    "id": "cmjic12mm000d14hnhoyc70k2",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjic12jz000b14hnwi1uguj7",
+    "metadata": {
+      "slug": "busra-karayoluk"
+    },
+    "createdAt": "2025-12-23T08:37:51.119Z"
+  },
+  {
+    "id": "cmjic1qdy000g14hnv3xnt20e",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjic1qbb000e14hncociv73z",
+    "metadata": {
+      "slug": "ozge-yesilirmak"
+    },
+    "createdAt": "2025-12-23T08:38:21.911Z"
+  },
+  {
+    "id": "cmjic22q1000j14hnk65p0hql",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjic22ne000h14hn82njrfxo",
+    "metadata": {
+      "slug": "meryem-dinc"
+    },
+    "createdAt": "2025-12-23T08:38:37.897Z"
+  },
+  {
+    "id": "cmjic3yg1000m14hn5d62zsh1",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjic3yde000k14hn8vo940zz",
+    "metadata": {
+      "slug": "op-dr-mine-sidika-kermalli"
+    },
+    "createdAt": "2025-12-23T08:40:05.666Z"
+  },
+  {
+    "id": "cmjic4a69000p14hnlzp6bx5u",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjic4a3m000n14hnqep0vxv6",
+    "metadata": {
+      "slug": "naime-erkovan"
+    },
+    "createdAt": "2025-12-23T08:40:20.866Z"
+  },
+  {
+    "id": "cmjic54jh000s14hnnnpld9lx",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjic54ea000q14hnuoa1lp14",
+    "metadata": {
+      "slug": "serap-buharali"
+    },
+    "createdAt": "2025-12-23T08:41:00.221Z"
+  },
+  {
+    "id": "cmjic6gs8000v14hnoohpi8j8",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjic6gkg000t14hnfzump19h",
+    "metadata": {
+      "slug": "sukran-tuncer"
+    },
+    "createdAt": "2025-12-23T08:42:02.652Z"
+  },
+  {
+    "id": "cmjic7etp000y14hnt616b3w7",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjic7er3000w14hnje08qv1m",
+    "metadata": {
+      "slug": "tugba-kismir"
+    },
+    "createdAt": "2025-12-23T08:42:46.862Z"
+  },
+  {
+    "id": "cmjic82c9001114hnktrj2vdz",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjic829n000z14hnko82n064",
+    "metadata": {
+      "slug": "busra-elvan"
+    },
+    "createdAt": "2025-12-23T08:43:17.337Z"
+  },
+  {
+    "id": "cmjic999p001414hn73wt7lns",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjic9973001214hn3ozld5q2",
+    "metadata": {
+      "slug": "dr-gokce-bozca"
+    },
+    "createdAt": "2025-12-23T08:44:12.974Z"
+  },
+  {
+    "id": "cmjic9w7p0008lu1wwxwhynht",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjhodkps000do71cgh5kqn3y",
+    "metadata": {
+      "slug": "bir-tebessumle-baslayan-iyilik-hareketi-sukran-tuncer",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T08:44:42.709Z"
+  },
+  {
+    "id": "cmjicbk46000alu1wey4jv8um",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjhodkps000do71cgh5kqn3y",
+    "metadata": {
+      "slug": "bir-tebessumle-baslayan-iyilik-hareketi-sukran-tuncer",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T08:46:00.343Z"
+  },
+  {
+    "id": "cmjicdk20000clu1wc6jdoimb",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjhnk730001r5r3b9ir57i6b",
+    "metadata": {
+      "slug": "kadin-sagliginin-temel-taslari-yasa-gore-rutin-kontroller-ve-erken-teshisin-gucu-dr-mine-sidika-kermalli",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T08:47:33.577Z"
+  },
+  {
+    "id": "cmjichpem000flu1wbt5q1mka",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjichp9a000dlu1wzwsicldj",
+    "metadata": {
+      "slug": "dr-ogr-uyesi-melek-yilmaz-gombeyaz"
+    },
+    "createdAt": "2025-12-23T08:50:47.134Z"
+  },
+  {
+    "id": "cmjiciww0000hlu1wkqarfii0",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjho3wwz0002o71cngip8ohh",
+    "metadata": {
+      "slug": "kureysten-ummete-asabiyetin-aidiyete-donusu",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T08:51:43.488Z"
+  },
+  {
+    "id": "cmjicjmai000jlu1wsbd5vryt",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmjichp9a000dlu1wzwsicldj",
+    "metadata": {
+      "slug": "dr-ogr-uyesi-melek-yilmaz-gombeyaz"
+    },
+    "createdAt": "2025-12-23T08:52:16.410Z"
+  },
+  {
+    "id": "cmjicnj6w000mlu1wlqryt40n",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjicnj1n000klu1w7egq10f3",
+    "metadata": {
+      "slug": "sumeyye-lambrecht"
+    },
+    "createdAt": "2025-12-23T08:55:19.017Z"
+  },
+  {
+    "id": "cmjico23g000olu1waybdqj31",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjhay6ho000713gkivz2jmkd",
+    "metadata": {
+      "slug": "dogumla-baslayan-psikolojik-gelisim-aidiyetin-yasam-boyu-etkisi-sumeyye-lambrecht",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T08:55:43.517Z"
+  },
+  {
+    "id": "cmjicoobj000rlu1w1p14u7cc",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjicoo6a000plu1w0wz8uj2d",
+    "metadata": {
+      "slug": "sadiye-tasoz"
+    },
+    "createdAt": "2025-12-23T08:56:12.320Z"
+  },
+  {
+    "id": "cmjicpce400014l9ocnk5hb7c",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjhapb5i000213gkgau1wbaf",
+    "metadata": {
+      "slug": "sif-bint-abdullh-ilmin-hikmetin-ve-emanetin-izinde-bir-hanim-sadiye-tasoz",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T08:56:43.516Z"
+  },
+  {
+    "id": "cmjicprwm00034l9o7l4q9ckx",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjhapb5i000213gkgau1wbaf",
+    "metadata": {
+      "slug": "sif-bint-abdullh-ilmin-hikmetin-ve-emanetin-izinde-bir-hanim-sadiye-tasoz",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T08:57:03.623Z"
+  },
+  {
+    "id": "cmjicrzc900054l9oaqs2lbx9",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh5kf9w0002ytdzrlf1qx0m",
+    "metadata": {
+      "slug": "inanc-kimlik-ortu-ve-olcu-busra-elvan",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T08:58:46.570Z"
+  },
+  {
+    "id": "cmjicsjme00074l9ol67i09kx",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh3s1t4000tp1h83jjpjpqo",
+    "metadata": {
+      "slug": "nefsin-golgesinden-tesetturun-isigina-ozge-yesilirmak",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T08:59:12.854Z"
+  },
+  {
+    "id": "cmjicu1vg00094l9o5qpy7aij",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh65w9e0009sypiz3cegabj",
+    "metadata": {
+      "slug": "eglence-ahlaki-ve-gunumuz-tugba-kismir",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T09:00:23.165Z"
+  },
+  {
+    "id": "cmjicv1r9000c4l9oy5rcnpbv",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjicv1ly000a4l9orce2r2pm",
+    "metadata": {
+      "slug": "gulsum-yilmaz"
+    },
+    "createdAt": "2025-12-23T09:01:09.669Z"
+  },
+  {
+    "id": "cmjicx20q000f4l9ol2b8u6ic",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjicx1vc000d4l9oufevsghp",
+    "metadata": {
+      "slug": "tugce-karas"
+    },
+    "createdAt": "2025-12-23T09:02:43.322Z"
+  },
+  {
+    "id": "cmjicy086000tlu1wcp4emi0y",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh6bnwh000esypiakmqu3df",
+    "metadata": {
+      "slug": "podyumdan-hakikate-yuruyus-tugce-karas",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T09:03:27.655Z"
+  },
+  {
+    "id": "cmjicz80c000vlu1wtpa3gsdr",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh3jfle0002p1h8ztsdkzh7",
+    "metadata": {
+      "slug": "gulun-hikayesi-gulsum-yilmaz",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T09:04:24.396Z"
+  },
+  {
+    "id": "cmjiczy6e000xlu1wtcdqgamd",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh3a0fo000lxpgrrwblikap",
+    "metadata": {
+      "slug": "zarafetin-ilmi-sumeyra-ildes",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T09:04:58.310Z"
+  },
+  {
+    "id": "cmjid2rva0010lu1wfrexc9yq",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjid2rq2000ylu1wk1k8bmm8",
+    "metadata": {
+      "slug": "ayse-dogan"
+    },
+    "createdAt": "2025-12-23T09:07:10.102Z"
+  },
+  {
+    "id": "cmjid4b8j0012lu1wfef75g91",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmivmmz7m001nlmih3czb3llq",
+    "metadata": {
+      "slug": "seda-aksoy"
+    },
+    "createdAt": "2025-12-23T09:08:21.860Z"
+  },
+  {
+    "id": "cmjid4llf0014lu1wo29d2ynr",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmjh617sv0004sypiqu7wqxy7",
+    "metadata": {
+      "slug": "caglar-sahin"
+    },
+    "createdAt": "2025-12-23T09:08:35.284Z"
+  },
+  {
+    "id": "cmjid4ukb0016lu1wlvpw51jb",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmivmmz1i001mlmih615xu509",
+    "metadata": {
+      "slug": "rehnuma-editor"
+    },
+    "createdAt": "2025-12-23T09:08:46.907Z"
+  },
+  {
+    "id": "cmjid5dd60018lu1wabdk0msp",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmjgvqu8x000qxz17yqg2u6c1",
+    "metadata": {
+      "slug": "birengahenkgmailcom"
+    },
+    "createdAt": "2025-12-23T09:09:11.274Z"
+  },
+  {
+    "id": "cmjid5ssv001alu1w9ibkvv24",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmivojlu10001bufeqcwl6i0k",
+    "metadata": {
+      "slug": "tarf-akademi"
+    },
+    "createdAt": "2025-12-23T09:09:31.280Z"
+  },
+  {
+    "id": "cmjid7856000h4l9ose876n4t",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh34mi30002xpgr5qwfhxqb",
+    "metadata": {
+      "slug": "sonilden-lilyum-cicegi-yapilisi-ayse-dogan",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T09:10:37.818Z"
+  },
+  {
+    "id": "cmjid80bt000j4l9ocik3y1a3",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh2tgsz000h9jrywftta486",
+    "metadata": {
+      "slug": "gul-asi-esra-cakmak",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T09:11:14.345Z"
+  },
+  {
+    "id": "cmjidacr7000m4l9otx1aecvm",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjidaclz000k4l9on87p8o6t",
+    "metadata": {
+      "slug": "safiye-nur-simsek"
+    },
+    "createdAt": "2025-12-23T09:13:03.763Z"
+  },
+  {
+    "id": "cmjidbfr2000o4l9onaqnqj0r",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh2n7dq000c9jry5npe6w2a",
+    "metadata": {
+      "slug": "guzellik-koklerden-gelen-sessiz-isik-safiye-nur-simsek",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T09:13:54.302Z"
+  },
+  {
+    "id": "cmjidcrl0000q4l9o7uqwbzpk",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh2d41o001dbrtkbcj6tojk",
+    "metadata": {
+      "slug": "kayserinin-davetiyle-baslayan-uc-kisilik-yolculugumuz-busra-karayoluk",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T09:14:56.292Z"
+  },
+  {
+    "id": "cmjiddac2000s4l9or9vb9s13",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh220yk0018brtkavv6kgov",
+    "metadata": {
+      "slug": "imanimizin-sesi-filistin-meryem-dinc",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T09:15:20.594Z"
+  },
+  {
+    "id": "cmjide07n001clu1wyuuo0vzi",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh1vs9j0013brtklh7lm9m1",
+    "metadata": {
+      "slug": "zarafetin-izinde-bir-kadin-hz-hatice-ra-yeliz-can",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T09:15:54.132Z"
+  },
+  {
+    "id": "cmjidh7q9001flu1w1p117qap",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjidh7kz001dlu1w63gldugm",
+    "metadata": {
+      "slug": "hulya-usan"
+    },
+    "createdAt": "2025-12-23T09:18:23.842Z"
+  },
+  {
+    "id": "cmjidhqz2001hlu1wj9ydtpix",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh1ohnv000ubrtkum1jxpwl",
+    "metadata": {
+      "slug": "guzeli-aramanin-izinde-geleneksel-sanatlarin-ruhu",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T09:18:48.782Z"
+  },
+  {
+    "id": "cmjidibgh001jlu1wynfmlesm",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh1eky10002fa4kon52xiai",
+    "metadata": {
+      "slug": "asirlara-direnen-kadin-izleri-toplumun-temelini-atanlarin-yolculugu-dr-gokce-bozca",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T09:19:15.329Z"
+  },
+  {
+    "id": "cmjidiuz6001llu1ww0i5dsp3",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh161db0007brtkjslq7ox7",
+    "metadata": {
+      "slug": "topraklasmak-naime-erkovan",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T09:19:40.626Z"
+  },
+  {
+    "id": "cmjidjcbq001olu1weedpanjv",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjidjc6f001mlu1wu52cc3sy",
+    "metadata": {
+      "slug": "ayse-altintas"
+    },
+    "createdAt": "2025-12-23T09:20:03.110Z"
+  },
+  {
+    "id": "cmjidjlzd001qlu1wg2znbe27",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmjidjc6f001mlu1wu52cc3sy",
+    "metadata": {
+      "slug": "ayse-altintas"
+    },
+    "createdAt": "2025-12-23T09:20:15.625Z"
+  },
+  {
+    "id": "cmjidn6mv001slu1w8iic04xy",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh11z3v0002brtkuyd9e7pq",
+    "metadata": {
+      "slug": "annemin-elleri-ayse-altintas",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T09:23:02.360Z"
+  },
+  {
+    "id": "cmjidnsir001ulu1wpuakszmt",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmiremn4e00822x2ozwsq25qk",
+    "metadata": {
+      "slug": "anne-baba-cocuklarina-mahremiyet-egitimini-ne-zaman-vermeye-baslar-jale-simsek",
+      "status": "draft"
+    },
+    "createdAt": "2025-12-23T09:23:30.724Z"
+  },
+  {
+    "id": "cmjidpf0r001xlu1woo4ow71z",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjidpevi001vlu1ws5ta7vxt",
+    "metadata": {
+      "slug": "do-dr-nergis-dama"
+    },
+    "createdAt": "2025-12-23T09:24:46.539Z"
+  },
+  {
+    "id": "cmjidpu7t001zlu1waj4fc8r1",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmjidpevi001vlu1ws5ta7vxt",
+    "metadata": {
+      "slug": "do-dr-nergis-dama"
+    },
+    "createdAt": "2025-12-23T09:25:06.233Z"
+  },
+  {
+    "id": "cmjidqs8v000u4l9otfyfazdv",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjgwpwlx0002lugb5k6plkjj",
+    "metadata": {
+      "slug": "unutulan-kokler-modernlesmenin-izinde-aidiyet-krizi-docdr-nergis-dama",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T09:25:50.335Z"
+  },
+  {
+    "id": "cmjidrbiu000x4l9o66fouuqz",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjidrbdm000v4l9onvcjhkbb",
+    "metadata": {
+      "slug": "sema-bayar"
+    },
+    "createdAt": "2025-12-23T09:26:15.319Z"
+  },
+  {
+    "id": "cmjidrr80000z4l9odqrdywlv",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjgvquyy000rxz17v7208pgh",
+    "metadata": {
+      "slug": "yeni-nesil-yoksunluk-aidiyet-bilincinin-zedelenmesi-sema-bayar",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T09:26:35.665Z"
+  },
+  {
+    "id": "cmjidsjyt00114l9o5c0931r6",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjgwdll3001ixz17103qxs5a",
+    "metadata": {
+      "slug": "ben-kimim-koklerden-kimlige-uzanan-yolculuk-uzm-psk-serap-buharali",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T09:27:12.917Z"
+  },
+  {
+    "id": "cmjidt69500134l9otskk1xue",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmjic54ea000q14hnuoa1lp14",
+    "metadata": {
+      "slug": "serap-buharali"
+    },
+    "createdAt": "2025-12-23T09:27:41.802Z"
+  },
+  {
+    "id": "cmjidv1ix00154l9ox67zeb64",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjibgvwq0002w7qdrxfs1t19",
+    "metadata": {
+      "slug": "yalnizligin-kokleri-veya-schutz-ile-birlikte-ahlat-agacini-izlemek-docdr-fahrunnisa-kazan",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T09:29:08.985Z"
+  },
+  {
+    "id": "cmjidwanw00174l9oofx259gm",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjibgvwq0002w7qdrxfs1t19",
+    "metadata": {
+      "slug": "yalnizligin-kokleri-veya-schutz-ile-birlikte-ahlat-agacini-izlemek-docdr-fahrunnisa-kazan",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T09:30:07.484Z"
+  },
+  {
+    "id": "cmjidyhr30021lu1wikoy3br1",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh11z3v0002brtkuyd9e7pq",
+    "metadata": {
+      "slug": "annemin-elleri-ayse-altintas",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T09:31:49.983Z"
+  },
+  {
+    "id": "cmjie4el20025lu1wpxgjji12",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh65w9e0009sypiz3cegabj",
+    "metadata": {
+      "slug": "eglence-ahlaki-ve-gunumuz-tugba-kismir",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T09:36:25.815Z"
+  },
+  {
+    "id": "cmjie54kb0027lu1wja63cp1q",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjhodkps000do71cgh5kqn3y",
+    "metadata": {
+      "slug": "bir-tebessumle-baslayan-iyilik-hareketi-sukran-tuncer",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T09:36:59.483Z"
+  },
+  {
+    "id": "cmjie58ah0029lu1wazphjudj",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjhodkps000do71cgh5kqn3y",
+    "metadata": {
+      "slug": "bir-tebessumle-baslayan-iyilik-hareketi-sukran-tuncer",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T09:37:04.313Z"
+  },
+  {
+    "id": "cmjif12t50001j5113x3jtlqh",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmjidjc6f001mlu1wu52cc3sy",
+    "metadata": {
+      "slug": "ayse-altintas"
+    },
+    "createdAt": "2025-12-23T10:01:50.201Z"
+  },
+  {
+    "id": "cmjif1qsr0003j511xr3345v8",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmjid2rq2000ylu1wk1k8bmm8",
+    "metadata": {
+      "slug": "ayse-dogan"
+    },
+    "createdAt": "2025-12-23T10:02:21.291Z"
+  },
+  {
+    "id": "cmjif26iu0005j511gt7t7e1a",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmjic829n000z14hnko82n064",
+    "metadata": {
+      "slug": "busra-elvan"
+    },
+    "createdAt": "2025-12-23T10:02:41.670Z"
+  },
+  {
+    "id": "cmjif2k9e0007j51139e1gzh3",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmjic12jz000b14hnwi1uguj7",
+    "metadata": {
+      "slug": "busra-karayoluk"
+    },
+    "createdAt": "2025-12-23T10:02:59.474Z"
+  },
+  {
+    "id": "cmjif40pl0009j511c1jcg8it",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmjidpevi001vlu1ws5ta7vxt",
+    "metadata": {
+      "slug": "do-dr-nergis-dama"
+    },
+    "createdAt": "2025-12-23T10:04:07.449Z"
+  },
+  {
+    "id": "cmjif4m5c000bj5117vokr0lv",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmjic9973001214hn3ozld5q2",
+    "metadata": {
+      "slug": "dr-gokce-bozca"
+    },
+    "createdAt": "2025-12-23T10:04:35.233Z"
+  },
+  {
+    "id": "cmjif62lu000dj511vkrta4ec",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmjichp9a000dlu1wzwsicldj",
+    "metadata": {
+      "slug": "dr-ogr-uyesi-melek-yilmaz-gombeyaz"
+    },
+    "createdAt": "2025-12-23T10:05:43.218Z"
+  },
+  {
+    "id": "cmjif6b9d000fj511dbc6lq9c",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmjibzrpn000514hnpgkc54ta",
+    "metadata": {
+      "slug": "esra-cakmak"
+    },
+    "createdAt": "2025-12-23T10:05:54.434Z"
+  },
+  {
+    "id": "cmjif7i2p000hj511qwwc7ugs",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmjidh7kz001dlu1w63gldugm",
+    "metadata": {
+      "slug": "hulya-usan"
+    },
+    "createdAt": "2025-12-23T10:06:49.921Z"
+  },
+  {
+    "id": "cmjif7t0c000jj511loh5dqmf",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmjicv1ly000a4l9orce2r2pm",
+    "metadata": {
+      "slug": "gulsum-yilmaz"
+    },
+    "createdAt": "2025-12-23T10:07:04.092Z"
+  },
+  {
+    "id": "cmjif84pk000lj511qzvheaiw",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmjic22ne000h14hn82njrfxo",
+    "metadata": {
+      "slug": "meryem-dinc"
+    },
+    "createdAt": "2025-12-23T10:07:19.257Z"
+  },
+  {
+    "id": "cmjif8gcc000nj511ikwvp2ft",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmjic4a3m000n14hnqep0vxv6",
+    "metadata": {
+      "slug": "naime-erkovan"
+    },
+    "createdAt": "2025-12-23T10:07:34.333Z"
+  },
+  {
+    "id": "cmjif94we000pj5112bn2geuj",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmjic3yde000k14hn8vo940zz",
+    "metadata": {
+      "slug": "op-dr-mine-sidika-kermalli"
+    },
+    "createdAt": "2025-12-23T10:08:06.159Z"
+  },
+  {
+    "id": "cmjif9jzr000rj511wiqh27gh",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmivmmz1i001mlmih615xu509",
+    "metadata": {
+      "slug": "rehnuma-editor"
+    },
+    "createdAt": "2025-12-23T10:08:25.720Z"
+  },
+  {
+    "id": "cmjif9wvr000tj511wxcygbwo",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmjidaclz000k4l9on87p8o6t",
+    "metadata": {
+      "slug": "safiye-nur-simsek"
+    },
+    "createdAt": "2025-12-23T10:08:42.424Z"
+  },
+  {
+    "id": "cmjifacnz000vj511ybtfvgqk",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "delete",
+    "targetType": "author",
+    "targetId": "cmjh2uz2v000s9jrygognot3e",
+    "metadata": null,
+    "createdAt": "2025-12-23T10:09:02.879Z"
+  },
+  {
+    "id": "cmjifavlm000xj5112qtb7g9q",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "author",
+    "targetId": "cmjibzivw000214hnxk5gxip3",
+    "metadata": {
+      "slug": "sumeyra-ildes"
+    },
+    "createdAt": "2025-12-23T10:09:27.418Z"
+  },
+  {
+    "id": "cmjigabzb0004hm9u9gyogjaw",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "homepage",
+    "targetId": "cmjig968p0000hm9uwgo1f36v",
+    "metadata": null,
+    "createdAt": "2025-12-23T10:37:01.608Z"
+  },
+  {
+    "id": "cmjigags00006hm9urxisxsru",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "homepage",
+    "targetId": "cmjig968p0000hm9uwgo1f36v",
+    "metadata": null,
+    "createdAt": "2025-12-23T10:37:07.824Z"
+  },
+  {
+    "id": "cmjigarh70008hm9ugiuhyqk3",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "homepage",
+    "targetId": "cmjig968p0000hm9uwgo1f36v",
+    "metadata": null,
+    "createdAt": "2025-12-23T10:37:21.692Z"
+  },
+  {
+    "id": "cmjigd36w000chm9ui59wh1yc",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766486349353-a7a9988dcf92e105-hero-ahlat-agaci-1152x768-4tyfdFR2pV2xW3c1q9I8WZ01NEMjbI.webp",
+    "metadata": {
+      "mime": "image/webp"
+    },
+    "createdAt": "2025-12-23T10:39:10.092Z"
+  },
+  {
+    "id": "cmjigd68i000ehm9uvc4qr57r",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "homepage",
+    "targetId": "cmjig968p0000hm9uwgo1f36v",
+    "metadata": null,
+    "createdAt": "2025-12-23T10:39:14.130Z"
+  },
+  {
+    "id": "cmjiggt7t0001z6fnamuvqaei",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjhodkps000do71cgh5kqn3y",
+    "metadata": {
+      "slug": "bir-tebessumle-baslayan-iyilik-hareketi-sukran-tuncer",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T10:42:03.881Z"
+  },
+  {
+    "id": "cmjigip0t0003z6fnnvehih6a",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh65w9e0009sypiz3cegabj",
+    "metadata": {
+      "slug": "eglence-ahlaki-ve-gunumuz-tugba-kismir",
+      "status": "published"
+    },
+    "createdAt": "2025-12-23T10:43:31.757Z"
+  },
+  {
+    "id": "cmjihx3p50001wal5v3vc9186",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766488963047-95b9741a02b05dbf-hero-lilyum-ciceginin-anlami-nedir-lilyum-cicegi-kokar-mi-lilyum-cicegi-hikayesi-nedir3-IxQ5PXc96tr0EVXckTlN2GAPtyLDWl.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-23T11:22:43.577Z"
+  },
+  {
+    "id": "cmjii3ot90003wal5acdnoxwm",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "homepage",
+    "targetId": "cmjig968p0000hm9uwgo1f36v",
+    "metadata": null,
+    "createdAt": "2025-12-23T11:27:50.877Z"
+  },
+  {
+    "id": "cmjjotnbj0001urmy2r5o28m2",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "homepage",
+    "targetId": "cmjig968p0000hm9uwgo1f36v",
+    "metadata": null,
+    "createdAt": "2025-12-24T07:23:45.871Z"
+  },
+  {
+    "id": "cmjjq47fx0001gq7jkiidhn80",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766563197529-4a2f978465605f44-coverUrl-WhatsApp_Image_2025-12-23_at_11.03.28-bipobM9TeaizZ3KnMyJ4DvwRAJvqmv.jpeg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-24T07:59:58.125Z"
+  },
+  {
+    "id": "cmjjq4emu0003gq7jhpyhj3gs",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjh2d41o001dbrtkbcj6tojk",
+    "metadata": {
+      "slug": "kayserinin-davetiyle-baslayan-uc-kisilik-yolculugumuz-busra-karayoluk",
+      "status": "published"
+    },
+    "createdAt": "2025-12-24T08:00:07.446Z"
+  },
+  {
+    "id": "cmjl1zwcn000114jkzgu2fn95",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766643617517-605981a835b4c574-hero-rehunma_kpk-FTxxolJ6xEGAv5ejqp9cvdHZU9rQoa.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-25T06:20:18.696Z"
+  },
+  {
+    "id": "cmjl202ft000314jkvogw6fwa",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "homepage",
+    "targetId": "cmjig968p0000hm9uwgo1f36v",
+    "metadata": null,
+    "createdAt": "2025-12-25T06:20:26.586Z"
+  },
+  {
+    "id": "cmjl27ic8000514jkh26ro3gn",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766643972982-85739a813d7f09f7-hero-rehunma_kpk-ajx9r5fzS3NbTFdUNnTDEOT0eThh5M.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-25T06:26:13.784Z"
+  },
+  {
+    "id": "cmjl27loe000714jks6i5low6",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "homepage",
+    "targetId": "cmjig968p0000hm9uwgo1f36v",
+    "metadata": null,
+    "createdAt": "2025-12-25T06:26:18.111Z"
+  },
+  {
+    "id": "cmjl2au0a000914jkxfgzi4nq",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766644127813-c160e245d6360b7a-hero-rehunma_kpk__1_-fRLGaZLKOXaRcBCFfKR4jSH0FOuDmb.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-25T06:28:48.875Z"
+  },
+  {
+    "id": "cmjl2ayhk000b14jk912lnhns",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "homepage",
+    "targetId": "cmjig968p0000hm9uwgo1f36v",
+    "metadata": null,
+    "createdAt": "2025-12-25T06:28:54.680Z"
+  },
+  {
+    "id": "cmjlfvrd50002sel2tlypnma4",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "author",
+    "targetId": "cmjlfvr7u0000sel2y2psg3zx",
+    "metadata": {
+      "slug": "vuslat-yagmur-yildirim"
+    },
+    "createdAt": "2025-12-25T12:49:00.234Z"
+  },
+  {
+    "id": "cmjlgb0xk0001q8kcsgaytj1f",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766667651956-4cf3afb0eda247b5-coverUrl-Civan_Percemi_Nedir_-_Buyuk_Anadolu_Hastanesi-1Uxur2u17YxRtlrIRhmPz7Need7ugz.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-25T13:00:52.473Z"
+  },
+  {
+    "id": "cmjlgb53d0004q8kcsvvl2afz",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjlgb4cj0002q8kcusq3nmeu",
+    "metadata": {
+      "slug": "civanpercemi",
+      "status": "published"
+    },
+    "createdAt": "2025-12-25T13:00:57.865Z"
+  },
+  {
+    "id": "cmjqvuxjm000110vf4l02i2rw",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766996105604-f74b7955aeb2d9b1-coverUrl-1766930178381-p6oj0L9IskWLfUXAwfGebkmbhZyRck.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-29T08:15:06.322Z"
+  },
+  {
+    "id": "cmjqvv1l3000410vf42tdd34y",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "create",
+    "targetType": "article",
+    "targetId": "cmjqvv0uu000210vfe58913hb",
+    "metadata": {
+      "slug": "hurrem-sultan-guc-hayir-ve-strateji",
+      "status": "published"
+    },
+    "createdAt": "2025-12-29T08:15:11.560Z"
+  },
+  {
+    "id": "cmjqvyw0o0001ethdlx8ozid5",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "upload",
+    "targetType": "blob",
+    "targetId": "https://xhn177gjakvmmzdu.public.blob.vercel-storage.com/1766996290368-1f0edf100a59da5f-coverUrl-haseki-hurrem-sultan-medresesi-3NGW5ykDv6B1BAUT4n7vl7DCEcsHJV.jpg",
+    "metadata": {
+      "mime": "image/jpeg"
+    },
+    "createdAt": "2025-12-29T08:18:10.968Z"
+  },
+  {
+    "id": "cmjqvz0j80003ethd3q738lyg",
+    "userId": "user_36gxUzmSoGe6eRdffyYN5OsJrs4",
+    "action": "update",
+    "targetType": "article",
+    "targetId": "cmjqvv0uu000210vfe58913hb",
+    "metadata": {
+      "slug": "hurrem-sultan-guc-hayir-ve-strateji",
+      "status": "published"
+    },
+    "createdAt": "2025-12-29T08:18:16.821Z"
+  },
+  {
+    "id": "cmjws856p00022jk5geol32i5",
+    "userId": "user_36LwKeAZ766TfZeuvEdeGeWNCZt",
+    "action": "setRole",
+    "targetType": "user",
+    "targetId": "user_36Wz4MAtU1VhqDMjKWv8u1qshjf",
+    "metadata": null,
+    "createdAt": "2026-01-02T11:20:01.346Z"
+  }
+]

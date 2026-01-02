@@ -52,7 +52,7 @@ export function HeroSection({ content }: Props) {
                 className="h-full w-full object-cover object-center scale-110 translate-x-6 rounded-l-[40px]"
                 loading="eager"
               />
-              <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-l from-transparent via-white/55 to-white" />
+
             </div>
           </div>
         </div>

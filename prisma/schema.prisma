@@ -153,6 +153,12 @@ model HomepageContent {
   updatedAt                  DateTime @updatedAt
 }
 
+model CorporateContent {
+  id        String   @id @default(cuid())
+  content   Json
+  updatedAt DateTime @updatedAt
+}
+
 model Session {
   id        String   @id @default(cuid())
   userId    String

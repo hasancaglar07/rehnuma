@@ -32,14 +32,14 @@ async function fetchRelated(articleId: string, categorySlug?: string | null) {
         status: "published",
         ...(categorySlug ? { category: { slug: categorySlug } } : {})
       },
-      select: { id: true, title: true, slug: true, content: true, category: { select: { name: true } } },
+      select: { id: true, title: true, slug: true, content: true, coverUrl: true, category: { select: { name: true } } },
       orderBy: { createdAt: "desc" },
       take: 4
     });
     if (related.length === 0 && categorySlug) {
       return prisma.article.findMany({
         where: { id: { not: articleId }, status: "published" },
-        select: { id: true, title: true, slug: true, content: true, category: { select: { name: true } } },
+        select: { id: true, title: true, slug: true, content: true, coverUrl: true, category: { select: { name: true } } },
         orderBy: { createdAt: "desc" },
         take: 4
       });
@@ -200,6 +200,7 @@ export default async function ArticlePage({ params }: Props) {
                     slug={item.slug}
                     excerpt={toExcerpt(item.content, 120)}
                     category={item.category?.name ?? undefined}
+                    coverUrl={item.coverUrl ?? undefined}
                   />
                 ))}
               </div>
