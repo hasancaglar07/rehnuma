@@ -6,7 +6,7 @@ export default function AbonelikPage() {
       <main className="container py-12 space-y-6">
         <div className="space-y-2">
           <h1 className="text-3xl font-serif">Abonelik Planları</h1>
-          <p className="text-muted-foreground">Stripe Checkout ile güvenli ödeme.</p>
+          <p className="text-muted-foreground">Kuveyt Türk 3D Secure ile güvenli ödeme.</p>
         </div>
         <SubscriptionPlans />
       </main>

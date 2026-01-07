@@ -40,10 +40,9 @@ Kullanıcı davranışı:
 1. **Annelik & Çocuk**  
 2. **Maneviyat & İslami İlimler**  
 3. **Aile & Evlilik**  
-4. **Ev ve Hayat**  
-5. **Şiir & Edebiyat**  
-6. **Sesli İçerikler**  
-7. **Dijital Dergi (Aylık Sayılar)**  
+4. **Şiir & Edebiyat**  
+5. **Sesli İçerikler**  
+6. **Dijital Dergi (Aylık Sayılar)**  
 
 ---
 

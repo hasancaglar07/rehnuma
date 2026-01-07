@@ -17,7 +17,7 @@ export function UserManager() {
   const [status, setStatus] = useState<string | null>(null);
   const [listLoading, setListLoading] = useState(true);
   const [search, setSearch] = useState("");
-  const [roleFilter, setRoleFilter] = useState<"all" | "admin" | "editor" | "author" | "user">("all");
+  const [roleFilter, setRoleFilter] = useState<"all" | "admin" | "editor" | "author" | "subscriber" | "user">("all");
   const [banFilter, setBanFilter] = useState<"all" | "banned" | "active">("all");
   const [editingSubId, setEditingSubId] = useState<string | null>(null);
   const [subForm, setSubForm] = useState({ plan: "", status: "", expiresAt: "" });
@@ -27,6 +27,13 @@ export function UserManager() {
     monthly: "Tek Sayı",
     yearly: "Abonelik",
     vip: "VIP (iptal)"
+  };
+  const roleLabels: Record<string, string> = {
+    admin: "Admin",
+    editor: "Editör",
+    author: "Yazar",
+    subscriber: "Abone",
+    user: "Kullanıcı"
   };
 
   useEffect(() => {
@@ -109,6 +116,7 @@ export function UserManager() {
           <option value="admin">Admin</option>
           <option value="editor">Editör</option>
           <option value="author">Yazar</option>
+          <option value="subscriber">Abone</option>
           <option value="user">Kullanıcı</option>
         </select>
         <select
@@ -144,7 +152,7 @@ export function UserManager() {
             <div className="space-y-1">
               <p className="font-semibold">{user.email}</p>
               <p className="text-sm text-muted-foreground">
-                Rol: {user.role} · Abonelik: {user.subscription?.status ?? "yok"}{" "}
+                Rol: {roleLabels[user.role] ?? user.role} · Abonelik: {user.subscription?.status ?? "yok"}{" "}
                 {user.subscription?.plan ? `(${planLabels[user.subscription.plan] ?? user.subscription.plan})` : ""}
               </p>
               <p className="text-xs text-muted-foreground">
@@ -196,6 +204,7 @@ export function UserManager() {
                 <option value="admin">Admin</option>
                 <option value="editor">Editör</option>
                 <option value="author">Yazar</option>
+                <option value="subscriber">Abone</option>
                 <option value="user">Kullanıcı</option>
               </select>
               <button

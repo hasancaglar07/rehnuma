@@ -88,8 +88,8 @@ export default async function HomePage() {
             id: "fallback-2",
             title: "Zarif Yaşam Rehberi",
             slug: "zarif-yasam-rehberi",
-            category: "Ev ve Yaşam",
-            excerpt: "Gündelik hayata estetik ve dinginlik katan küçük dokunuşlar.",
+            category: "Kadın ve Sağlık",
+            excerpt: "Gündelik hayatta iyi hissettiren sağlıklı ve nazik dokunuşlar.",
             coverUrl: undefined,
             readingMinutes: 5
           },
@@ -105,7 +105,7 @@ export default async function HomePage() {
         ];
 
   const categoryList = categories.length
-    ? categories.map((c) => ({ slug: c.slug, name: c.name }))
+    ? categories.filter((c) => c.slug !== "ev-ve-yasam").map((c) => ({ slug: c.slug, name: c.name }))
     : undefined;
   const heroContent = normalizeHomepageContent(homepageContent ?? undefined);
 

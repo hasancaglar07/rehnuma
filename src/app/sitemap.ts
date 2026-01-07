@@ -32,7 +32,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/iletisim",
     "/gizlilik-politikasi",
     "/cerez-politikasi",
-    "/kullanim-sartlari"
+    "/kullanim-sartlari",
+    "/mesafeli-satis-sozlesmesi",
+    "/abonelik-sozlesmesi"
   ].map((path) => ({
     url: `${baseUrl}${path}`,
     lastModified: now,

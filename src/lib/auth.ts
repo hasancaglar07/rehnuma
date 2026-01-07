@@ -94,6 +94,13 @@ async function getDbUser(userId: string, sessionClaims: SessionClaims) {
   const subscription = user.subscription;
 
   const isExpired = subscription?.expiresAt && subscription.expiresAt < new Date();
+  if (isExpired && user.role === "subscriber") {
+    user = await prisma.user.update({
+      where: { id: user.id },
+      data: { role: "user" },
+      include: { subscription: true }
+    });
+  }
   return {
     id: user.id,
     email: user.email,

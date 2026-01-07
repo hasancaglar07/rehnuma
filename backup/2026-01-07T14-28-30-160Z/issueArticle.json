@@ -1,0 +1,18 @@
+[
+  {
+    "id": "cmivmo65r001t29gqjv4tl34k",
+    "issueId": "seed-issue",
+    "articleId": "cmip2f5ln0007zmqejc7xaxg0",
+    "reviewerId": "cmivmmyo4001klmih185hc6e4",
+    "role": "reviewer",
+    "order": 0
+  },
+  {
+    "id": "cmivmo65r001u29gqt8lde9m0",
+    "issueId": "seed-issue",
+    "articleId": "cmivmn0f9001plmihgl7ed4ew",
+    "reviewerId": "cmivmmyo4001klmih185hc6e4",
+    "role": "reviewer",
+    "order": 1
+  }
+]

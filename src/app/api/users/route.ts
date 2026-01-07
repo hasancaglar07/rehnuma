@@ -10,7 +10,7 @@ const actionSchema = z.discriminatedUnion("action", [
   z.object({
     action: z.enum(["ban", "unban", "promote", "demote", "setRole"]),
     id: z.string().min(1),
-    role: z.enum(["admin", "editor", "author", "user"]).optional(),
+    role: z.enum(["admin", "editor", "author", "subscriber", "user"]).optional(),
     reason: z.string().max(200).optional()
   }),
   z.object({
@@ -82,6 +82,7 @@ export async function PUT(req: NextRequest) {
     }
   } else if (parsed.data.action === "subscription") {
     const exists = await prisma.subscription.findUnique({ where: { userId: parsed.data.id } });
+    const currentUser = await prisma.user.findUnique({ where: { id: parsed.data.id }, select: { role: true } });
     const expiresAt = parsed.data.expiresAt ? new Date(parsed.data.expiresAt) : exists?.expiresAt;
     if (!exists && !parsed.data.plan) {
       return NextResponse.json({ error: "Plan gerekli" }, { status: 400 });
@@ -107,6 +108,13 @@ export async function PUT(req: NextRequest) {
           expiresAt: data.expiresAt || new Date(Date.now() + 30 * 24 * 60 * 60 * 1000)
         }
       });
+    }
+    const nextStatus = data.status ?? exists?.status ?? "active";
+    if ((nextStatus === "active" || nextStatus === "trial") && currentUser?.role === "user") {
+      await prisma.user.update({ where: { id: parsed.data.id }, data: { role: "subscriber" } });
+    }
+    if (["canceled", "expired", "inactive"].includes(nextStatus) && currentUser?.role === "subscriber") {
+      await prisma.user.update({ where: { id: parsed.data.id }, data: { role: "user" } });
     }
     user = await prisma.user.findUnique({
       where: { id: parsed.data.id },

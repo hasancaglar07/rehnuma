@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 const navigation = [
+  { href: "/abonelik", label: "Abonelik" },
   { href: "/sayilar", label: "Sayılar" },
   { href: "/kategoriler", label: "Kategoriler" },
   { href: "/yazarlar", label: "Yazarlar" },
@@ -12,6 +13,8 @@ const legalLinks = [
   { href: "/gizlilik-politikasi", label: "Gizlilik" },
   { href: "/cerez-politikasi", label: "Çerez Politikası" },
   { href: "/kullanim-sartlari", label: "Kullanım Şartları" },
+  { href: "/mesafeli-satis-sozlesmesi", label: "Mesafeli Satış" },
+  { href: "/abonelik-sozlesmesi", label: "Abonelik Sözleşmesi" },
   { href: "/iletisim", label: "İletişim" }
 ];
 

@@ -12,7 +12,7 @@ const categoryMap: Record<string, Mapping> = {
   "annelik-cocuk": { target: "aile-ve-cocuk", child: "tohum" },
   "aile-evlilik": { target: "aile-ve-cocuk", child: "evlilige-dair" },
   "siir-edebiyat": { target: "kultur-edebiyat", child: "edebi-alem" },
-  "ev-ve-hayat": { target: "ev-ve-yasam", child: "pur-ihtimam" },
+  "ev-ve-hayat": { target: "kadin-ve-saglik", child: "guzellik-ve-bakim" },
   "maneviyat-islami-ilimler": { target: "maneviyat", child: "ruh-ve-mana" },
   "sesli-icerikler": { target: "rehnuma-dusunce" },
   "dijital-dergi": { target: "rehnuma-dusunce" }

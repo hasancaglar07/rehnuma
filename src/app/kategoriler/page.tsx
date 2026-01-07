@@ -38,16 +38,6 @@ const fallbackCategories: CategoryNode[] = [
     ]
   },
   {
-    name: "Ev ve Yaşam",
-    slug: "ev-ve-yasam",
-    children: [
-      { name: "Lezzetli Hikayeler", slug: "lezzetli-hikayeler" },
-      { name: "El Emeği", slug: "el-emegi" },
-      { name: "Pür İhtimam", slug: "pur-ihtimam" },
-      { name: "Gülistan", slug: "gulistan" }
-    ]
-  },
-  {
     name: "Maneviyat",
     slug: "maneviyat",
     children: [
@@ -90,6 +80,10 @@ export default async function KategorilerPage() {
           children: { orderBy: { order: "asc" }, select: { name: true, slug: true } }
         }
       })) || [];
+  }
+
+  if (categories.length) {
+    categories = categories.filter((category) => category.slug !== "ev-ve-yasam");
   }
 
   const list = categories.length ? categories : fallbackCategories;

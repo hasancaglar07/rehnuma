@@ -90,7 +90,6 @@ export default async function CategoryPage({ params }: Props) {
     "rehnuma-dusunce": "Fikir, eleştiri ve çağın ruhuna dair derinlikli okumalar.",
     "kultur-edebiyat": "Dizeler, hikayeler ve kültürel mirasla ruhu besleyen seçkiler.",
     "kadin-ve-saglik": "Sağlık, beslenme ve şefkatli bakım için zarif öneriler.",
-    "ev-ve-yasam": "Gündelik hayata estetik ve huzur katan yaşam pratikleri.",
     maneviyat: "Kalbi dinginleştiren manevi okumalara seçilmiş yazılar.",
     "aile-ve-cocuk": "Evlilik, ebeveynlik ve aile içi ahenk için rehber içerikler."
   };

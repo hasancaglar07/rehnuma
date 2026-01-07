@@ -2,7 +2,7 @@
 
 ## Brief’ten çıkan gereksinimler
 - Header: Anasayfa, Kurumsal (Hakkımızda, Misyon, Vizyon, Künye), Sayılar, Kategoriler, Yazarlar, Blog, İletişim + “Abone Ol” CTA.
-- Yeni kategori kurgusu: 6 ana kategori ve alt kırılımlar (Rehnüma Düşünce, Kültür Edebiyat, Kadın ve Sağlık, Ev ve Yaşam, Maneviyat, Aile ve Çocuk).
+- Yeni kategori kurgusu: 5 ana kategori ve alt kırılımlar (Rehnüma Düşünce, Kültür Edebiyat, Kadın ve Sağlık, Maneviyat, Aile ve Çocuk).
 - Metinler: Vizyon, Misyon, Hakkımızda içeriği hazır; Künye bilgisi beklenecek.
 
 ## Mevcut durum (özet)
@@ -28,7 +28,7 @@
 ### 3) Taksonomi ve veri modeli
 - Prisma’da `Category`ye opsiyonel `parentId` ekleyerek hiyerarşi oluştur; mevcut sorgular root kategorilerle çalışmaya devam eder (parentId null).
 - Seed ve admin panel:
-  - Root kategoriler: Rehnüma Düşünce, Kültür Edebiyat, Kadın ve Sağlık, Ev ve Yaşam, Maneviyat, Aile ve Çocuk.
+  - Root kategoriler: Rehnüma Düşünce, Kültür Edebiyat, Kadın ve Sağlık, Maneviyat, Aile ve Çocuk.
   - Alt kategoriler parentId ile bağlanır (Akis, Ruh ve Mana, …).
   - Admin kategoriler ekranında parent seçimi ve sıralama alanı eklenir; listeleme root/child ayrımı gösterir.
 - Mevcut kategori grid/tagline haritaları yeni slug’lara göre güncellenir; eski slug’lar gerekiyorsa 301 redirect listesi hazırlanır.

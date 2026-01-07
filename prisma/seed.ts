@@ -8,7 +8,6 @@ async function main() {
     { name: "Rehnüma Düşünce", slug: "rehnuma-dusunce" },
     { name: "Kültür Edebiyat", slug: "kultur-edebiyat" },
     { name: "Kadın ve Sağlık", slug: "kadin-ve-saglik" },
-    { name: "Ev ve Yaşam", slug: "ev-ve-yasam" },
     { name: "Maneviyat", slug: "maneviyat" },
     { name: "Aile ve Çocuk", slug: "aile-ve-cocuk" }
   ];
@@ -28,10 +27,6 @@ async function main() {
     { name: "Çocuk Sağlığı", slug: "cocuk-sagligi", parentSlug: "kadin-ve-saglik" },
     { name: "Beslenme", slug: "beslenme", parentSlug: "kadin-ve-saglik" },
     { name: "Güzellik ve Bakım", slug: "guzellik-ve-bakim", parentSlug: "kadin-ve-saglik" },
-    { name: "Lezzetli Hikayeler", slug: "lezzetli-hikayeler", parentSlug: "ev-ve-yasam" },
-    { name: "El Emeği", slug: "el-emegi", parentSlug: "ev-ve-yasam" },
-    { name: "Pür İhtimam", slug: "pur-ihtimam", parentSlug: "ev-ve-yasam" },
-    { name: "Gülistan", slug: "gulistan", parentSlug: "ev-ve-yasam" },
     { name: "Asr-ı Saadet", slug: "asri-saadet", parentSlug: "maneviyat" },
     { name: "Mizan", slug: "mizan", parentSlug: "maneviyat" },
     { name: "İmanla Yeniden", slug: "imanla-yeniden", parentSlug: "maneviyat" },

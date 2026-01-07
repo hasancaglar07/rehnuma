@@ -20,6 +20,8 @@ model User {
   readingProgress ReadingProgress[]
   sessions        Session[]
   auditLogs       AuditLog[]
+  payments        Payment[]
+  paymentConsents PaymentConsent[]
   issueReviews    IssueArticle[]    @relation("IssueArticleReviewer")
   authorProfile   AuthorProfile?    @relation("UserAuthorProfile")
   createdAt       DateTime          @default(now())
@@ -177,4 +179,55 @@ model AuditLog {
   metadata   Json?
   createdAt  DateTime @default(now())
   user       User?    @relation(fields: [userId], references: [id])
+}
+
+model Payment {
+  id               String   @id @default(cuid())
+  userId           String
+  plan             String
+  status           String
+  provider         String
+  paymentModel     String
+  amount           Int
+  currency         String
+  quantity         Int      @default(1)
+  orderId          String
+  remoteOrderId    String?
+  transactionId    String?
+  authCode         String?
+  refRetNum        String?
+  batchNum         String?
+  installmentCount Int?
+  cardMasked       String?
+  cardType         String?
+  responseCode     String?
+  responseMessage  String?
+  ipAddress        String?
+  userAgent        String?
+  billing          Json?
+  authResponse     Json?
+  paymentResponse  Json?
+  statusResponse   Json?
+  refundResponse   Json?
+  cancelResponse   Json?
+  refundedAmount   Int?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  user             User     @relation(fields: [userId], references: [id])
+  consents         PaymentConsent[]
+}
+
+model PaymentConsent {
+  id              String   @id @default(cuid())
+  paymentId       String
+  userId          String
+  type            String
+  documentUrl     String?
+  documentVersion String?
+  acceptedAt      DateTime @default(now())
+  ipAddress       String?
+  userAgent       String?
+  metadata        Json?
+  payment         Payment  @relation(fields: [paymentId], references: [id])
+  user            User     @relation(fields: [userId], references: [id])
 }

@@ -70,6 +70,7 @@ export function NavbarClient() {
         { href: "/admin/anasayfa", label: "Anasayfa" },
         { href: "/admin/kurumsal", label: "Kurumsal" },
         { href: "/admin/kullanicilar", label: "Kullanıcılar" },
+        { href: "/admin/odemeler", label: "Ödemeler" },
         { href: "/admin/yazarlar", label: "Yazarlar" },
         { href: "/admin/yazilar", label: "Yönetim" }
       ]

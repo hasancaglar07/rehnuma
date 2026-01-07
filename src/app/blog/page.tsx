@@ -69,7 +69,7 @@ export default async function BlogPage() {
           <p className="text-xs uppercase tracking-[0.18em] text-primary/80">Blog</p>
           <h1 className="text-3xl md:text-4xl font-serif leading-tight">Güncel yazılar ve ilham veren içerikler</h1>
           <p className="text-lg text-muted-foreground">
-            Rehnüma Düşünce’den Ev ve Yaşam’a uzanan taze yazılar, rehberler ve röportajlar burada.
+            Rehnüma Düşünce’den Aile ve Çocuk’a uzanan taze yazılar, rehberler ve röportajlar burada.
           </p>
         </div>
 

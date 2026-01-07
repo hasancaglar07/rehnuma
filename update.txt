@@ -42,15 +42,7 @@ Fonksiyonel Tıp
 Beslenme 
 Güzellik ve Bakım 
 
-4.Ev ve Yaşam
-Alt kategoriler 
-
-Lezzetli Hikayeler 
-El Emeği 
-Pür İhtimam 
-Gülistan 
-
-5. Maneviyat 
+4. Maneviyat 
 Alt Kategoriler 
 
 Asr-ı Saadet 
@@ -59,7 +51,7 @@ Mizan
 Baş'tan Konuşalım
 Eğlence İlmihali 
 
-6. Aile ve Çocuk
+5. Aile ve Çocuk
 Alt kategoriler 
 
 Evliliğe Dair 

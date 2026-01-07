@@ -41,7 +41,8 @@ export default async function AdminDashboard() {
     { href: "/admin/dergi", title: "Dergi", desc: "PDF & kapak yükle, arşivi yönet", cta: "Yönet" },
     { href: "/admin/kategoriler", title: "Kategoriler", desc: "CRUD ve sıralama", cta: "Düzenle" },
     { href: "/admin/yazarlar", title: "Yazarlar", desc: "Profil ve görünürlük yönetimi", cta: "Yönet" },
-    { href: "/admin/kullanicilar", title: "Kullanıcılar", desc: "Ban/rol ve abonelik bilgisi", cta: "Yönet" }
+    { href: "/admin/kullanicilar", title: "Kullanıcılar", desc: "Ban/rol ve abonelik bilgisi", cta: "Yönet" },
+    { href: "/admin/odemeler", title: "Ödemeler", desc: "Ödeme kayıtları ve sözleşmeler", cta: "Görüntüle" }
   ];
 
   return (
